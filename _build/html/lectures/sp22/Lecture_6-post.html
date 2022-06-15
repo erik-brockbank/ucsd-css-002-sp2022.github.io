@@ -1,0 +1,2820 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 6 (4/8/22) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 7 (guest) - Introduction to Data Visualization in Python" href="Lecture_7-post.html" />
+    <link rel="prev" title="Lecture 5 (4/6/22)" href="Lecture_5-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_6-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_6-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_6-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#creating-new-dataframes">
+   Creating new dataframes
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#adding-data-to-existing-dataframes">
+   Adding data to existing dataframes
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-columns-common">
+     Adding columns (common!)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#adding-rows">
+     Adding rows
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#processing-data-filtering-grouping-summarizing">
+   Processing data: filtering, grouping, summarizing
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#filtering-fetch-rows-that-meet-certain-conditions">
+     Filtering: fetch rows that meet certain conditions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#filtering-operations-given-by-pandas">
+       Filtering operations given by pandas
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logical-filtering">
+       Logical filtering
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#why-is-this-useful">
+       Why is this useful?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#grouping-and-summarizing-analyze-and-graph-your-data">
+     Grouping and summarizing: analyze and graph your data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#let-s-practice">
+     Let’s practice!
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-6-4-8-22">
+<h1>Lecture 6 (4/8/22)<a class="headerlink" href="#lecture-6-4-8-22" title="Permalink to this headline">¶</a></h1>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>numpy continuation</p></li>
+<li><p>pandas basics</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Processing data with pandas</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="creating-new-dataframes">
+<h1>Creating new dataframes<a class="headerlink" href="#creating-new-dataframes" title="Permalink to this headline">¶</a></h1>
+<p>It’s worth noting: there are <em>many</em> different ways to do operations like dataframe creation in pandas.</p>
+<p>This is probably the most intuitive but you may come across others!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First let&#39;s initialize some data</span>
+<span class="c1"># Typically, we want to think of our data as being lists of the stuff in each column</span>
+<span class="n">uc_schools</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">([</span><span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span> <span class="s2">&quot;Santa Barbara&quot;</span><span class="p">,</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> 
+                       <span class="s2">&quot;Irvine&quot;</span><span class="p">,</span> <span class="s2">&quot;Davis&quot;</span><span class="p">,</span> <span class="s2">&quot;Riverside&quot;</span><span class="p">,</span> <span class="s2">&quot;Santa Cruz&quot;</span><span class="p">,</span> <span class="s2">&quot;Merced&quot;</span><span class="p">])</span>
+<span class="n">uc_founded</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1868</span><span class="p">,</span> <span class="mi">1960</span><span class="p">,</span> <span class="mi">1919</span><span class="p">,</span> <span class="mi">1909</span><span class="p">,</span> <span class="mi">1864</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="mi">1905</span><span class="p">,</span> <span class="mi">1954</span><span class="p">,</span> <span class="mi">1965</span><span class="p">,</span> <span class="mi">2005</span><span class="p">]</span>
+<span class="n">uc_students</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">45057</span><span class="p">,</span> <span class="mi">42875</span><span class="p">,</span> <span class="mi">45742</span><span class="p">,</span> <span class="mi">26314</span><span class="p">,</span> <span class="mi">3132</span><span class="p">,</span> <span class="mi">35220</span><span class="p">,</span> <span class="mi">40031</span><span class="p">,</span> <span class="mi">25548</span><span class="p">,</span> <span class="mi">19161</span><span class="p">,</span> <span class="mi">8847</span><span class="p">])</span>
+<span class="n">uc_grads</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">zeros</span><span class="p">((</span><span class="mi">10</span><span class="p">))</span>
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1"># Now let&#39;s put it in a dataframe!</span>
+<span class="n">uc_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span> <span class="c1"># start by declaring a new data frame</span>
+    <span class="s2">&quot;Campus&quot;</span><span class="p">:</span> <span class="n">uc_schools</span><span class="p">,</span> <span class="c1"># each column name is a dictionary key and the list of column data points is the value</span>
+    <span class="s2">&quot;Date_founded&quot;</span><span class="p">:</span> <span class="n">uc_founded</span><span class="p">,</span>
+    <span class="s2">&quot;Number_of_students&quot;</span><span class="p">:</span> <span class="n">uc_students</span><span class="p">,</span>
+<span class="c1">#     &quot;grads&quot;: uc_grads</span>
+<span class="p">})</span>
+
+<span class="n">uc_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Berkeley</td>
+      <td>1868</td>
+      <td>45057</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>San Diego</td>
+      <td>1960</td>
+      <td>42875</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Los Angeles</td>
+      <td>1919</td>
+      <td>45742</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Santa Barbara</td>
+      <td>1909</td>
+      <td>26314</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>San Francisco</td>
+      <td>1864</td>
+      <td>3132</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Irvine</td>
+      <td>1965</td>
+      <td>35220</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Davis</td>
+      <td>1905</td>
+      <td>40031</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Riverside</td>
+      <td>1954</td>
+      <td>25548</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Santa Cruz</td>
+      <td>1965</td>
+      <td>19161</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Merced</td>
+      <td>2005</td>
+      <td>8847</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We will likely find ourselves reading in data more often than creating new dataframes, but it’s occassionally useful and good to know how to do it!</p>
+</div>
+<div class="section" id="adding-data-to-existing-dataframes">
+<h1>Adding data to existing dataframes<a class="headerlink" href="#adding-data-to-existing-dataframes" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="adding-columns-common">
+<h2>Adding columns (common!)<a class="headerlink" href="#adding-columns-common" title="Permalink to this headline">¶</a></h2>
+<p>We may often find ourselves adding columns to a dataframe, e.g., creating columns that represent our existing data in a new way</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># One option: when we have new data to add</span>
+<span class="n">uc_undergrads</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">Series</span><span class="p">([</span><span class="mi">33343</span><span class="p">,</span> <span class="mi">31543</span><span class="p">,</span> <span class="mi">23349</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">30222</span><span class="p">,</span> <span class="mi">31162</span><span class="p">,</span> <span class="mi">22055</span><span class="p">,</span> <span class="mi">17207</span><span class="p">,</span> <span class="mi">8151</span><span class="p">,</span> <span class="mi">31814</span><span class="p">],</span>
+                         <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;San Diego&quot;</span><span class="p">,</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span> <span class="s2">&quot;Santa Barbara&quot;</span><span class="p">,</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> 
+                       <span class="s2">&quot;Irvine&quot;</span><span class="p">,</span> <span class="s2">&quot;Davis&quot;</span><span class="p">,</span> <span class="s2">&quot;Riverside&quot;</span><span class="p">,</span> <span class="s2">&quot;Santa Cruz&quot;</span><span class="p">,</span> <span class="s2">&quot;Merced&quot;</span><span class="p">,</span> <span class="s2">&quot;Berkeley&quot;</span><span class="p">])</span>
+
+<span class="c1"># uc_undergrads.index = [&quot;Berkeley&quot;, &quot;San Diego&quot;, &quot;Los Angeles&quot;, &quot;Santa Barbara&quot;, &quot;San Francisco&quot;, </span>
+<span class="c1">#                        &quot;Irvine&quot;, &quot;Davis&quot;, &quot;Riverside&quot;, &quot;Santa Cruz&quot;, &quot;Merced&quot;]</span>
+
+<span class="n">uc_data</span><span class="o">.</span><span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Berkeley&quot;</span><span class="p">,</span> <span class="s2">&quot;San Diego&quot;</span><span class="p">,</span> <span class="s2">&quot;Los Angeles&quot;</span><span class="p">,</span> <span class="s2">&quot;Santa Barbara&quot;</span><span class="p">,</span> <span class="s2">&quot;San Francisco&quot;</span><span class="p">,</span> 
+                       <span class="s2">&quot;Irvine&quot;</span><span class="p">,</span> <span class="s2">&quot;Davis&quot;</span><span class="p">,</span> <span class="s2">&quot;Riverside&quot;</span><span class="p">,</span> <span class="s2">&quot;Santa Cruz&quot;</span><span class="p">,</span> <span class="s2">&quot;Merced&quot;</span><span class="p">]</span>
+
+<span class="c1"># uc_undergrads</span>
+<span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">uc_undergrads</span> <span class="c1"># Use bracket syntax to declare a new column</span>
+
+<span class="n">uc_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Berkeley</th>
+      <td>Berkeley</td>
+      <td>1868</td>
+      <td>45057</td>
+      <td>31814</td>
+    </tr>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960</td>
+      <td>42875</td>
+      <td>33343</td>
+    </tr>
+    <tr>
+      <th>Los Angeles</th>
+      <td>Los Angeles</td>
+      <td>1919</td>
+      <td>45742</td>
+      <td>31543</td>
+    </tr>
+    <tr>
+      <th>Santa Barbara</th>
+      <td>Santa Barbara</td>
+      <td>1909</td>
+      <td>26314</td>
+      <td>23349</td>
+    </tr>
+    <tr>
+      <th>San Francisco</th>
+      <td>San Francisco</td>
+      <td>1864</td>
+      <td>3132</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>Irvine</th>
+      <td>Irvine</td>
+      <td>1965</td>
+      <td>35220</td>
+      <td>30222</td>
+    </tr>
+    <tr>
+      <th>Davis</th>
+      <td>Davis</td>
+      <td>1905</td>
+      <td>40031</td>
+      <td>31162</td>
+    </tr>
+    <tr>
+      <th>Riverside</th>
+      <td>Riverside</td>
+      <td>1954</td>
+      <td>25548</td>
+      <td>22055</td>
+    </tr>
+    <tr>
+      <th>Santa Cruz</th>
+      <td>Santa Cruz</td>
+      <td>1965</td>
+      <td>19161</td>
+      <td>17207</td>
+    </tr>
+    <tr>
+      <th>Merced</th>
+      <td>Merced</td>
+      <td>2005</td>
+      <td>8847</td>
+      <td>8151</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># A second option: when we want to process existing data and form a new column</span>
+
+<span class="n">uc_data</span> <span class="o">=</span> <span class="n">uc_data</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Undergraduate_pct</span> <span class="o">=</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Number_of_students&#39;</span><span class="p">])</span>
+
+<span class="c1"># uc_data[&#39;Undergraduate_pct&#39;] = uc_data[&#39;Undergraduates&#39;] / uc_data[&#39;Number_of_students&#39;]</span>
+
+<span class="n">uc_data</span> <span class="c1"># Note what happens if we don&#39;t do the re-assignment above</span>
+
+<span class="n">uc_data</span> <span class="o">=</span> <span class="n">uc_data</span><span class="o">.</span><span class="n">assign</span><span class="p">(</span><span class="n">Total</span> <span class="o">=</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span><span class="o">+</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Number_of_students&#39;</span><span class="p">])</span>
+
+<span class="n">uc_data</span>
+<span class="c1"># For this sort of processing, we can also use similar syntax to the above (try it yourself!)</span>
+<span class="c1"># but `assign` gives us some additional flexibility</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+      <th>Undergraduate_pct</th>
+      <th>Total</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Berkeley</th>
+      <td>Berkeley</td>
+      <td>1868</td>
+      <td>45057</td>
+      <td>31814</td>
+      <td>0.706083</td>
+      <td>76871</td>
+    </tr>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960</td>
+      <td>42875</td>
+      <td>33343</td>
+      <td>0.777679</td>
+      <td>76218</td>
+    </tr>
+    <tr>
+      <th>Los Angeles</th>
+      <td>Los Angeles</td>
+      <td>1919</td>
+      <td>45742</td>
+      <td>31543</td>
+      <td>0.689585</td>
+      <td>77285</td>
+    </tr>
+    <tr>
+      <th>Santa Barbara</th>
+      <td>Santa Barbara</td>
+      <td>1909</td>
+      <td>26314</td>
+      <td>23349</td>
+      <td>0.887322</td>
+      <td>49663</td>
+    </tr>
+    <tr>
+      <th>San Francisco</th>
+      <td>San Francisco</td>
+      <td>1864</td>
+      <td>3132</td>
+      <td>0</td>
+      <td>0.000000</td>
+      <td>3132</td>
+    </tr>
+    <tr>
+      <th>Irvine</th>
+      <td>Irvine</td>
+      <td>1965</td>
+      <td>35220</td>
+      <td>30222</td>
+      <td>0.858092</td>
+      <td>65442</td>
+    </tr>
+    <tr>
+      <th>Davis</th>
+      <td>Davis</td>
+      <td>1905</td>
+      <td>40031</td>
+      <td>31162</td>
+      <td>0.778447</td>
+      <td>71193</td>
+    </tr>
+    <tr>
+      <th>Riverside</th>
+      <td>Riverside</td>
+      <td>1954</td>
+      <td>25548</td>
+      <td>22055</td>
+      <td>0.863277</td>
+      <td>47603</td>
+    </tr>
+    <tr>
+      <th>Santa Cruz</th>
+      <td>Santa Cruz</td>
+      <td>1965</td>
+      <td>19161</td>
+      <td>17207</td>
+      <td>0.898022</td>
+      <td>36368</td>
+    </tr>
+    <tr>
+      <th>Merced</th>
+      <td>Merced</td>
+      <td>2005</td>
+      <td>8847</td>
+      <td>8151</td>
+      <td>0.921329</td>
+      <td>16998</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="adding-rows">
+<h2>Adding rows<a class="headerlink" href="#adding-rows" title="Permalink to this headline">¶</a></h2>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s say the UC system decides it&#39;s long overdue to build a campus in Lake Tahoe near the Nevada border. </span>
+<span class="c1"># We want to add some projected data</span>
+
+<span class="c1"># First, we make our new row into a dataframe of its own, with matching columns</span>
+<span class="n">uc_tahoe</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;Campus&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;Lake Tahoe&quot;</span><span class="p">],</span>
+    <span class="s2">&quot;Date founded&quot;</span><span class="p">:</span> <span class="p">[</span><span class="mi">2022</span><span class="p">]</span> <span class="c1"># Note we don&#39;t need to know all the column info here</span>
+<span class="p">})</span>
+
+<span class="n">uc_tahoe</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date founded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Lake Tahoe</td>
+      <td>2022</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Next, we use `concat` to add it to the previous dataframe</span>
+<span class="n">uc_data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">uc_data</span><span class="p">,</span> <span class="n">uc_tahoe</span><span class="p">])</span>
+
+<span class="n">uc_data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+      <th>Undergraduate_pct</th>
+      <th>Total</th>
+      <th>Date founded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Berkeley</th>
+      <td>Berkeley</td>
+      <td>1868.0</td>
+      <td>45057.0</td>
+      <td>31814.0</td>
+      <td>0.706083</td>
+      <td>76871.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960.0</td>
+      <td>42875.0</td>
+      <td>33343.0</td>
+      <td>0.777679</td>
+      <td>76218.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Los Angeles</th>
+      <td>Los Angeles</td>
+      <td>1919.0</td>
+      <td>45742.0</td>
+      <td>31543.0</td>
+      <td>0.689585</td>
+      <td>77285.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Santa Barbara</th>
+      <td>Santa Barbara</td>
+      <td>1909.0</td>
+      <td>26314.0</td>
+      <td>23349.0</td>
+      <td>0.887322</td>
+      <td>49663.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>San Francisco</th>
+      <td>San Francisco</td>
+      <td>1864.0</td>
+      <td>3132.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>3132.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Irvine</th>
+      <td>Irvine</td>
+      <td>1965.0</td>
+      <td>35220.0</td>
+      <td>30222.0</td>
+      <td>0.858092</td>
+      <td>65442.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Davis</th>
+      <td>Davis</td>
+      <td>1905.0</td>
+      <td>40031.0</td>
+      <td>31162.0</td>
+      <td>0.778447</td>
+      <td>71193.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Riverside</th>
+      <td>Riverside</td>
+      <td>1954.0</td>
+      <td>25548.0</td>
+      <td>22055.0</td>
+      <td>0.863277</td>
+      <td>47603.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Santa Cruz</th>
+      <td>Santa Cruz</td>
+      <td>1965.0</td>
+      <td>19161.0</td>
+      <td>17207.0</td>
+      <td>0.898022</td>
+      <td>36368.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Merced</th>
+      <td>Merced</td>
+      <td>2005.0</td>
+      <td>8847.0</td>
+      <td>8151.0</td>
+      <td>0.921329</td>
+      <td>16998.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Lake Tahoe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+</div>
+<div class="section" id="processing-data-filtering-grouping-summarizing">
+<h1>Processing data: filtering, grouping, summarizing<a class="headerlink" href="#processing-data-filtering-grouping-summarizing" title="Permalink to this headline">¶</a></h1>
+<p>First, note that some operations can be done on our dataframe without having to use filtering or grouping</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uc_data</span> <span class="o">=</span> <span class="n">uc_data</span><span class="o">.</span><span class="n">sort_values</span><span class="p">(</span><span class="s1">&#39;Date_founded&#39;</span><span class="p">,</span> <span class="n">ascending</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">uc_data</span>
+
+<span class="c1"># Note this doesn&#39;t change index at far left!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+      <th>Undergraduate_pct</th>
+      <th>Total</th>
+      <th>Date founded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>San Francisco</th>
+      <td>San Francisco</td>
+      <td>1864.0</td>
+      <td>3132.0</td>
+      <td>0.0</td>
+      <td>0.000000</td>
+      <td>3132.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Berkeley</th>
+      <td>Berkeley</td>
+      <td>1868.0</td>
+      <td>45057.0</td>
+      <td>31814.0</td>
+      <td>0.706083</td>
+      <td>76871.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Davis</th>
+      <td>Davis</td>
+      <td>1905.0</td>
+      <td>40031.0</td>
+      <td>31162.0</td>
+      <td>0.778447</td>
+      <td>71193.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Santa Barbara</th>
+      <td>Santa Barbara</td>
+      <td>1909.0</td>
+      <td>26314.0</td>
+      <td>23349.0</td>
+      <td>0.887322</td>
+      <td>49663.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Los Angeles</th>
+      <td>Los Angeles</td>
+      <td>1919.0</td>
+      <td>45742.0</td>
+      <td>31543.0</td>
+      <td>0.689585</td>
+      <td>77285.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Riverside</th>
+      <td>Riverside</td>
+      <td>1954.0</td>
+      <td>25548.0</td>
+      <td>22055.0</td>
+      <td>0.863277</td>
+      <td>47603.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960.0</td>
+      <td>42875.0</td>
+      <td>33343.0</td>
+      <td>0.777679</td>
+      <td>76218.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Irvine</th>
+      <td>Irvine</td>
+      <td>1965.0</td>
+      <td>35220.0</td>
+      <td>30222.0</td>
+      <td>0.858092</td>
+      <td>65442.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Santa Cruz</th>
+      <td>Santa Cruz</td>
+      <td>1965.0</td>
+      <td>19161.0</td>
+      <td>17207.0</td>
+      <td>0.898022</td>
+      <td>36368.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Merced</th>
+      <td>Merced</td>
+      <td>2005.0</td>
+      <td>8847.0</td>
+      <td>8151.0</td>
+      <td>0.921329</td>
+      <td>16998.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>0</th>
+      <td>Lake Tahoe</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>NaN</td>
+      <td>2022.0</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">uc_data</span><span class="o">.</span><span class="n">max</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Campus                Santa Cruz
+Date_founded                2005
+Number_of_students         45742
+Undergraduates             33343
+Undergraduate_pct       0.921329
+Total                      77285
+Date founded                2022
+dtype: object
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Number_of_students&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">min</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>3132.0
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="filtering-fetch-rows-that-meet-certain-conditions">
+<h2>Filtering: fetch rows that meet certain conditions<a class="headerlink" href="#filtering-fetch-rows-that-meet-certain-conditions" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="filtering-operations-given-by-pandas">
+<h3>Filtering operations given by pandas<a class="headerlink" href="#filtering-operations-given-by-pandas" title="Permalink to this headline">¶</a></h3>
+<p>We can do some kinds of filtering with built-in operations like <code class="docutils literal notranslate"><span class="pre">nlargest</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">top_3_students</span> <span class="o">=</span> <span class="n">uc_data</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">3</span><span class="p">,</span> <span class="s1">&#39;Number_of_students&#39;</span><span class="p">)</span>
+<span class="n">top_3_students</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+      <th>Undergraduate_pct</th>
+      <th>Total</th>
+      <th>Date founded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Los Angeles</th>
+      <td>Los Angeles</td>
+      <td>1919.0</td>
+      <td>45742.0</td>
+      <td>31543.0</td>
+      <td>0.689585</td>
+      <td>77285.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Berkeley</th>
+      <td>Berkeley</td>
+      <td>1868.0</td>
+      <td>45057.0</td>
+      <td>31814.0</td>
+      <td>0.706083</td>
+      <td>76871.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960.0</td>
+      <td>42875.0</td>
+      <td>33343.0</td>
+      <td>0.777679</td>
+      <td>76218.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="logical-filtering">
+<h3>Logical filtering<a class="headerlink" href="#logical-filtering" title="Permalink to this headline">¶</a></h3>
+<p>Most often, we filter by setting logical criteria over certain column values</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Get quantiles of undergraduate sizes</span>
+<span class="n">q</span> <span class="o">=</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.75</span><span class="p">])</span>
+<span class="n">q</span><span class="p">[</span><span class="mf">0.75</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31447.75
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Fetch uc_data rows where uc_data[&#39;Undergraduates&#39;] is &gt; the 75th percentile value above</span>
+<span class="n">large_undergrads</span> <span class="o">=</span> <span class="n">uc_data</span><span class="p">[</span><span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">[</span><span class="mf">0.75</span><span class="p">]]</span> 
+<span class="n">large_undergrads</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+      <th>Undergraduate_pct</th>
+      <th>Total</th>
+      <th>Date founded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>Berkeley</th>
+      <td>Berkeley</td>
+      <td>1868.0</td>
+      <td>45057.0</td>
+      <td>31814.0</td>
+      <td>0.706083</td>
+      <td>76871.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>Los Angeles</th>
+      <td>Los Angeles</td>
+      <td>1919.0</td>
+      <td>45742.0</td>
+      <td>31543.0</td>
+      <td>0.689585</td>
+      <td>77285.0</td>
+      <td>NaN</td>
+    </tr>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960.0</td>
+      <td>42875.0</td>
+      <td>33343.0</td>
+      <td>0.777679</td>
+      <td>76218.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>How does this work?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">q</span><span class="p">[</span><span class="mf">0.75</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>San Francisco    False
+Berkeley          True
+Davis            False
+Santa Barbara    False
+Los Angeles       True
+Riverside        False
+San Diego         True
+Irvine           False
+Santa Cruz       False
+Merced           False
+0                False
+Name: Undergraduates, dtype: bool
+</pre></div>
+</div>
+</div>
+</div>
+<p>So in the code above, we’re basically saying “fetch the rows where this condition evaluates to <code class="docutils literal notranslate"><span class="pre">True</span></code>”.</p>
+<p>Note this can get much more complicated…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What&#39;s going on here?</span>
+<span class="n">max_undergrad</span> <span class="o">=</span> <span class="n">uc_data</span><span class="p">[</span><span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">max</span><span class="p">()]</span>
+<span class="n">max_undergrad</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Campus</th>
+      <th>Date_founded</th>
+      <th>Number_of_students</th>
+      <th>Undergraduates</th>
+      <th>Undergraduate_pct</th>
+      <th>Total</th>
+      <th>Date founded</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>San Diego</th>
+      <td>San Diego</td>
+      <td>1960.0</td>
+      <td>42875.0</td>
+      <td>33343.0</td>
+      <td>0.777679</td>
+      <td>76218.0</td>
+      <td>NaN</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="why-is-this-useful">
+<h3>Why is this useful?<a class="headerlink" href="#why-is-this-useful" title="Permalink to this headline">¶</a></h3>
+<p>Let’s ask: what is the average number of undergraduates in the schools with the most students overall</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">q</span> <span class="o">=</span> <span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Number_of_students&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">quantile</span><span class="p">([</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">0.80</span><span class="p">])</span>
+<span class="c1"># type(q)</span>
+<span class="c1"># q.index</span>
+<span class="n">q</span><span class="p">[</span><span class="mf">0.8</span><span class="p">]</span>
+
+<span class="c1"># What&#39;s going on here?</span>
+<span class="n">uc_data</span><span class="p">[</span><span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Number_of_students&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">q</span><span class="p">[</span><span class="mf">0.8</span><span class="p">]][</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">uc_data</span><span class="p">[</span><span class="n">uc_data</span><span class="p">[</span><span class="s1">&#39;Number_of_students&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="n">q</span><span class="p">[</span><span class="mf">0.2</span><span class="p">]][</span><span class="s1">&#39;Undergraduates&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="c1"># uc_data[uc_data[&#39;Number_of_students&#39;] &gt;= q[0.4]][&#39;Undergraduates&#39;].mean()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>27586.875
+</pre></div>
+</div>
+</div>
+</div>
+<p>Here, we applied some statistics to a filtered subset of our data.</p>
+<p>Imagine we wanted the same average for <em>each quartile</em> of student numbers, instead of just the top 20%.</p>
+<p>This kind of thing is pretty common: this is where grouping comes in.</p>
+</div>
+</div>
+<div class="section" id="grouping-and-summarizing-analyze-and-graph-your-data">
+<h2>Grouping and summarizing: analyze and graph your data<a class="headerlink" href="#grouping-and-summarizing-analyze-and-graph-your-data" title="Permalink to this headline">¶</a></h2>
+<p>First let’s read in some more complex data.</p>
+<p>What’s going on with this data?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># pokemon = pd.read_csv(&quot;../Datasets/Pokemon.csv&quot;)</span>
+<span class="c1"># Use this code in class</span>
+<span class="n">pokemon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/UCSD-CSS-002/ucsd-css-002.github.io/master/datasets/Pokemon.csv&quot;</span><span class="p">)</span>
+<span class="n">pokemon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>Let’s say we want to know which <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> group has the most <code class="docutils literal notranslate"><span class="pre">HP</span></code> on average
+[any guesses?]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, what are we dealing with here?</span>
+<span class="n">pokemon</span><span class="p">[</span><span class="s1">&#39;Type 1&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">value_counts</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Water       112
+Normal       98
+Grass        70
+Bug          69
+Psychic      57
+Fire         52
+Electric     44
+Rock         44
+Ground       32
+Ghost        32
+Dragon       32
+Dark         31
+Poison       28
+Steel        27
+Fighting     27
+Ice          24
+Fairy        17
+Flying        4
+Name: Type 1, dtype: int64
+</pre></div>
+</div>
+</div>
+</div>
+<p>One solution:</p>
+<ol class="simple">
+<li><p>Look at each individual <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> value in our data</p></li>
+<li><p>Then, one by one, filter the data to match each unique <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> value</p></li>
+<li><p>Then, compute the average <code class="docutils literal notranslate"><span class="pre">HP</span></code> in that filtered data</p></li>
+<li><p>Then save it somewhere else to keep track of</p></li>
+<li><p>Then see which one is largest</p></li>
+</ol>
+<p>This seems pretty tough…</p>
+<p>Let’s start with something simpler: how many of each kind of <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> pokemon are there?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokemon</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type 1&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">size</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Type 1</th>
+      <th>0</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bug</td>
+      <td>69</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Dark</td>
+      <td>31</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dragon</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Electric</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Fairy</td>
+      <td>17</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fighting</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Fire</td>
+      <td>52</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Flying</td>
+      <td>4</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Ghost</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Grass</td>
+      <td>70</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Ground</td>
+      <td>32</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ice</td>
+      <td>24</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Normal</td>
+      <td>98</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Poison</td>
+      <td>28</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Psychic</td>
+      <td>57</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Rock</td>
+      <td>44</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Steel</td>
+      <td>27</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Water</td>
+      <td>112</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Above, we just asked pandas to tell us the value of <code class="docutils literal notranslate"><span class="pre">size()</span></code> applied to each unique group of <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> pokemon.</p>
+<p>Can we do the same thing but for more complex operations than <code class="docutils literal notranslate"><span class="pre">size()</span></code>? You bet!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokemon</span><span class="o">.</span><span class="n">groupby</span><span class="p">([</span><span class="s1">&#39;Type 1&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span> <span class="c1"># .agg is our friend here!</span>
+    <span class="n">mean_hp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">)</span> <span class="c1"># this defines a new statistic over each grouping. Apply `np.mean` to the `HP` column</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Type 1</th>
+      <th>mean_hp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bug</td>
+      <td>56.884058</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Dark</td>
+      <td>66.806452</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dragon</td>
+      <td>83.312500</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Electric</td>
+      <td>59.795455</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Fairy</td>
+      <td>74.117647</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Fighting</td>
+      <td>69.851852</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Fire</td>
+      <td>69.903846</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Flying</td>
+      <td>70.750000</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Ghost</td>
+      <td>64.437500</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Grass</td>
+      <td>67.271429</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Ground</td>
+      <td>73.781250</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Ice</td>
+      <td>72.000000</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Normal</td>
+      <td>77.275510</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Poison</td>
+      <td>67.250000</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Psychic</td>
+      <td>70.631579</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Rock</td>
+      <td>65.363636</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Steel</td>
+      <td>65.222222</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Water</td>
+      <td>72.062500</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We don’t need to stop there. We can group by multiple variables and add multiple metrics!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">type1_hp_summary</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span>
+    <span class="p">[</span><span class="s1">&#39;Type 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Legendary&#39;</span><span class="p">]</span> <span class="c1"># Note we&#39;re now grouping by each combination of Type 1 and Legendary</span>
+<span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">mean_hp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">mean</span><span class="p">),</span> <span class="c1"># And we&#39;re compiling multiple statistics here</span>
+    <span class="n">min_hp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">min</span><span class="p">),</span>
+    <span class="n">max_hp</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="n">np</span><span class="o">.</span><span class="n">max</span><span class="p">)</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">type1_hp_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Type 1</th>
+      <th>Legendary</th>
+      <th>mean_hp</th>
+      <th>min_hp</th>
+      <th>max_hp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>Bug</td>
+      <td>False</td>
+      <td>56.884058</td>
+      <td>1</td>
+      <td>86</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>Dark</td>
+      <td>False</td>
+      <td>64.655172</td>
+      <td>35</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dark</td>
+      <td>True</td>
+      <td>98.000000</td>
+      <td>70</td>
+      <td>126</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>Dragon</td>
+      <td>False</td>
+      <td>72.650000</td>
+      <td>41</td>
+      <td>108</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dragon</td>
+      <td>True</td>
+      <td>101.083333</td>
+      <td>80</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>Electric</td>
+      <td>False</td>
+      <td>57.325000</td>
+      <td>20</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>Electric</td>
+      <td>True</td>
+      <td>84.500000</td>
+      <td>79</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>Fairy</td>
+      <td>False</td>
+      <td>70.875000</td>
+      <td>35</td>
+      <td>101</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Fairy</td>
+      <td>True</td>
+      <td>126.000000</td>
+      <td>126</td>
+      <td>126</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>Fighting</td>
+      <td>False</td>
+      <td>69.851852</td>
+      <td>30</td>
+      <td>144</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>Fire</td>
+      <td>False</td>
+      <td>67.085106</td>
+      <td>38</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>Fire</td>
+      <td>True</td>
+      <td>96.400000</td>
+      <td>80</td>
+      <td>115</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>Flying</td>
+      <td>False</td>
+      <td>62.500000</td>
+      <td>40</td>
+      <td>85</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>Flying</td>
+      <td>True</td>
+      <td>79.000000</td>
+      <td>79</td>
+      <td>79</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>Ghost</td>
+      <td>False</td>
+      <td>58.733333</td>
+      <td>20</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>Ghost</td>
+      <td>True</td>
+      <td>150.000000</td>
+      <td>150</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>Grass</td>
+      <td>False</td>
+      <td>65.940299</td>
+      <td>30</td>
+      <td>123</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>Grass</td>
+      <td>True</td>
+      <td>97.000000</td>
+      <td>91</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>Ground</td>
+      <td>False</td>
+      <td>70.821429</td>
+      <td>10</td>
+      <td>115</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>Ground</td>
+      <td>True</td>
+      <td>94.500000</td>
+      <td>89</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>Ice</td>
+      <td>False</td>
+      <td>70.818182</td>
+      <td>36</td>
+      <td>110</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>Ice</td>
+      <td>True</td>
+      <td>85.000000</td>
+      <td>80</td>
+      <td>90</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>Normal</td>
+      <td>False</td>
+      <td>76.489583</td>
+      <td>30</td>
+      <td>255</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Normal</td>
+      <td>True</td>
+      <td>115.000000</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>Poison</td>
+      <td>False</td>
+      <td>67.250000</td>
+      <td>35</td>
+      <td>105</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>Psychic</td>
+      <td>False</td>
+      <td>67.720930</td>
+      <td>20</td>
+      <td>190</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>Psychic</td>
+      <td>True</td>
+      <td>79.571429</td>
+      <td>50</td>
+      <td>106</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>Rock</td>
+      <td>False</td>
+      <td>65.125000</td>
+      <td>30</td>
+      <td>123</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>Rock</td>
+      <td>True</td>
+      <td>67.750000</td>
+      <td>50</td>
+      <td>91</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>Steel</td>
+      <td>False</td>
+      <td>60.434783</td>
+      <td>40</td>
+      <td>80</td>
+    </tr>
+    <tr>
+      <th>30</th>
+      <td>Steel</td>
+      <td>True</td>
+      <td>92.750000</td>
+      <td>80</td>
+      <td>100</td>
+    </tr>
+    <tr>
+      <th>31</th>
+      <td>Water</td>
+      <td>False</td>
+      <td>71.120370</td>
+      <td>20</td>
+      <td>170</td>
+    </tr>
+    <tr>
+      <th>32</th>
+      <td>Water</td>
+      <td>True</td>
+      <td>97.500000</td>
+      <td>90</td>
+      <td>100</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now we can apply the filtering we discussed above for example.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">type1_hp_summary</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">5</span><span class="p">,</span> <span class="s1">&#39;mean_hp&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Type 1</th>
+      <th>Legendary</th>
+      <th>mean_hp</th>
+      <th>min_hp</th>
+      <th>max_hp</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>15</th>
+      <td>Ghost</td>
+      <td>True</td>
+      <td>150.000000</td>
+      <td>150</td>
+      <td>150</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>Fairy</td>
+      <td>True</td>
+      <td>126.000000</td>
+      <td>126</td>
+      <td>126</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Normal</td>
+      <td>True</td>
+      <td>115.000000</td>
+      <td>110</td>
+      <td>120</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>Dragon</td>
+      <td>True</td>
+      <td>101.083333</td>
+      <td>80</td>
+      <td>125</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>Dark</td>
+      <td>True</td>
+      <td>98.000000</td>
+      <td>70</td>
+      <td>126</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="let-s-practice">
+<h2>Let’s practice!<a class="headerlink" href="#let-s-practice" title="Permalink to this headline">¶</a></h2>
+<p>In each <code class="docutils literal notranslate"><span class="pre">Generation</span></code>, how many different <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> and <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">2</span></code> types are there? (did they change across generations?)</p>
+<p>[HINT: use the <code class="docutils literal notranslate"><span class="pre">nunique</span></code> summary function]</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write here</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1"># SOLUTION</span>
+<span class="c1"># pokemon.groupby(&#39;Generation&#39;).agg(</span>
+<span class="c1">#     type1_types = (&#39;Type 1&#39;, &#39;nunique&#39;),</span>
+<span class="c1">#     type2_types = (&#39;Type 2&#39;, &#39;nunique&#39;)</span>
+<span class="c1"># ).reset_index()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Make a new column called <code class="docutils literal notranslate"><span class="pre">Composite_force</span></code> that’s the average of each pokemon’s <code class="docutils literal notranslate"><span class="pre">Attack</span></code>, <code class="docutils literal notranslate"><span class="pre">Defense</span></code>, and <code class="docutils literal notranslate"><span class="pre">Speed</span></code> values.</p>
+<p>Next, for each <code class="docutils literal notranslate"><span class="pre">Type</span> <span class="pre">1</span></code> type, what is the maximum of this new column?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Write here</span>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+<span class="c1"># SOLUTION</span>
+<span class="c1"># pokemon = pokemon.assign(</span>
+<span class="c1">#     Composite_force = (pokemon[&#39;Attack&#39;] + pokemon[&#39;Defense&#39;] + pokemon[&#39;Speed&#39;])/3</span>
+<span class="c1"># )</span>
+
+<span class="c1"># max_force = pokemon.groupby([&#39;Generation&#39;]).agg(</span>
+<span class="c1">#     max_force = (&#39;Composite_force&#39;, np.max)</span>
+<span class="c1"># ).reset_index()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_5-post.html" title="previous page">Lecture 5 (4/6/22)</a>
+    <a class='right-next' id="next-link" href="Lecture_7-post.html" title="next page">Lecture 7 (guest) - Introduction to Data Visualization in Python</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

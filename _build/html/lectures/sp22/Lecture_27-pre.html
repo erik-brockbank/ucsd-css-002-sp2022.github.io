@@ -1,0 +1,1697 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 27 (5/27/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Week 10" href="Week10_Overview.html" />
+    <link rel="prev" title="Lecture 26 (5/25/2022)" href="Lecture_26-pre.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_27-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_27-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_27-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionality-reduction-other-solutions">
+   Dimensionality Reduction: Other Solutions
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-space">
+     Solution space
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#key-take-aways">
+       Key take-aways
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factor-analysis-solving-a-key-problem-with-pca">
+     Factor Analysis: solving a key problem with PCA
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#pca">
+       PCA
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#factor-analysis">
+       Factor Analysis
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#factor-analysis-in-python">
+     Factor Analysis in python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#selecting-the-number-of-factors">
+       Selecting the number of factors
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#rotations">
+       Rotations
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#analyzing-factors">
+       Analyzing factors
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#worked-example-comparing-fa-and-pca-with-the-iris-dataset">
+   Worked example: comparing FA and PCA with the
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     iris
+    </span>
+   </code>
+   dataset
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-27-5-27-2022">
+<h1>Lecture 27 (5/27/2022)<a class="headerlink" href="#lecture-27-5-27-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Lab 9 due today! Please make sure to fill it out so Purva and I can give feedback on your final project plans!</p></li>
+</ul>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Principal Components Analysis: interpretation + evaluation</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Alternative dimensionality reduction solutions</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dimensionality-reduction-other-solutions">
+<h1>Dimensionality Reduction: Other Solutions<a class="headerlink" href="#dimensionality-reduction-other-solutions" title="Permalink to this headline">¶</a></h1>
+<p>In class on Monday and Wednesday, we talked about the general problem of dimensionality reduction, and then focused on the most popular solution to this problem: Principal Components Analysis.</p>
+<p>PCA will work for many different kinds of dimensionality reduction. However, there are a number of other popular solutions out there, so it’s worth knowing how to think about alternatives.</p>
+<p>In this lecture, we’ll review the broader space of dimensionality reduction algorithms.</p>
+<div class="section" id="solution-space">
+<h2>Solution space<a class="headerlink" href="#solution-space" title="Permalink to this headline">¶</a></h2>
+<p>On Monday, we discussed the <em>intuitiion</em> behind dimensionality reduction, which is just to display and model our data in fewer dimensions without losing the gist of the pattern or structure in it.</p>
+<p>You can think of solutions to this problem as either <em>getting rid of less useful dimensions</em> or <em>creating new (more efficient) dimensions</em> that combine existing ones.</p>
+<p><img alt="overview" src="../../_images/dim_reduction_overview.png" /></p>
+<p>This graphic comes from a super helpful blog post <a class="reference external" href="https://medium.com/p/dcb9500d388b">here</a> which I highly recommend!</p>
+<div class="section" id="key-take-aways">
+<h3>Key take-aways<a class="headerlink" href="#key-take-aways" title="Permalink to this headline">¶</a></h3>
+<ol class="simple">
+<li><p><strong>Backward elimination</strong> and <strong>forward selection</strong> essentially do the same thing just in opposite directions: you provide a classification or regression model with a full set of dimensions and then it either eliminates predictors (backward elimination) or starts with a single predictor and adds them one by one (forward selection) to find the best performing low-dimensional representation.</p></li>
+<li><p><strong>Random forests</strong> are a solution for both classification and regression. However, the sklearn <code class="docutils literal notranslate"><span class="pre">RandomForestClassifer</span></code> (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">here</a>) also has a <code class="docutils literal notranslate"><span class="pre">feature_importances_</span></code> attribute that can be used to identify the <em>most important</em> features.</p></li>
+<li><p><strong>PCA</strong> and <strong>FA</strong> (<em>Factor Analysis</em>) are among the two most popular of the <em>linear</em> methods above, but there are others not shown here as well!</p></li>
+<li><p><strong>MDS</strong> (Multi-dimensional scaling) and <strong>t-SNE</strong> are among the two most popular <em>non-linear</em> methods above, but once again there are others not shown here.</p></li>
+</ol>
+<p>The <em>linear</em> methods above are available in the sklearn <code class="docutils literal notranslate"><span class="pre">decomposition</span></code> module <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.decomposition">here</a> (LDA is separately available <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.discriminant_analysis">here</a>). The <em>non-linear</em> methods are available in the <code class="docutils literal notranslate"><span class="pre">manifold</span></code> module <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.manifold">here</a> (except kernal PCA, which is available with the other linear methods).</p>
+</div>
+</div>
+<div class="section" id="factor-analysis-solving-a-key-problem-with-pca">
+<h2>Factor Analysis: solving a key problem with PCA<a class="headerlink" href="#factor-analysis-solving-a-key-problem-with-pca" title="Permalink to this headline">¶</a></h2>
+<p>Many of the machine learning techniques we’ve discussed this quarter start with a pretty simple <em>intuition</em> about the problem they’re trying to solve (for example, <span class="math notranslate nohighlight">\(k\)</span>-means clustering produces an algorithmic and formal structure for the intuition that similar items should be <em>closer together</em>).</p>
+<p>Factor Analysis starts with a simple intuition about dimensionality reduction: <strong>when we measure something in high-dimensional space, we’re often just measuring a handful of <em>latent variables</em> in a few different ways.</strong> We can give our data a lower-dimensional representation by identifying those latent variables and transforming our data to latent variable measurements.</p>
+<ul class="simple">
+<li><p>Example: voter surveys or psychological inventories, where many questions try to get at a few latent dispositions or tendencies</p></li>
+</ul>
+<p>Below is a schematic representation of PCA versus factor analysis to help illustrate this (<a class="reference external" href="https://www.theanalysisfactor.com/the-fundamental-difference-between-principal-component-analysis-and-factor-analysis/">source</a>):</p>
+<div class="section" id="pca">
+<h3>PCA<a class="headerlink" href="#pca" title="Permalink to this headline">¶</a></h3>
+<p>In the schematic below, each <span class="math notranslate nohighlight">\(Y_i\)</span> is one of our observed variables (e.g. pokemon “Speed”). The <span class="math notranslate nohighlight">\(w_i\)</span> values are weights mapping onto a principal component <span class="math notranslate nohighlight">\(C\)</span>.</p>
+<p><img alt="pca_schematic" src="../../_images/pca_schematic.png" /></p>
+</div>
+<div class="section" id="factor-analysis">
+<h3>Factor Analysis<a class="headerlink" href="#factor-analysis" title="Permalink to this headline">¶</a></h3>
+<p>In the schematic below, each <span class="math notranslate nohighlight">\(Y_i\)</span> is one of our observed variables (e.g. pokemon “Speed”). The <span class="math notranslate nohighlight">\(b_i\)</span> values are weights used to map <em>from</em> a latent variable or factor <span class="math notranslate nohighlight">\(F\)</span> to our observed variables. The <span class="math notranslate nohighlight">\(u_i\)</span> values are the residuals or errors in our mapping from latent variable to observed variable.</p>
+<p><img alt="fa_schematic" src="../../_images/fa_schematic.png" /></p>
+<p>Formally, with PCA, we determine our principal components (C above) such that:</p>
+<p><span class="math notranslate nohighlight">\(C = \sum_{i=1}^{N} w_i x_i\)</span> (I’ve replaced <span class="math notranslate nohighlight">\(Y_i\)</span> with <span class="math notranslate nohighlight">\(x_i\)</span> here)</p>
+<p>For FA, we estimate each <em>latent factor</em> F such that:</p>
+<p><span class="math notranslate nohighlight">\(x_i = b_i F + \epsilon_i\)</span> (I’ve replaced <span class="math notranslate nohighlight">\(Y_i\)</span> with <span class="math notranslate nohighlight">\(x_i\)</span> and <span class="math notranslate nohighlight">\(u_i\)</span> with <span class="math notranslate nohighlight">\(\epsilon_i\)</span> here)</p>
+<p>Another way to think about this difference: in PCA, each principal component is a linear combination of observed variables; in FA, observed variables are linear combinations of <em>latent variables</em> or factors. In this way, FA is sometimes described as a <em>modeling</em> approach because it’s trying to learn something useful about our data.</p>
+<p><strong>Interpretability</strong></p>
+<p>One key difference between factor analysis and PCA is that with PCA, there was no guarantee that our principal components would be <em>interpretable</em>. They just satisfy a goal of maximizing the amount of variance captured in our original data.</p>
+<p>In contrast, <strong>one of the explicit goals of factor analysis is to determine <em>interpretable</em> factors.</strong> The <em>latent variables</em> being estimated by the model are assumed to be interpretable constructs like “verbal intelligence” or <a class="reference external" href="https://en.wikipedia.org/wiki/Big_Five_personality_traits">Big Five</a> personality traits.</p>
+</div>
+</div>
+<div class="section" id="factor-analysis-in-python">
+<h2>Factor Analysis in python<a class="headerlink" href="#factor-analysis-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Let’s compute a factor analysis using the same pokemon data that we looked at on Wednesday.</p>
+<p>Here, we assume that our <em>latent factors</em> might be something like “offensive skill” that combines <code class="docutils literal notranslate"><span class="pre">Attack</span></code> and <code class="docutils literal notranslate"><span class="pre">Speed</span></code> variables, and <em>defensive skill</em> combining <code class="docutils literal notranslate"><span class="pre">Defense</span></code> and <code class="docutils literal notranslate"><span class="pre">Sp.</span> <span class="pre">Defense</span></code> for example.</p>
+<p>Let’s take a look to find out:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokemon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/erik-brockbank/css2_sp22-public/main/Datasets/Pokemon.csv&quot;</span><span class="p">)</span>
+<span class="n">pokemon</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="s1">&#39;Attack&#39;</span><span class="p">,</span> <span class="s1">&#39;Defense&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Atk&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Speed&#39;</span><span class="p">]</span>
+
+<span class="n">subset</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]</span>
+<span class="n">subset_scaled</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+<span class="n">subset_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">subset_scaled</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-0.950626</td>
+      <td>-0.924906</td>
+      <td>-0.797154</td>
+      <td>-0.239130</td>
+      <td>-0.248189</td>
+      <td>-0.801503</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-0.362822</td>
+      <td>-0.524130</td>
+      <td>-0.347917</td>
+      <td>0.219560</td>
+      <td>0.291156</td>
+      <td>-0.285015</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.420917</td>
+      <td>0.092448</td>
+      <td>0.293849</td>
+      <td>0.831146</td>
+      <td>1.010283</td>
+      <td>0.403635</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.420917</td>
+      <td>0.647369</td>
+      <td>1.577381</td>
+      <td>1.503891</td>
+      <td>1.729409</td>
+      <td>0.403635</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-1.185748</td>
+      <td>-0.832419</td>
+      <td>-0.989683</td>
+      <td>-0.392027</td>
+      <td>-0.787533</td>
+      <td>-0.112853</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>-0.754692</td>
+      <td>0.647369</td>
+      <td>2.443765</td>
+      <td>0.831146</td>
+      <td>2.808099</td>
+      <td>-0.629341</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>-0.754692</td>
+      <td>2.497104</td>
+      <td>1.160233</td>
+      <td>2.665905</td>
+      <td>1.369846</td>
+      <td>1.436611</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>0.420917</td>
+      <td>0.955658</td>
+      <td>-0.444182</td>
+      <td>2.360112</td>
+      <td>2.088973</td>
+      <td>0.059310</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>0.420917</td>
+      <td>2.497104</td>
+      <td>-0.444182</td>
+      <td>2.971699</td>
+      <td>2.088973</td>
+      <td>0.403635</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>0.420917</td>
+      <td>0.955658</td>
+      <td>1.481116</td>
+      <td>1.748526</td>
+      <td>0.650720</td>
+      <td>0.059310</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>A good first test is to see how our variables correlate.</p>
+<p>That gives us an initial indication of what we might expect our latent factors to be.</p>
+<p><em>Why is this the case?</em></p>
+<p>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Look at correlations of our high-dimensional variables</span>
+<span class="n">c</span> <span class="o">=</span> <span class="n">subset_scaled</span><span class="o">.</span><span class="n">corr</span><span class="p">()</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">heatmap</span><span class="p">(</span><span class="n">c</span><span class="p">)</span>
+
+<span class="n">c</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>HP</th>
+      <td>1.000000</td>
+      <td>0.422386</td>
+      <td>0.239622</td>
+      <td>0.362380</td>
+      <td>0.378718</td>
+      <td>0.175952</td>
+    </tr>
+    <tr>
+      <th>Attack</th>
+      <td>0.422386</td>
+      <td>1.000000</td>
+      <td>0.438687</td>
+      <td>0.396362</td>
+      <td>0.263990</td>
+      <td>0.381240</td>
+    </tr>
+    <tr>
+      <th>Defense</th>
+      <td>0.239622</td>
+      <td>0.438687</td>
+      <td>1.000000</td>
+      <td>0.223549</td>
+      <td>0.510747</td>
+      <td>0.015227</td>
+    </tr>
+    <tr>
+      <th>Sp. Atk</th>
+      <td>0.362380</td>
+      <td>0.396362</td>
+      <td>0.223549</td>
+      <td>1.000000</td>
+      <td>0.506121</td>
+      <td>0.473018</td>
+    </tr>
+    <tr>
+      <th>Sp. Def</th>
+      <td>0.378718</td>
+      <td>0.263990</td>
+      <td>0.510747</td>
+      <td>0.506121</td>
+      <td>1.000000</td>
+      <td>0.259133</td>
+    </tr>
+    <tr>
+      <th>Speed</th>
+      <td>0.175952</td>
+      <td>0.381240</td>
+      <td>0.015227</td>
+      <td>0.473018</td>
+      <td>0.259133</td>
+      <td>1.000000</td>
+    </tr>
+  </tbody>
+</table>
+</div></div><img alt="../../_images/Lecture_27-pre_10_1.png" src="../../_images/Lecture_27-pre_10_1.png" />
+</div>
+</div>
+<p><em>Is this what we expected?</em></p>
+<p>Not exactly. Let’s see what our FA model estimates as latent factors.</p>
+<p>There are two solutions for doing this.</p>
+<p>The sklearn library has a <code class="docutils literal notranslate"><span class="pre">FactorAnalysis</span></code> class <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.decomposition.FactorAnalysis.html">here</a>.</p>
+<ul class="simple">
+<li><p>The advantage to this is that it functions a lot like other sklearn models we’ve used.</p></li>
+<li><p>The disadvantage is that it seems to lack a lot of useful functions for interpreting factor analyses.</p></li>
+</ul>
+<p>Meanwhile, the <code class="docutils literal notranslate"><span class="pre">FactorAnalyzer</span></code> class <a class="reference external" href="https://factor-analyzer.readthedocs.io/en/latest/">here</a> seems to be more commonly used in analyses and tutorials people have posted online and has more functionality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># !pip install factor_analyzer</span>
+<span class="kn">from</span> <span class="nn">factor_analyzer</span> <span class="kn">import</span> <span class="n">FactorAnalyzer</span>
+<span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">FactorAnalysis</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="selecting-the-number-of-factors">
+<h3>Selecting the number of factors<a class="headerlink" href="#selecting-the-number-of-factors" title="Permalink to this headline">¶</a></h3>
+<p>Just like with PCA, our first step with factor analysis is to choose the number of factors.</p>
+<p>Here, people often use the <em>eigenvalues of each latent factor</em> to choose how many factors to include. The eigenvalue of the factor essentially indicates how much variance each factor is explaining relative to the underlying variables (<a class="reference external" href="https://towardsdatascience.com/factor-analysis-a-complete-tutorial-1b7621890e42">source</a>).</p>
+<p>Any value greater than 1 means it is explaining more than a single individual variable, which means it’s probably helpful.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">FactorAnalyzer</span><span class="p">()</span>
+<span class="n">fa</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">))</span>
+
+<span class="n">ev</span><span class="p">,</span> <span class="n">v</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">get_eigenvalues</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">cols</span><span class="p">)</span><span class="o">+</span><span class="mi">1</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ev</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;:&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Factor eigenvalue&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Factor&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_27-pre_14_0.png" src="../../_images/Lecture_27-pre_14_0.png" />
+</div>
+</div>
+<p>Based on this, it looks like two latent factors is an appropriate number!</p>
+<p>Let’s fit a factor analysis model with two latent factors:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">FactorAnalyzer</span><span class="p">(</span><span class="mi">2</span><span class="p">)</span>
+<span class="n">fa</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FactorAnalyzer(n_factors=2, rotation_kwargs={})
+</pre></div>
+</div>
+</div>
+</div>
+<p>The FactorAnalyzer class exports a lot of functionality!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">dir</span><span class="p">(</span><span class="n">fa</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;__class__&#39;,
+ &#39;__delattr__&#39;,
+ &#39;__dict__&#39;,
+ &#39;__dir__&#39;,
+ &#39;__doc__&#39;,
+ &#39;__eq__&#39;,
+ &#39;__format__&#39;,
+ &#39;__ge__&#39;,
+ &#39;__getattribute__&#39;,
+ &#39;__getstate__&#39;,
+ &#39;__gt__&#39;,
+ &#39;__hash__&#39;,
+ &#39;__init__&#39;,
+ &#39;__init_subclass__&#39;,
+ &#39;__le__&#39;,
+ &#39;__lt__&#39;,
+ &#39;__module__&#39;,
+ &#39;__ne__&#39;,
+ &#39;__new__&#39;,
+ &#39;__reduce__&#39;,
+ &#39;__reduce_ex__&#39;,
+ &#39;__repr__&#39;,
+ &#39;__setattr__&#39;,
+ &#39;__setstate__&#39;,
+ &#39;__sizeof__&#39;,
+ &#39;__str__&#39;,
+ &#39;__subclasshook__&#39;,
+ &#39;__weakref__&#39;,
+ &#39;_arg_checker&#39;,
+ &#39;_check_n_features&#39;,
+ &#39;_fit_factor_analysis&#39;,
+ &#39;_fit_ml_objective&#39;,
+ &#39;_fit_principal&#39;,
+ &#39;_fit_uls_objective&#39;,
+ &#39;_get_factor_variance&#39;,
+ &#39;_get_param_names&#39;,
+ &#39;_get_tags&#39;,
+ &#39;_more_tags&#39;,
+ &#39;_normalize_ml&#39;,
+ &#39;_normalize_uls&#39;,
+ &#39;_repr_html_&#39;,
+ &#39;_repr_html_inner&#39;,
+ &#39;_repr_mimebundle_&#39;,
+ &#39;_validate_data&#39;,
+ &#39;bounds&#39;,
+ &#39;corr_&#39;,
+ &#39;fit&#39;,
+ &#39;fit_transform&#39;,
+ &#39;get_communalities&#39;,
+ &#39;get_eigenvalues&#39;,
+ &#39;get_factor_variance&#39;,
+ &#39;get_params&#39;,
+ &#39;get_uniquenesses&#39;,
+ &#39;impute&#39;,
+ &#39;is_corr_matrix&#39;,
+ &#39;loadings_&#39;,
+ &#39;mean_&#39;,
+ &#39;method&#39;,
+ &#39;n_factors&#39;,
+ &#39;phi_&#39;,
+ &#39;rotation&#39;,
+ &#39;rotation_kwargs&#39;,
+ &#39;rotation_matrix_&#39;,
+ &#39;set_params&#39;,
+ &#39;std_&#39;,
+ &#39;structure_&#39;,
+ &#39;svd_method&#39;,
+ &#39;transform&#39;,
+ &#39;use_smc&#39;,
+ &#39;weights_&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, let’s look at the <em>loadings</em> for each factor.</p>
+<p>This tells us how strong the relationship is between each observed variable and our latent variables:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Factor 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Factor 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_27-pre_20_0.png" src="../../_images/Lecture_27-pre_20_0.png" />
+<img alt="../../_images/Lecture_27-pre_20_1.png" src="../../_images/Lecture_27-pre_20_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.40860905,  0.16261274],
+       [ 0.44318863,  0.24865551],
+       [-0.27736748,  1.12755493],
+       [ 0.81237948, -0.05022259],
+       [ 0.36989369,  0.37097783],
+       [ 0.71462316, -0.23628463]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just for good measure, here’s how we do the same thing with the sklearn package.</p>
+<p>Note, for some reason, the factor loadings are essentially swapped with the sklearn version, not totally sure why.</p>
+<p>However, the results <em>across</em> the two factors are very similar.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa_sk</span> <span class="o">=</span> <span class="n">FactorAnalysis</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> 
+                       <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span>
+                      <span class="p">)</span>
+<span class="n">fa_sk</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">subset_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>FactorAnalysis(n_components=2)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa_sk</span><span class="o">.</span><span class="n">components_</span>
+<span class="c1"># fa.components_[0]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.28805287,  0.47741779,  0.97067396,  0.29453491,  0.55673398,
+         0.06883294],
+       [ 0.40088512,  0.37844834, -0.08221658,  0.74945399,  0.40043021,
+         0.60960599]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa_sk</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;FA Component 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa_sk</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;FA Component 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_27-pre_24_0.png" src="../../_images/Lecture_27-pre_24_0.png" />
+<img alt="../../_images/Lecture_27-pre_24_1.png" src="../../_images/Lecture_27-pre_24_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="rotations">
+<h3>Rotations<a class="headerlink" href="#rotations" title="Permalink to this headline">¶</a></h3>
+<p>One of the neat tools available with factor analysis is computing “rotations” of the factors.</p>
+<p>We’re not going to get into the statistics of this, but instead focus on the <em>goal</em> of rotations, which is to make the factors more interpretable.</p>
+<p>A rotation tries to make it so that each factor has loadings that are either close to 0 or very high and across factors, different original variables have 0 or high values.</p>
+<p>Here’s what it looks like with our pokemon data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa</span> <span class="o">=</span> <span class="n">FactorAnalyzer</span><span class="p">(</span><span class="n">n_factors</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">rotation</span> <span class="o">=</span> <span class="s1">&#39;varimax&#39;</span><span class="p">)</span>
+<span class="n">fa</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Factor 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Factor 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">fa</span><span class="o">.</span><span class="n">loadings_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_27-pre_26_0.png" src="../../_images/Lecture_27-pre_26_0.png" />
+<img alt="../../_images/Lecture_27-pre_26_1.png" src="../../_images/Lecture_27-pre_26_1.png" />
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 0.43711331,  0.27487173],
+       [ 0.4946431 ,  0.36743549],
+       [ 0.05503063,  1.00032837],
+       [ 0.76291798,  0.18836155],
+       [ 0.4592798 ,  0.46337713],
+       [ 0.61652876, -0.01849209]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Did it help? Not a ton.</p>
+<p>Essentially, it seems to be exaggerating the “Defense” versus “everything else” distinction.</p>
+<p>But this is kind of helpful! It tells us that the two <em>latent factors</em> in our pokemon data are a pokemon’s defensive skill and a combination of its other variables that (presumably) reflect more offensive abilities.</p>
+<p>Here’s how we do the same thing with the sklearn <code class="docutils literal notranslate"><span class="pre">FactorAnalysis</span></code> class:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa_rot</span> <span class="o">=</span> <span class="n">FactorAnalysis</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> 
+                        <span class="n">rotation</span> <span class="o">=</span> <span class="s1">&#39;varimax&#39;</span><span class="p">,</span>
+                        <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span>
+                       <span class="p">)</span>
+<span class="n">fa_rot</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">subset_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">TypeError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mi">5</span><span class="n">a096e5addcb</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fa_rot</span> <span class="o">=</span> <span class="n">FactorAnalysis</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> 
+<span class="g g-Whitespace">      </span><span class="mi">2</span>                         <span class="n">rotation</span> <span class="o">=</span> <span class="s1">&#39;varimax&#39;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>                         <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>                        <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">fa_rot</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">subset_scaled</span><span class="p">)</span>
+
+<span class="nn">/opt/anaconda3/lib/python3.8/site-packages/sklearn/utils/validation.py</span> in <span class="ni">inner_f</span><span class="nt">(*args, **kwargs)</span>
+<span class="g g-Whitespace">     </span><span class="mi">70</span>                           <span class="ne">FutureWarning</span><span class="p">)</span>
+<span class="nn">     71         kwargs.update({k: arg for k, arg</span> in <span class="ni">zip</span><span class="nt">(sig.parameters, args)})</span>
+<span class="ne">---&gt; </span><span class="mi">72</span>         <span class="k">return</span> <span class="n">f</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">73</span>     <span class="k">return</span> <span class="n">inner_f</span>
+<span class="g g-Whitespace">     </span><span class="mi">74</span> 
+
+<span class="ne">TypeError</span>: __init__() got an unexpected keyword argument &#39;rotation&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">fa_rot</span><span class="o">.</span><span class="n">components_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">660</span><span class="n">b3ae3dbc3</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">fa_rot</span><span class="o">.</span><span class="n">components_</span>
+
+<span class="ne">NameError</span>: name &#39;fa_rot&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa_rot</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;FA (rotated) Component 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa_rot</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;FA (rotated) Component 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">b674e44fc77a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa_rot</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;FA (rotated) Component 1&quot;</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fa_rot</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;fa_rot&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>When introducing this earlier, we contrasted it with PCA in part based on its interpretability.</p>
+<p>Let’s look at the first two principal components of our pokemon data to see how they compare:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;PCA Component 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;PCA Component 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_27-pre_32_0.png" src="../../_images/Lecture_27-pre_32_0.png" />
+<img alt="../../_images/Lecture_27-pre_32_1.png" src="../../_images/Lecture_27-pre_32_1.png" />
+</div>
+</div>
+<p>As you can see, these are indeed much less interpretable!</p>
+<p>The first component seems to be kind of a generic amalgam of our existing dimensions, while the second one draws a sharp contrast between defense and speed. However, neither of these gives us a particularly intuitive answer about the underlying (low-dimensional) variables that our data is expressing.</p>
+<p>This is what makes factor analysis useful!</p>
+</div>
+<div class="section" id="analyzing-factors">
+<h3>Analyzing factors<a class="headerlink" href="#analyzing-factors" title="Permalink to this headline">¶</a></h3>
+<p>Now, a last thing we can do is <em>transform</em> our data onto their values for each of the factors discovered by the factor analysis, and see if there are any notable clusters or patterns in the data.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokemon_transformed</span> <span class="o">=</span> <span class="n">fa</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">)</span>
+
+<span class="n">pokemon_transformed</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pokemon_transformed</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;Factor 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Factor 2&quot;</span><span class="p">])</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pokemon_transformed</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Factor 1&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Factor 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_27-pre_35_0.png" src="../../_images/Lecture_27-pre_35_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="worked-example-comparing-fa-and-pca-with-the-iris-dataset">
+<h1>Worked example: comparing FA and PCA with the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset<a class="headerlink" href="#worked-example-comparing-fa-and-pca-with-the-iris-dataset" title="Permalink to this headline">¶</a></h1>
+<p>In the code below, I’ve done some factor analysis and principal components analysis of the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset, to compare how the two approaches identify lower dimensional representations for our data.</p>
+<p>Recall that the iris dataset represents each iris in 4 dimensions (sepal length and width, petal length and width). Since it also has labels (<code class="docutils literal notranslate"><span class="pre">species</span></code>), it’s easier to evaluate how successfully the dimensionality reduction techniques manage to preserve or even exaggerate the differences in the target variable.</p>
+<p><strong>If we have time remaining, go through the code blocks below and start by trying to solve the problem on your own. You can do all of this with code from earlier in this lecture. If you need a hint, the solution is provided at the bottom of each block.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ### </span>
+<span class="c1"># First, read in the `iris` dataset from seaborn and save it to a variable called &#39;iris&#39;</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ### </span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># iris = sns.load_dataset(&#39;iris&#39;)</span>
+<span class="c1"># iris</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ### </span>
+<span class="c1"># Next, fit a factor analysis to the iris predictor columns (sepal length + width, petal length + width)</span>
+<span class="c1"># Use the FactorAnalyzer class (not the sklearn version)</span>
+<span class="c1"># Use 4 factors in the factor analysis, then use the FactorAnalyzer `get_eigenvalues` function to extract</span>
+<span class="c1"># eigenvalues for each factor. Plot these eigenvalues to see how many factors we should use in our analysis.</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># fa = FactorAnalyzer()</span>
+<span class="c1"># fa.fit(iris.loc[:, (&#39;sepal_length&#39;, &#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;)], 4)</span>
+<span class="c1"># ev, v = fa.get_eigenvalues()</span>
+
+<span class="c1"># sns.lineplot(x = np.arange(1, 5), y = ev)</span>
+<span class="c1"># plt.axhline(1, c = &quot;k&quot;, ls = &quot;:&quot;)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Now, fit a factor analysis model to the petal length + width and sepal length + width data from iris,</span>
+<span class="c1"># using the number of factors you identified above. Use the &#39;varimax&#39; rotation to ensure interpretable factors.</span>
+<span class="c1"># Then, plot the &quot;loadings&quot; for each of the original columns onto your factors. What do they show?</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ### </span>
+<span class="c1"># cols = [&#39;sepal_length&#39;, &#39;sepal_width&#39;, &#39;petal_length&#39;, &#39;petal_width&#39;]</span>
+<span class="c1"># fa = FactorAnalyzer(n_factors = 2, rotation = &#39;varimax&#39;)</span>
+<span class="c1"># fa.fit(iris.loc[:, cols])</span>
+
+<span class="c1"># sns.barplot(x = fa.loadings_[:, 0], y = cols)</span>
+<span class="c1"># plt.title(&quot;Factor 1&quot;)</span>
+<span class="c1"># plt.show()</span>
+<span class="c1"># sns.barplot(x = fa.loadings_[:, 1], y = cols)</span>
+<span class="c1"># plt.title(&quot;Factor 2&quot;)</span>
+<span class="c1"># plt.show()</span>
+
+<span class="c1"># fa.loadings_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Now, let&#39;s compare the factors you identified above with the principal components of the same data.</span>
+<span class="c1"># Use the sklearn `PCA` class to extract the principal components of the iris data.</span>
+<span class="c1"># Use the same 4-dimensional iris data as above (petal length + width, sepal length + width) and </span>
+<span class="c1"># identify the same number of principal components as factors you selected previously.</span>
+<span class="c1"># Once you&#39;ve fit the PCA, plot the weights for each principal component.</span>
+<span class="c1"># How do they compare to the factor loadings above?</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ### </span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># pca = PCA(n_components = 2, random_state = 0).fit(iris.loc[:, cols])</span>
+
+<span class="c1"># sns.barplot(x = pca.components_[0], y = cols)</span>
+<span class="c1"># plt.title(&quot;PCA Component 1&quot;)</span>
+<span class="c1"># plt.show()</span>
+
+<span class="c1"># sns.barplot(x = pca.components_[1], y = cols)</span>
+<span class="c1"># plt.title(&quot;PCA Component 2&quot;)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Now, let&#39;s see how the iris data looks when transformed onto the two factors you identified with your factor analysis.</span>
+<span class="c1"># Use the `FactorAnalyzer` `fit_transform` function to transform the 4 iris dimensions (petal and sepal variables)</span>
+<span class="c1"># onto the two factors. Save these transformed values to a dataframe with &quot;Factor 1&quot; and &quot;Factor 2&quot; as the columns.</span>
+<span class="c1"># Next, add the iris &quot;species&quot; column to this new dataframe. </span>
+<span class="c1"># Finally, make a scatterplot with &quot;Factor 1&quot; on X, &quot;Factor 2&quot; on Y, and the &quot;species&quot; value as the hue.</span>
+<span class="c1"># What do the different species look like when projected onto these two factors?</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ### </span>
+<span class="c1"># x_trans = fa.fit_transform(iris.loc[:, cols])</span>
+<span class="c1"># df_trans = pd.DataFrame(x_trans, columns = [&quot;Factor 1&quot;, &quot;Factor 2&quot;])</span>
+<span class="c1"># df_trans[&#39;species&#39;] = iris[&#39;species&#39;]</span>
+
+<span class="c1"># sns.scatterplot(data = df_trans, x = &quot;Factor 1&quot;, y = &quot;Factor 2&quot;, hue = &quot;species&quot;)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### INSTRUCTIONS ###</span>
+<span class="c1"># Finally, let&#39;s compare the low-dimensional representation of the iris data from our factor analysis above</span>
+<span class="c1"># to what we get from PCA. Below, use the `PCA` `fit_transform` function to project the 4-dimensional iris </span>
+<span class="c1"># feature variables onto the two principal components you found above. </span>
+<span class="c1"># Create a new dataframe with these transformed values. Name the columns &quot;PC 1&quot; and &quot;PC 2&quot;.</span>
+<span class="c1"># Now, add the `species` column from the original iris dataframe to your new dataframe.</span>
+<span class="c1"># Finally, make a scatterplot of the low dimensional data just as you did above, this time with</span>
+<span class="c1"># &quot;PC 1&quot; on X, &quot;PC 2&quot; on Y, and &quot;species&quot; as the hue. </span>
+<span class="c1"># How does this figure compare to the factor analysis results above?</span>
+<span class="c1">###</span>
+
+
+
+<span class="c1">### YOUR CODE HERE ###</span>
+
+
+
+
+
+
+
+
+
+<span class="c1">### SOLUTION ###</span>
+<span class="c1"># x_pca = pca.fit_transform(iris.loc[:, cols])</span>
+<span class="c1"># df_pca = pd.DataFrame(x_pca, columns = [&quot;PC 1&quot;, &quot;PC 2&quot;])</span>
+<span class="c1"># df_pca[&#39;species&#39;] = iris[&#39;species&#39;]</span>
+
+<span class="c1"># sns.scatterplot(data = df_pca, x = &quot;PC 1&quot;, y = &quot;PC 2&quot;, hue = &quot;species&quot;)</span>
+<span class="c1"># plt.show()</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_26-pre.html" title="previous page">Lecture 26 (5/25/2022)</a>
+    <a class='right-next' id="next-link" href="Week10_Overview.html" title="next page">Week 10</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

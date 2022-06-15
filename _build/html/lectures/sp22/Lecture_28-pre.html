@@ -1,0 +1,1327 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 28 (6/3/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 2 (3/30/22)" href="Lecture_2-post.html" />
+    <link rel="prev" title="Week 10" href="Week10_Overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_28-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_28-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_28-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#course-evals">
+   Course evals
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#data-sources-in-2022">
+   Data Sources in 2022
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#web-scraping">
+   Web Scraping
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#libraries">
+     Libraries
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#web-scraping-example">
+     Web scraping example
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bottom-up-web-scraping">
+       “Bottom-up” web scraping
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#top-down-web-scraping">
+       “Top down” web scraping
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#apis">
+   APIs
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#api-examples">
+     API Examples
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-you-need-to-make-api-requests">
+     What you need to make API “requests”
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-s-in-an-api-request">
+     What’s in an API request?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-gets-returned-by-an-api-request">
+     What gets
+     <em>
+      returned
+     </em>
+     by an API request?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#your-turn">
+   Your turn!
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#other-css-resources">
+   Other CSS Resources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-28-6-3-2022">
+<h1>Lecture 28 (6/3/2022)<a class="headerlink" href="#lecture-28-6-3-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Any late code assignments (labs, problem sets) due by 11:59pm Monday, 6/6 for up to 50% credit</p></li>
+<li><p>Final projects due 11:59pm Wednesday, 6/8</p>
+<ul>
+<li><p>Turn in (by email) <em>one</em> jupyter notebook with names of all project members</p></li>
+<li><p>Please also include your data file or an external link to it so we can run your code!</p></li>
+</ul>
+</li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Course evals</p></li>
+<li><p>Special topic: web scraping and APIs</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="course-evals">
+<h1>Course evals<a class="headerlink" href="#course-evals" title="Permalink to this headline">¶</a></h1>
+<p>Before we jump into content for today, <strong>I want to set aside 5 mins. for folks to complete course evaluations.</strong></p>
+<p>Here’s why you should take the time to fill them out:</p>
+<ul class="simple">
+<li><p>I’m new to teaching so I take them seriously! Because I’m still figuring out how I like to teach, it’s important to me that I develop good habits, and your feedback helps.</p></li>
+<li><p>This content matters and figuring out how to teach it well matters. If you have thoughts about what would have made it better, these aren’t just things I can incorporate into my own teaching, they’re things I can share with other teachers (including future CSS I and II professors).</p></li>
+<li><p>Positive evaluations are an important part of evaluating teaching and academic job candidates. If there are things you like about the course, your feedback can help me and Purva continue to do this.</p></li>
+<li><p>Purva and I have both put a ton of hours into this course (as have many of you!). <em>Sharing what worked and what didn’t is an important part of evaluating <strong>anything</strong> you’ve put your valuable time and energy into!</em></p></li>
+</ul>
+<p>So, I’m setting aside 5 mins. now for folks to open up their evals and at least get them started.</p>
+<p>Head to: <a class="reference external" href="https://academicaffairs.ucsd.edu/Modules/Evals">https://academicaffairs.ucsd.edu/Modules/Evals</a></p>
+<p>Evaluations are <strong>due by 11:59pm on Monday, June 6th.</strong></p>
+</div>
+<div class="section" id="data-sources-in-2022">
+<h1>Data Sources in 2022<a class="headerlink" href="#data-sources-in-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>How to access data for building and testing models:</strong></p>
+<ol class="simple">
+<li><p>Use available datasets</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://www.kaggle.com/datasets">Kaggle</a></p></li>
+<li><p><a class="reference external" href="https://ourworldindata.org/">Our world in data</a></p></li>
+<li><p>Inter-university Consortium for Political and Social Research <a class="reference external" href="https://www.icpsr.umich.edu/web/pages/">ICPSR</a></p></li>
+<li><p>The list goes on…</p></li>
+</ul>
+</li>
+<li><p>Collect your own data from human subjects</p>
+<ul class="simple">
+<li><p>On twitter</p></li>
+<li><p>On other social media (<a class="reference external" href="https://www.theverge.com/2021/9/24/22688278/tiktok-science-study-survey-prolific">tiktok</a>??)</p></li>
+<li><p>In the lab</p></li>
+</ul>
+</li>
+<li><p>Gather data from the web</p>
+<ul class="simple">
+<li><p>Web scraping</p></li>
+<li><p>APIs</p></li>
+</ul>
+</li>
+</ol>
+<p>In this course, we’ve mostly looked at pre-generated datasets like the ones in category 1 above (and in your final projects, you’ve encountered some of the challenges with this).</p>
+<p>Collecting behavioral data online comes with a number of challenges of its own; you could teach a whole course on methodologies for this.</p>
+<p>Today, we’ll talk a bit about another option, which is gathering data using web scraping and APIs.</p>
+</div>
+<div class="section" id="web-scraping">
+<h1>Web Scraping<a class="headerlink" href="#web-scraping" title="Permalink to this headline">¶</a></h1>
+<p><strong>Web scraping is extracting data that’s available on publicly accessible websites to answer a research question or create a useful dataset</strong>.</p>
+<p>Usually, it involves <em>writing code</em> to:</p>
+<ol class="simple">
+<li><p>Send web requests to (often many) web pages to retrieve their HTML content</p></li>
+<li><p>Processing or analyzing their HTML content to extract the desired data</p></li>
+</ol>
+<p><strong>Web scraping presents a unique opportunity to harvest large batches of data from the internet.</strong> Large text corpora from recipe sites or message boards, product information from Amazon or Walmart, etc. Cool!</p>
+<p><strong>However, in my opinion (others may disagree here), web scraping is a bit of a dying art.</strong> <em>Why?</em></p>
+<ul class="simple">
+<li><p>First, modern web pages load a lot of content <em>dynamically</em>, so your may need more advanced web scraping techniques to extract all the content you see when you load the page in a browser.</p></li>
+<li><p>Second, many modern web pages, especially those that people historically scraped for information, have developed tools to discourage web scraping. Why? Because that’s their product! Try making a script to scrape product information from Amazon or flight information from United and you’ll quickly find your requests failing…</p></li>
+<li><p>Third, many web pages have developed sophisticated <strong>APIs</strong> for fetching information from them. On the one hand, this gives you a much more structured and reliable response than merely web scraping. On the other hand, it also gives the web pages themselves much more control over what information you can request.</p></li>
+</ul>
+<p>This doesn’t mean it’s useless! There are still lots of potentially great applications of it. To summarize: <strong>it’s a good skill to have in your data modeling toolbox, but it’s also important to be aware of the limitations.</strong></p>
+<p>With that, let’s take a quick peek!</p>
+<div class="section" id="libraries">
+<h2>Libraries<a class="headerlink" href="#libraries" title="Permalink to this headline">¶</a></h2>
+<p>We’re going to use two libraries below.</p>
+<p>The generic python <code class="docutils literal notranslate"><span class="pre">requests</span></code> library allows you to <em>issue http requests</em> to a given URL. Briefly, this involves sending a request to the server that stores the web content for a particular URL and asking it (in a very structured way) for that content. It’s what your browser does behind the scenes to <em>fetch a website’s content</em> anytime you visit a webpage.</p>
+<p>Next, we’re going to use a popular python library called <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> (<a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/">home page</a>) that was made specifically to support <em>processing html content</em> when web scraping.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span> <span class="c1"># now we get beautiful soup</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="web-scraping-example">
+<h2>Web scraping example<a class="headerlink" href="#web-scraping-example" title="Permalink to this headline">¶</a></h2>
+<p>We’re going to go fetch the wikipedia page for UCSD. You can check it out yourself <a class="reference external" href="https://en.wikipedia.org/wiki/University_of_California,_San_Diego">here</a>.</p>
+<p>Below we start by using the <code class="docutils literal notranslate"><span class="pre">requests</span></code> library to go fetch the raw HTML content at the wikipedia link above.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_San_Diego&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>What information does this give us?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">status_code</span></code> tells us if our request was successful</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">content</span></code> gives us the actual content. But it’s not in a useful format right now.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">response</span>
+<span class="n">response</span><span class="o">.</span><span class="n">status_code</span>
+<span class="nb">type</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">)</span> <span class="c1"># this doesn&#39;t help us so much...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>bytes
+</pre></div>
+</div>
+</div>
+</div>
+<p>This is where BeautifulSoup comes in!</p>
+<p>BeautifulSoup gives us a bunch of functions for turning this response content <em>byte string</em> into something we can extract information from.</p>
+<p>Step 1 is to convert it to a BeautifulSoup class. This is an object that stores the information in the HTML page in a very <em>structured</em> way, allowing us to pull all kinds of information out of it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+<span class="c1"># soup.prettify()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we can use available functions exported by the BeautifulSoup class to extract information from the HTML.</p>
+<p>We’re not going to go through everything here, just a teaser. You can check out the full set of functions on their documentation page <a class="reference external" href="https://www.crummy.com/software/BeautifulSoup/bs4/doc/">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># use `find_all` to get all instances of an HTML tag (div, p, etc.)</span>
+
+<span class="n">divs</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;div&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">divs</span><span class="p">)</span>
+
+<span class="n">ps</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;p&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">ps</span><span class="p">)</span>
+
+<span class="n">spans</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;span&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">spans</span><span class="p">)</span> <span class="c1"># yikes...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1459
+</pre></div>
+</div>
+</div>
+</div>
+<p>With this, we can start to dissect what’s on the page using functions like <code class="docutils literal notranslate"><span class="pre">get</span></code> and attributes of the items themselves.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">divs</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="c1"># boring...</span>
+<span class="n">divs</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span> <span class="c1"># boring</span>
+<span class="c1"># divs[2] # ah-ha!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;div class=&quot;noprint&quot; id=&quot;mw-head-base&quot;&gt;&lt;/div&gt;
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use the `get` function to get attributes of the HTML tag</span>
+<span class="n">divs</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;class&#39;</span><span class="p">)</span>
+
+<span class="c1"># Use the `text` attribute to get the actual content inside the tag</span>
+<span class="c1"># divs[2].text</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;mw-body&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="bottom-up-web-scraping">
+<h3>“Bottom-up” web scraping<a class="headerlink" href="#bottom-up-web-scraping" title="Permalink to this headline">¶</a></h3>
+<p>Note, this has some powerful tools for “bottom up” web processing. In other words, extracting content from the page without any knowledge of how the page is structured (that wording is something I just called it, not a technical term for this!).</p>
+<p>For example, without knowing anything about the structure of the page, we can find out all the other wikipedia pages it links to:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">links</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">links</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s see an example</span>
+<span class="n">links</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span>
+<span class="n">links</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+<span class="n">links</span><span class="p">[</span><span class="mi">3</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+
+<span class="c1"># Let&#39;s use this to go figure out all the different external links on this page</span>
+<span class="n">link_lookup</span> <span class="o">=</span> <span class="p">{}</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">links</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">elem</span><span class="o">.</span><span class="n">text</span> <span class="o">!=</span> <span class="s1">&#39;&#39;</span> <span class="ow">and</span> <span class="n">elem</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">link_lookup</span><span class="p">[</span><span class="n">elem</span><span class="o">.</span><span class="n">text</span><span class="p">]</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s1">&#39;href&#39;</span><span class="p">)</span>
+
+<span class="c1"># link_lookup        </span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>The above is a bit clunky, but with a little additional processing we could figure out all the other wikipedia pages that our page connects to, or all the external web links that it references.</p>
+<p><strong>However, when web scraping, it’s often more useful to know something about the structure of the page you’re scraping and how to find the content you’re looking for.</strong></p>
+<p>This requires more manual work with the page itself.</p>
+</div>
+<div class="section" id="top-down-web-scraping">
+<h3>“Top down” web scraping<a class="headerlink" href="#top-down-web-scraping" title="Permalink to this headline">¶</a></h3>
+<p>What I’m calling “top down” web scraping (again, there may be more technical verbage for this) involves looking at the structure of the page ahead of time to allow for a more directed search for the information you want to extract.</p>
+<p>Let’s take a look at the UCSD <a class="reference external" href="https://en.wikipedia.org/wiki/University_of_California,_San_Diego">wikipedia page</a> content <em>in the browser</em> and try to extract useful information that way.</p>
+<p><strong>Here, we’ll try to extract the <em>number of students currently enrolled</em> using a more careful, directed search</strong> informed by how the page is actually set up rather than just searching blindly.</p>
+<p>NOTE: this requires a more advanced understanding of HTML code. If HTML is new to you, this should still be fairly understandable.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tables</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;table&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">tables</span><span class="p">)</span> <span class="c1"># what the heck...</span>
+
+<span class="c1"># Let&#39;s get more specific</span>
+<span class="n">info_table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;infobox&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;vcard&#39;</span><span class="p">})</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">info_table</span><span class="p">)</span> <span class="c1"># that&#39;s better</span>
+<span class="n">info_table</span> <span class="o">=</span> <span class="n">info_table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">info_table</span>
+
+
+<span class="c1"># Now, let&#39;s go through the rows to extract the info we want</span>
+<span class="n">rows</span> <span class="o">=</span> <span class="n">info_table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">rows</span><span class="p">)</span>
+
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+    <span class="n">row_key</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row_key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">row_key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;Students&quot;</span><span class="p">:</span>
+        <span class="n">students</span> <span class="o">=</span> <span class="n">elem</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+
+        
+<span class="nb">print</span><span class="p">(</span><span class="n">students</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>42,875 (Fall 2021)[5]
+</pre></div>
+</div>
+</div>
+</div>
+<p>That worked!</p>
+<p>Now, we can leverage the consistent structure of wikipedia pages to try something more bold…</p>
+<p><em>Remember the lecture at the beginning of this quarter where we did all kinds of python operations with a list of students across the UCs?</em></p>
+<p>For class, I typed that in manually. Let’s go fetch it automatically!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">process_pages</span><span class="p">(</span><span class="n">url</span><span class="p">):</span>
+    <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+    <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">content</span><span class="p">,</span> <span class="s1">&#39;html.parser&#39;</span><span class="p">)</span>
+    <span class="n">info_table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="n">attrs</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;infobox&#39;</span><span class="p">,</span> <span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;vcard&#39;</span><span class="p">})</span>
+    <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">info_table</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span> 
+        <span class="n">info_table</span> <span class="o">=</span> <span class="n">info_table</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+        <span class="n">rows</span> <span class="o">=</span> <span class="n">info_table</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">rows</span><span class="p">:</span>
+            <span class="n">row_key</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;th&#39;</span><span class="p">)</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">row_key</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="n">row_key</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span> <span class="o">==</span> <span class="s2">&quot;Students&quot;</span><span class="p">:</span>
+                <span class="n">students</span> <span class="o">=</span> <span class="n">row</span><span class="o">.</span><span class="n">find_all</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span><span class="o">.</span><span class="n">text</span>
+                <span class="k">return</span> <span class="n">students</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">urls</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;San Diego&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_San_Diego&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Berkeley&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Berkeley&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Davis&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Davis&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Irvine&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Irvine&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Los Angeles&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Los_Angeles&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Santa Barbara&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Santa_Barbara&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Santa Cruz&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Santa_Cruz&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Merced&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Merced&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;Riverside&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_Riverside&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;San Francisco&#39;</span><span class="p">:</span> <span class="s1">&#39;https://en.wikipedia.org/wiki/University_of_California,_San_Francisco&#39;</span>
+<span class="p">}</span>
+
+<span class="n">student_lookup</span> <span class="o">=</span> <span class="p">{}</span>
+
+<span class="k">for</span> <span class="n">campus</span><span class="p">,</span> <span class="n">url</span> <span class="ow">in</span> <span class="n">urls</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+    <span class="n">student_lookup</span><span class="p">[</span><span class="n">campus</span><span class="p">]</span> <span class="o">=</span> <span class="n">process_pages</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+
+<span class="n">student_lookup</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>{&#39;San Diego&#39;: &#39;42,875 (Fall 2021)[5]&#39;,
+ &#39;Berkeley&#39;: &#39;45,057 (fall 2021)[5]&#39;,
+ &#39;Davis&#39;: &#39;40,031 (Fall 2020–21)[7]&#39;,
+ &#39;Irvine&#39;: &#39;35,220 (2019)[6]&#39;,
+ &#39;Los Angeles&#39;: &#39;45,742 (Fall 2019)[9]&#39;,
+ &#39;Santa Barbara&#39;: &#39;26,314 (Fall 2019)[5]&#39;,
+ &#39;Santa Cruz&#39;: &#39;19,161 (fall 2020)[3]&#39;,
+ &#39;Merced&#39;: &#39;8,847 (Fall 2019)[6]&#39;,
+ &#39;Riverside&#39;: &#39;25,548 (2019)[7]&#39;,
+ &#39;San Francisco&#39;: None}
+</pre></div>
+</div>
+</div>
+</div>
+<p>That’s it on web scraping!</p>
+<p>If you have some comfort with HTML and how web pages are organized, there’s a lot more you can do here.</p>
+<p>But, as you can see, it’s pretty tedious and how far you can go with this depends in part on:</p>
+<ul class="simple">
+<li><p>How consistently structured the pages you’re scraping are</p></li>
+<li><p>Whether they have any kind of advanced rate limiting to prevent you from systematically requesting all their content</p></li>
+</ul>
+<p>Many modern web pages will instead surface <em><strong>APIs</strong></em> that you can use to query information from the site.</p>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="apis">
+<h1>APIs<a class="headerlink" href="#apis" title="Permalink to this headline">¶</a></h1>
+<p><em>What is an API??</em></p>
+<p>API stands for <em>Application Programming Interface</em>. What it means is that it’s a <strong>structured way to request information from (and sometimes pass information to) a website</strong>.</p>
+<p>For purposes of data analysis, it’s a lot like web scraping but with more structure. Like web scraping, it’s an exchange that happens between code you execute on your own computer and a distant web server with information you want to obtain.</p>
+<p>Specifically:</p>
+<ul class="simple">
+<li><p>The <em>requester</em> (you) sends a specific <em>query</em> that’s formatted to indicate what information they want</p></li>
+<li><p>The <em>receiver</em> (a sever) sends a <em>response</em> in a format that’s easier for the requester to parse</p></li>
+</ul>
+<p>APIs are defined by <strong>endpoints</strong>, which are just URLs that have been configured for people to request certain kinds of information from.</p>
+<p>There’s a lot more to say about APIs and how they work, but this is enough to get us started.</p>
+<div class="section" id="api-examples">
+<h2>API Examples<a class="headerlink" href="#api-examples" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take a look at some examples!</p>
+<ul class="simple">
+<li><p>Twitter API <a class="reference external" href="https://developer.twitter.com/en/docs">homepage</a> (the requests we can make are <a class="reference external" href="https://developer.twitter.com/en/docs/twitter-api/tweets/lookup/introduction">here</a>)</p></li>
+<li><p>Spotify API <a class="reference external" href="https://developer.spotify.com/documentation/">homepage</a> (example requests we can make are <a class="reference external" href="https://developer.spotify.com/documentation/web-api/reference/#/">here</a>)</p></li>
+<li><p>Facebook API <a class="reference external" href="https://developers.facebook.com/?no_redirect=1">homepage</a> (facebook graph API is <a class="reference external" href="https://developers.facebook.com/docs/graph-api/">here</a> and instagram graph API is <a class="reference external" href="https://developers.facebook.com/docs/instagram-api/">here</a>)</p></li>
+<li><p>New York Times API <a class="reference external" href="https://developer.nytimes.com/apis">homepage</a> (great for fetching articles and text!)</p></li>
+<li><p>Google maps API <a class="reference external" href="https://developers.google.com/maps">homepage</a> (you can use this for lots of online mapping operations. Just ask uber or lyft!)</p></li>
+<li><p>Giphy API <a class="reference external" href="https://developers.giphy.com/">homepage</a></p></li>
+</ul>
+<p>…and many many more!</p>
+</div>
+<div class="section" id="what-you-need-to-make-api-requests">
+<h2>What you need to make API “requests”<a class="headerlink" href="#what-you-need-to-make-api-requests" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>For almost all publicly facing APIs like the ones above, your first step is to create a “developer account” so the API can track the requests you’re making.</p></li>
+<li><p>Next, you create an “app” on your developer account. When you do this, the API will give you a set of “keys” or “tokens” that you can use to make requests against the API. This is confusing the first time around, but becomes a lot of copy-paste once you’ve done it.</p></li>
+</ol>
+<p>For most APIs, you can view your apps and copy or regenerate keys on a page like this one:</p>
+<p><img alt="twitter_dev" src="../../_images/twitter_dev.png" /></p>
+<p>On this page, the “bearer token” I created is what I use to make requests to the twitter API.</p>
+<p>In the code below, I’m reading the “bearer token” from a file in the same directory as my code.</p>
+<p>It’s important that you <strong>DO NOT put this information directly in your code</strong>, or even in the github repositories or other public places where you store your code. It’s like a password.</p>
+</div>
+<div class="section" id="what-s-in-an-api-request">
+<h2>What’s in an API request?<a class="headerlink" href="#what-s-in-an-api-request" title="Permalink to this headline">¶</a></h2>
+<ol class="simple">
+<li><p>A URL that says what information you want from the API</p>
+<ul class="simple">
+<li><p>Note: this is where all the flexibility of APIs comes in. You can specify lots of different information using URL parameters</p></li>
+</ul>
+</li>
+<li><p>Some form of authentication key or token that you pass along to the request</p>
+<ul class="simple">
+<li><p>This is what the API uses to ensure that you have a right to request the information you’re asking for</p></li>
+</ul>
+</li>
+</ol>
+</div>
+<div class="section" id="what-gets-returned-by-an-api-request">
+<h2>What gets <em>returned</em> by an API request?<a class="headerlink" href="#what-gets-returned-by-an-api-request" title="Permalink to this headline">¶</a></h2>
+<p>The API request returns (at a minimum):</p>
+<ol class="simple">
+<li><p>A <em>status code</em> indicating whether your request was successful</p></li>
+<li><p>A structured response with the information you requested</p>
+<ul class="simple">
+<li><p>The first step is usually to convert this to <em>JSON</em> so you can parse the response in your code</p></li>
+</ul>
+</li>
+</ol>
+<p>Let’s take a look!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">json</span> 
+
+<span class="c1"># The API request URL: this says what information I want</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.twitter.com/2/users/by?usernames=ErikBrockbank&quot;</span>
+
+<span class="c1"># The bearer token I stored separately in a text file</span>
+<span class="n">bearer_token</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;twitter_bearer_token.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+
+
+<span class="c1"># A function to formulate an &quot;authentication&quot; object with my bearer token</span>
+<span class="c1"># NOTE function was copied directly from resources here, which the twitter api links to as well:</span>
+<span class="c1"># https://github.com/twitterdev/Twitter-API-v2-sample-code/blob/main/Tweet-Lookup/get_tweets_with_bearer_token.py</span>
+<span class="k">def</span> <span class="nf">bearer_oauth</span><span class="p">(</span><span class="n">r</span><span class="p">):</span>
+    <span class="n">r</span><span class="o">.</span><span class="n">headers</span><span class="p">[</span><span class="s2">&quot;Authorization&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Bearer </span><span class="si">{</span><span class="n">bearer_token</span><span class="si">}</span><span class="s2">&quot;</span>
+    <span class="k">return</span> <span class="n">r</span>
+
+
+<span class="c1"># Now, I make a HTTP request just like I did in the web scraping example,</span>
+<span class="c1"># but this time to the API url and with my authentication information included</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s what I get back</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+
+<span class="c1"># I can use this to extract my own twitter user ID (this was the whole point of this request...)</span>
+<span class="n">userid</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()[</span><span class="s1">&#39;data&#39;</span><span class="p">][</span><span class="mi">0</span><span class="p">][</span><span class="s1">&#39;id&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">FileNotFoundError</span><span class="g g-Whitespace">                         </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="n">da6296e6d5c4</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+<span class="g g-Whitespace">      </span><span class="mi">6</span> <span class="c1"># The bearer token I stored separately in a text file</span>
+<span class="ne">----&gt; </span><span class="mi">7</span> <span class="n">bearer_token</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;twitter_bearer_token.txt&quot;</span><span class="p">,</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">readline</span><span class="p">()</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> 
+<span class="g g-Whitespace">      </span><span class="mi">9</span> 
+
+<span class="ne">FileNotFoundError</span>: [Errno 2] No such file or directory: &#39;twitter_bearer_token.txt&#39;
+</pre></div>
+</div>
+</div>
+</div>
+<p>Neat! But this request just gave me my user ID.</p>
+<p>That’s a bit boring, but now I can use that to request a whole batch of tweets from my own account using <a class="reference external" href="https://developer.twitter.com/en/docs/twitter-api/tweets/timelines/api-reference/get-users-id-tweets">this</a> API “endpoint”:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Notice how this URL is different from the one above. I&#39;m requesting from a new endpoint</span>
+<span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://api.twitter.com/2/users/</span><span class="si">{}</span><span class="s2">/tweets&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+
+<span class="c1"># Now I formulate the request hte same way I did above</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">)</span>
+
+<span class="c1"># And presto! Look at this big batch of data!</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="n">response_json</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">()</span>
+<span class="n">response_json</span><span class="p">[</span><span class="s1">&#39;data&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="mi">2640</span><span class="n">da40263a</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Notice how this URL is different from the one above. I&#39;m requesting from a new endpoint</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">url</span><span class="o">=</span><span class="s2">&quot;https://api.twitter.com/2/users/</span><span class="si">{}</span><span class="s2">/tweets&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">userid</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="c1"># Now I formulate the request hte same way I did above</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">)</span>
+
+<span class="ne">NameError</span>: name &#39;userid&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, just for demonstration, I’ll show how you can get a whole bunch of additional information about a particular tweet by supplying particular “fields” in the API request.</p>
+<p>I’m following the example <a class="reference external" href="https://developer.twitter.com/en/docs/labs/tweets-and-users/quick-start/get-tweets">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ids</span> <span class="o">=</span> <span class="s2">&quot;ids=1530327762803625984&quot;</span> <span class="c1"># specific tweet ID</span>
+
+<span class="c1"># I want all of the &quot;fields&quot; blow as part of the response</span>
+<span class="n">fields</span> <span class="o">=</span> <span class="s2">&quot;tweet.fields=created_at,author_id,lang,source,public_metrics,context_annotations,entities&quot;</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s2">&quot;https://api.twitter.com/2/tweets?</span><span class="si">{}</span><span class="s2">&amp;</span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">ids</span><span class="p">,</span> <span class="n">fields</span><span class="p">)</span>
+
+<span class="c1"># Now, I formulate my request with the more complicated URL above</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="mi">7783</span><span class="n">c30446bd</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span> 
+<span class="g g-Whitespace">      </span><span class="mi">7</span> <span class="c1"># Now, I formulate my request with the more complicated URL above</span>
+<span class="ne">----&gt; </span><span class="mi">8</span> <span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">request</span><span class="p">(</span><span class="s2">&quot;GET&quot;</span><span class="p">,</span> <span class="n">url</span><span class="p">,</span> <span class="n">auth</span><span class="o">=</span><span class="n">bearer_oauth</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">9</span> <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">status_code</span><span class="p">)</span>
+<span class="g g-Whitespace">     </span><span class="mi">10</span> <span class="nb">print</span><span class="p">(</span><span class="n">response</span><span class="o">.</span><span class="n">json</span><span class="p">())</span>
+
+<span class="ne">NameError</span>: name &#39;bearer_oauth&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="your-turn">
+<h1>Your turn!<a class="headerlink" href="#your-turn" title="Permalink to this headline">¶</a></h1>
+<p>That’s all we’re going to cover on APIs!</p>
+<p>There’s a lot more to say here but hopefully this gives you the ingredients to get started yourself.</p>
+<p>The good news is, companies <em>want</em> people using their APIs, so there are a lot of resources available to help you get started.</p>
+<p>If we have time left over, you can try creating a developer account with one of these APIs and making a request of your own.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-css-resources">
+<h1>Other CSS Resources<a class="headerlink" href="#other-css-resources" title="Permalink to this headline">¶</a></h1>
+<p><em>Keep educating yourself!</em></p>
+<p><strong>Summer Institute for Computational Social Sciences</strong> (SICSS)</p>
+<ul class="simple">
+<li><p>Website <a class="reference external" href="https://sicss.io/overview">here</a> with tons of video content and tutorials</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Week10_Overview.html" title="previous page">Week 10</a>
+    <a class='right-next' id="next-link" href="Lecture_2-post.html" title="next page">Lecture 2 (3/30/22)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

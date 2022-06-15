@@ -1,0 +1,94 @@
+# Table of contents
+# Learn more at https://jupyterbook.org/customize/toc.html
+#
+format: jb-book
+root: index
+parts:
+  - caption: Course (CSS 2 Spring 2022)
+    chapters:
+      - file: course/syllabus
+      - file: course/expectations
+      - file: course/datahub
+      - file: course/debugging
+      - file: course/resources
+      - file: course/final
+  - caption: Lectures - download before class
+    chapters:
+      - file: lectures/sp22/Week1_Overview
+        sections:
+        - file: lectures/sp22/Lecture_1.ipynb
+        - file: lectures/sp22/Lecture_2-pre.ipynb
+        - file: lectures/sp22/Lecture_3-pre.ipynb
+      - file: lectures/sp22/Week2_Overview
+        sections:
+        - file: lectures/sp22/Lecture_4-pre.ipynb
+        - file: lectures/sp22/Lecture_5-pre.ipynb
+        - file: lectures/sp22/Lecture_6-pre.ipynb
+      - file: lectures/sp22/Week3_Overview
+        sections:
+        - file: lectures/sp22/Lecture_7-pre.ipynb
+        - file: lectures/sp22/Lecture_8.ipynb
+        - file: lectures/sp22/Lecture_9-pre.ipynb
+      - file: lectures/sp22/Week4_Overview
+        sections:
+        - file: lectures/sp22/Lecture_10-pre.ipynb
+        - file: lectures/sp22/Lecture_11-pre.ipynb
+        - file: lectures/sp22/Lecture_12-pre.ipynb
+      - file: lectures/sp22/Week5_Overview
+        sections:
+        - file: lectures/sp22/Lecture_13-pre.ipynb
+        - file: lectures/sp22/Lecture_14-pre.ipynb
+        - file: lectures/sp22/Lecture_15-pre.ipynb
+      - file: lectures/sp22/Week6_Overview
+        sections:
+        - file: lectures/sp22/Lecture_16-pre.ipynb
+        - file: lectures/sp22/Lecture_17-pre.ipynb
+        - file: lectures/sp22/Lecture_18-pre.ipynb
+      - file: lectures/sp22/Week7_Overview
+        sections:
+        - file: lectures/sp22/Lecture_19-pre.ipynb
+        - file: lectures/sp22/Lecture_20-pre.ipynb
+        - file: lectures/sp22/Lecture_21-pre.ipynb
+      - file: lectures/sp22/Week8_Overview
+        sections:
+        - file: lectures/sp22/Lecture_22-pre.ipynb
+        - file: lectures/sp22/Lecture_23-pre.ipynb
+        - file: lectures/sp22/Lecture_24-pre.ipynb
+      - file: lectures/sp22/Week9_Overview
+        sections:
+        - file: lectures/sp22/Lecture_25-pre.ipynb
+        - file: lectures/sp22/Lecture_26-pre.ipynb
+        - file: lectures/sp22/Lecture_27-pre.ipynb
+      - file: lectures/sp22/Week10_Overview
+        sections:
+        - file: lectures/sp22/Lecture_28-pre.ipynb
+  - caption: Lecture code - available after class
+    chapters:
+      # - file: lectures/sp22/Lecture_1.ipynb
+      - file: lectures/sp22/Lecture_2-post.ipynb
+      - file: lectures/sp22/Lecture_3-post.ipynb
+      - file: lectures/sp22/Lecture_4-post.ipynb
+      - file: lectures/sp22/Lecture_5-post.ipynb
+      - file: lectures/sp22/Lecture_6-post.ipynb
+      - file: lectures/sp22/Lecture_7-post.ipynb
+      # - file: lectures/sp22/Lecture_8.ipynb
+      - file: lectures/sp22/Lecture_9-post.ipynb
+      - file: lectures/sp22/Lecture_10-post.ipynb
+      - file: lectures/sp22/Lecture_11-post.ipynb
+      - file: lectures/sp22/Lecture_12-post.ipynb
+      - file: lectures/sp22/Lecture_13-post.ipynb
+      - file: lectures/sp22/Lecture_14-post.ipynb
+      - file: lectures/sp22/Lecture_15-post.ipynb
+      - file: lectures/sp22/Lecture_16-post.ipynb
+      - file: lectures/sp22/Lecture_17-post.ipynb
+      - file: lectures/sp22/Lecture_18-post.ipynb
+      - file: lectures/sp22/Lecture_19-post.ipynb
+      - file: lectures/sp22/Lecture_20-post.ipynb
+      - file: lectures/sp22/Lecture_21-post.ipynb
+      - file: lectures/sp22/Lecture_22-post.ipynb
+      - file: lectures/sp22/Lecture_23-post.ipynb
+      - file: lectures/sp22/Lecture_24-post.ipynb
+      - file: lectures/sp22/Lecture_25-post.ipynb
+      - file: lectures/sp22/Lecture_26-post.ipynb
+      - file: lectures/sp22/Lecture_27-post.ipynb
+      - file: lectures/sp22/Lecture_28-post.ipynb

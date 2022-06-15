@@ -1,0 +1,2953 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 26 (5/25/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 27 (5/27/2022)" href="Lecture_27-post.html" />
+    <link rel="prev" title="Lecture 25 (5/23/2022)" href="Lecture_25-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_26-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_26-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_26-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#interpreting-principal-components-analysis">
+   Interpreting Principal Components Analysis
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#review">
+     Review
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example-low-dimensional-representation-of-pokemon-attributes">
+     Example: low-dimensional representation of pokemon attributes
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#proportion-of-explained-variance-how-well-do-our-principal-components-summarize-the-data">
+       Proportion of explained variance: how well do our principal components summarize the data?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#principal-component-weights-what-are-the-key-axes-along-which-our-data-varies">
+       Principal component weights: what are the key “axes” along which our data varies?
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#transforming-data-onto-principal-components-how-well-do-they-summarize-our-data">
+       Transforming data onto principal components: how well do they summarize our data?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#applying-principal-components-can-we-understand-our-data-better-by-looking-at-the-primary-axes-it-varies-along">
+     Applying Principal Components: can we understand our data better by looking at the primary axes it varies along?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#evaluating-pca-along-individual-dimensions">
+       Evaluating PCA along individual dimensions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-26-5-25-2022">
+<h1>Lecture 26 (5/25/2022)<a class="headerlink" href="#lecture-26-5-25-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Today’s lab + OH on zoom as well! See announcement from Purva</p></li>
+<li><p>This week’s lab due Friday 5/27!</p></li>
+<li><p>Plan for upcoming lectures</p>
+<ul>
+<li><p>Friday 5/27: last “official course content” lecture</p></li>
+<li><p>Monday 5/30: no class (holiday)</p></li>
+<li><p>Wednesday 6/1: <strong>class in ERC 117</strong> for final project presentations</p>
+<ul>
+<li><p>Sign up for a slot <a class="reference external" href="https://docs.google.com/spreadsheets/d/1Ppe4Ff3Tfj2rMSWaBVSo9bHT6mJRREtFF-mFr7AQ_0k/edit?usp=sharing">here</a></p></li>
+</ul>
+</li>
+<li><p>Friday 6/3: special topic: APIs</p></li>
+</ul>
+</li>
+</ul>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Dimensionality reduction: intro to Principal Components Analysis</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Interpreting PCA results (cont’d from last time) + Evaluating PCA</p>
+<ul>
+<li><p>These are kind of interchangeable so we’ll mostly be presenting interpretation and evaluation measures together</p></li>
+</ul>
+</li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="interpreting-principal-components-analysis">
+<h1>Interpreting Principal Components Analysis<a class="headerlink" href="#interpreting-principal-components-analysis" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="review">
+<h2>Review<a class="headerlink" href="#review" title="Permalink to this headline">¶</a></h2>
+<p>On Monday, we walked through the basics of how PCA works and how to implement it with the sklearn <code class="docutils literal notranslate"><span class="pre">PCA</span></code> class.</p>
+<p>As a reminder, we’re looking for lines like the blue and red ones below, which form the <em>principal components</em> of our data.</p>
+<p><img alt="pca_static" src="../../_images/pca_static.jpeg" /></p>
+<p>(<a class="reference external" href="https://towardsdatascience.com/understanding-pca-fae3e243731d">Source</a>)</p>
+<p>These lines have two key properties:</p>
+<ol class="simple">
+<li><p>They represent the axes on which our data has the highest variance (the first principal component is the highest, the second is the second highest, …)</p></li>
+<li><p>They are <em>orthogonal</em> to each other, meaning they are <em>independent</em> as predictors of our data</p></li>
+</ol>
+<p>Because of these properties, when we <em>project</em> our data onto the principal components, we can often describe most of the variance in our high-dimensional data with only a few principal component axes. In other words, they provide a high fidelity <em>summary</em> of what our data is doing without needing all the original dimensions.</p>
+<p><img alt="pca" src="../../_images/pca.gif" /></p>
+<p>(<a class="reference external" href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">Source</a>)</p>
+<p>For this reason, PCA is one of the most popular <em>dimensionality reduction</em> techniques in modern data science.</p>
+<p>Today, we’re going to talk about how to interpret and evaluate our PCA resuls.</p>
+</div>
+<div class="section" id="example-low-dimensional-representation-of-pokemon-attributes">
+<h2>Example: low-dimensional representation of pokemon attributes<a class="headerlink" href="#example-low-dimensional-representation-of-pokemon-attributes" title="Permalink to this headline">¶</a></h2>
+<p>Today, we’ll use the <code class="docutils literal notranslate"><span class="pre">pokemon</span></code> dataset, which we’ve discussed in previous lectures and assignments, to create a low-dimensional encoding of pokemon attributes.</p>
+<p>In the data below, take a look at the columns indicating each pokemon’s effectiveness (<code class="docutils literal notranslate"><span class="pre">HP</span></code>, <code class="docutils literal notranslate"><span class="pre">Attack</span></code>, <code class="docutils literal notranslate"><span class="pre">Defense</span></code>, <code class="docutils literal notranslate"><span class="pre">Sp.</span> <span class="pre">Atk</span></code>, <code class="docutils literal notranslate"><span class="pre">Sp.</span> <span class="pre">Def</span></code>, <code class="docutils literal notranslate"><span class="pre">Speed</span></code>); we need a very high-dimensional representation of each pokemon if we use all these columns to cluster or classify them!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in the data</span>
+<span class="n">pokemon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/erik-brockbank/css2_sp22-public/main/Datasets/Pokemon.csv&quot;</span><span class="p">)</span>
+<span class="n">pokemon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>Let’s find the principal components of these pokemon behavior attributes to create a lower-dimensional representation:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="c1"># Use these columns as the basis for PCA</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="s1">&#39;Attack&#39;</span><span class="p">,</span> <span class="s1">&#39;Defense&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Atk&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Speed&#39;</span><span class="p">]</span>
+
+<span class="c1"># Fit the PCA class to our data</span>
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
+<span class="n">pca</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>PCA(random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p>How effective is PCA here?</p>
+<ul class="simple">
+<li><p>Look at the explained variance ratio to see how many principal components we need to account for a large amount of the variance in our data</p></li>
+</ul>
+<div class="section" id="proportion-of-explained-variance-how-well-do-our-principal-components-summarize-the-data">
+<h3>Proportion of explained variance: how well do our principal components summarize the data?<a class="headerlink" href="#proportion-of-explained-variance-how-well-do-our-principal-components-summarize-the-data" title="Permalink to this headline">¶</a></h3>
+<p>A good first step after running PCA is to see how well each successive component accounts for variance in our original data. Remember, the principal components are identified in order of how much of the variance in the data they can explain.</p>
+<p>A <em>good</em> PCA result will show that you can account for a large percentage of the variance in the underlying data with much fewer dimensions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">n_components_</span> <span class="o">+</span> <span class="mi">1</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Principal component&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Proportion of additional variance explained&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_11_0.png" src="../../_images/Lecture_26-post_11_0.png" />
+</div>
+</div>
+<p>The plot above suggests that we can explain 70-80% of variance in our (6-dimensional) data with just 2-3 dimensions. In other words, a lof the general pattern of our data is captured by a couple key axes.</p>
+<p>We can confirm this by adding up the actual values from the graph above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span> <span class="o">+</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6484827653819596
+</pre></div>
+</div>
+</div>
+</div>
+<p>So what are these axes?</p>
+<p>Remember that a “principal component” is just a line through our data, expressed via <em>weights</em> on each of the existing dimensions that are a lot like regression coefficients. Like regression coefficients, these weights tell us about the pattern in our original variables that each principal component is capturing.</p>
+</div>
+<div class="section" id="principal-component-weights-what-are-the-key-axes-along-which-our-data-varies">
+<h3>Principal component weights: what are the key “axes” along which our data varies?<a class="headerlink" href="#principal-component-weights-what-are-the-key-axes-along-which-our-data-varies" title="Permalink to this headline">¶</a></h3>
+<p>Below, we’ll plot the weights applied to each of our original dimensions to create the principal components. Ideally, these should give us some indication of the smaller number of “axes” that our data varies along.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Component 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Component 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">2</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Component 3&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_16_0.png" src="../../_images/Lecture_26-post_16_0.png" />
+<img alt="../../_images/Lecture_26-post_16_1.png" src="../../_images/Lecture_26-post_16_1.png" />
+<img alt="../../_images/Lecture_26-post_16_2.png" src="../../_images/Lecture_26-post_16_2.png" />
+</div>
+</div>
+<p><strong>How do we interpret these plots? What does each one mean?</strong></p>
+<p>Ideally, should have some interpretation in terms of more abstract patterns in the data.</p>
+<p>Note: PCA can sometimes present challenges in <em>interpreting</em> the principal components. In some cases, they may index really clear aspects of the data. In other cases, they may be more ambiguous. For this reason, it’s best to have a grasp of the domain of the data when interpreting PCA. Like unsupervised clustering we talked about last week, it requires more subjective interpretation than our supervised methods.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="transforming-data-onto-principal-components-how-well-do-they-summarize-our-data">
+<h3>Transforming data onto principal components: how well do they summarize our data?<a class="headerlink" href="#transforming-data-onto-principal-components-how-well-do-they-summarize-our-data" title="Permalink to this headline">¶</a></h3>
+<p>Since our principal components are <em>new orthogonal lines drawn through our data</em>, we can plot the value that each of our original data points takes on when <em>projected onto these lines</em>.</p>
+<p>If the first 2-3 principal components describe our data well, we should see it line up in a fairly orderly way along these axes.</p>
+<p>Our first step is to <em>transform</em> our original data into a position on each of the principal components that our PCA identified:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokemon_transform</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
+<span class="n">pokemon_transform</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pokemon_transform</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Component &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="n">pca</span><span class="o">.</span><span class="n">n_components_</span> <span class="o">+</span> <span class="mi">1</span><span class="p">)])</span>
+
+<span class="n">pokemon_transform</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Component 1</th>
+      <th>Component 2</th>
+      <th>Component 3</th>
+      <th>Component 4</th>
+      <th>Component 5</th>
+      <th>Component 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-45.860728</td>
+      <td>-5.384432</td>
+      <td>18.925550</td>
+      <td>-0.988558</td>
+      <td>-12.398527</td>
+      <td>10.548700</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-11.152937</td>
+      <td>-5.805620</td>
+      <td>20.848717</td>
+      <td>0.269407</td>
+      <td>-5.800877</td>
+      <td>7.175004</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>36.946009</td>
+      <td>-5.236130</td>
+      <td>21.520463</td>
+      <td>1.531646</td>
+      <td>2.445413</td>
+      <td>3.159865</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80.128413</td>
+      <td>18.995343</td>
+      <td>29.313909</td>
+      <td>-11.228419</td>
+      <td>-8.684840</td>
+      <td>0.214346</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-50.385905</td>
+      <td>-21.792797</td>
+      <td>3.921880</td>
+      <td>-12.581893</td>
+      <td>-7.357519</td>
+      <td>3.041302</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>72.196952</td>
+      <td>67.431919</td>
+      <td>44.284620</td>
+      <td>-34.857821</td>
+      <td>-10.971975</td>
+      <td>26.977909</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>120.944879</td>
+      <td>-20.303238</td>
+      <td>-8.390285</td>
+      <td>-38.395104</td>
+      <td>-44.341807</td>
+      <td>21.930314</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>75.999885</td>
+      <td>-27.270786</td>
+      <td>37.017466</td>
+      <td>19.106076</td>
+      <td>-28.247968</td>
+      <td>39.369910</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>114.096713</td>
+      <td>-36.870567</td>
+      <td>6.750875</td>
+      <td>17.902908</td>
+      <td>-45.622767</td>
+      <td>54.767251</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>72.883550</td>
+      <td>15.152616</td>
+      <td>10.180516</td>
+      <td>-3.206397</td>
+      <td>-32.026195</td>
+      <td>-11.208742</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 6 columns</p>
+</div></div></div>
+</div>
+<p>The dataframe above shows us the values of each row of our original data <em>projected onto the principal components</em>.</p>
+<p>In other words, instead of each Pokemon’s values in <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>, it shows us each pokemon’s new value on <span class="math notranslate nohighlight">\(pc_1\)</span>, <span class="math notranslate nohighlight">\(pc_2\)</span>, …, <span class="math notranslate nohighlight">\(pc_n\)</span>.</p>
+<p>Let’s add these to our original dataframe so we can do interesting comparisons:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pokemon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pokemon</span><span class="p">,</span> <span class="n">pokemon_transform</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pokemon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>Component 1</th>
+      <th>Component 2</th>
+      <th>Component 3</th>
+      <th>Component 4</th>
+      <th>Component 5</th>
+      <th>Component 6</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-45.860728</td>
+      <td>-5.384432</td>
+      <td>18.925550</td>
+      <td>-0.988558</td>
+      <td>-12.398527</td>
+      <td>10.548700</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-11.152937</td>
+      <td>-5.805620</td>
+      <td>20.848717</td>
+      <td>0.269407</td>
+      <td>-5.800877</td>
+      <td>7.175004</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>36.946009</td>
+      <td>-5.236130</td>
+      <td>21.520463</td>
+      <td>1.531646</td>
+      <td>2.445413</td>
+      <td>3.159865</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>80.128413</td>
+      <td>18.995343</td>
+      <td>29.313909</td>
+      <td>-11.228419</td>
+      <td>-8.684840</td>
+      <td>0.214346</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-50.385905</td>
+      <td>-21.792797</td>
+      <td>3.921880</td>
+      <td>-12.581893</td>
+      <td>-7.357519</td>
+      <td>3.041302</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+      <td>72.196952</td>
+      <td>67.431919</td>
+      <td>44.284620</td>
+      <td>-34.857821</td>
+      <td>-10.971975</td>
+      <td>26.977909</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+      <td>120.944879</td>
+      <td>-20.303238</td>
+      <td>-8.390285</td>
+      <td>-38.395104</td>
+      <td>-44.341807</td>
+      <td>21.930314</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>75.999885</td>
+      <td>-27.270786</td>
+      <td>37.017466</td>
+      <td>19.106076</td>
+      <td>-28.247968</td>
+      <td>39.369910</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+      <td>114.096713</td>
+      <td>-36.870567</td>
+      <td>6.750875</td>
+      <td>17.902908</td>
+      <td>-45.622767</td>
+      <td>54.767251</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>72.883550</td>
+      <td>15.152616</td>
+      <td>10.180516</td>
+      <td>-3.206397</td>
+      <td>-32.026195</td>
+      <td>-11.208742</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 19 columns</p>
+</div></div></div>
+</div>
+<p>Now, let’s get a sense of how well our first couple principal components summarize our data by plotting the data projected onto these components:</p>
+<p>In other words, we plot each of our data points but instead of plotting them on our original axes, we plot them on the <em>new</em> principal component axes:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pokemon</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Component 1&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Component 2&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_24_0.png" src="../../_images/Lecture_26-post_24_0.png" />
+</div>
+</div>
+<p><strong>How should we interpret this plot? What does it show?</strong></p>
+<p>PC1 does a really nice job capturing variance in our data long its axis. PC2 as well.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="applying-principal-components-can-we-understand-our-data-better-by-looking-at-the-primary-axes-it-varies-along">
+<h2>Applying Principal Components: can we understand our data better by looking at the primary axes it varies along?<a class="headerlink" href="#applying-principal-components-can-we-understand-our-data-better-by-looking-at-the-primary-axes-it-varies-along" title="Permalink to this headline">¶</a></h2>
+<p>In the plot above, there seemed to be an intriguing discontinuity in our data along the first two principal components.</p>
+<p>One way to evaluate PCA is to see how well it affords the analyses we <em>want</em> to do with our high-dimensional data, like classification and clustering.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pokemon</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Component 1&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Component 2&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="mi">50</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">,</span> <span class="n">ls</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_28_0.png" src="../../_images/Lecture_26-post_28_0.png" />
+</div>
+</div>
+<p><em>Is the discontinuity in our first principal component telling us something useful about how our data is arranged in high-dimensional space?</em></p>
+<p>One way we can approach this question is by applying a clustering algorithm to our data, <strong>but now we’ll cluster along the principal components rather than the original data points</strong>.</p>
+<p>This tells us how our low-dimensional data representation can be clustered.</p>
+<p><em>Does a Gaussian Mixture Model cluster according to the discontinuity we detected above?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
+
+<span class="c1"># Fit a GMM with 4 clusters</span>
+<span class="n">gm</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Then, generate labels for each of our data points based on these clusters</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">gm</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;Component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Component 2&#39;</span><span class="p">)])</span>
+
+<span class="c1"># Finally, let&#39;s add these labels to our original dataframe</span>
+<span class="n">pokemon</span><span class="p">[</span><span class="s1">&#39;pca_lab&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">preds</span>
+
+<span class="n">pokemon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>Component 1</th>
+      <th>Component 2</th>
+      <th>Component 3</th>
+      <th>Component 4</th>
+      <th>Component 5</th>
+      <th>Component 6</th>
+      <th>pca_lab</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-45.860728</td>
+      <td>-5.384432</td>
+      <td>18.925550</td>
+      <td>-0.988558</td>
+      <td>-12.398527</td>
+      <td>10.548700</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-11.152937</td>
+      <td>-5.805620</td>
+      <td>20.848717</td>
+      <td>0.269407</td>
+      <td>-5.800877</td>
+      <td>7.175004</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>36.946009</td>
+      <td>-5.236130</td>
+      <td>21.520463</td>
+      <td>1.531646</td>
+      <td>2.445413</td>
+      <td>3.159865</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>80.128413</td>
+      <td>18.995343</td>
+      <td>29.313909</td>
+      <td>-11.228419</td>
+      <td>-8.684840</td>
+      <td>0.214346</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-50.385905</td>
+      <td>-21.792797</td>
+      <td>3.921880</td>
+      <td>-12.581893</td>
+      <td>-7.357519</td>
+      <td>3.041302</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+      <td>72.196952</td>
+      <td>67.431919</td>
+      <td>44.284620</td>
+      <td>-34.857821</td>
+      <td>-10.971975</td>
+      <td>26.977909</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+      <td>120.944879</td>
+      <td>-20.303238</td>
+      <td>-8.390285</td>
+      <td>-38.395104</td>
+      <td>-44.341807</td>
+      <td>21.930314</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>75.999885</td>
+      <td>-27.270786</td>
+      <td>37.017466</td>
+      <td>19.106076</td>
+      <td>-28.247968</td>
+      <td>39.369910</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+      <td>114.096713</td>
+      <td>-36.870567</td>
+      <td>6.750875</td>
+      <td>17.902908</td>
+      <td>-45.622767</td>
+      <td>54.767251</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>72.883550</td>
+      <td>15.152616</td>
+      <td>10.180516</td>
+      <td>-3.206397</td>
+      <td>-32.026195</td>
+      <td>-11.208742</td>
+      <td>0</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 20 columns</p>
+</div></div></div>
+</div>
+<p>Now, let’s see how well the clustering above did with our data arranged along the first two principal components:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pokemon</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Component 1&quot;</span><span class="p">,</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Component 2&quot;</span><span class="p">,</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;pca_lab&quot;</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_32_0.png" src="../../_images/Lecture_26-post_32_0.png" />
+</div>
+</div>
+<p>This seems to do a decently good job clustering our data.</p>
+<p>Interestingly, it does somewhat capture the discontinuity we observed at <span class="math notranslate nohighlight">\(pc_1 = 50\)</span>, though not perfectly.</p>
+<p>As an aside, we can show that 4 clusters is a pretty good choice using the “elbow method” with the GMM’s “Akaike Information Criterion” below:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">clusters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">scores</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">clusters</span><span class="p">:</span>
+    <span class="n">scores</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;Component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Component 2&#39;</span><span class="p">)])</span><span class="o">.</span><span class="n">aic</span><span class="p">(</span>
+            <span class="n">X</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;Component 1&#39;</span><span class="p">,</span> <span class="s1">&#39;Component 2&#39;</span><span class="p">)]))</span>
+<span class="n">scores</span>
+    
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">clusters</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">scores</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_26-post_34_1.png" src="../../_images/Lecture_26-post_34_1.png" />
+</div>
+</div>
+<p><em>So what’s happening at that discontinuity in our first principal component?</em></p>
+<p><em>Is there anything interpretable in our data that the PCA identified?</em></p>
+<p>Note, there’s nothing guaranteeing that this will be the case, but here, it looks like this discontinuity may in part reflect whether a pokemon is “Legendary” or not!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pokemon</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Component 1&quot;</span><span class="p">,</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Component 2&quot;</span><span class="p">,</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;Legendary&quot;</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_36_0.png" src="../../_images/Lecture_26-post_36_0.png" />
+</div>
+</div>
+<p>That’s pretty cool! Our Principal Components Analysis showed us a pattern in our data along the primary axes that our data varies on.</p>
+<p>And, when we cluster based on those primary axes, we do a decent job separating out the “Legendary” pokemon based on this discontinuity:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pokemon</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Component 1&quot;</span><span class="p">,</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Component 2&quot;</span><span class="p">,</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;pca_lab&quot;</span><span class="p">,</span>
+                <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;Legendary&quot;</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_26-post_38_0.png" src="../../_images/Lecture_26-post_38_0.png" />
+</div>
+</div>
+<p>It’s not perfect, but pretty good!</p>
+<p>Now, if you’re skeptical of the above, you might be thinking, “maybe we could have done all this <em>without</em> our fancy PCA and clustering based on principal components.”</p>
+<p>When we look at our data with “Legendary” pokemon highlighted in each of the two-dimensional representations of our original data, it seems kind of unlikely that a clustering solution would easily isolate those labels…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="s1">&#39;Legendary&#39;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">],</span>
+             <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;Legendary&quot;</span><span class="p">,</span>
+             <span class="n">plot_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">}</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.PairGrid at 0x7fcdc546d9a0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_26-post_40_1.png" src="../../_images/Lecture_26-post_40_1.png" />
+</div>
+</div>
+<p>But, just for thoroughness, we can run a similar GMM with 4 clusters on the <em>original high-dimensional data</em> and see if we do as clean a job separating out the “Legendary” pokemon:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Use these columns as the basis for our high-dimensional GMM</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="s1">&#39;Attack&#39;</span><span class="p">,</span> <span class="s1">&#39;Defense&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Atk&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Speed&#39;</span><span class="p">]</span>
+
+<span class="c1"># Then, fit a GMM and assign the labels to our original data </span>
+<span class="c1"># we call them &#39;highd_lab&#39; to differentiate from the PCA labels (&#39;pca_lab&#39;)</span>
+<span class="n">pokemon</span><span class="p">[</span><span class="s1">&#39;highd_lab&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">4</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">])</span>
+<span class="n">pokemon</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>...</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>Component 1</th>
+      <th>Component 2</th>
+      <th>Component 3</th>
+      <th>Component 4</th>
+      <th>Component 5</th>
+      <th>Component 6</th>
+      <th>pca_lab</th>
+      <th>highd_lab</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>...</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-45.860728</td>
+      <td>-5.384432</td>
+      <td>18.925550</td>
+      <td>-0.988558</td>
+      <td>-12.398527</td>
+      <td>10.548700</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>...</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-11.152937</td>
+      <td>-5.805620</td>
+      <td>20.848717</td>
+      <td>0.269407</td>
+      <td>-5.800877</td>
+      <td>7.175004</td>
+      <td>3</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>...</td>
+      <td>1</td>
+      <td>False</td>
+      <td>36.946009</td>
+      <td>-5.236130</td>
+      <td>21.520463</td>
+      <td>1.531646</td>
+      <td>2.445413</td>
+      <td>3.159865</td>
+      <td>3</td>
+      <td>2</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>...</td>
+      <td>1</td>
+      <td>False</td>
+      <td>80.128413</td>
+      <td>18.995343</td>
+      <td>29.313909</td>
+      <td>-11.228419</td>
+      <td>-8.684840</td>
+      <td>0.214346</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>...</td>
+      <td>1</td>
+      <td>False</td>
+      <td>-50.385905</td>
+      <td>-21.792797</td>
+      <td>3.921880</td>
+      <td>-12.581893</td>
+      <td>-7.357519</td>
+      <td>3.041302</td>
+      <td>1</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>...</td>
+      <td>6</td>
+      <td>True</td>
+      <td>72.196952</td>
+      <td>67.431919</td>
+      <td>44.284620</td>
+      <td>-34.857821</td>
+      <td>-10.971975</td>
+      <td>26.977909</td>
+      <td>2</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>...</td>
+      <td>6</td>
+      <td>True</td>
+      <td>120.944879</td>
+      <td>-20.303238</td>
+      <td>-8.390285</td>
+      <td>-38.395104</td>
+      <td>-44.341807</td>
+      <td>21.930314</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>...</td>
+      <td>6</td>
+      <td>True</td>
+      <td>75.999885</td>
+      <td>-27.270786</td>
+      <td>37.017466</td>
+      <td>19.106076</td>
+      <td>-28.247968</td>
+      <td>39.369910</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>...</td>
+      <td>6</td>
+      <td>True</td>
+      <td>114.096713</td>
+      <td>-36.870567</td>
+      <td>6.750875</td>
+      <td>17.902908</td>
+      <td>-45.622767</td>
+      <td>54.767251</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>...</td>
+      <td>6</td>
+      <td>True</td>
+      <td>72.883550</td>
+      <td>15.152616</td>
+      <td>10.180516</td>
+      <td>-3.206397</td>
+      <td>-32.026195</td>
+      <td>-11.208742</td>
+      <td>0</td>
+      <td>3</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 21 columns</p>
+</div></div></div>
+</div>
+<p>How did we do here? Did these clusters also identify our “Legendary” pokemon?</p>
+<p>One drawback of doing the high-dimensional clustering is that it’s not easy to visualize our data in this many dimensions!</p>
+<p>Instead, we can resort to a summary based on counting the percent of “Legendary” pokemon assigned to each of our high dimensional clusters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">highd_summary</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;highd_lab&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">Legendary</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Legendary&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">highd_summary</span><span class="p">[</span><span class="s1">&#39;Legendary_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">highd_summary</span><span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">highd_summary</span><span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">])</span>
+<span class="n">highd_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>highd_lab</th>
+      <th>Legendary</th>
+      <th>Legendary_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>4</td>
+      <td>0.061538</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>33</td>
+      <td>0.507692</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>28</td>
+      <td>0.430769</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We did… not great. We have about 23% of our “Legendary” pokemon in one cluster, 58% in another, and 19% in a third.</p>
+<p>How does this compare to our PCA-based clusters above, using only the first two principal components?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">lowd_summary</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s2">&quot;pca_lab&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">agg</span><span class="p">(</span>
+    <span class="n">Legendary</span> <span class="o">=</span> <span class="p">(</span><span class="s2">&quot;Legendary&quot;</span><span class="p">,</span> <span class="s2">&quot;sum&quot;</span><span class="p">),</span>
+<span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+
+<span class="n">lowd_summary</span><span class="p">[</span><span class="s1">&#39;Legendary_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">lowd_summary</span><span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">np</span><span class="o">.</span><span class="n">sum</span><span class="p">(</span><span class="n">lowd_summary</span><span class="p">[</span><span class="s1">&#39;Legendary&#39;</span><span class="p">])</span>
+<span class="n">lowd_summary</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pca_lab</th>
+      <th>Legendary</th>
+      <th>Legendary_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>53</td>
+      <td>0.815385</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>1</td>
+      <td>0</td>
+      <td>0.000000</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2</td>
+      <td>6</td>
+      <td>0.092308</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>6</td>
+      <td>0.092308</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>With PCA and only <em>two</em> dimensions, we put 83% of our “Legendary” pokemon into a single cluster and less than 10% in the others. This is much better!</p>
+<p><em><strong>What’s the point of all this?</strong></em></p>
+<p>When we take our high-dimensional data and use a dimensionality reduction technique like PCA to identify the primary axes that our data varies on, this can actually help us understand our data <strong>better</strong> than in its original form.</p>
+<p>Here, for example, we saw that the primary axis along which our data varies does a pretty good job of separating out “Legendary” pokemon from the others. Clustering algorithms based on just the first two principal components do a better job isolating these pokemon than the same algorithms applied to our original data!</p>
+<hr class="docutils" />
+<div class="section" id="evaluating-pca-along-individual-dimensions">
+<h3>Evaluating PCA along individual dimensions<a class="headerlink" href="#evaluating-pca-along-individual-dimensions" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="s1">&#39;Attack&#39;</span><span class="p">,</span> <span class="s1">&#39;Defense&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Atk&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Speed&#39;</span><span class="p">]</span>
+
+<span class="n">pokemon_subset</span> <span class="o">=</span> <span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]</span>
+
+<span class="c1"># Fit the PCA class to our data with just two principal components</span>
+<span class="n">pca2</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">pokemon_subset</span><span class="p">)</span>
+
+<span class="c1"># Transform our data onto these two principal components</span>
+<span class="n">pca2_vals</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">pca2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]),</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;PC1&quot;</span><span class="p">,</span> <span class="s2">&quot;PC2&quot;</span><span class="p">])</span>
+<span class="n">pca2_vals</span>
+
+<span class="c1"># Add the transformed data to our dataframe</span>
+<span class="n">pokemon_subset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pokemon_subset</span><span class="p">,</span> <span class="n">pca2_vals</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pokemon_subset</span>
+
+<span class="c1"># Run the &quot;inverse transform&quot; of our data projected onto the principal components</span>
+<span class="n">inv_transform</span> <span class="o">=</span> <span class="n">pca2</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">pca2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pokemon</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">cols</span><span class="p">]))</span>
+<span class="n">inv_transform</span>
+
+<span class="c1"># Make a dataframe of the new predictions and add it to our original dataframe for comparison</span>
+<span class="n">pca2_preds</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">inv_transform</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="n">elem</span> <span class="o">+</span> <span class="s2">&quot;_pred&quot;</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">cols</span><span class="p">])</span>
+<span class="n">pca2_preds</span>
+
+<span class="n">pokemon_subset</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span><span class="n">pokemon_subset</span><span class="p">,</span> <span class="n">pca2_preds</span><span class="p">],</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">pokemon_subset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>PC1</th>
+      <th>PC2</th>
+      <th>HP_pred</th>
+      <th>Attack_pred</th>
+      <th>Defense_pred</th>
+      <th>Sp. Atk_pred</th>
+      <th>Sp. Def_pred</th>
+      <th>Speed_pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>-45.860728</td>
+      <td>-5.384432</td>
+      <td>55.236205</td>
+      <td>55.984724</td>
+      <td>52.642982</td>
+      <td>51.541692</td>
+      <td>52.880090</td>
+      <td>56.370858</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>-11.152937</td>
+      <td>-5.805620</td>
+      <td>65.658802</td>
+      <td>73.059669</td>
+      <td>65.561149</td>
+      <td>69.368731</td>
+      <td>66.494554</td>
+      <td>67.972058</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>36.946009</td>
+      <td>-5.236130</td>
+      <td>80.151381</td>
+      <td>96.810835</td>
+      <td>84.265187</td>
+      <td>93.631871</td>
+      <td>85.562359</td>
+      <td>83.384973</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>80.128413</td>
+      <td>18.995343</td>
+      <td>94.163805</td>
+      <td>119.949881</td>
+      <td>117.548003</td>
+      <td>106.322678</td>
+      <td>106.805912</td>
+      <td>83.557711</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>-50.385905</td>
+      <td>-21.792797</td>
+      <td>53.182394</td>
+      <td>52.498326</td>
+      <td>39.513188</td>
+      <td>55.527978</td>
+      <td>48.242175</td>
+      <td>64.342455</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>72.196952</td>
+      <td>67.431919</td>
+      <td>93.822481</td>
+      <td>119.748098</td>
+      <td>148.202887</td>
+      <td>83.719427</td>
+      <td>112.100828</td>
+      <td>53.058732</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>120.944879</td>
+      <td>-20.303238</td>
+      <td>104.782914</td>
+      <td>137.059880</td>
+      <td>105.763167</td>
+      <td>142.161063</td>
+      <td>116.068896</td>
+      <td>119.554513</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>75.999885</td>
+      <td>-27.270786</td>
+      <td>90.969004</td>
+      <td>114.373532</td>
+      <td>83.811600</td>
+      <td>121.955673</td>
+      <td>97.132328</td>
+      <td>108.859557</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>114.096713</td>
+      <td>-36.870567</td>
+      <td>102.023620</td>
+      <td>132.416331</td>
+      <td>91.638649</td>
+      <td>145.025926</td>
+      <td>110.487221</td>
+      <td>126.857459</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>72.883550</td>
+      <td>15.152616</td>
+      <td>91.822291</td>
+      <td>116.084807</td>
+      <td>112.118834</td>
+      <td>104.108145</td>
+      <td>103.280528</td>
+      <td>83.400454</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 14 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What is the difference between our original values and our &quot;predicted&quot; values?</span>
+<span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">-</span> <span class="n">pca2</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">pca2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>-10.236205</td>
+      <td>-6.984724</td>
+      <td>-3.642982</td>
+      <td>13.458308</td>
+      <td>12.119910</td>
+      <td>-11.370858</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>-5.658802</td>
+      <td>-11.059669</td>
+      <td>-2.561149</td>
+      <td>10.631269</td>
+      <td>13.505446</td>
+      <td>-7.972058</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>-0.151381</td>
+      <td>-14.810835</td>
+      <td>-1.265187</td>
+      <td>6.368129</td>
+      <td>14.437641</td>
+      <td>-3.384973</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>-14.163805</td>
+      <td>-19.949881</td>
+      <td>5.451997</td>
+      <td>15.677322</td>
+      <td>13.194088</td>
+      <td>-3.557711</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>-14.182394</td>
+      <td>-0.498326</td>
+      <td>3.486812</td>
+      <td>4.472022</td>
+      <td>1.757825</td>
+      <td>0.657545</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>-43.822481</td>
+      <td>-19.748098</td>
+      <td>1.797113</td>
+      <td>16.280573</td>
+      <td>37.899172</td>
+      <td>-3.058732</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>-54.782914</td>
+      <td>22.940120</td>
+      <td>4.236833</td>
+      <td>17.838937</td>
+      <td>-6.068896</td>
+      <td>-9.554513</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>-10.969004</td>
+      <td>-4.373532</td>
+      <td>-23.811600</td>
+      <td>28.044327</td>
+      <td>32.867672</td>
+      <td>-38.859557</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>-22.023620</td>
+      <td>27.583669</td>
+      <td>-31.638649</td>
+      <td>24.974074</td>
+      <td>19.512779</td>
+      <td>-46.857459</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>-11.822291</td>
+      <td>-6.084807</td>
+      <td>7.881166</td>
+      <td>25.891855</td>
+      <td>-13.280528</td>
+      <td>-13.400454</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What is the mean of these differences squared in each column?</span>
+<span class="p">((</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">-</span> <span class="n">pca2</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">pca2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HP         425.808290
+Attack     445.921493
+Defense    127.285682
+Sp. Atk    281.520945
+Sp. Def    358.746080
+Speed      245.169533
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>What does this tell us?</strong></p>
+<p>The mean squared error for each of our columns when we project them onto the principal components gives us an indication of how much information we lose when we project our original data in high dimensions onto (in this case) just two principal components.</p>
+<p>Now, we can calculate something kind of like <span class="math notranslate nohighlight">\(R^2\)</span> to see how much of the variance in each column’s individual values is accounted for by the principal component predictions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This is the mean total sum of squares for each column (essentially the variance)</span>
+<span class="p">((</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">-</span> <span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HP          651.204298
+Attack     1052.163748
+Defense     971.195194
+Sp. Atk    1069.410100
+Sp. Def     773.480494
+Speed       843.455494
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># When we divide the mean sum of squared &quot;residuals&quot; by the mean total sum of squares (and subtract from 1),</span>
+<span class="c1"># this gives us an R^2 metric for our PCA broken out by each column</span>
+<span class="mi">1</span> <span class="o">-</span> <span class="p">(((</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">-</span> <span class="n">pca2</span><span class="o">.</span><span class="n">inverse_transform</span><span class="p">(</span><span class="n">pca2</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">])))</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="o">/</span> <span class="p">((</span><span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span> <span class="o">-</span> <span class="n">pokemon_subset</span><span class="p">[</span><span class="n">cols</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">())</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>HP         0.346122
+Attack     0.576186
+Defense    0.868939
+Sp. Atk    0.736751
+Sp. Def    0.536192
+Speed      0.709327
+dtype: float64
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_25-post.html" title="previous page">Lecture 25 (5/23/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_27-post.html" title="next page">Lecture 27 (5/27/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

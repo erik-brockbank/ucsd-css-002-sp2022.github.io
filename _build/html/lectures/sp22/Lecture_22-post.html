@@ -1,0 +1,1559 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 22 (5/16/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 23 (5/18/2022)" href="Lecture_23-post.html" />
+    <link rel="prev" title="Lecture 21 (5/13/2022)" href="Lecture_21-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_22-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_22-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_22-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#clustering">
+   Clustering
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#supervised-v-unsupervised-learning">
+     <em>
+      Supervised
+     </em>
+     v.
+     <em>
+      Unsupervised
+     </em>
+     learning
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-kind-of-problems-can-we-solve-with-unsupervised-learning">
+     What kind of problems can we solve with unsupervised learning?
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#supervised-movie-genres">
+       Supervised movie genres
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#unsupervised-movie-genres">
+       Unsupervised movie genres
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#another-example-margaritas">
+       Another example: margaritas?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#clustering-example-k-means-clustering">
+     Clustering example:
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     -means clustering
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#the-k-means-algorithm">
+     The
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     -means algorithm
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#brute-force-k-means">
+     “Brute force”
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     -means
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#k-means-in-python">
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     -means in python
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#kmeans-attributes">
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         KMeans
+        </span>
+       </code>
+       attributes
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluating-k-means-clustering-how-many-clusters">
+     Evaluating
+     <span class="math notranslate nohighlight">
+      \(k\)
+     </span>
+     -means clustering: how many clusters?
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-22-5-16-2022">
+<h1>Lecture 22 (5/16/2022)<a class="headerlink" href="#lecture-22-5-16-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Problem set 6 will be released today, due Sunday night by 11:59pm</p></li>
+<li><p>This week’s lab + problem set covering classification in depth, meant to complement each other</p></li>
+</ul>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Classification + CSS ethics</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Clustering: introduction</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="clustering">
+<h1>Clustering<a class="headerlink" href="#clustering" title="Permalink to this headline">¶</a></h1>
+<p>Before we jump into clustering, it’s worth doing some theoretical situating.</p>
+<p>What makes clustering different from the things we’ve talked about so far?</p>
+<div class="section" id="supervised-v-unsupervised-learning">
+<h2><em>Supervised</em> v. <em>Unsupervised</em> learning<a class="headerlink" href="#supervised-v-unsupervised-learning" title="Permalink to this headline">¶</a></h2>
+<p>This week and next week, we transition to modeling techniques that have a fundamentally different approach to understanding our data.</p>
+<ul class="simple">
+<li><p><strong><em>Supervised</em> learning</strong>: use existing (<span class="math notranslate nohighlight">\(X\)</span>, <span class="math notranslate nohighlight">\(y\)</span>) pairs to learn relationships between <span class="math notranslate nohighlight">\(X\)</span> and <span class="math notranslate nohighlight">\(y\)</span> that we can apply to new data.</p>
+<ul>
+<li><p>Examples: regression (continuous response variables) + classification (categorical response variables)</p></li>
+<li><p>Assumptions: features <span class="math notranslate nohighlight">\(X\)</span> have systematic relationship to a corresponding “true” (measurable) response variable <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p>Procedure: minimize a loss function over predictions of training data</p></li>
+<li><p>In practice: requires lots of labeled data, careful procedures for evaluating generalization</p></li>
+</ul>
+</li>
+<li><p><strong><em>Unsupervised</em> learning</strong>: describe structure in our data <span class="math notranslate nohighlight">\(X\)</span> without the use of labels or output values <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<ul>
+<li><p>Clustering (this week) + dimensionality reduction (next week)</p>
+<ul>
+<li><p>Note these have a kind of parallel structure to regression + classification: clustering looks for categorical structure, dimensionality reduction looks for more continuous structure</p></li>
+</ul>
+</li>
+<li><p>Assumptions: features <span class="math notranslate nohighlight">\(X\)</span> have structure but may not map onto a particular response variable <span class="math notranslate nohighlight">\(y\)</span></p></li>
+<li><p>Procedure: identify candidate <em>categories</em> or <em>low-dimensional representations</em> in the data without any adherence to predictive accuracy (because there are no labels to predict!)</p>
+<ul>
+<li><p>Note: this means we need other creative ways of assessing model “fit”; we’ll look at one today</p></li>
+</ul>
+</li>
+<li><p>In practice: data no longer needs to be labeled! But can be harder to evaluate our models</p></li>
+</ul>
+</li>
+</ul>
+<p>There are lots of resources diving deeper into this distinction online: one nice example <a class="reference external" href="https://towardsdatascience.com/supervised-vs-unsupervised-learning-14f68e32ea8d">here</a>.</p>
+</div>
+<div class="section" id="what-kind-of-problems-can-we-solve-with-unsupervised-learning">
+<h2>What kind of problems can we solve with unsupervised learning?<a class="headerlink" href="#what-kind-of-problems-can-we-solve-with-unsupervised-learning" title="Permalink to this headline">¶</a></h2>
+<p>Here, I think it’s helpful to use a concrete example: movie (or music) genres.</p>
+<div class="section" id="supervised-movie-genres">
+<h3>Supervised movie genres<a class="headerlink" href="#supervised-movie-genres" title="Permalink to this headline">¶</a></h3>
+<p>Traditionally, music or movie stores are roughly organized by <em>genre</em>. One of the ways people find new books or movies they expect to enjoy is by perusing the shelves for genres they like.</p>
+<p>Identifying music or movie genres is a kind of <strong>supervised classification problem</strong>. Given a large set of features like who is in a movie, who made it, even the plot summary, and a set of labeled examples, we can learn to map these features onto genre predictions. Then, when a new movie arrives on our shelves, we can predict its genre based on its features. Or, when a customer asks for a movie recommendation, we can show them movies in their favorite genres.</p>
+<p><img alt="blockbuster" src="../../_images/blockbuster.jpeg" /></p>
+</div>
+<div class="section" id="unsupervised-movie-genres">
+<h3>Unsupervised movie genres<a class="headerlink" href="#unsupervised-movie-genres" title="Permalink to this headline">¶</a></h3>
+<p>But, when you go to a streaming site like Netflix, or when Spotify tells you your “top genres”, this isn’t usually how they recommend new titles or music.</p>
+<p>Instead, they assume that there is deep structure in the ways people watch movies or the music they listen to which may not always correspond to particular <em>genres</em> but <em>is</em> helpful for organizing their movie library and identifying what people want to see or hear.</p>
+<p>Their recommendation systems use <strong>unsupervised clustering and dimensionality reduction</strong> to determine what kind of movies or music people will enjoy (note: I haven’t seen how Netflix or Spotify solve these problems but this is a fairly safe assumption).</p>
+<p>For example, Netflix may look for ways of <em>clustering</em> their movies based on the movies people tended to watch together, then try to come up with descriptive genres after the fact (“Heart-warming family movies” or “Animated comedies”). Spotify does similar things when it describes the genres you listen to.</p>
+<p><img alt="netflix" src="../../_images/netflix_genres.png" /></p>
+<p>Unsupervised learning is something you encounter all the time in today’s tech ecosystem. Other recommendation systems (e.g., Amazon suggesting future purchases) rely on it, as do many other algorithms that have a) rich data and b) complex behaviors or outputs that may be hard to categorize.</p>
+</div>
+<div class="section" id="another-example-margaritas">
+<h3>Another example: margaritas?<a class="headerlink" href="#another-example-margaritas" title="Permalink to this headline">¶</a></h3>
+<p><img alt="margaritas" src="../../_images/k-margs.png" /></p>
+<p>(Source: <a class="reference external" href="https://fivethirtyeight.com/videos/we-got-drunk-on-margaritas-for-science/">538</a>)</p>
+<p><em>Why is this example here?</em></p>
+<p>Apart from being kind of funny (and recent), it actually illustrates the appeal of unsupervised clustering really well.</p>
+<ul class="simple">
+<li><p>We don’t have pre-existing labels for the different <em>types</em> of margaritas out there</p></li>
+<li><p>But we do have a lot of recipes, and we <em>assume</em> that these recipes might have some natural structure to them in terms of how they balance ingredients</p></li>
+</ul>
+<p>Because of the above, performing traditional classification on margarita recipes seems hard (and kind of arbitrary). But, if we had some <em>data-driven</em> way of determining how the recipes cluster, we could use our human intuitions to better understand the basis for these clusters.</p>
+<p>So, let’s see how that works (not with margaritas)!</p>
+</div>
+</div>
+<div class="section" id="clustering-example-k-means-clustering">
+<h2>Clustering example: <span class="math notranslate nohighlight">\(k\)</span>-means clustering<a class="headerlink" href="#clustering-example-k-means-clustering" title="Permalink to this headline">¶</a></h2>
+<p>So what does <strong>unsupervised clustering</strong> actually look like in practice?</p>
+<p>Let’s go through a somewhat intuitive example that will parallel our introduction to classification: the <span class="math notranslate nohighlight">\(k\)</span>-means algorithm.</p>
+<p>First, let’s return to familiar (and easily clusterable!) data: the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+<p>When we use the petal length and petal width features, our data seems to cluster pretty nicely by species.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_22-post_11_0.png" src="../../_images/Lecture_22-post_11_0.png" />
+</div>
+</div>
+<p>Previously, we used our classifier to learn the species labels based on these features.</p>
+<p>Let’s say we didn’t have the species information.</p>
+<p>We just collected this data in the field and we want to know if these variables produce detectable clusters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_22-post_13_0.png" src="../../_images/Lecture_22-post_13_0.png" />
+</div>
+</div>
+<p><strong>Using the data above, how might we go about suggesting clusters?</strong></p>
+</div>
+<div class="section" id="the-k-means-algorithm">
+<h2>The <span class="math notranslate nohighlight">\(k\)</span>-means algorithm<a class="headerlink" href="#the-k-means-algorithm" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math notranslate nohighlight">\(k\)</span>-means algorithm has a similar name to its classification colleague, <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, but the two have some important differences!</p>
+<p>Here’s how <span class="math notranslate nohighlight">\(k\)</span>-means works:</p>
+<p><img alt="kmeans" src="../../_images/kmeans.png" /></p>
+<p>(Source: <a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">wikipedia</a>)</p>
+<p><strong>Convergence</strong></p>
+<p>The “naive” <span class="math notranslate nohighlight">\(k\)</span>-means algorithm above converges when the assignments no longer change from the previous step.</p>
+</div>
+<div class="section" id="brute-force-k-means">
+<h2>“Brute force” <span class="math notranslate nohighlight">\(k\)</span>-means<a class="headerlink" href="#brute-force-k-means" title="Permalink to this headline">¶</a></h2>
+<p>Below, I’m going to walk through some (very clunky) code that implements <span class="math notranslate nohighlight">\(k\)</span>-means clustering in the <code class="docutils literal notranslate"><span class="pre">iris</span></code> data by <em>brute force</em>, assuming there are 3 clusters.</p>
+<p><em>Why?</em> Doing this will illustrate how the steps above in “plain English” map onto actual code behaviors (sometimes this mapping is tricky and is in general one of the more challenging things about learning to code, so practice is good!).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Pick 3 random starting &quot;centers&quot;</span>
+<span class="n">centers</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">sample</span><span class="p">(</span><span class="n">n</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">centers</span>
+<span class="n">c1</span> <span class="o">=</span> <span class="n">centers</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">c2</span> <span class="o">=</span> <span class="n">centers</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="p">:]</span>
+<span class="n">c3</span> <span class="o">=</span> <span class="n">centers</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="p">:]</span>
+
+
+<span class="c1"># Let&#39;s generate our initial cluster assignment</span>
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;clusters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s2">&quot;c2&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">iris</span><span class="p">))</span> <span class="c1"># this is just a stand-in. Bit hacky...</span>
+
+<span class="c1"># Keep track of clusters from previous iteration to assess convergence</span>
+<span class="n">prev_clusters</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">repeat</span><span class="p">(</span><span class="s2">&quot;c1&quot;</span><span class="p">,</span> <span class="nb">len</span><span class="p">(</span><span class="n">iris</span><span class="p">))</span> <span class="c1"># this is just a stand-in. Also hacky...</span>
+
+<span class="c1"># Function to figure out the closest centroid to each data point</span>
+<span class="k">def</span> <span class="nf">get_closest</span><span class="p">(</span><span class="n">df</span><span class="p">):</span>
+    <span class="c1"># This is just the Euclidean distance from the datapoint in `df` to each centroid c1, c2, and c3</span>
+    <span class="n">dist1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">df</span><span class="o">.</span><span class="n">petal_length</span> <span class="o">-</span> <span class="n">c1</span><span class="o">.</span><span class="n">petal_length</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">petal_width</span> <span class="o">-</span> <span class="n">c1</span><span class="o">.</span><span class="n">petal_width</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">dist2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">df</span><span class="o">.</span><span class="n">petal_length</span> <span class="o">-</span> <span class="n">c2</span><span class="o">.</span><span class="n">petal_length</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">petal_width</span> <span class="o">-</span> <span class="n">c2</span><span class="o">.</span><span class="n">petal_width</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="n">dist3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(((</span><span class="n">df</span><span class="o">.</span><span class="n">petal_length</span> <span class="o">-</span> <span class="n">c3</span><span class="o">.</span><span class="n">petal_length</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">)</span> <span class="o">+</span> <span class="p">((</span><span class="n">df</span><span class="o">.</span><span class="n">petal_width</span> <span class="o">-</span> <span class="n">c3</span><span class="o">.</span><span class="n">petal_width</span><span class="p">)</span><span class="o">**</span><span class="mi">2</span><span class="p">))</span>
+    <span class="c1"># Now, what&#39;s the minimum of the distances above? Return the centroid that is closest</span>
+    <span class="n">check</span> <span class="o">=</span> <span class="nb">min</span><span class="p">(</span><span class="n">dist1</span><span class="p">,</span> <span class="n">dist2</span><span class="p">,</span> <span class="n">dist3</span><span class="p">)</span>
+    <span class="k">if</span> <span class="n">check</span> <span class="o">==</span> <span class="n">dist1</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;c1&quot;</span>
+    <span class="k">elif</span> <span class="n">check</span> <span class="o">==</span> <span class="n">dist2</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;c2&quot;</span>
+    <span class="k">elif</span> <span class="n">check</span> <span class="o">==</span> <span class="n">dist3</span><span class="p">:</span>
+        <span class="k">return</span> <span class="s2">&quot;c3&quot;</span>
+
+<span class="c1"># Run actual k-means</span>
+<span class="n">iter_num</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># this is just to keep track of how many times our `while` loop below is running</span>
+<span class="k">while</span> <span class="nb">list</span><span class="p">(</span><span class="n">iris</span><span class="o">.</span><span class="n">clusters</span><span class="p">)</span> <span class="o">!=</span> <span class="nb">list</span><span class="p">(</span><span class="n">prev_clusters</span><span class="p">)</span> <span class="ow">and</span> <span class="n">iter_num</span> <span class="o">&lt;</span> <span class="mi">100</span><span class="p">:</span>
+    <span class="n">iter_num</span> <span class="o">+=</span> <span class="mi">1</span>
+    <span class="n">prev_clusters</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;clusters&#39;</span><span class="p">]</span>
+    <span class="c1"># Find closest cluster center for each datapoint</span>
+    <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;clusters&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="n">get_closest</span><span class="p">,</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+    
+    <span class="c1"># Get the data belonging to each centroid and calculate the new centers</span>
+    <span class="n">c1_dat</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">iris</span><span class="o">.</span><span class="n">clusters</span> <span class="o">==</span> <span class="s2">&quot;c1&quot;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">c2_dat</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">iris</span><span class="o">.</span><span class="n">clusters</span> <span class="o">==</span> <span class="s2">&quot;c2&quot;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="n">c3_dat</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">iris</span><span class="o">.</span><span class="n">clusters</span> <span class="o">==</span> <span class="s2">&quot;c3&quot;</span><span class="p">,</span> <span class="p">:]</span>
+    <span class="c1"># c1 center update</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c1_dat</span><span class="o">.</span><span class="n">petal_length</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">c1</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;petal_width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c1_dat</span><span class="o">.</span><span class="n">petal_width</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="c1"># c2 center update</span>
+    <span class="n">c2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c2_dat</span><span class="o">.</span><span class="n">petal_length</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">c2</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;petal_width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c2_dat</span><span class="o">.</span><span class="n">petal_width</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="c1"># c3 center update</span>
+    <span class="n">c3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;petal_length&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c3_dat</span><span class="o">.</span><span class="n">petal_length</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+    <span class="n">c3</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="s2">&quot;petal_width&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">c3_dat</span><span class="o">.</span><span class="n">petal_width</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/pandas/core/indexing.py:670: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  iloc._setitem_with_indexer(indexer, value)
+&lt;ipython-input-5-cf7e0a49717b&gt;:43: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  c1.loc[&quot;petal_length&quot;] = c1_dat.petal_length.mean()
+&lt;ipython-input-5-cf7e0a49717b&gt;:44: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  c1.loc[&quot;petal_width&quot;] = c1_dat.petal_width.mean()
+&lt;ipython-input-5-cf7e0a49717b&gt;:46: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  c2.loc[&quot;petal_length&quot;] = c2_dat.petal_length.mean()
+&lt;ipython-input-5-cf7e0a49717b&gt;:47: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  c2.loc[&quot;petal_width&quot;] = c2_dat.petal_width.mean()
+&lt;ipython-input-5-cf7e0a49717b&gt;:49: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  c3.loc[&quot;petal_length&quot;] = c3_dat.petal_length.mean()
+&lt;ipython-input-5-cf7e0a49717b&gt;:50: SettingWithCopyWarning: 
+A value is trying to be set on a copy of a slice from a DataFrame
+
+See the caveats in the documentation: https://pandas.pydata.org/pandas-docs/stable/user_guide/indexing.html#returning-a-view-versus-a-copy
+  c3.loc[&quot;petal_width&quot;] = c3_dat.petal_width.mean()
+</pre></div>
+</div>
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+      <th>clusters</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>c3</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>c3</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>c3</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>c3</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+      <td>c3</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+      <td>c1</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+      <td>c1</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+      <td>c1</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+      <td>c1</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+      <td>c1</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 6 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;clusters&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">c1</span><span class="o">.</span><span class="n">petal_length</span><span class="p">,</span> <span class="n">c1</span><span class="o">.</span><span class="n">petal_width</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">c2</span><span class="o">.</span><span class="n">petal_length</span><span class="p">,</span> <span class="n">c2</span><span class="o">.</span><span class="n">petal_width</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">c3</span><span class="o">.</span><span class="n">petal_length</span><span class="p">,</span> <span class="n">c3</span><span class="o">.</span><span class="n">petal_width</span><span class="p">,</span> <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_22-post_18_0.png" src="../../_images/Lecture_22-post_18_0.png" />
+</div>
+</div>
+<p>When we run the above code a bunch of different times, does it always do the same thing?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Go up and run the k-means clustering code above, then come back and print iter_num again</span>
+<span class="n">iter_num</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>2
+</pre></div>
+</div>
+</div>
+</div>
+<p>One vulnerability of <span class="math notranslate nohighlight">\(k\)</span>-means clustering is that it can depend on the <em>seed</em> or the elements you initially assign to each cluster, which are randomly chosen.</p>
+<p>The sklearn solution (below) includes an <code class="docutils literal notranslate"><span class="pre">n_init</span></code> argument with a default value of 10. This runs the clustering algorithm 10 consecutive times and chooses the best one according to a metric called <em>inertia</em>.</p>
+<p>Let’s see what else it can do!</p>
+</div>
+<div class="section" id="k-means-in-python">
+<h2><span class="math notranslate nohighlight">\(k\)</span>-means in python<a class="headerlink" href="#k-means-in-python" title="Permalink to this headline">¶</a></h2>
+<p>Let’s take a look at the scikit-learn <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> class <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.cluster.KMeans.html">here</a></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the KMeans class from sklearn</span>
+<span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="c1"># Get our features (now we don&#39;t have corresponding labels!)</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">iris</span><span class="p">[[</span><span class="s1">&#39;petal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;petal_width&#39;</span><span class="p">]])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">iris</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+
+<span class="c1"># Initialize the model</span>
+<span class="n">kmeans</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="c1"># default value is 8</span>
+                <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Fit the model to our data</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span>
+
+<span class="n">kmeans</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KMeans(n_clusters=3, random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="kmeans-attributes">
+<h3><code class="docutils literal notranslate"><span class="pre">KMeans</span></code> attributes<a class="headerlink" href="#kmeans-attributes" title="Permalink to this headline">¶</a></h3>
+<p>What attributes does the <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> class export?</p>
+<ul class="simple">
+<li><p>cluster centers</p></li>
+<li><p>labels</p></li>
+<li><p>iterations</p></li>
+<li><p><em>inertia</em></p></li>
+</ul>
+<p><strong>Cluster centers</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The cluster centers estimated by our k-means clustering</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[5.59583333, 2.0375    ],
+       [1.462     , 0.246     ],
+       [4.26923077, 1.34230769]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s pull out these cluster centers</span>
+<span class="n">x_center</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="n">y_center</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">:</span>
+    <span class="n">x_center</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+    <span class="n">y_center</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">elem</span><span class="p">[</span><span class="mi">1</span><span class="p">])</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">x_center</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_center</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;petal_length&#39;, ylabel=&#39;petal_width&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_22-post_27_1.png" src="../../_images/Lecture_22-post_27_1.png" />
+</div>
+</div>
+<p><strong>Labels</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The labels applied to our X data</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span>
+
+<span class="c1"># len(kmeans.labels_)</span>
+<span class="c1"># len(x_vals)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1, 1,
+       1, 1, 1, 1, 1, 1, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2, 2, 0, 2, 2, 2, 2,
+       2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0,
+       0, 0, 0, 0, 0, 0, 2, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0], dtype=int32)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_22-post_30_0.png" src="../../_images/Lecture_22-post_30_0.png" />
+</div>
+</div>
+<p>How does this compare to our empirical species labels?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">kmeans</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_22-post_32_0.png" src="../../_images/Lecture_22-post_32_0.png" />
+<img alt="../../_images/Lecture_22-post_32_1.png" src="../../_images/Lecture_22-post_32_1.png" />
+</div>
+</div>
+<p>That’s COOL!</p>
+<p>Now it’s your turn!</p>
+<p>Try the above with only two clusters. Does it do the thing we expect? What about 8 clusters?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Iterations and Intertia</strong></p>
+<p>As we discussed when setting up the algorithm, it runs a certain number of times until <em>convergence</em>, and this can vary depending on which elements are chosen as the starting <em>seeds</em>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> class has attributes that let you check how it did: in the best run, how many iterations did it do, and how successful were they?</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">n_iter_</span></code> tells you how many iterations the algorithm underwent until convergence</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">inertia_</span></code> tells you the sum of squared distances of samples to their closest cluster center. So lower is better here.</p></li>
+</ul>
+<p>Critically, these values are the <em>best</em> ones chosen from across <code class="docutils literal notranslate"><span class="pre">n_init</span></code> runs of the algorithm.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span><span class="o">.</span><span class="n">n_iter_</span>
+<span class="n">kmeans</span><span class="o">.</span><span class="n">inertia_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.371358974358966
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can change this value, though with data that clusters this well, it doesn’t seem to impact us too much…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans_quick</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span>
+                      <span class="n">n_init</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># NOTE: changing this param</span>
+                      <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;petal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;petal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">kmeans_quick</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;petal_length&#39;, ylabel=&#39;petal_width&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_22-post_38_1.png" src="../../_images/Lecture_22-post_38_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans_quick</span><span class="o">.</span><span class="n">inertia_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>31.371358974358966
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluating-k-means-clustering-how-many-clusters">
+<h2>Evaluating <span class="math notranslate nohighlight">\(k\)</span>-means clustering: how many clusters?<a class="headerlink" href="#evaluating-k-means-clustering-how-many-clusters" title="Permalink to this headline">¶</a></h2>
+<p>The <em>within cluster sum of squared distance to the center</em> is one way of evaluating our <span class="math notranslate nohighlight">\(k\)</span>-means clustering.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">inertia_</span></code> attribute for the <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> class gives us this, as does the <code class="docutils literal notranslate"><span class="pre">score</span></code> function (this gives us negative inertia technically).</p>
+<p>Below, we plot the inertia for <span class="math notranslate nohighlight">\(k\)</span>-means going from 1-10 in the <code class="docutils literal notranslate"><span class="pre">iris</span></code> data from above.</p>
+<p>One way to choose the number of clusters is to find the point where our <em>inertia</em> isn’t getting any lower even as we add more clusters.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmeans</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)</span>
+<span class="n">inertias</span> <span class="o">=</span> <span class="p">[]</span>
+
+<span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">kmeans</span><span class="p">:</span>
+    <span class="n">inertias</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+        <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">x</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">)</span><span class="o">.</span><span class="n">inertia_</span>
+    <span class="p">)</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">inertias</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">kmeans</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">inertias</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_22-post_41_1.png" src="../../_images/Lecture_22-post_41_1.png" />
+</div>
+</div>
+<p>In the figure above, we can see that 2-3 clusters is probably ideal for this data.</p>
+</div>
+</div>
+<div class="section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p>This is meant to introduce the idea of unsupervised clustering and give you a feel for how it works with <span class="math notranslate nohighlight">\(k\)</span>-means clustering.</p>
+<p>In the remainder of this week, we’ll follow a similar structure to our regression and classification units: what other clustering solutions are out there and how do we evaluate them?</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_21-post.html" title="previous page">Lecture 21 (5/13/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_23-post.html" title="next page">Lecture 23 (5/18/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

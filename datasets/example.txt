@@ -1,0 +1,6 @@
+This is line 1.
+This is line 2, it contains the following phrase: "Hello!"
+"What?" is the first word on line 3.
+
+(the line above is blank)
+This is the last line of the file.

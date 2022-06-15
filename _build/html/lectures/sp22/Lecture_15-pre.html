@@ -1,0 +1,1919 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 15 (4/29/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Week 6" href="Week6_Overview.html" />
+    <link rel="prev" title="Lecture 14 (4/27/2022)" href="Lecture_14-pre.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_15-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_15-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_15-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-evaluating-linear-regression">
+   Review: Evaluating linear regression
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#r-2-the-coefficient-of-determination">
+     <span class="math notranslate nohighlight">
+      \(R^2\)
+     </span>
+     , the
+     <em>
+      coefficient of determination
+     </em>
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#out-of-sample-prediction">
+     Out of sample prediction
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#parameter-estimates">
+     Parameter estimates
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#problems-with-simple-linear-regression">
+   Problems with simple linear regression
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#polynomial-regression-non-linear-relationship-between-x-and-y">
+     Polynomial regression: non-linear relationship between
+     <span class="math notranslate nohighlight">
+      \(x\)
+     </span>
+     and
+     <span class="math notranslate nohighlight">
+      \(y\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#polynomial-regression-overview">
+       Polynomial regression: overview
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#polynomial-regression-in-python">
+       Polynomial regression in python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#multiple-regression-multiple-predictors-for-y">
+     Multiple regression: multiple predictors for
+     <span class="math notranslate nohighlight">
+      \(y\)
+     </span>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-regression-overview">
+       Multiple regression: overview
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#multiple-regression-in-python">
+       Multiple regression in python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-15-4-29-2022">
+<h1>Lecture 15 (4/29/2022)<a class="headerlink" href="#lecture-15-4-29-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Pset 4 will be released today, due next Friday 5/6</p></li>
+</ul>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Evaluating regression: <span class="math notranslate nohighlight">\(R^2\)</span>, out-of-sample prediction, parameter interpretation</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Polynomial regression, multiple regression</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Read in and prepare the data we were using last time</span>
+<span class="n">mpg</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;mpg&#39;</span><span class="p">)</span>
+<span class="n">mpg_clean</span> <span class="o">=</span> <span class="n">mpg</span><span class="o">.</span><span class="n">dropna</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+<span class="n">mpg_clean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>mpg</th>
+      <th>cylinders</th>
+      <th>displacement</th>
+      <th>horsepower</th>
+      <th>weight</th>
+      <th>acceleration</th>
+      <th>model_year</th>
+      <th>origin</th>
+      <th>name</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>307.0</td>
+      <td>130.0</td>
+      <td>3504</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>chevrolet chevelle malibu</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>15.0</td>
+      <td>8</td>
+      <td>350.0</td>
+      <td>165.0</td>
+      <td>3693</td>
+      <td>11.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>buick skylark 320</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>18.0</td>
+      <td>8</td>
+      <td>318.0</td>
+      <td>150.0</td>
+      <td>3436</td>
+      <td>11.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>plymouth satellite</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>16.0</td>
+      <td>8</td>
+      <td>304.0</td>
+      <td>150.0</td>
+      <td>3433</td>
+      <td>12.0</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>amc rebel sst</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>17.0</td>
+      <td>8</td>
+      <td>302.0</td>
+      <td>140.0</td>
+      <td>3449</td>
+      <td>10.5</td>
+      <td>70</td>
+      <td>usa</td>
+      <td>ford torino</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>27.0</td>
+      <td>4</td>
+      <td>140.0</td>
+      <td>86.0</td>
+      <td>2790</td>
+      <td>15.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford mustang gl</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>44.0</td>
+      <td>4</td>
+      <td>97.0</td>
+      <td>52.0</td>
+      <td>2130</td>
+      <td>24.6</td>
+      <td>82</td>
+      <td>europe</td>
+      <td>vw pickup</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>32.0</td>
+      <td>4</td>
+      <td>135.0</td>
+      <td>84.0</td>
+      <td>2295</td>
+      <td>11.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>dodge rampage</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>28.0</td>
+      <td>4</td>
+      <td>120.0</td>
+      <td>79.0</td>
+      <td>2625</td>
+      <td>18.6</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>ford ranger</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>31.0</td>
+      <td>4</td>
+      <td>119.0</td>
+      <td>82.0</td>
+      <td>2720</td>
+      <td>19.4</td>
+      <td>82</td>
+      <td>usa</td>
+      <td>chevy s-10</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 9 columns</p>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="review-evaluating-linear-regression">
+<h1>Review: Evaluating linear regression<a class="headerlink" href="#review-evaluating-linear-regression" title="Permalink to this headline">¶</a></h1>
+<p>In last lecture, we talked about three ways of checking that your regression fit the data well.</p>
+<ol class="simple">
+<li><p><span class="math notranslate nohighlight">\(R^2\)</span> <em>coefficient of determination</em></p></li>
+<li><p>Out of sample prediction accuracy</p></li>
+<li><p>High confidence (and useful) parameter estimates</p></li>
+</ol>
+<p>Let’s start by running through each of these in a little more detail since we didn’t get much time to discuss them.</p>
+<div class="section" id="r-2-the-coefficient-of-determination">
+<h2><span class="math notranslate nohighlight">\(R^2\)</span>, the <em>coefficient of determination</em><a class="headerlink" href="#r-2-the-coefficient-of-determination" title="Permalink to this headline">¶</a></h2>
+<p><img alt="determination" src="../../_images/Determination.png" /></p>
+<p><span class="math notranslate nohighlight">\( R^2 = 1 - \dfrac{RSS}{TSS} \)</span></p>
+<p><span class="math notranslate nohighlight">\( RSS = \sum_{i=1}^{n}{(y_i - \hat{y_i})}^2 \)</span></p>
+<p><span class="math notranslate nohighlight">\( TSS = \sum_{i=1}^{n}{(y_i - \bar{y})}^2 \)</span></p>
+<p><span class="math notranslate nohighlight">\(R^2\)</span> ranges between 0 and 1 and can be thought of as the <em>percentage of variance in <span class="math notranslate nohighlight">\(y\)</span> that our model explains</em>.</p>
+<p>To understand how it works, remember that RSS is 0 when the regression <em>perfectly predicts our data</em> and RSS is equal to TSS when we just guess <span class="math notranslate nohighlight">\(\bar{y}\)</span> for every data point <span class="math notranslate nohighlight">\(y_i\)</span> (worst case for our regression).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The scikit-learn LinearRegression class surfaces a function called `score` that computes R^2</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LinearRegression</span>
+
+<span class="c1"># Format values</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;weight&#39;</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
+
+<span class="c1"># Fit regression</span>
+<span class="n">mod</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span>
+
+<span class="n">rsq_mod</span> <span class="o">=</span> <span class="n">mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span> <span class="c1"># R^2 value</span>
+<span class="n">rsq_mod</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.74742549968982
+</pre></div>
+</div>
+</div>
+</div>
+<p>Last time, we showed how to calculate the <span class="math notranslate nohighlight">\(R^2\)</span> value by hand using the LinearRegression <code class="docutils literal notranslate"><span class="pre">predict</span></code> function.</p>
+<p>If you’re feeling hazy on <span class="math notranslate nohighlight">\(R^2\)</span>, I recommend going back to the code from that lecture and going through the part where we calculate <span class="math notranslate nohighlight">\(R^2\)</span>.</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="out-of-sample-prediction">
+<h2>Out of sample prediction<a class="headerlink" href="#out-of-sample-prediction" title="Permalink to this headline">¶</a></h2>
+<p><img alt="train" src="../../_images/train.jpeg" /></p>
+<p><strong>Motivation</strong></p>
+<p>If our model is the right fit to our data, it should predict other data from the same underlying distribution or generative process pretty well.</p>
+<p><strong>How to check this</strong></p>
+<p>There are a lot of ways to test out of sample data which we’ll get into in more detail on Monday, but the high-level approach is almost always:</p>
+<ol class="simple">
+<li><p><em>Randomly</em> select a subset of your original data (20-25%) and set it aside as <em>test data</em>. The remaining data is your <em>training data</em>.</p></li>
+<li><p>Fit your model to the <em>training data only</em>.</p></li>
+<li><p>See how well your fitted model predicts the <em>test data</em>. Compare it to the predictions on the training data with something like <em>Mean Squared Error</em> (MSE).</p></li>
+<li><p>Often, repeat steps 1-3 in various ways (more on that later).</p></li>
+</ol>
+<p><strong>Comparing train and test performance</strong></p>
+<p>Step 3 above is critical. One common approach is to use <em>Mean Squared Error</em> (MSE):</p>
+<p><span class="math notranslate nohighlight">\( MSE = \dfrac{1}{n - 2} \sum_{i=1}^{n}{(y_i - \hat{y_i})}^2 = \dfrac{1}{n - 2} \sum_{i=1}^{n}{\epsilon_i}^2 \)</span></p>
+<p>This tells you, on average, how close your model was to the true value across all the data points (the <span class="math notranslate nohighlight">\(n-2\)</span> is specific to linear regression where we have two parameters, <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span>, so <span class="math notranslate nohighlight">\(n-2\)</span> is our degrees of freedom).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span> <span class="c1"># Use the sklearn `train_test_split` to make this easy</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">mean_squared_error</span> <span class="c1"># Use the sklearn `mean_squared_error` for quick MSE calculation</span>
+
+<span class="c1"># Randomly sample 25% of our data points to be test data</span>
+<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> 
+                                                <span class="n">y_vals</span><span class="p">,</span> 
+                                                <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.25</span>
+                                               <span class="p">)</span>
+<span class="c1"># Fit the model on the training data</span>
+<span class="n">mod_tr</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+
+<span class="c1"># Generate model predictions for the test data</span>
+<span class="n">mod_preds_test</span> <span class="o">=</span> <span class="n">mod_tr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+
+<span class="c1"># Compare MSE for the model predictions on train and test data</span>
+<span class="n">mod_preds_train</span> <span class="o">=</span> <span class="n">mod_tr</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">)</span>
+
+<span class="n">mse_train</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">mod_preds_train</span><span class="p">)</span>
+<span class="n">mse_train</span> <span class="c1"># Note this divides by n rather than n-2 but that&#39;s not super important for our purposes</span>
+
+<span class="n">mse_test</span> <span class="o">=</span> <span class="n">mean_squared_error</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">mod_preds_test</span><span class="p">)</span>
+<span class="n">mse_test</span>
+
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Training MSE: </span><span class="si">{}</span><span class="s2"> </span><span class="se">\n</span><span class="s2">Test MSE: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">mse_train</span><span class="p">,</span> <span class="n">mse_test</span><span class="p">))</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Training MSE: 362.70613120726557 
+Test MSE: 405.079291570969
+</pre></div>
+</div>
+</div>
+</div>
+<p>Just for fun, try running the code above several times and look at how different the values are.</p>
+<p><em>More on this next week…</em></p>
+</div>
+<hr class="docutils" />
+<div class="section" id="parameter-estimates">
+<h2>Parameter estimates<a class="headerlink" href="#parameter-estimates" title="Permalink to this headline">¶</a></h2>
+<p><img alt="right" src="../../_images/right.png" /></p>
+<p>The criteria above are mostly concerned with whether we’re doing <em>a good job predicting our <span class="math notranslate nohighlight">\(y\)</span> values</em> with this model.</p>
+<p>In many cases, part of what we’re concerned with isn’t just how well we predict our data, but what kind of relationship our model estimates between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>.</p>
+<ul class="simple">
+<li><p>How large or small is the slope?</p></li>
+<li><p>How confident are we in the estimate?</p></li>
+</ul>
+<p>To assess this, we typically compute confidence bounds on the parameter estimates (95% confidence interval or standard error) and compare them to a null value of 0 using <span class="math notranslate nohighlight">\(t\)</span> tests.</p>
+<p><strong>Linear regression parameter estimates are most useful when they are high confidence and significantly different from 0.</strong></p>
+<p>The sklearn <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> class doesn’t include functions for this sort of analysis, but other tools like the <code class="docutils literal notranslate"><span class="pre">statsmodels</span></code> regression class do.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">statsmodels.formula.api</span> <span class="k">as</span> <span class="nn">smf</span>
+
+<span class="c1"># Fit the model</span>
+<span class="n">results</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;horsepower ~ weight&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># View the results</span>
+<span class="n">results</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>       <td>horsepower</td>    <th>  R-squared:         </th> <td>   0.747</td> 
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.747</td> 
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   1154.</td> 
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 14 Jun 2022</td> <th>  Prob (F-statistic):</th> <td>1.36e-118</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>18:22:37</td>     <th>  Log-Likelihood:    </th> <td> -1717.0</td> 
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   392</td>      <th>  AIC:               </th> <td>   3438.</td> 
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   390</td>      <th>  BIC:               </th> <td>   3446.</td> 
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     1</td>      <th>                     </th>     <td> </td>    
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>    
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+      <td></td>         <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th> <td>  -12.1835</td> <td>    3.570</td> <td>   -3.412</td> <td> 0.001</td> <td>  -19.203</td> <td>   -5.164</td>
+</tr>
+<tr>
+  <th>weight</th>    <td>    0.0392</td> <td>    0.001</td> <td>   33.972</td> <td> 0.000</td> <td>    0.037</td> <td>    0.041</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>83.255</td> <th>  Durbin-Watson:     </th> <td>   1.014</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td> 312.937</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td> 0.892</td> <th>  Prob(JB):          </th> <td>1.11e-68</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 6.997</td> <th>  Cond. No.          </th> <td>1.13e+04</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.<br/>[2] The condition number is large, 1.13e+04. This might indicate that there are<br/>strong multicollinearity or other numerical problems.</div></div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="problems-with-simple-linear-regression">
+<h1>Problems with simple linear regression<a class="headerlink" href="#problems-with-simple-linear-regression" title="Permalink to this headline">¶</a></h1>
+<p><img alt="corr_ex" src="../../_images/corr_ex.png" />
+Disclaimer: this figure (from wikipedia) shows <em>correlation</em> values associated with these datasets, but the limitations of correlation in capturing these patterns holds for linear regression as well.</p>
+<div class="section" id="polynomial-regression-non-linear-relationship-between-x-and-y">
+<h2>Polynomial regression: non-linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#polynomial-regression-non-linear-relationship-between-x-and-y" title="Permalink to this headline">¶</a></h2>
+<p>Non-linear data can take all kinds of forms, though there are probably a few that are most common.</p>
+<p>Let’s take a look at a simple example from our cars dataset:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;horsepower&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;mpg&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fca8c5ecd90&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_15-pre_19_1.png" src="../../_images/Lecture_15-pre_19_1.png" />
+</div>
+</div>
+<p>Does this data have a linear relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>? Seems like it might be more complicated.</p>
+<p>Enter: polynomial regression!</p>
+<div class="section" id="polynomial-regression-overview">
+<h3>Polynomial regression: overview<a class="headerlink" href="#polynomial-regression-overview" title="Permalink to this headline">¶</a></h3>
+<p>Polynomial regression is just like linear regression except that instead of fitting a linear function to the data, we fit higher degree polynomials.</p>
+<p>Previously, our simple linear regression model assumed that our data <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> could be described as:</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i\)</span></p>
+<p>The OLS process estimates values for <span class="math notranslate nohighlight">\(\beta_0\)</span> and <span class="math notranslate nohighlight">\(\beta_1\)</span> that correspond to a straight line that minimizes <span class="math notranslate nohighlight">\(\epsilon_i\)</span>.</p>
+<p>With polynomial regression, we extend this basic model to include functions of the form:</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \epsilon_i\)</span> for <em>degree 2</em> polynomial regression,</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \beta_3 x_i^3 + \epsilon_i\)</span> for <em>degree 3</em> polynomial regression,</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_i + \beta_2 x_i^2 + \beta_3 x_i^3 + \ ... \ + \beta_n x_i^n + \epsilon_i\)</span> for <em>degree n</em> polynomial regression.</p>
+<p>Even though this seems much more complex, polynomial regression uses the same <em>Ordinary Least Squares</em> (OLS) parameter estimation as simple regression. You can think of simple linear regression as a special case of polynomial regression.</p>
+<p><strong>This gives us immense flexibility to fit more complex functions to our data.</strong> Some of the data illustrated at the top of this section can <em>only</em> be modeled using more complex polynomials (see example below as well).</p>
+<p><strong>CAUTION</strong>: most of the time you <em>don’t</em> need polynomials to capture your data. Bad things happen when you use them for data that doesn’t have an underlying non-linear structure. More on this on Monday.</p>
+<p><img alt="poly" src="../../_images/Poly.png" /></p>
+</div>
+<div class="section" id="polynomial-regression-in-python">
+<h3>Polynomial regression in python<a class="headerlink" href="#polynomial-regression-in-python" title="Permalink to this headline">¶</a></h3>
+<p>We can use the numpy <code class="docutils literal notranslate"><span class="pre">polyfit</span></code> library to fit 2nd and 3rd order polynomials to this data
+(Note: this is probably the simplest method, but there’s code to use the familiar scikit learn approach as well below).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can fit higher order polynomial functions to our data rather than just a linear function</span>
+<span class="n">deg1_fits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">mpg_clean</span><span class="o">.</span><span class="n">horsepower</span><span class="p">,</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">mpg</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">deg2_fits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">mpg_clean</span><span class="o">.</span><span class="n">horsepower</span><span class="p">,</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">mpg</span><span class="p">,</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">deg3_fits</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">polyfit</span><span class="p">(</span><span class="n">mpg_clean</span><span class="o">.</span><span class="n">horsepower</span><span class="p">,</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">mpg</span><span class="p">,</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="n">p1</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">deg1_fits</span><span class="p">)</span>
+<span class="n">p2</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">deg2_fits</span><span class="p">)</span>
+<span class="n">p3</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">poly1d</span><span class="p">(</span><span class="n">deg3_fits</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What do the functions fitted above predict for our data?</span>
+
+<span class="n">preds</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">)]</span>
+
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p1</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg2_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p2</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg3_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">p3</span><span class="p">(</span><span class="n">preds</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span>
+
+<span class="n">preds</span>
+
+<span class="n">preds_long</span> <span class="o">=</span> <span class="n">preds</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+    <span class="n">id_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">preds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>horsepower</th>
+      <th>mpg</th>
+      <th>deg1_pred</th>
+      <th>deg2_pred</th>
+      <th>deg3_pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>130.0</td>
+      <td>18.0</td>
+      <td>19.416046</td>
+      <td>17.091508</td>
+      <td>17.153421</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>165.0</td>
+      <td>15.0</td>
+      <td>13.891480</td>
+      <td>13.480156</td>
+      <td>13.782683</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>18.0</td>
+      <td>16.259151</td>
+      <td>14.658717</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>16.0</td>
+      <td>16.259151</td>
+      <td>14.658717</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>140.0</td>
+      <td>17.0</td>
+      <td>17.837598</td>
+      <td>15.752059</td>
+      <td>15.904046</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>86.0</td>
+      <td>27.0</td>
+      <td>26.361214</td>
+      <td>25.908837</td>
+      <td>25.774667</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>52.0</td>
+      <td>44.0</td>
+      <td>31.727935</td>
+      <td>35.985609</td>
+      <td>36.424392</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>84.0</td>
+      <td>32.0</td>
+      <td>26.676903</td>
+      <td>26.422834</td>
+      <td>26.298564</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>79.0</td>
+      <td>28.0</td>
+      <td>27.466127</td>
+      <td>27.750895</td>
+      <td>27.662364</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>82.0</td>
+      <td>31.0</td>
+      <td>26.992593</td>
+      <td>26.946675</td>
+      <td>26.834765</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, our original data</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">preds_long</span><span class="p">,</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;mpg&#39;</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
+               <span class="p">)</span>
+
+<span class="c1"># Now add in our lines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">preds_long</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+             <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;variable&#39;</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_15-pre_25_1.png" src="../../_images/Lecture_15-pre_25_1.png" />
+</div>
+</div>
+<p>Here’s the solution using scikit learn; it’s a bit more complicated, though it does let you keep using the <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> class</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">PolynomialFeatures</span>
+
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">]),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">mpg_clean</span><span class="p">[</span><span class="s1">&#39;mpg&#39;</span><span class="p">])</span>
+<span class="n">preds</span> <span class="o">=</span> <span class="n">mpg_clean</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">)]</span>
+
+<span class="c1"># Simple linear model</span>
+<span class="n">mod1</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
+
+<span class="c1"># 2nd order polynomial</span>
+<span class="n">poly2</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">x2_features</span> <span class="o">=</span> <span class="n">poly2</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
+<span class="n">mod2</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x2_features</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
+
+
+<span class="c1"># 3rd order polynomial</span>
+<span class="n">poly3</span> <span class="o">=</span> <span class="n">PolynomialFeatures</span><span class="p">(</span><span class="n">degree</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">include_bias</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span>
+<span class="n">x3_features</span> <span class="o">=</span> <span class="n">poly3</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
+<span class="n">mod3</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">x3_features</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">)</span>
+
+
+<span class="n">mod2</span><span class="o">.</span><span class="n">coef_</span>
+<span class="c1"># mod3.coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([-0.46618963,  0.00123054])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Add predictions for each model so we can view how it does</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg1_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod1</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x_vals</span><span class="p">)</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg2_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod2</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x2_features</span><span class="p">)</span>
+<span class="n">preds</span><span class="p">[</span><span class="s1">&#39;deg3_pred&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">mod3</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">x3_features</span><span class="p">)</span>
+
+<span class="n">preds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>horsepower</th>
+      <th>mpg</th>
+      <th>deg1_pred</th>
+      <th>deg2_pred</th>
+      <th>deg3_pred</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>130.0</td>
+      <td>18.0</td>
+      <td>19.416046</td>
+      <td>17.091508</td>
+      <td>17.153421</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>165.0</td>
+      <td>15.0</td>
+      <td>13.891480</td>
+      <td>13.480156</td>
+      <td>13.782683</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>150.0</td>
+      <td>18.0</td>
+      <td>16.259151</td>
+      <td>14.658717</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>150.0</td>
+      <td>16.0</td>
+      <td>16.259151</td>
+      <td>14.658717</td>
+      <td>14.890157</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>140.0</td>
+      <td>17.0</td>
+      <td>17.837598</td>
+      <td>15.752059</td>
+      <td>15.904046</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>86.0</td>
+      <td>27.0</td>
+      <td>26.361214</td>
+      <td>25.908837</td>
+      <td>25.774667</td>
+    </tr>
+    <tr>
+      <th>388</th>
+      <td>52.0</td>
+      <td>44.0</td>
+      <td>31.727935</td>
+      <td>35.985609</td>
+      <td>36.424392</td>
+    </tr>
+    <tr>
+      <th>389</th>
+      <td>84.0</td>
+      <td>32.0</td>
+      <td>26.676903</td>
+      <td>26.422834</td>
+      <td>26.298564</td>
+    </tr>
+    <tr>
+      <th>390</th>
+      <td>79.0</td>
+      <td>28.0</td>
+      <td>27.466127</td>
+      <td>27.750895</td>
+      <td>27.662364</td>
+    </tr>
+    <tr>
+      <th>391</th>
+      <td>82.0</td>
+      <td>31.0</td>
+      <td>26.992593</td>
+      <td>26.946675</td>
+      <td>26.834765</td>
+    </tr>
+  </tbody>
+</table>
+<p>392 rows × 5 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds_long</span> <span class="o">=</span> <span class="n">preds</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+    <span class="n">id_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;horsepower&#39;</span><span class="p">,</span> <span class="s1">&#39;mpg&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">preds</span>
+
+<span class="c1"># First, our original data</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">preds_long</span><span class="p">,</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;mpg&#39;</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;m&#39;</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.1</span>
+               <span class="p">)</span>
+
+<span class="c1"># Now add in our lines</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">preds_long</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;horsepower&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;value&#39;</span><span class="p">,</span>
+             <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;variable&#39;</span>
+            <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;horsepower&#39;, ylabel=&#39;mpg&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_15-pre_29_1.png" src="../../_images/Lecture_15-pre_29_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s check the R^2 values for these models to see what kind of improvement we get</span>
+<span class="c1"># (more on this next week)</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="multiple-regression-multiple-predictors-for-y">
+<h2>Multiple regression: multiple predictors for <span class="math notranslate nohighlight">\(y\)</span><a class="headerlink" href="#multiple-regression-multiple-predictors-for-y" title="Permalink to this headline">¶</a></h2>
+<p>Another basic scenario that arises when predicting a continuous variable (probably more commonly than polynomial regression) is having <em>multiple predictors</em>.</p>
+<p>Let’s take a look at an intuitive example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/UCSD-CSS-002/ucsd-css-002.github.io/master/datasets/gapminder.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Let&#39;s keep just some of the variables (note for pset!)</span>
+<span class="n">gap_subset</span> <span class="o">=</span> <span class="n">gap</span><span class="o">.</span><span class="n">loc</span><span class="p">[</span><span class="n">gap</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">,</span> <span class="p">(</span><span class="s1">&#39;country&#39;</span><span class="p">,</span> <span class="s1">&#39;year&#39;</span><span class="p">,</span> <span class="s1">&#39;lifeExp&#39;</span><span class="p">,</span> <span class="s1">&#39;pop&#39;</span><span class="p">,</span> <span class="s1">&#39;gdpPercap&#39;</span><span class="p">)]</span>
+
+<span class="c1"># Add log population</span>
+<span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;logPop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+<span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;logGdpPercap&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;gdpPercap&#39;</span><span class="p">])</span>
+<span class="n">gap_subset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>country</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+      <th>logPop</th>
+      <th>logGdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>11</th>
+      <td>Afghanistan</td>
+      <td>2007</td>
+      <td>43.828</td>
+      <td>31889923</td>
+      <td>974.580338</td>
+      <td>7.503653</td>
+      <td>2.988818</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>Albania</td>
+      <td>2007</td>
+      <td>76.423</td>
+      <td>3600523</td>
+      <td>5937.029526</td>
+      <td>6.556366</td>
+      <td>3.773569</td>
+    </tr>
+    <tr>
+      <th>35</th>
+      <td>Algeria</td>
+      <td>2007</td>
+      <td>72.301</td>
+      <td>33333216</td>
+      <td>6223.367465</td>
+      <td>7.522877</td>
+      <td>3.794025</td>
+    </tr>
+    <tr>
+      <th>47</th>
+      <td>Angola</td>
+      <td>2007</td>
+      <td>42.731</td>
+      <td>12420476</td>
+      <td>4797.231267</td>
+      <td>7.094138</td>
+      <td>3.680991</td>
+    </tr>
+    <tr>
+      <th>59</th>
+      <td>Argentina</td>
+      <td>2007</td>
+      <td>75.320</td>
+      <td>40301927</td>
+      <td>12779.379640</td>
+      <td>7.605326</td>
+      <td>4.106510</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1655</th>
+      <td>Vietnam</td>
+      <td>2007</td>
+      <td>74.249</td>
+      <td>85262356</td>
+      <td>2441.576404</td>
+      <td>7.930757</td>
+      <td>3.387670</td>
+    </tr>
+    <tr>
+      <th>1667</th>
+      <td>West Bank and Gaza</td>
+      <td>2007</td>
+      <td>73.422</td>
+      <td>4018332</td>
+      <td>3025.349798</td>
+      <td>6.604046</td>
+      <td>3.480776</td>
+    </tr>
+    <tr>
+      <th>1679</th>
+      <td>Yemen, Rep.</td>
+      <td>2007</td>
+      <td>62.698</td>
+      <td>22211743</td>
+      <td>2280.769906</td>
+      <td>7.346583</td>
+      <td>3.358081</td>
+    </tr>
+    <tr>
+      <th>1691</th>
+      <td>Zambia</td>
+      <td>2007</td>
+      <td>42.384</td>
+      <td>11746035</td>
+      <td>1271.211593</td>
+      <td>7.069891</td>
+      <td>3.104218</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>Zimbabwe</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+      <td>7.090298</td>
+      <td>2.671829</td>
+    </tr>
+  </tbody>
+</table>
+<p>142 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>In the last problem set, you generated a graph that predicted life expectancy as a function of income, with information about population and region available as well.</p>
+<p><img alt="gap" src="../../_images/gapminder.png" /></p>
+<p>The graph suggests that life expectancy is strongly predicted by income, while population may not play such an important role.</p>
+<p>Let’s test that here!</p>
+<p>What that amounts to asking is:</p>
+<p><strong>Can we predict life expectancy using both income <em>and</em> population better than we could only using one of those variables?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">gap_subset</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;logGdpPercap&quot;</span><span class="p">,</span> <span class="c1"># x1 </span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;lifeExp&quot;</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">gap_subset</span><span class="p">,</span> 
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;logPop&quot;</span><span class="p">,</span> <span class="c1"># x2 </span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;lifeExp&quot;</span><span class="p">,</span>
+                <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;b&quot;</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_15-pre_35_0.png" src="../../_images/Lecture_15-pre_35_0.png" />
+<img alt="../../_images/Lecture_15-pre_35_1.png" src="../../_images/Lecture_15-pre_35_1.png" />
+</div>
+</div>
+<div class="section" id="multiple-regression-overview">
+<h3>Multiple regression: overview<a class="headerlink" href="#multiple-regression-overview" title="Permalink to this headline">¶</a></h3>
+<p>Multiple regression is like linear regression except that we assume our dependent variable <span class="math notranslate nohighlight">\(y_i\)</span> is <em>jointly</em> predicted by multiple independent variables <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>, as in the example above.</p>
+<p>As noted above, our simple linear regression model assumes that our data <span class="math notranslate nohighlight">\((x_i, y_i)\)</span> has the following form:</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_i + \epsilon_i\)</span></p>
+<p>With multiple regression, we now extend this model to include multiple predictors:</p>
+<p><span class="math notranslate nohighlight">\(y_i = \beta_0 + \beta_1 x_{i,1} + \beta_2 x_{i,2} + \ ... \ + \beta_n x_{i,n} + \epsilon_i \)</span></p>
+<p>In most cases, multiple regression once again uses the same <em>Ordinary Least Squares</em> (OLS) parameter estimation as simple regression. However, interpreting the parameter estimates is a little less straightforward.</p>
+<p><em>How would we interpret <span class="math notranslate nohighlight">\(\beta_0 = 1\)</span>, <span class="math notranslate nohighlight">\(\beta_1 = 2\)</span>, <span class="math notranslate nohighlight">\(\beta_2 = 3\)</span></em>?</p>
+</div>
+<div class="section" id="multiple-regression-in-python">
+<h3>Multiple regression in python<a class="headerlink" href="#multiple-regression-in-python" title="Permalink to this headline">¶</a></h3>
+<p>To run our multiple regression, we can use the scikit <code class="docutils literal notranslate"><span class="pre">LinearRegression</span></code> class with just a few modifications to our simple regression code.</p>
+<p>I’ve also included the statsmodels code below as well so we can look at the statistics more closely!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># scikit learn approach</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[[</span><span class="s1">&#39;logGdpPercap&#39;</span><span class="p">,</span> <span class="s1">&#39;logPop&#39;</span><span class="p">]])</span> <span class="c1"># Note: this syntax is important!</span>
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">x_vals</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">),</span> <span class="mi">2</span><span class="p">)</span>
+<span class="n">x_vals</span>
+
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">gap_subset</span><span class="p">[</span><span class="s1">&#39;lifeExp&#39;</span><span class="p">])</span>
+<span class="n">y_vals</span>
+
+<span class="n">mod</span> <span class="o">=</span> <span class="n">LinearRegression</span><span class="p">()</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span>
+
+<span class="n">mod</span><span class="o">.</span><span class="n">intercept_</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">coef_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([16.6811828 ,  1.86827925])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How well does our regression do?</span>
+<span class="n">mod</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">x_vals</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">y_vals</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6649393884784984
+</pre></div>
+</div>
+</div>
+</div>
+<p>Using the statsmodels regression class, we can view statistical tests on our parameter fits</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">multiple_reg</span> <span class="o">=</span> <span class="n">smf</span><span class="o">.</span><span class="n">ols</span><span class="p">(</span><span class="s1">&#39;lifeExp ~ logGdpPercap + logPop&#39;</span><span class="p">,</span> <span class="n">data</span> <span class="o">=</span> <span class="n">gap_subset</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">()</span>
+
+<span class="c1"># View the results</span>
+<span class="n">multiple_reg</span><span class="o">.</span><span class="n">summary</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><table class="simpletable">
+<caption>OLS Regression Results</caption>
+<tr>
+  <th>Dep. Variable:</th>         <td>lifeExp</td>     <th>  R-squared:         </th> <td>   0.665</td>
+</tr>
+<tr>
+  <th>Model:</th>                   <td>OLS</td>       <th>  Adj. R-squared:    </th> <td>   0.660</td>
+</tr>
+<tr>
+  <th>Method:</th>             <td>Least Squares</td>  <th>  F-statistic:       </th> <td>   137.9</td>
+</tr>
+<tr>
+  <th>Date:</th>             <td>Tue, 14 Jun 2022</td> <th>  Prob (F-statistic):</th> <td>9.91e-34</td>
+</tr>
+<tr>
+  <th>Time:</th>                 <td>18:22:45</td>     <th>  Log-Likelihood:    </th> <td> -477.07</td>
+</tr>
+<tr>
+  <th>No. Observations:</th>      <td>   142</td>      <th>  AIC:               </th> <td>   960.1</td>
+</tr>
+<tr>
+  <th>Df Residuals:</th>          <td>   139</td>      <th>  BIC:               </th> <td>   969.0</td>
+</tr>
+<tr>
+  <th>Df Model:</th>              <td>     2</td>      <th>                     </th>     <td> </td>   
+</tr>
+<tr>
+  <th>Covariance Type:</th>      <td>nonrobust</td>    <th>                     </th>     <td> </td>   
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+        <td></td>          <th>coef</th>     <th>std err</th>      <th>t</th>      <th>P>|t|</th>  <th>[0.025</th>    <th>0.975]</th>  
+</tr>
+<tr>
+  <th>Intercept</th>    <td>   -8.6161</td> <td>    7.538</td> <td>   -1.143</td> <td> 0.255</td> <td>  -23.520</td> <td>    6.288</td>
+</tr>
+<tr>
+  <th>logGdpPercap</th> <td>   16.6812</td> <td>    1.008</td> <td>   16.555</td> <td> 0.000</td> <td>   14.689</td> <td>   18.673</td>
+</tr>
+<tr>
+  <th>logPop</th>       <td>    1.8683</td> <td>    0.896</td> <td>    2.086</td> <td> 0.039</td> <td>    0.098</td> <td>    3.639</td>
+</tr>
+</table>
+<table class="simpletable">
+<tr>
+  <th>Omnibus:</th>       <td>34.155</td> <th>  Durbin-Watson:     </th> <td>   2.170</td>
+</tr>
+<tr>
+  <th>Prob(Omnibus):</th> <td> 0.000</td> <th>  Jarque-Bera (JB):  </th> <td>  54.987</td>
+</tr>
+<tr>
+  <th>Skew:</th>          <td>-1.183</td> <th>  Prob(JB):          </th> <td>1.15e-12</td>
+</tr>
+<tr>
+  <th>Kurtosis:</th>      <td> 4.923</td> <th>  Cond. No.          </th> <td>    104.</td>
+</tr>
+</table><br/><br/>Notes:<br/>[1] Standard Errors assume that the covariance matrix of the errors is correctly specified.</div></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_14-pre.html" title="previous page">Lecture 14 (4/27/2022)</a>
+    <a class='right-next' id="next-link" href="Week6_Overview.html" title="next page">Week 6</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

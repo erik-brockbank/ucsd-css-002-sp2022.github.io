@@ -1,0 +1,32 @@
+# Book settings
+# Learn more at https://jupyterbook.org/customize/config.html
+
+title: UCSD CSS 2 - Spring 2022
+author: Erik Brockbank
+copyright: "2022"
+logo: logo.png
+
+# Force re-execution of notebooks on each build.
+# See https://jupyterbook.org/content/execute.html
+execute:
+  execute_notebooks: force
+  allow_errors: true
+
+parse:
+  myst_substitutions:
+    key: value
+    url_website: "[Class Website](https://ucsd-css-002.github.io)"
+    url_canvas: "[Canvas (UCSD)](https://canvas.ucsd.edu/courses/36054)"
+    url_campuswire: "[Campuswire](https://campuswire.com/p/GAEAAD197)"
+    url_datahub: "[Datahub (UCSD)](https://datahub.ucsd.edu)"
+
+# Information about where the book exists on the web
+repository:
+  url: https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io  # Online location of your book
+  branch: master  # Which branch of the repository should be used when creating links (optional)
+
+# Add GitHub buttons to your book
+# See https://jupyterbook.org/customize/config.html#add-a-link-to-your-repository
+html:
+  use_issues_button: true
+  use_repository_button: true

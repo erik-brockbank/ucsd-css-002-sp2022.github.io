@@ -1,0 +1,2980 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 18 (5/6/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 19 (5/9/2022)" href="Lecture_19-post.html" />
+    <link rel="prev" title="Lecture 17 (5/4/2022)" href="Lecture_17-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_18-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_18-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_18-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-classification-algorithms">
+   Evaluating classification algorithms
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#classifier-evaluation-metrics">
+     Classifier evaluation metrics
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#accuracy">
+       Accuracy
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#confusion-matrix">
+       Confusion matrix
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#understanding-the-confusion-matrix">
+     Understanding the confusion matrix
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluating-the-confusion-matrix">
+     Evaluating the confusion matrix
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metrics-for-components-of-the-confusion-matrix">
+       Metrics for components of the confusion matrix
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#metrics-conditioned-on-the-true-values-y">
+         Metrics conditioned on the
+         <em>
+          true
+         </em>
+         values (
+         <span class="math notranslate nohighlight">
+          \(y\)
+         </span>
+         )
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#metrics-conditioned-on-the-predicted-values-hat-y">
+         Metrics conditioned on the
+         <em>
+          predicted
+         </em>
+         values (
+         <span class="math notranslate nohighlight">
+          \(\hat{y}\)
+         </span>
+         )
+        </a>
+       </li>
+      </ul>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#metrics-for-summarizing-the-full-confusion-matrix">
+       Metrics for summarizing the full confusion matrix
+      </a>
+      <ul class="nav section-nav flex-column">
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#id1">
+         Accuracy
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#balanced-accuracy">
+         <em>
+          Balanced
+         </em>
+         Accuracy
+        </a>
+       </li>
+       <li class="toc-h4 nav-item toc-entry">
+        <a class="reference internal nav-link" href="#f1-score">
+         F1 Score
+        </a>
+       </li>
+      </ul>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#advanced-classifier-evaluation-roc-curves">
+     Advanced classifier evaluation: ROC curves
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hard-and-soft-classification">
+       Hard and Soft Classification
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#different-thresholds-change-evaluation-metrics">
+       Different thresholds change evaluation metrics
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#roc-curves-expressing-accuracy-across-different-thresholds">
+       ROC curves: expressing accuracy across different thresholds
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roc-curves-in-scikit-learn">
+     ROC curves in scikit-learn
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auc">
+       AUC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-classification-algorithms-summary">
+   Evaluating classification algorithms: summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-18-5-6-2022">
+<h1>Lecture 18 (5/6/2022)<a class="headerlink" href="#lecture-18-5-6-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Pset 4 due by 11:59PM tonight</p></li>
+<li><p>This lecture: download the images from the github repo with lecture content</p></li>
+</ul>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Classification intro + <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Evaluating classification</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluating-classification-algorithms">
+<h1>Evaluating classification algorithms<a class="headerlink" href="#evaluating-classification-algorithms" title="Permalink to this headline">¶</a></h1>
+<p>On Wednesday, we talked about the problems that classification algorithms solve and looked at an example solution: <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors applied to the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset.</p>
+<p>Let’s start with a slightly more complex version of this problem: predicting iris species using <em>sepal length</em> and <em>sepal width</em>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_18-post_5_0.png" src="../../_images/Lecture_18-post_5_0.png" />
+</div>
+</div>
+<p>As you can see, <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors is likely to struggle with this one a bit more than the petal length and petal width features we used on Wednesday.</p>
+<p><em>Let’s see how it goes.</em></p>
+<p>First, we set aside training and test data, as before:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">)]</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;species&#39;</span><span class="p">]</span>
+
+<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> 
+                                                <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="c1"># we&#39;ll use a small test set here</span>
+                                                <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># make this process reproducible</span>
+                                               <span class="p">)</span>
+<span class="n">xtrain</span> <span class="o">=</span> <span class="n">xtrain</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">xtest</span> <span class="o">=</span> <span class="n">xtest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ytrain</span> <span class="o">=</span> <span class="n">ytrain</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ytest</span> <span class="o">=</span> <span class="n">ytest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Next, we fit our <span class="math notranslate nohighlight">\(k\)</span>-NN model:</p>
+<ul class="simple">
+<li><p>We’ll use <span class="math notranslate nohighlight">\(k\)</span> = 3</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the KNeighborsClassifier</span>
+<span class="kn">from</span> <span class="nn">sklearn.neighbors</span> <span class="kn">import</span> <span class="n">KNeighborsClassifier</span>
+
+<span class="c1"># Initialize the classifier</span>
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Train the classifier</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>KNeighborsClassifier(n_neighbors=3)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, we use the model to make predicions for our test data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">preds</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">preds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([&#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;setosa&#39;,
+       &#39;virginica&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;virginica&#39;, &#39;versicolor&#39;,
+       &#39;versicolor&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;virginica&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;,
+       &#39;versicolor&#39;, &#39;versicolor&#39;, &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;,
+       &#39;setosa&#39;, &#39;setosa&#39;, &#39;virginica&#39;, &#39;versicolor&#39;, &#39;setosa&#39;],
+      dtype=object)
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s compare these predictions to the true underlying labels for the test data:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn_eval</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;sepal_length&quot;</span><span class="p">:</span> <span class="n">xtest</span><span class="p">[</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;sepal_width&quot;</span><span class="p">:</span> <span class="n">xtest</span><span class="p">[</span><span class="s1">&#39;sepal_width&#39;</span><span class="p">],</span>
+    <span class="s2">&quot;species&quot;</span><span class="p">:</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="s2">&quot;prediction&quot;</span><span class="p">:</span> <span class="n">preds</span>
+<span class="p">})</span>
+
+<span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;correct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]</span>
+<span class="n">knn_eval</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>species</th>
+      <th>prediction</th>
+      <th>correct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.8</td>
+      <td>2.8</td>
+      <td>virginica</td>
+      <td>versicolor</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.0</td>
+      <td>2.2</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.3</td>
+      <td>2.9</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6.3</td>
+      <td>3.3</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6.7</td>
+      <td>3.1</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6.8</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6.1</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6.1</td>
+      <td>2.6</td>
+      <td>virginica</td>
+      <td>versicolor</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6.4</td>
+      <td>3.2</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>6.1</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6.5</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>6.1</td>
+      <td>2.9</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>4.9</td>
+      <td>3.6</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>6.0</td>
+      <td>2.9</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5.5</td>
+      <td>2.6</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>5.6</td>
+      <td>2.8</td>
+      <td>virginica</td>
+      <td>versicolor</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5.6</td>
+      <td>3.0</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>6.2</td>
+      <td>2.8</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>4.6</td>
+      <td>3.6</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>6.2</td>
+      <td>2.9</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>5.0</td>
+      <td>2.3</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Let’s graph the predictions for easier analysis:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">,</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span>
+                <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="c1"># comment this out to just view overall accuracy</span>
+                <span class="n">style</span> <span class="o">=</span> <span class="s2">&quot;correct&quot;</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">loc</span> <span class="o">=</span> <span class="s1">&#39;upper right&#39;</span><span class="p">,</span> 
+           <span class="n">bbox_to_anchor</span> <span class="o">=</span> <span class="p">(</span><span class="mf">1.3</span><span class="p">,</span> <span class="mi">1</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_18-post_15_0.png" src="../../_images/Lecture_18-post_15_0.png" />
+</div>
+</div>
+<p><strong>How did our classifier perform?</strong></p>
+<p><em>What metric(s) should we use to evaluate it?</em></p>
+<ul class="simple">
+<li><p>Percent that were correct (accuracy)</p></li>
+</ul>
+<div class="section" id="classifier-evaluation-metrics">
+<h2>Classifier evaluation metrics<a class="headerlink" href="#classifier-evaluation-metrics" title="Permalink to this headline">¶</a></h2>
+<p>There are a number of different ways to evaluate a classifier; the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> package exports many of the most common metrics <a class="reference external" href="https://scikit-learn.org/stable/modules/model_evaluation.html#classification-metrics">here</a>. As we’ll see, some are better than others, so it’s worth understanding the tradeoffs!</p>
+<div class="section" id="accuracy">
+<h3>Accuracy<a class="headerlink" href="#accuracy" title="Permalink to this headline">¶</a></h3>
+<p>Probably the most intuitive way to determine a classifier’s success is just by looking at its overall accuracy. We can do that here with the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">accuracy_score</span></code> function:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">],</span> 
+               <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: this is what the <code class="docutils literal notranslate"><span class="pre">score</span></code> function of the <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> returns as well.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Problems with accuracy</strong></p>
+<p>However, there are a few issues with simply using <em>accuracy</em> as our metric.</p>
+<p>Can you think of any?</p>
+<ul class="simple">
+<li><p>Some values much more common than others</p></li>
+<li><p>High stakes classification</p></li>
+</ul>
+<ol class="simple">
+<li><p><em>Imbalanced classification</em>: In many cases, the event or variable outcome we want to predict is <em>rare</em> in our training data.</p>
+<ul class="simple">
+<li><p>Ex. whether a credit card transaction is fraudulent (the vast majority are not)</p></li>
+<li><p>In this case, our classifier could achieve very high accuracy by classifying <em>everything</em> it sees as non-fraudulent</p></li>
+<li><p>So with imbalanced labels, accuracy isn’t really telling us what we want to know about the classifier.</p></li>
+</ul>
+</li>
+<li><p><em>Varying costs and benefits</em>: In other cases, independent of the probability of particular events, the <em>costs</em> of an error differ dramatically depending on the <em>type</em> of error.</p>
+<ul class="simple">
+<li><p>Ex. a classifier for determining whether a medical image contains a tumor should <em>never</em> make the mistake of saying a tumor is non-cancerous when it’s actually cancerous. If it sometimes says a tumor is cancerous and a follow-up reveals it’s not, this is much less bad.</p></li>
+<li><p>A regular <em>accuracy</em> metric treats all mistakes equally, but in these cases, we want our model evaluation to penalize some mistakes (incorrect negative labels) much more than others (incorrect positive labels).</p></li>
+</ul>
+</li>
+</ol>
+<p><em>So what do we do?</em></p>
+</div>
+<div class="section" id="confusion-matrix">
+<h3>Confusion matrix<a class="headerlink" href="#confusion-matrix" title="Permalink to this headline">¶</a></h3>
+<p>Most of the more nuanced evaluation metrics rely on an underlying <em><a class="reference external" href="https://en.wikipedia.org/wiki/Confusion_matrix">confusion matrix</a></em> for the classifier. To unpack this more, we’ll need to change our results above slightly.</p>
+<p>Since most of the classifier’s mistakes were around labeling the <em>versicolor</em> species, let’s focus on that one. We’ll change our results to be whether the classifier correctly identified each item as <em>versicolor</em> or <em>non-versicolor</em>, making this a <strong>binary classification</strong> problem. (note the best thing to do here would be to re-run the classifier as a binary classifier but in this case the results should be similar).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Create a &quot;mapping&quot; that will change our prediction values to be BINARY predictions</span>
+<span class="n">binary_encoding</span> <span class="o">=</span> <span class="p">{</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">:</span> <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;virginica&#39;</span><span class="p">:</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;setosa&#39;</span><span class="p">:</span> <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">}</span>
+
+<span class="c1"># Add binary outcome and prediction columns encoding this information</span>
+<span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">binary_encoding</span><span class="p">)</span>
+<span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;prediction&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">binary_encoding</span><span class="p">)</span>
+
+<span class="c1"># Take a look at these new columns to get a sense of our binary accuracy</span>
+<span class="n">knn_eval</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>species</th>
+      <th>prediction</th>
+      <th>correct</th>
+      <th>binary_species</th>
+      <th>binary_prediction</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.8</td>
+      <td>2.8</td>
+      <td>virginica</td>
+      <td>versicolor</td>
+      <td>False</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>6.0</td>
+      <td>2.2</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>5.5</td>
+      <td>4.2</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>7.3</td>
+      <td>2.9</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>6.3</td>
+      <td>3.3</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>5.0</td>
+      <td>3.5</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>6.7</td>
+      <td>3.1</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>6.8</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>6.1</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>6.1</td>
+      <td>2.6</td>
+      <td>virginica</td>
+      <td>versicolor</td>
+      <td>False</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>6.4</td>
+      <td>3.2</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>6.1</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>6.5</td>
+      <td>2.8</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>6.1</td>
+      <td>2.9</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>4.9</td>
+      <td>3.6</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>6.0</td>
+      <td>2.9</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>5.5</td>
+      <td>2.6</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>4.8</td>
+      <td>3.0</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>5.4</td>
+      <td>3.9</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>5.6</td>
+      <td>2.8</td>
+      <td>virginica</td>
+      <td>versicolor</td>
+      <td>False</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>5.6</td>
+      <td>3.0</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>4.8</td>
+      <td>3.4</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>4.4</td>
+      <td>2.9</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>6.2</td>
+      <td>2.8</td>
+      <td>virginica</td>
+      <td>virginica</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>4.6</td>
+      <td>3.6</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>5.1</td>
+      <td>3.8</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>6.2</td>
+      <td>2.9</td>
+      <td>versicolor</td>
+      <td>virginica</td>
+      <td>False</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>5.0</td>
+      <td>2.3</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>True</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>5.0</td>
+      <td>3.4</td>
+      <td>setosa</td>
+      <td>setosa</td>
+      <td>True</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, let’s use the <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">confusion_matrix</span></code> function to generate a confusion matrix for these binary results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">confusion_matrix</span>
+
+<span class="n">mat</span> <span class="o">=</span> <span class="n">confusion_matrix</span><span class="p">(</span><span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">],</span> 
+                       <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">],</span> 
+                       <span class="n">labels</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">]</span>
+                      <span class="p">)</span>
+<span class="n">mat</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 6,  7],
+       [ 3, 14]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>What’s going on in this matrix?</p>
+<p>Let’s add some indexes and column names to clarify:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mat_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">mat</span><span class="p">,</span> 
+                      <span class="n">index</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;species: versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;species: non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;predicted: versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;predicted: non-versicolor&#39;</span><span class="p">]</span>
+                     <span class="p">)</span>
+
+<span class="n">mat_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>predicted: versicolor</th>
+      <th>predicted: non-versicolor</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>species: versicolor</th>
+      <td>6</td>
+      <td>7</td>
+    </tr>
+    <tr>
+      <th>species: non-versicolor</th>
+      <td>3</td>
+      <td>14</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><em>What’s happening in this table?</em></p>
+<p><em>Which values do we like and which ones do we dislike?</em></p>
+<p>predicted / species: non-versicolor: want high number</p>
+<p>predicted / species: versicolor: want high number</p>
+<p>Note: this allows us to distinguish between different <em>types</em> of errors, which in turn lets us move beyond just accuracy as a metric.</p>
+</div>
+</div>
+<div class="section" id="understanding-the-confusion-matrix">
+<h2>Understanding the confusion matrix<a class="headerlink" href="#understanding-the-confusion-matrix" title="Permalink to this headline">¶</a></h2>
+<p>The images below walk through how to label the different portions of the confusion matrix and the metrics we use based on it.</p>
+<p>I’ll send out the slides with these images so you can keep this with your lecture slides as well</p>
+<p><strong>First, here’s how we can understand the rows and columns in our confusion matrix:</strong></p>
+<p><img alt="confusion_matrix" src="../../_images/confusion_matrix_1.png" /></p>
+<p><strong>Next, these are the <em>accurate</em> (“true”) classification counts:</strong></p>
+<ul class="simple">
+<li><p>“True Positive” (TP): <em>true</em> classification with a <em>positive</em> label (“versicolor”)</p></li>
+<li><p>“True Negative” (TN): <em>true</em> classification with a <em>negative</em> label (“non-versicolor”)</p></li>
+</ul>
+<p><img alt="confusion_matrix" src="../../_images/confusion_matrix_2.png" /></p>
+<p><strong>Finally, these are the <em>inaccurate</em> (“false”) classification counts:</strong></p>
+<ul class="simple">
+<li><p>“False Positive” (FP): <em>false</em> classification with a <em>positive</em> label (“versicolor”) -&gt; Type I error</p></li>
+<li><p>“False Negative” (FN): <em>false</em> classification with a <em>negative</em> label (“non-versicolor”) -&gt; Type II error</p></li>
+</ul>
+<p><img alt="confusion_matrix" src="../../_images/confusion_matrix_3.png" /></p>
+</div>
+<div class="section" id="evaluating-the-confusion-matrix">
+<h2>Evaluating the confusion matrix<a class="headerlink" href="#evaluating-the-confusion-matrix" title="Permalink to this headline">¶</a></h2>
+<p>Broadly, there are two kinds of metrics available with our confusion matrix:</p>
+<ol class="simple">
+<li><p>Metrics based on <em>subsets</em> of the confusion matrix (many)</p></li>
+<li><p>Overall metrics that summarize the whole confusion matrix</p>
+<ul class="simple">
+<li><p>Accuracy</p></li>
+<li><p>Balanced accuracy</p></li>
+<li><p>F1 score</p></li>
+</ul>
+</li>
+</ol>
+<p>We’ll go through each one for our data above.</p>
+<p>The goal isn’t to memorize these as we go, but to make sure you understand each one and what it tells us.</p>
+<div class="section" id="metrics-for-components-of-the-confusion-matrix">
+<h3>Metrics for components of the confusion matrix<a class="headerlink" href="#metrics-for-components-of-the-confusion-matrix" title="Permalink to this headline">¶</a></h3>
+<p>These break down into which <em>part</em> of the confusion matrix they are conditioning on: the <em>true values</em> or the <em>predicted values</em>.</p>
+<p>Let’s walk through each one below:</p>
+<div class="section" id="metrics-conditioned-on-the-true-values-y">
+<h4>Metrics conditioned on the <em>true</em> values (<span class="math notranslate nohighlight">\(y\)</span>)<a class="headerlink" href="#metrics-conditioned-on-the-true-values-y" title="Permalink to this headline">¶</a></h4>
+<p><strong>Conditioned on a <em>positive</em> true value</strong></p>
+<p>True Postive Rate (TPR) = <span class="math notranslate nohighlight">\(\dfrac{TP}{TP + FN}\)</span></p>
+<p>Note: this is also called <em>sensitivity</em>, <em>hit rate</em>, <em>recall</em>, or <em>power</em>.</p>
+<p><img alt="confusion_matrix_tpr" src="../../_images/confusion_matrix_tpr.png" /></p>
+<p><em>What’s our TPR for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+<p>When looking at “true” values, how often did you get it right?
+-&gt; Want a large value (close to 1)</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sklearn has a TPR &quot;recall&quot; function</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">recall_score</span>
+
+<span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">],</span> 
+             <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">],</span>
+             <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span> <span class="c1"># data labels</span>
+             <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span> <span class="c1"># positive label</span>
+            <span class="p">)</span>
+
+<span class="c1"># 6/13</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.46153846153846156
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Conditioned on a <em>positive</em> true value</strong></p>
+<p>False Negative Rate (FNR) = <span class="math notranslate nohighlight">\(\dfrac{FN}{TP + FN}\)</span></p>
+<p>Note: this is also called <em>miss rate</em> or <em>Type II error rate</em>.</p>
+<p><img alt="confusion_matrix_fnr" src="../../_images/confusion_matrix_fnr.png" /></p>
+<p><em>What’s our FNR for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+<p><strong>Conditioned on a <em>negative</em> true value</strong></p>
+<p>False Positive Rate (FPR) = <span class="math notranslate nohighlight">\(\dfrac{FP}{FP + TN}\)</span></p>
+<p>Note: this is also called <em>false alarm rate</em> or <em>Type I error rate</em>.</p>
+<p><img alt="confusion_matrix_fpr" src="../../_images/confusion_matrix_fpr.png" /></p>
+<p><em>What’s our FPR for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+<p><strong>Conditioned on a <em>negative</em> true value</strong></p>
+<p>True Negative Rate (TNR) = <span class="math notranslate nohighlight">\(\dfrac{TN}{FP + TN}\)</span></p>
+<p>Note: this is also called <em>specificity</em> or <em>selectivity</em>, or <em>correct rejection rate</em>.</p>
+<p><img alt="confusion_matrix_tnr" src="../../_images/confusion_matrix_tnr.png" /></p>
+<p><em>What’s our TNR for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+</div>
+<div class="section" id="metrics-conditioned-on-the-predicted-values-hat-y">
+<h4>Metrics conditioned on the <em>predicted</em> values (<span class="math notranslate nohighlight">\(\hat{y}\)</span>)<a class="headerlink" href="#metrics-conditioned-on-the-predicted-values-hat-y" title="Permalink to this headline">¶</a></h4>
+<p><strong>Conditioned on a <em>positive</em> predicted value</strong></p>
+<p>Positive predictive value (PPV) = <span class="math notranslate nohighlight">\(\dfrac{TP}{TP + FP}\)</span></p>
+<p>Note: this is also called <em>precision</em>.</p>
+<p><img alt="confusion_matrix_tpr" src="../../_images/confusion_matrix_ppv.png" /></p>
+<p><em>What’s our PPV for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sklearn also has a prectision function we can use directly</span>
+<span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">precision_score</span>
+
+<span class="n">precision_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">],</span> 
+                <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">],</span>
+                <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span> <span class="c1"># data labels</span>
+                <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span> <span class="c1"># positive label</span>
+               <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Conditioned on a <em>positive</em> predicted value</strong></p>
+<p>False discovery rate (FDR) = <span class="math notranslate nohighlight">\(\dfrac{FP}{TP + FP}\)</span></p>
+<p><img alt="confusion_matrix_fdr" src="../../_images/confusion_matrix_fdr.png" /></p>
+<p><em>What’s our FDR for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+<p><strong>Conditioned on a <em>negative</em> predicted value</strong></p>
+<p>Negative Predictive Value (NPV) = <span class="math notranslate nohighlight">\(\dfrac{TN}{FN + TN}\)</span></p>
+<p><img alt="confusion_matrix_npv" src="../../_images/confusion_matrix_npv.png" /></p>
+<p><em>What’s our NPV for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+<p><strong>Conditioned on a <em>negative</em> predicted value</strong></p>
+<p>False Omission Rate (FOR) = <span class="math notranslate nohighlight">\(\dfrac{FN}{FN + TN}\)</span></p>
+<p><img alt="confusion_matrix_for" src="../../_images/confusion_matrix_for.png" /></p>
+<p><em>What’s our FOR for the data above?</em></p>
+<p><em>What does this actually tell us?</em> <em>Do we want it to be large or small?</em></p>
+</div>
+</div>
+<div class="section" id="metrics-for-summarizing-the-full-confusion-matrix">
+<h3>Metrics for summarizing the full confusion matrix<a class="headerlink" href="#metrics-for-summarizing-the-full-confusion-matrix" title="Permalink to this headline">¶</a></h3>
+<p>The metrics above demonstrated how we can quantify certain key aspects of our classifier’s performance.</p>
+<p>But in many cases, we want to summarize how our classifier is performing overall with a metric applied to the confusion matrix as a whole. How can we do this?</p>
+<p>Here are a few of the most common metrics:</p>
+<ol class="simple">
+<li><p>Accuracy (okay for balanced problems)</p></li>
+<li><p><em>Balanced</em> accuracy</p></li>
+<li><p>F1 score</p></li>
+</ol>
+<p>We’ll walk through each of these briefly to give a flavor for them.</p>
+<div class="section" id="id1">
+<h4>Accuracy<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h4>
+<p>We discussed this above already and it’s fairly intuitive, but here’s the formal breakdown:</p>
+<p>Accuracy = <span class="math notranslate nohighlight">\(\dfrac{TP + TN}{TP + FN + FP + TN}\)</span></p>
+<p><img alt="confusion_matrix_for" src="../../_images/confusion_matrix_acc.png" /></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span>
+
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">],</span> 
+               <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6666666666666666
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="balanced-accuracy">
+<h4><em>Balanced</em> Accuracy<a class="headerlink" href="#balanced-accuracy" title="Permalink to this headline">¶</a></h4>
+<p>Balanced accuracy is the average of the true positive and true negative rates.</p>
+<p>Balanced Accuracy = <span class="math notranslate nohighlight">\(\dfrac{TPR + TNR}{2}\)</span></p>
+<p><em>How does this resolve the issues of imbalanced classification described above?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">balanced_accuracy_score</span>
+
+<span class="n">balanced_accuracy_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">],</span> 
+                        <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6425339366515836
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="f1-score">
+<h4>F1 Score<a class="headerlink" href="#f1-score" title="Permalink to this headline">¶</a></h4>
+<p>The F1 score is the <em>harmonic mean</em> (good for averaging <em>rates</em>) of TPR and PPV.</p>
+<ul class="simple">
+<li><p>Combines the rate at which our predictions of “versicolor” were correct across all “versicolor” predictions (PPV) and the rate at which true versicolors led us to predict “versicolor” (TPR).</p></li>
+</ul>
+<p>F1 Score = <span class="math notranslate nohighlight">\(2 \times \dfrac{TPR \times PPV}{TPR + PPV}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">f1_score</span>
+
+<span class="n">f1_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_species&#39;</span><span class="p">],</span> 
+         <span class="n">y_pred</span> <span class="o">=</span> <span class="n">knn_eval</span><span class="p">[</span><span class="s1">&#39;binary_prediction&#39;</span><span class="p">],</span>
+         <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span> <span class="c1"># labels to evaluate</span>
+         <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span> <span class="c1"># name of positive label</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5454545454545455
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-classifier-evaluation-roc-curves">
+<h2>Advanced classifier evaluation: ROC curves<a class="headerlink" href="#advanced-classifier-evaluation-roc-curves" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="hard-and-soft-classification">
+<h3>Hard and Soft Classification<a class="headerlink" href="#hard-and-soft-classification" title="Permalink to this headline">¶</a></h3>
+<p>The <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors classifier chooses a predicted label <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> for a new set of features <span class="math notranslate nohighlight">\(\theta\)</span> by selecting the <em>mode</em> of the labels of the nearest training items.</p>
+<p>In this way, you can think of the nearest neighbors as essentially “voting” for the label of each test item. This produces a single label prediction for each test item. Put another way, all the predictions for our test items in the example above are either <code class="docutils literal notranslate"><span class="pre">'versicolor'</span></code> or <code class="docutils literal notranslate"><span class="pre">'non-versicolor'</span></code>. This sort of <em>decision policy</em> is referred to as <strong>Hard Classification</strong>.</p>
+<p><strong>But, it doesn’t need to be this way.</strong> We can also represent the “votes” of the nearest neighbors as generating a <em>probability distribution</em> over <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> values.</p>
+<ul class="simple">
+<li><p>For example, if there are 3 nearest neighbors for our new item and 2 are ‘versicolor’ and 1 is ‘non-versicolor’, there’s a 2/3 chance that the new item should have a label of ‘versicolor’.</p></li>
+<li><p>Many of the classification algorithms we’ll discuss can assign a <em>probability</em> of a particular label for a given test item rather than a strict label assignment.</p></li>
+</ul>
+<p>This form of classification is called <strong>Soft Classification</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> class exports a <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> function that is just like the <code class="docutils literal notranslate"><span class="pre">predict</span></code> function except instead of showing us the <em>hard predictions</em> for each test item, it shows us the <em>soft prediction</em> probabilities:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_vals</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="p">(</span><span class="s1">&#39;sepal_length&#39;</span><span class="p">,</span> <span class="s1">&#39;sepal_width&#39;</span><span class="p">)]</span>
+
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species_binary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;versicolor&#39;</span><span class="p">:</span> <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;virginica&#39;</span><span class="p">:</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;setosa&#39;</span><span class="p">:</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">})</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">iris</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="s1">&#39;species_binary&#39;</span><span class="p">]</span>
+
+<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> 
+                                                <span class="n">test_size</span> <span class="o">=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="c1"># we&#39;ll use a small test set here</span>
+                                                <span class="n">random_state</span> <span class="o">=</span> <span class="mi">0</span> <span class="c1"># make this process reproducible</span>
+                                               <span class="p">)</span>
+<span class="n">xtrain</span> <span class="o">=</span> <span class="n">xtrain</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">xtest</span> <span class="o">=</span> <span class="n">xtest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ytrain</span> <span class="o">=</span> <span class="n">ytrain</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+<span class="n">ytest</span> <span class="o">=</span> <span class="n">ytest</span><span class="o">.</span><span class="n">reset_index</span><span class="p">(</span><span class="n">drop</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span>
+
+
+<span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span>
+
+<span class="c1"># Train the classifier</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s the original `predict` function</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s the graded probability prediction</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.        , 1.        ],
+       [0.33333333, 0.66666667],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [0.66666667, 0.33333333],
+       [1.        , 0.        ],
+       [0.66666667, 0.33333333],
+       [0.66666667, 0.33333333],
+       [0.33333333, 0.66666667],
+       [0.33333333, 0.66666667],
+       [1.        , 0.        ],
+       [0.33333333, 0.66666667],
+       [1.        , 0.        ],
+       [0.66666667, 0.33333333],
+       [1.        , 0.        ],
+       [0.66666667, 0.33333333],
+       [0.        , 1.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [0.        , 1.        ],
+       [0.        , 1.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [1.        , 0.        ],
+       [0.33333333, 0.66666667],
+       [1.        , 0.        ]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the predictions above, the first column is the probability of ‘non-versicolor’ and the second is the probability of ‘versicolor’.</p>
+<p>This <em>Soft Classification</em> allows us to set more flexible decision policies about what kind of label <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> we want to assign to a given test item. Using the <em>mode</em> of the nearest neighbor labels in k-NN classification sets a <strong>classification threshold</strong> of 50% (for binary classification), but we could choose any threshold we want depending on the problem.</p>
+<ul class="simple">
+<li><p>In some cases, we may want to predict a label value whenever <em>any</em> of the neighbors have that label (ex. risk of a fatal disease).</p></li>
+<li><p>Or, maybe we only want to predict a particular label if 90% of the neighbors have that label (ex. setting a high parole).</p></li>
+</ul>
+<p>However, the classification threshold we set will effect how often we assign a particular label to new pieces of data.</p>
+<p><em>Why does this matter?</em></p>
+</div>
+<div class="section" id="different-thresholds-change-evaluation-metrics">
+<h3>Different thresholds change evaluation metrics<a class="headerlink" href="#different-thresholds-change-evaluation-metrics" title="Permalink to this headline">¶</a></h3>
+<p>Critically, our choice of classification threshold will affect our evaluation metrics above in predictable ways.</p>
+<p>In our <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset, labeling new data points based on the mode of 3 nearest neighbors sets a threshold of 2/3 for ‘versicolor’ labels.</p>
+<p>If we set a <em>lower</em> threshold of 1/3:</p>
+<ul class="simple">
+<li><p>We will label <em>more</em> test items as ‘versicolor’ since we only need 1 out of 3 neighbors to be ‘versicolor’</p></li>
+<li><p>We will have a <strong>higher true positive rate</strong> (and <strong>lower false negative rate</strong>) because we are more likely to detect all true versicolor items this way</p></li>
+<li><p>But, we will have a <strong>higher false positive rate</strong> (and <strong>lower true negative rate</strong>) since we will label more things as ‘versicolor’ that shouldn’t be due to our low threshold.</p></li>
+</ul>
+<p>If instead we set a very <em>high</em> threshold of 3/3:</p>
+<ul class="simple">
+<li><p>We will label <em>fewer</em> test items as ‘versicolor’ since we now need 3 out of 3 neighbors to be ‘versicolor’ before labeling a new item ‘versicolor’.</p></li>
+<li><p>We will have a <strong>lower true positive rate</strong> (and <strong>higher false negative rate</strong>) because we are more likely to pass up on some true versicolor items this way</p></li>
+<li><p>We will have a <strong>lower false positive rate</strong> (and <strong>higher true negative rate</strong>) since we will label few things as ‘versicolor’ that shouldn’t be due to our high threshold.</p></li>
+</ul>
+<p>Let’s illustrate this by looking at this pattern in our data.</p>
+</div>
+<div class="section" id="roc-curves-expressing-accuracy-across-different-thresholds">
+<h3>ROC curves: expressing accuracy across different thresholds<a class="headerlink" href="#roc-curves-expressing-accuracy-across-different-thresholds" title="Permalink to this headline">¶</a></h3>
+<p>Below, we’re going to compute the “versicolor probability” in our test set from above for a classifier with 5 nearest neighbors.</p>
+<p>Then, we’ll look at how different <em>thresholds</em> for identifying test items as ‘versicolor’ change our <strong>true positive rate</strong> and <strong>false positive rate</strong> in opposite directions.</p>
+<p><strong>Step 1</strong>: use the k-NN <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> function shown above to get probability values for each test item <span class="math notranslate nohighlight">\(p(\text{'versicolor'})\)</span> rather than hard classifications</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s our soft classification with 5 nearest neighbors (converted to dataframe for easier processing)</span>
+<span class="n">versicolor_probs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">),</span>
+                                <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;non-versicolor_prob&quot;</span><span class="p">,</span> <span class="s2">&quot;versicolor_prob&quot;</span><span class="p">]</span>
+                               <span class="p">)</span>
+
+<span class="c1"># Let&#39;s add the true values for comparison</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ytest</span>
+
+<span class="n">versicolor_probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>non-versicolor_prob</th>
+      <th>versicolor_prob</th>
+      <th>true_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.2</td>
+      <td>0.8</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.4</td>
+      <td>0.6</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.8</td>
+      <td>0.2</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.4</td>
+      <td>0.6</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.8</td>
+      <td>0.2</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>0.2</td>
+      <td>0.8</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Step 2</strong>: Now, let’s pick a range of <em>classification thresholds</em> for ‘versicolor’ and show how this changes what values we assign to the test items.</p>
+<p>For <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, the thresholds are intuitive because we can break them out by each possible voting arrangement of our 5 neighbors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which test items get labeled &#39;versicolor&#39; if you only need 1 nearest neighbor to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="c1"># np.where is like an &quot;if-else&quot; condition for this column value</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="c1"># condition</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="c1"># value in all rows where condition above is True</span>
+    <span class="s1">&#39;non-versicolor&#39;</span> <span class="c1"># value in all rows where condition above is False</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need at least 2 nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k2_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.4</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need at least 3 nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k3_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.6</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need at least 4 nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k4_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.8</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need *all 5* nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k5_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="n">versicolor_probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>non-versicolor_prob</th>
+      <th>versicolor_prob</th>
+      <th>true_label</th>
+      <th>k1_label</th>
+      <th>k2_label</th>
+      <th>k3_label</th>
+      <th>k4_label</th>
+      <th>k5_label</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.2</td>
+      <td>0.8</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.4</td>
+      <td>0.6</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>5</th>
+      <td>0.8</td>
+      <td>0.2</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>6</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>7</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>8</th>
+      <td>0.4</td>
+      <td>0.6</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>9</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>10</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>11</th>
+      <td>0.8</td>
+      <td>0.2</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>12</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>13</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>14</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>15</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>16</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>17</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>18</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>20</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>non-versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>21</th>
+      <td>0.0</td>
+      <td>1.0</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+    </tr>
+    <tr>
+      <th>22</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>23</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>24</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>25</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>26</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>27</th>
+      <td>0.6</td>
+      <td>0.4</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>28</th>
+      <td>0.2</td>
+      <td>0.8</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+    <tr>
+      <th>29</th>
+      <td>1.0</td>
+      <td>0.0</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+      <td>non-versicolor</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p><strong>Step 3</strong>: How do our <strong>true positive rate</strong> and <strong>false positive rate</strong> change for each of these thresholds?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># What&#39;s the TPR for our lowest threshold (k1) above?</span>
+<span class="n">k1_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="c1"># What&#39;s the FPR for our lowest threshold (k1) above?</span>
+<span class="c1"># Note FPR = 1 - TNR and TNR is just the recall (TPR) for the *negative* label, which we can set below</span>
+<span class="n">k1_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span> <span class="c1"># positive label</span>
+                         <span class="p">)</span>
+
+<span class="c1"># Same as above for k2 threshold</span>
+<span class="n">k2_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k2_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k2_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k2_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+
+<span class="c1"># Same as above for k3 threshold</span>
+<span class="n">k3_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k3_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k3_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k3_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+
+
+<span class="c1"># Same as above for k4 threshold</span>
+<span class="n">k4_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k4_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k4_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k4_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+
+<span class="c1"># Same as above for k5 threshold</span>
+<span class="n">k5_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k5_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k5_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k5_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Phew! Now let’s combine the above to see how they compare:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each of our thresholds, what is the true positive rate and the false positive rate?</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">roc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="s2">&quot;TPR&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">k1_tpr</span><span class="p">,</span> <span class="n">k2_tpr</span><span class="p">,</span> <span class="n">k3_tpr</span><span class="p">,</span> <span class="n">k4_tpr</span><span class="p">,</span> <span class="n">k5_tpr</span><span class="p">],</span>
+    <span class="s2">&quot;FPR&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">k1_fpr</span><span class="p">,</span> <span class="n">k2_fpr</span><span class="p">,</span> <span class="n">k3_fpr</span><span class="p">,</span> <span class="n">k4_fpr</span><span class="p">,</span> <span class="n">k5_fpr</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">roc_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>threshold</th>
+      <th>TPR</th>
+      <th>FPR</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.2</td>
+      <td>1.000000</td>
+      <td>0.235294</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.4</td>
+      <td>0.923077</td>
+      <td>0.176471</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.6</td>
+      <td>0.384615</td>
+      <td>0.117647</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.8</td>
+      <td>0.230769</td>
+      <td>0.117647</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>1.0</td>
+      <td>0.153846</td>
+      <td>0.058824</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>Now, our final step is to graph this relationship.</p>
+<p>This is called an <strong>ROC curve</strong> (Receiver Operating Characteristic) and we’ll see why it’s useful once we’ve plotted it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ROC curve by hand</span>
+
+<span class="n">g</span><span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">roc_df</span><span class="p">,</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;FPR&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;TPR&quot;</span>
+<span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;False Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;True Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_18-post_67_0.png" src="../../_images/Lecture_18-post_67_0.png" />
+</div>
+</div>
+<p><em>What is that??</em></p>
+<p>Answer: a somewhat clumsy ROC curve (since we’re not working with much data here).</p>
+<p><em>What does this mean?</em></p>
+<ul class="simple">
+<li><p>Each of our points above is the TPR and FPR for a given <em>classification threshold</em></p></li>
+<li><p>When we set a <em>low threshold</em>, we expect TPR and FPR to be very high (top right)</p></li>
+<li><p>When we set a <em>high threshold</em>, we expect TPR and FPR to both be very low (bottom left)</p></li>
+</ul>
+<p>What about in between?</p>
+<ul class="simple">
+<li><p>For every threshold in between the top right (low) and bottom left (high), we want to <em>keep TPR high while FPR goes down</em>.</p></li>
+<li><p>Put another way, we want to reduce FPR without having to also sacrifice TPR.</p></li>
+</ul>
+<p>Given the above, <strong>a good ROC curve is one that swings as close to the <em>top left</em> portion of the axes as possible</strong>.</p>
+<p>Here’s a picture that illustrates this:</p>
+<p><img alt="roc" src="../../_images/roc.png" /></p>
+<p>(<a class="reference external" href="https://medium.com/the-owl/evaluation-metrics-part-3-47c315e07222">source</a>)</p>
+<p><strong>Compared to what?</strong></p>
+<p>Note the dashed line across the middle. This indicates what you would expect to happen with TPR and FPR if your classifier was <em>random</em>. In other words, we can compare our ROC curve to the “random classifier” line to determine how much better our classifier is doing than random guessing.</p>
+<p>We use a metric called <em>area under the curve (AUC)</em> to calculate this difference.</p>
+<p>This measures the area under the ROC curve. The value ranges from 0 to 1, but since a random classifier has an AUC of 0.5, we’re looking for values &gt; 0.5.</p>
+</div>
+</div>
+<div class="section" id="roc-curves-in-scikit-learn">
+<h2>ROC curves in scikit-learn<a class="headerlink" href="#roc-curves-in-scikit-learn" title="Permalink to this headline">¶</a></h2>
+<p>Fortunately, we don’t need to do all the manual calculations above to generate an ROC curve.</p>
+<p>As usual, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> has us covered!</p>
+<p>Below, we call the <code class="docutils literal notranslate"><span class="pre">roc_curve</span></code> function to generate an ROC curve:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+<span class="p">)</span>
+
+
+<span class="n">tpr</span>
+<span class="n">fpr</span>
+<span class="n">thresholds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([2. , 1. , 0.8, 0.6, 0.4, 0.2, 0. ])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can graph the results in seaborn:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">fpr</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tpr</span>
+<span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;False Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;True Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_18-post_72_0.png" src="../../_images/Lecture_18-post_72_0.png" />
+</div>
+</div>
+<div class="section" id="auc">
+<h3>AUC<a class="headerlink" href="#auc" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> also exports an AUC function that will report how our ROC curve fares:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
+
+
+<span class="n">roc_auc_score</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.8755656108597285
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluating-classification-algorithms-summary">
+<h1>Evaluating classification algorithms: summary<a class="headerlink" href="#evaluating-classification-algorithms-summary" title="Permalink to this headline">¶</a></h1>
+<p>When we use a classification algorithm like <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, we want a way to quantify <em>how well it performs</em> with test data.</p>
+<ol class="simple">
+<li><p>The most intuitive way to do so is with accuracy, but this can mis-construe our classifier’s performance when we have imbalanced data.</p></li>
+<li><p>Alternatives that rely on the <em>confusion matrix</em> allow us to weight the relative impact of different kinds of <em>errors</em> (false positives and false negatives).</p></li>
+<li><p>Recognizing that our rate of false positives and false negatives is sensitive to the <em>classification threshold</em> used in our model (e.g., the “voting” procedure in k-NN), we can use an ROC curve to examine the classifier’s success across a range of thresholds.</p></li>
+</ol>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_17-post.html" title="previous page">Lecture 17 (5/4/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_19-post.html" title="next page">Lecture 19 (5/9/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

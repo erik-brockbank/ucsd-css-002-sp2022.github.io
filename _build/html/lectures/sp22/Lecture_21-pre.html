@@ -1,0 +1,1358 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 21 (5/13/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Week 8" href="Week8_Overview.html" />
+    <link rel="prev" title="Lecture 20 (5/11/2022)" href="Lecture_20-pre.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_21-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_21-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_21-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-classification-models-cont-d">
+   Common Classification Models cont’d.
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#support-vector-machines-svms">
+     Support Vector Machines (SVMs)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svms-in-python">
+       SVMs in python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classifier-wrap-up">
+   Classifier Wrap-Up
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#ethics-in-computational-social-science">
+   Ethics in computational social science
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#overview">
+     Overview
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#why-discuss-ethics-of-computational-social-science">
+     Why discuss ethics of computational social science?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ethics-position-be-sensitive-to-ways-your-models-can-violate-privacy">
+     Ethics Position: be sensitive to ways your models can violate privacy
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ethics-position-be-sensitive-to-ways-your-models-can-introduce-bias-or-inequality">
+     Ethics Position: be sensitive to ways your models can introduce bias or inequality
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#criminal-justice">
+       Criminal justice
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hiring">
+       Hiring
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ethics-position-be-sensitive-to-ways-your-models-can-be-misused-or-behave-unethically">
+     Ethics Position: be sensitive to ways your models can be misused or behave unethically
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#models-in-the-hands-of-bad-actors">
+       Models in the hands of “bad actors”
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#models-making-bad-decisions-of-their-own">
+       Models making bad decisions of their own
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#hybrid-models-in-the-hands-of-bad-actors-making-bad-decisions">
+       Hybrid: models in the hands of “bad actors” making bad decisions
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#summary">
+   Summary
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-considerations-inputs">
+     Data considerations (inputs)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#model-behavior-considerations-outputs">
+     Model behavior considerations (outputs)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#future-directions">
+     Future Directions
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#resources">
+   Resources
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-21-5-13-2022">
+<h1>Lecture 21 (5/13/2022)<a class="headerlink" href="#lecture-21-5-13-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Common classification models</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Classification wrap-up: SVMs and beyond!</p></li>
+<li><p>Computational social science science ethics</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="common-classification-models-cont-d">
+<h1>Common Classification Models cont’d.<a class="headerlink" href="#common-classification-models-cont-d" title="Permalink to this headline">¶</a></h1>
+<p><strong>Initialize our data</strong></p>
+<p>Reminder: predictors of Coronary Heart Disease, <a class="reference external" href="https://hastie.su.domains/ElemStatLearn/">source</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://web.stanford.edu/~hastie/ElemStatLearn/datasets/SAheart.data&#39;</span><span class="p">)</span>
+<span class="n">data</span>
+
+<span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;chd&#39;</span><span class="p">])</span>
+
+<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="c1"># sns.scatterplot(x = xtest[:, 0], y = ytest)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CHD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CHD&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_21-pre_7_1.png" src="../../_images/Lecture_21-pre_7_1.png" />
+</div>
+</div>
+<div class="section" id="support-vector-machines-svms">
+<h2>Support Vector Machines (SVMs)<a class="headerlink" href="#support-vector-machines-svms" title="Permalink to this headline">¶</a></h2>
+<p>Support Vector Machines work by trying to find a line or plane (usually in a high-dimensional space) that <em>maximally separates</em> the training labels in that space.</p>
+<p>The intuition for this is relatively straightforward but the implementation can get complicated!</p>
+<p>In the plot below, the linear funtion <span class="math notranslate nohighlight">\(h_3(x_1, x_2)\)</span> is the best way to separate our training data because it maximizes the margin on either side of the line.</p>
+<p>SVMs try to find the equivalent of <span class="math notranslate nohighlight">\(h_3\)</span> given some training data. This separator can be defined by the closest points in the data to the line; these are called the “support vectors”. Finding the best separator usually requires mapping the training data into a high-dimensional space where it can be effectively separated.</p>
+<p><img alt="svm" src="../../_images/svm2.png" /></p>
+<p>(<a class="reference external" href="https://en.wikipedia.org/wiki/Support-vector_machine">Source</a>)</p>
+<div class="section" id="svms-in-python">
+<h3>SVMs in python<a class="headerlink" href="#svms-in-python" title="Permalink to this headline">¶</a></h3>
+<p>The documentation for SVMs in scikit-learn is <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+
+<span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC()
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the case of SVMs, there are class attributes that help you recover the separator that was fit.</p>
+<p>We won’t get into these but if you’re interested in learning more it’s good to know about!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># svm.intercept_</span>
+<span class="c1"># svm.coef_ # only for &#39;linear&#39; kernel</span>
+<span class="c1"># svm.support_vectors_</span>
+<span class="c1"># svm.support_</span>
+
+<span class="c1"># For example, we can view the items in the training set that formed the support vector</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Training data&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">][:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Support vectors&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_21-pre_12_0.png" src="../../_images/Lecture_21-pre_12_0.png" />
+<img alt="../../_images/Lecture_21-pre_12_1.png" src="../../_images/Lecture_21-pre_12_1.png" />
+</div>
+</div>
+<p>The SVM class has a <code class="docutils literal notranslate"><span class="pre">score</span></code> function that returns the accuracy of a test set, plus prediction functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Percent of correct classifications</span>
+<span class="n">svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="n">svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.646551724137931
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">ypreds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, soft prediction requires configuring the initial model to do soft classification (by default, SVMs are made to only do hard classification).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_soft</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">probability</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># indicate that you want the SVM to do soft classification</span>
+<span class="n">svm_soft</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+
+<span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">svm_soft</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">ypreds_soft</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.76933614, 0.23066386],
+       [0.77048218, 0.22951782],
+       [0.71680033, 0.28319967],
+       [0.77000393, 0.22999607],
+       [0.38906564, 0.61093436],
+       [0.7693514 , 0.2306486 ],
+       [0.77473392, 0.22526608],
+       [0.48462904, 0.51537096],
+       [0.77048218, 0.22951782],
+       [0.3943812 , 0.6056188 ],
+       [0.42747946, 0.57252054],
+       [0.76978542, 0.23021458],
+       [0.7693514 , 0.2306486 ],
+       [0.39658574, 0.60341426],
+       [0.76777941, 0.23222059],
+       [0.71680033, 0.28319967],
+       [0.77029537, 0.22970463],
+       [0.51976714, 0.48023286],
+       [0.76777941, 0.23222059],
+       [0.7746238 , 0.2253762 ],
+       [0.76936097, 0.23063903],
+       [0.76936097, 0.23063903],
+       [0.7508805 , 0.2491195 ],
+       [0.77048218, 0.22951782],
+       [0.76933614, 0.23066386],
+       [0.41009142, 0.58990858],
+       [0.77048218, 0.22951782],
+       [0.76153853, 0.23846147],
+       [0.41009142, 0.58990858],
+       [0.38906564, 0.61093436],
+       [0.45345106, 0.54654894],
+       [0.76864247, 0.23135753],
+       [0.77048218, 0.22951782],
+       [0.76712728, 0.23287272],
+       [0.76864247, 0.23135753],
+       [0.59434272, 0.40565728],
+       [0.76938329, 0.23061671],
+       [0.40758449, 0.59241551],
+       [0.76857657, 0.23142343],
+       [0.59434272, 0.40565728],
+       [0.76938329, 0.23061671],
+       [0.76777941, 0.23222059],
+       [0.77279737, 0.22720263],
+       [0.55707755, 0.44292245],
+       [0.76863294, 0.23136706],
+       [0.77000393, 0.22999607],
+       [0.42747946, 0.57252054],
+       [0.76938329, 0.23061671],
+       [0.40758449, 0.59241551],
+       [0.76933614, 0.23066386],
+       [0.76153853, 0.23846147],
+       [0.41009142, 0.58990858],
+       [0.48462904, 0.51537096],
+       [0.39658574, 0.60341426],
+       [0.66088831, 0.33911169],
+       [0.77208063, 0.22791937],
+       [0.77029537, 0.22970463],
+       [0.71680033, 0.28319967],
+       [0.40758449, 0.59241551],
+       [0.45345106, 0.54654894],
+       [0.77473392, 0.22526608],
+       [0.77029537, 0.22970463],
+       [0.62943962, 0.37056038],
+       [0.76978542, 0.23021458],
+       [0.55707755, 0.44292245],
+       [0.3943812 , 0.6056188 ],
+       [0.76153853, 0.23846147],
+       [0.76153853, 0.23846147],
+       [0.77208063, 0.22791937],
+       [0.76864247, 0.23135753],
+       [0.76938329, 0.23061671],
+       [0.76938329, 0.23061671],
+       [0.77473392, 0.22526608],
+       [0.77042055, 0.22957945],
+       [0.76913607, 0.23086393],
+       [0.7688928 , 0.2311072 ],
+       [0.76870163, 0.23129837],
+       [0.3943812 , 0.6056188 ],
+       [0.7693514 , 0.2306486 ],
+       [0.77000393, 0.22999607],
+       [0.48462904, 0.51537096],
+       [0.55707755, 0.44292245],
+       [0.76857657, 0.23142343],
+       [0.42747946, 0.57252054],
+       [0.51976714, 0.48023286],
+       [0.76913607, 0.23086393],
+       [0.38820911, 0.61179089],
+       [0.48462904, 0.51537096],
+       [0.7508805 , 0.2491195 ],
+       [0.45345106, 0.54654894],
+       [0.76712728, 0.23287272],
+       [0.77019241, 0.22980759],
+       [0.38820911, 0.61179089],
+       [0.77473392, 0.22526608],
+       [0.38906564, 0.61093436],
+       [0.77370999, 0.22629001],
+       [0.77048218, 0.22951782],
+       [0.77370999, 0.22629001],
+       [0.77048218, 0.22951782],
+       [0.76933614, 0.23066386],
+       [0.77370999, 0.22629001],
+       [0.62943962, 0.37056038],
+       [0.42747946, 0.57252054],
+       [0.76864247, 0.23135753],
+       [0.42747946, 0.57252054],
+       [0.39658574, 0.60341426],
+       [0.76864247, 0.23135753],
+       [0.76864247, 0.23135753],
+       [0.55707755, 0.44292245],
+       [0.59434272, 0.40565728],
+       [0.77000393, 0.22999607],
+       [0.38820911, 0.61179089],
+       [0.77000393, 0.22999607],
+       [0.77370999, 0.22629001],
+       [0.76153853, 0.23846147],
+       [0.38820911, 0.61179089]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Note: ROC curves require this soft prediction</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="c1"># ROC curve</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">ypreds_soft</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">pos_label</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">)</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fpr</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">(</span><span class="n">xy1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">slope</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;FPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;TPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_21-pre_19_0.png" src="../../_images/Lecture_21-pre_19_0.png" />
+</div>
+</div>
+</div>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="classifier-wrap-up">
+<h1>Classifier Wrap-Up<a class="headerlink" href="#classifier-wrap-up" title="Permalink to this headline">¶</a></h1>
+<p>This is just a sample of what’s out there!</p>
+<p>There are a number of other common classifiers you should take a look at if you’re interested:</p>
+<ul class="simple">
+<li><p>Naive Bayes (<a class="reference external" href="https://scikit-learn.org/stable/modules/naive_bayes.html">here</a>)</p></li>
+<li><p>Discriminant analysis (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html">linear</a> and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis.html">quadratic</a>)</p></li>
+<li><p>Neural networks (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html">here</a>)</p></li>
+<li><p>Random forests (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">here</a>) (related to decision trees)</p></li>
+<li><p>Gradient boosted trees (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html">here</a>)</p></li>
+<li><p>…</p></li>
+</ul>
+<p>The main goal of this lecture is to show you some of the creative ways that people solve classification problems and how the scikit-learn library supports these solutions.</p>
+<p>This should empower you to go off and try some of these other ones on your own!</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="ethics-in-computational-social-science">
+<h1>Ethics in computational social science<a class="headerlink" href="#ethics-in-computational-social-science" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="overview">
+<h2>Overview<a class="headerlink" href="#overview" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Why discuss ethics of computational social science?</p></li>
+<li><p>What are some of the most salient principles we should adhere to, and how do they arise?</p>
+<ul>
+<li><p>Be sensitive to personal privacy</p></li>
+<li><p>Be sensitive to bias and inequality</p></li>
+<li><p>Be sensitive to models that can have unethical agency of their own!</p></li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="section" id="why-discuss-ethics-of-computational-social-science">
+<h2>Why discuss ethics of computational social science?<a class="headerlink" href="#why-discuss-ethics-of-computational-social-science" title="Permalink to this headline">¶</a></h2>
+<p><strong>1. Issues of fairness and ethical use of data arise <em>the moment</em> you start building models</strong></p>
+<p>This is from the same <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> dataset repository that we’ve been drawing on all quarter!</p>
+<p><img alt="boston" src="../../_images/boston_housing.png" /></p>
+<p>(<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.load_boston.html">Source</a>)</p>
+<p><strong>2. These issues are more and more prescient as rich computational modeling infiltrates our lives</strong></p>
+<p><img alt="ai_spend" src="../../_images/ai_spend.png" /></p>
+<p>(<a class="reference external" href="https://news.harvard.edu/gazette/story/2020/10/ethical-concerns-mount-as-ai-takes-bigger-decision-making-role/">Source</a>)</p>
+<p><strong>Failure to adhere to ethical standards in computational social science can have serious impacts</strong></p>
+<p>There are many examples of the consequences of misusing the tools we learn in this class; today we’ll cover a handful but you may be familiar with others already!</p>
+<p>Note: many of the examples and topics we’ll discuss today extend well beyond the basics of computational social science. However, more advanced artificial intelligence is built on many of the same techniques and ideas as the modeling we’ve been discussing this quarter (and will talk about in the next 2-3 weeks).</p>
+<p>Therefore, it’s worth thinking about these issues even as general practitioners of modeling and computational work!</p>
+</div>
+<div class="section" id="ethics-position-be-sensitive-to-ways-your-models-can-violate-privacy">
+<h2>Ethics Position: be sensitive to ways your models can violate privacy<a class="headerlink" href="#ethics-position-be-sensitive-to-ways-your-models-can-violate-privacy" title="Permalink to this headline">¶</a></h2>
+<p><strong>The availability of massive behavioral datasets online offers a rich opportunity for research and modeling.</strong></p>
+<p>However, in some cases, collection of certain kinds of data may run against existing legal frameworks.</p>
+<p><img alt="facebook" src="../../_images/facebook.png" /></p>
+<p>(<a class="reference external" href="https://techcrunch.com/2022/02/14/texas-attorney-general-files-lawsuit-against-meta-over-facebooks-facial-recognition-technology/">Source</a>)</p>
+<p>In other cases, ethics of data collection can be more subtle.</p>
+<ul class="simple">
+<li><p>For example, most human behavior experiments require informed consent from participants.</p></li>
+</ul>
+<p><em>If you’re using data to train a model, should you have to obtain consent from the people whose data you’re using?</em></p>
+<p><strong>People’s data, even when it is meant to keep identities safe, may be easily de-anonymized by adversarial actors when it is made publicly available.</strong></p>
+<p><img alt="netflix" src="../../_images/netflix.png" /></p>
+<p>(<a class="reference external" href="https://arxiv.org/pdf/cs/0610105.pdf">Source</a>)</p>
+<p><strong><em>What happened here??</em> The Netflix Challenge is a canonical example of good intentions gone awry.</strong></p>
+<ul class="simple">
+<li><p>The key to de-anonymization (in this case) was aligning information in the Netflix dataset with other publicly available info (IMDB reviews) to learn <em>new</em> information from the Netflix dataset.</p></li>
+</ul>
+<p><strong>When this data contains medical information or potentially sensitive consumer records, the consequences of de-anonymization can be serious.</strong></p>
+<p><img alt="jane-doe" src="../../_images/jane_doe.png" /></p>
+<p>(<a class="reference external" href="https://www.wired.com/2009/12/netflix-privacy-lawsuit/">Source</a>)</p>
+<p><strong>Take-away: data that is meant to protect privacy may not always do so.</strong></p>
+<p>Be aware of this any time you’re generating, distributing, or working with large datasets.</p>
+<p><em><strong>What else can you do?</strong></em></p>
+<ul class="simple">
+<li><p>There <em>are</em> ways to safeguard people’s data and use it responsibly. But it requires thoughtful and responsible engineering.</p></li>
+<li><p>Lots of debate about whether certain data should be collected in the first place. This has led to interesting ideas about how to do good modeling <em>without</em> keeping sensitive data around.</p></li>
+</ul>
+<p><img alt="apple" src="../../_images/apple.png" /></p>
+<p>(<a class="reference external" href="https://ui.adsabs.harvard.edu/abs/2021arXiv210203316C/abstract">Source</a>; see more approachable blog post <a class="reference external" href="https://machinelearning.apple.com/research/learning-with-privacy-at-scale">here</a>)</p>
+<p><strong>Take-away (more positive): respect for user privacy can open the door to innovative modeling and data science.</strong></p>
+</div>
+<div class="section" id="ethics-position-be-sensitive-to-ways-your-models-can-introduce-bias-or-inequality">
+<h2>Ethics Position: be sensitive to ways your models can introduce bias or inequality<a class="headerlink" href="#ethics-position-be-sensitive-to-ways-your-models-can-introduce-bias-or-inequality" title="Permalink to this headline">¶</a></h2>
+<p>Much of the conversation around ethics in AI and computational modeling focuses on the risks of models introducing or reinforcing bias and inequality.</p>
+<p>In 2022, I probably don’t need to tell you that this can have very serious consequences for people’s lives and livelihoods.</p>
+<p>Here, the problem is typically that the model is trained or otherwise relies on data that is fundamentally biased or lacks representation. As a result, the <em>predictive features</em> the model learns for classification, regression, or other processes have the same underlying bias(es).</p>
+<p><strong>This is an important concept in all modeling contexts, sometimes called “garbage in, garbage out”</strong>. In general terms, it says that shortcomings or misrepresentations in your data will emerge in your model.</p>
+<p>Below, I’m going to walk through a few examples of how bias or inequality can arise in important settings, and the complications of thinking about computational models of decision making in these settings.</p>
+<div class="section" id="criminal-justice">
+<h3>Criminal justice<a class="headerlink" href="#criminal-justice" title="Permalink to this headline">¶</a></h3>
+<p>As noted in our classification intro lecture, classification and similar classes of models are in widespread use in the criminal justice system, where they take in data about a defendant’s prior history and other information that might help in making sentencing or parole decisions, then make recommendations based on the perceived risk of recidivism.</p>
+<p><img alt="nyt_rai" src="../../_images/nyt_rai.png" /></p>
+<p>(<a class="reference external" href="https://www.nytimes.com/2020/02/06/technology/predictive-algorithms-crime.html">Source</a>)</p>
+<p>However, these algorithms have faced widespread criticism for reinforcing racial biases in the criminal justice system due to their reliance on prior criminal records, which are seen as disproportionately punishing black people.</p>
+<p><img alt="mit_rai" src="../../_images/mit_rai.png" /></p>
+<p>(<a class="reference external" href="https://www.technologyreview.com/2019/01/21/137783/algorithms-criminal-justice-ai/">Source</a>)</p>
+<blockquote>
+<div><p>“One of the most concerning possible sources of bias can come from the historical outcomes that an RAI [risk assessment instrument] learns to predict. If these outcomes are the product of unfair practices, it is possible that any derivative model will learn to replicate them, rather than predict the true underlying risk for misconduct.”</p>
+</div></blockquote>
+<p>Part of what makes this issue difficult is that in many cases, these tools may be replacing people who are just as fallible:</p>
+<blockquote>
+<div><p>“The authors found that if judges had used their proposed checklist-style model to determine pretrial release, decisions would have been more consistent across cases, and they would have detained 30% fewer defendants overall without a corresponding rise in pretrial misconduct.”</p>
+</div></blockquote>
+<p>(<a class="reference external" href="https://www.brookings.edu/research/understanding-risk-assessment-instruments-in-criminal-justice/">Source</a>)</p>
+<p>The strain on the criminal justice system creates increasing demand for algorithmic solutions even as many people object to their use:</p>
+<blockquote>
+<div><p>“Last July, more than 100 civil rights and community-based organizations, including the ACLU and the NAACP, signed a statement urging against the use of risk assessment. At the same time, more and more jurisdictions and states, including California, have turned to them in a hail-Mary effort to fix their overburdened jails and prisons.”</p>
+</div></blockquote>
+<p>(<a class="reference external" href="https://www.technologyreview.com/2019/01/21/137783/algorithms-criminal-justice-ai/">Source</a>)</p>
+<p><em>Is this a problem of reinforcing bad decisions with biased data, or improving on fallible human decisions with more systematic policies?</em></p>
+</div>
+<div class="section" id="hiring">
+<h3>Hiring<a class="headerlink" href="#hiring" title="Permalink to this headline">¶</a></h3>
+<p>Another area where computational models can support more efficient decision making is when hiring people.</p>
+<p>Here, the model can use a rich set of inputs related to a candidate’s qualifications and make recommendations about their fit for a role.</p>
+<p>As with criminal justice, this is an area where advocates argue that the use of algorithmic tools can improve fairness and avoid human biases (note that’s not what the article below is about):</p>
+<p><img alt="hiring_bias" src="../../_images/hiring_bias.png" /></p>
+<p>(<a class="reference external" href="https://hbr.org/2019/06/how-to-reduce-personal-bias-when-hiring">Source</a>)</p>
+<p>However, here again we encounter concerns that the algorithms themselves have biases of their own.</p>
+<p><img alt="amazon" src="../../_images/amazon.png" /></p>
+<p>(<a class="reference external" href="https://www.reuters.com/article/us-amazon-com-jobs-automation-insight/amazon-scraps-secret-ai-recruiting-tool-that-showed-bias-against-women-idUSKCN1MK08G">Source</a>)</p>
+<p>Once again, these biases arise because of biases in the underlying data that the algorithms were trained with.</p>
+<p><img alt="amazon_bias" src="../../_images/amazon_bias.png" /></p>
+<p>(Source: same as above)</p>
+<p><em>How can these systems be improved to avoid these issues?</em></p>
+</div>
+</div>
+<div class="section" id="ethics-position-be-sensitive-to-ways-your-models-can-be-misused-or-behave-unethically">
+<h2>Ethics Position: be sensitive to ways your models can be misused or behave unethically<a class="headerlink" href="#ethics-position-be-sensitive-to-ways-your-models-can-be-misused-or-behave-unethically" title="Permalink to this headline">¶</a></h2>
+<p>Whereas concerns about data that is biased or violates privacy have been around for a little while, the possibility of AI acting in unexpected ways or being used unethically is a growing issue.</p>
+<p>Here, we’ll talk about two different versions of this concern (but there are probably others!):</p>
+<ol class="simple">
+<li><p>Models in bad hands</p></li>
+<li><p>Models doing bad things on their own(ish)</p></li>
+</ol>
+<p>Note: this category of modeling ethics is often thought of or described in very futuristic terms (“the AI takeover”). In some cases, the concerns people have are very forward-looking. But, as some of the examples below illustrate, people run up against this concern in much more benign ways.</p>
+<div class="section" id="models-in-the-hands-of-bad-actors">
+<h3>Models in the hands of “bad actors”<a class="headerlink" href="#models-in-the-hands-of-bad-actors" title="Permalink to this headline">¶</a></h3>
+<p>Large artificial intelligence models are created for many different purposes (including basic research), but people have also pointed out out various ways in which they can be used for unethical purposes.</p>
+<p>Here’s a fun example from discussions about recent advances in “Large Language Models”.</p>
+<p><img alt="ai_papers" src="../../_images/ai_papers.png" /></p>
+<p>The author points out that this concern isn’t limited to students: teachers could just as easily ask a language model like this to evaluate student short answer responses.</p>
+<p>This is probably <em>not</em> what the designers of large language models had in mind.</p>
+<p><strong>Does this mean we shouldn’t build large language models?</strong></p>
+<p>No, but it does underscore the need to be thoughtful about the unexpected uses of our models!</p>
+</div>
+<div class="section" id="models-making-bad-decisions-of-their-own">
+<h3>Models making bad decisions of their own<a class="headerlink" href="#models-making-bad-decisions-of-their-own" title="Permalink to this headline">¶</a></h3>
+<p>Increasingly, we may find ourselves trusting large computational models in risky or high-stakes scenarios. In some cases, this may represent a welcome change!</p>
+<p>However, it’s important to be aware of the ways that this trust can lead to AI behavior that challenges our ethics.</p>
+<p>The example often used in this conversation is self-driving cars.</p>
+<p><img alt="self_driving" src="../../_images/tesla.png" /></p>
+<p>(<a class="reference external" href="https://www.washingtonpost.com/nation/2021/04/19/tesla-texas-driverless-crash/">Source</a>)</p>
+<p>In the above example, it was an error by the self-driving model that led to the crash.</p>
+<p>However, in this case, the Tesla software was not found to be at fault because the driver had enough time to override and correct the car’s self-driving.</p>
+<p><strong>While concerns about the testing and reliability of self-driving car software are important, so too is the fact that driving accidents are a leading cause of death <em>without</em> self-driving cars.</strong></p>
+<blockquote>
+<div><p>“Despite claims to the contrary, self-driving cars currently have a higher rate of accidents than human-driven cars, but the injuries are less severe. On average, there are 9.1 self-driving car accidents per million miles driven, while the same rate is 4.1 crashes per million miles for regular vehicles.”</p>
+</div></blockquote>
+<p>(<a class="reference external" href="https://www.natlawreview.com/article/dangers-driverless-cars">Source</a>)</p>
+</div>
+<div class="section" id="hybrid-models-in-the-hands-of-bad-actors-making-bad-decisions">
+<h3>Hybrid: models in the hands of “bad actors” making bad decisions<a class="headerlink" href="#hybrid-models-in-the-hands-of-bad-actors-making-bad-decisions" title="Permalink to this headline">¶</a></h3>
+<p>In some cases, the line between a model behaving badly on its own and being used for nefarious purposes can be a litte blurry.</p>
+<p>Here’s a fairly canonical example. In 2016, Microsoft released a chat bot named “Tay” whose purpose was to learn novel uses of language by engaging with people on Twitter:</p>
+<p><img alt="Tay" src="../../_images/Tay.png" /></p>
+<p>(<a class="reference external" href="https://spectrum.ieee.org/in-2016-microsofts-racist-chatbot-revealed-the-dangers-of-online-conversation">Source</a>)</p>
+<p><strong>Unfortunately, things very quickly went South for Tay…</strong></p>
+<p>Tay was shut down after only 16 hours online. <em>Why?</em></p>
+<ul class="simple">
+<li><p>Tay began unexpectedly tweeting racist and highly offensive content</p></li>
+<li><p>Once again, this is presumably not what her engineers had in mind…</p></li>
+</ul>
+<p><strong>How did this happen?</strong></p>
+<p>A concerted effort of online users were able to steer the model’s language learning through the inputs they provided.</p>
+<p><img alt="Tay_downfall" src="../../_images/Tay_downfall.png" /></p>
+<p>(Source: same as above)</p>
+</div>
+</div>
+</div>
+<div class="section" id="summary">
+<h1>Summary<a class="headerlink" href="#summary" title="Permalink to this headline">¶</a></h1>
+<p>How can we think about a more general framework for ethics in modeling?</p>
+<p>This is beyond the scope of this lecture (and my knowledge!), but here are some guideposts:</p>
+<div class="section" id="data-considerations-inputs">
+<h2>Data considerations (inputs)<a class="headerlink" href="#data-considerations-inputs" title="Permalink to this headline">¶</a></h2>
+<p>Most of the issues outlined above center on <em>data</em>, the model’s <em>inputs</em>.</p>
+<ul class="simple">
+<li><p>Models used in business and public sector work often require large amounts of data to train and validate.</p></li>
+<li><p>This raises ethical concerns about the data’s <em>source</em> and its <em>representativeness</em>.</p></li>
+</ul>
+<p>Here are some things you should think about when modeling large datasets:</p>
+<ol class="simple">
+<li><p>Where does your data <em>come from</em>?</p></li>
+</ol>
+<ul class="simple">
+<li><p>Collecting and distributing this data can introduce concerns around privacy and consent</p></li>
+</ul>
+<ol class="simple">
+<li><p>Is your data <em>representative</em>?</p></li>
+</ol>
+<ul class="simple">
+<li><p>If your data has significant biases or doesn’t represent certain populations, your model risks making predictions, classifications, or recommendations that reflect these same biases or omissions.</p></li>
+</ul>
+</div>
+<div class="section" id="model-behavior-considerations-outputs">
+<h2>Model behavior considerations (outputs)<a class="headerlink" href="#model-behavior-considerations-outputs" title="Permalink to this headline">¶</a></h2>
+<p>Not all of the ethical considerations that arise with modeling and AI are centered on data. In some cases, the model’s <em>behavior itself</em> may be deemed unethical.</p>
+<p>Here are some things worth considering when it comes to the model’s <em>output</em>:</p>
+<ol class="simple">
+<li><p>Could this model be a problem in the hands of <em>bad actors</em>?</p></li>
+</ol>
+<ul class="simple">
+<li><p>Models that are initially constructed for one purpose can be misused. What are the potential consequences?</p></li>
+<li><p>Note: potential bad consequences don’t mean we <em>shouldn’t</em> use the model, but it’s an important discussion.</p></li>
+</ul>
+<ol class="simple">
+<li><p>Could this model engage in behavior that would be considered unethical or harmful through its normal operations?</p></li>
+</ol>
+<ul class="simple">
+<li><p>Models that are used in high stakes settings (e.g., driving) may make decisions that can harm others. What kinds of harm or undesired behavior can we anticipate when leveraging a model?</p></li>
+<li><p>Note: once again, the potential for harm may not be in and of itself a reason to avoid the model (self-driving cars are likely to get in accidents) but once again, this is an important discussion to have.</p></li>
+</ul>
+</div>
+<div class="section" id="future-directions">
+<h2>Future Directions<a class="headerlink" href="#future-directions" title="Permalink to this headline">¶</a></h2>
+<p>Issues of ethical AI and modeling are at the forefront of many public policy debates.</p>
+<p>If you’re interested in this, take a look at discussions of “transparent” or “explainable” AI (<a class="reference external" href="https://en.wikipedia.org/wiki/Explainable_artificial_intelligence">wikipedia</a>), or other specific initiatives aimed at providing oversight into how AI gets used in various setting (e.g. <a class="reference external" href="https://pretrialrisk.com/">this</a> group for monitoring use of risk assessment tools in criminal settings).</p>
+</div>
+</div>
+<div class="section" id="resources">
+<h1>Resources<a class="headerlink" href="#resources" title="Permalink to this headline">¶</a></h1>
+<p>Summer Institute for Computational Social Science (SICCS) <a class="reference external" href="https://sicss.io/overview">website</a></p>
+<ul class="simple">
+<li><p>Lots of cool content here, including stuff you might be interested in that we don’t cover in this course!</p></li>
+</ul>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_20-pre.html" title="previous page">Lecture 20 (5/11/2022)</a>
+    <a class='right-next' id="next-link" href="Week8_Overview.html" title="next page">Week 8</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

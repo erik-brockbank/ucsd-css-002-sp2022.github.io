@@ -1,0 +1,2693 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 7 (guest) - Introduction to Data Visualization in Python &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 8 (4/13/2022)" href="Lecture_8.html" />
+    <link rel="prev" title="Week 3" href="Week3_Overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_7-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_7-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_7-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#what-is-data-visualization">
+   What is data visualization?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#why-is-data-visualization-important">
+   Why is data visualization important?
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploratory-data-analysis">
+     Exploratory data analysis
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#communicating-insights">
+     Communicating insights
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#impacting-the-world">
+     Impacting the world
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#exploratory-data-analysis-checking-your-assumptions">
+     Exploratory Data Analysis: Checking your assumptions
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#id1">
+     Communicating Insights
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id2">
+   Impacting the world
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#so-how-do-we-visualize-data">
+   So how do we visualize data?
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#key-learning-outcomes">
+   Key learning outcomes
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#loading-packages">
+   Loading packages
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-basic-plot-types-with-matplotlib-pyplot">
+   Part 1: Basic plot types with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     matplotlib.pyplot
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-dataset">
+     Load dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms-plotting-frequency-distributions">
+     Histograms: plotting frequency distributions
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-how-would-you-plot-the-distribution-of-trip-distances">
+       Q: How would you plot the distribution of trip distances?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-about-the-distribution-of-tip-amounts">
+       Q: What about the distribution of tip amounts?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-if-we-wanted-to-plot-the-distribution-of-tip-percentages">
+       Q: What if we wanted to plot the distribution of tip
+       <em>
+        percentages
+       </em>
+       ?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-a-new-variable">
+       Creating a new variable
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-adding-other-markers-to-the-plot">
+       Q: Adding other markers to the plot?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatterplots-plotting-multiple-continuous-variables">
+     Scatterplots: plotting multiple continuous variables
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#what-to-ask-our-data">
+       What to ask our data?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-how-could-we-ask-about-the-relationship-between-distance-and-tip-amount">
+       Q: How could we ask about the relationship between distance and tip amount?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-about-distance-and-tip-percentage">
+       Q: What about distance and tip percentage?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-about-crossing-between-boroughs">
+       Q: What about crossing between boroughs?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#plotting-categorical-and-continuous-data">
+       Plotting categorical
+       <em>
+        and
+       </em>
+       continuous data
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#barplots">
+     Barplots
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#barplots-in-pyplot">
+     Barplots in
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pyplot
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-is-the-mean-tip-for-green-vs-yellow-taxis">
+       Q: What is the
+       <em>
+        mean
+       </em>
+       tip % for green vs. yellow taxis?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#creating-a-new-dataframe-using-groupby">
+       Creating a new dataframe using
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         groupby
+        </span>
+       </code>
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#adding-error-bars">
+       Adding error bars
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#other-pyplot-affordances">
+     Other
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       pyplot
+      </span>
+     </code>
+     affordances
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-plotting-with-seaborn">
+   Part 2: Plotting with
+   <code class="docutils literal notranslate">
+    <span class="pre">
+     seaborn
+    </span>
+   </code>
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#histograms">
+     Histograms
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-exercise-for-homerecreate-the-rest-of-the-histograms-from-part-1-using-seaborn">
+       Q: Exercise for home––recreate the rest of the histograms from Part 1 using seaborn.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#scatterplots">
+     Scatterplots
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-how-would-you-create-the-same-plot-but-with-the-points-colored-to-reflect-whether-a-borough-has-been-crossed">
+       Q: How would you create the same plot, but with the points colored to reflect whether a borough has been crossed?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-exercise-for-homerecreate-the-other-scatterplots-or-new-ones-using-seaborn">
+       Q: Exercise for home––recreate the other scatterplots, or new ones, using seaborn.
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#bar-plots">
+     Bar plots
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-how-would-we-recreate-the-figure-showing-average-tip-by-taxi-color">
+       Q: How would we recreate the figure showing average tip % by taxi color?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-other-variables-would-you-be-interested-in-looking-at-whether-or-not-they-re-crossed-a-borough">
+       Q: What other variables would you be interested in looking at? Whether or not they’re crossed a borough?
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#additional-exercises-with-taxis">
+     Additional exercises with
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       taxis
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-3-reconstructing-plots-from-the-wild">
+   Part 3: Reconstructing plots from “the wild”
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#chart-14-reasons-for-missing-work">
+     Chart 14: Reasons for missing work
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#load-the-data">
+       Load the data
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#converting-to-long-format">
+       Converting to long format
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-any-ideas-on-how-to-do-this">
+       Q: Any ideas on how to do this?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#distribution-over-the-year">
+       Distribution over the year
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-what-pattern-should-we-conclude">
+       Q: What pattern should we conclude?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-2-why-is-there-so-much-error-in-the-summer-months">
+       Q (2): Why is there so much error in the summer months?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#reconstructing-the-original-plot">
+       Reconstructing the original plot
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#q-now-how-can-we-actually-create-the-final-plot">
+       Q: Now, how can we actually create the final plot?
+      </a>
+     </li>
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#bonus-smoothing">
+       Bonus: Smoothing
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#conclusion">
+   Conclusion
+  </a>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-4-bonus-anscombe-s-quartet">
+   Part 4 (Bonus): Anscombe’s Quartet
+  </a>
+  <ul class="nav section-nav flex-column">
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#load-data">
+     Load data
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#calculate-correlation-coefficient-for-each-dataset">
+     Calculate correlation coefficient for each dataset
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-data-a-first-and-flawed-approach">
+     Plot the data: a first (and flawed) approach
+    </a>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-data-using-facetgrid">
+     Plot the data using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       FacetGrid
+      </span>
+     </code>
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h4 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#introducing-facetgrid">
+       Introducing
+       <code class="docutils literal notranslate">
+        <span class="pre">
+         FacetGrid
+        </span>
+       </code>
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h3 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#plot-the-data-using-lmplot">
+     Plot the data using
+     <code class="docutils literal notranslate">
+      <span class="pre">
+       lmplot
+      </span>
+     </code>
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h2 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#id3">
+   Conclusion
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-7-guest-introduction-to-data-visualization-in-python">
+<h1>Lecture 7 (guest) - Introduction to Data Visualization in Python<a class="headerlink" href="#lecture-7-guest-introduction-to-data-visualization-in-python" title="Permalink to this headline">¶</a></h1>
+<p><em><strong>Author: Sean Trott</strong></em></p>
+<p>The goal of this tutorial is to familiarize you with the basics of data visualization in Python.</p>
+<p>Note that the slides version can be found <a class="reference external" href="https://seantrott.github.io/data_visualization_python/trott.slides.html">here</a>, and the repository itself can be found <a class="reference external" href="https://github.com/seantrott/data_visualization_python">here</a>.</p>
+<div class="section" id="what-is-data-visualization">
+<h2>What is data visualization?<a class="headerlink" href="#what-is-data-visualization" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Data_visualization">Data visualization</a> refers to the process (and result) of representing data graphically.</p>
+<p>For our purposes today, we’ll be talking mostly about common methods of <strong>plotting</strong> data, including:</p>
+<ul class="simple">
+<li><p>Histograms</p></li>
+<li><p>Scatterplots</p></li>
+<li><p>Line plots</p></li>
+<li><p>Bar plots</p></li>
+</ul>
+</div>
+<div class="section" id="why-is-data-visualization-important">
+<h2>Why is data visualization important?<a class="headerlink" href="#why-is-data-visualization-important" title="Permalink to this headline">¶</a></h2>
+<div class="section" id="exploratory-data-analysis">
+<h3>Exploratory data analysis<a class="headerlink" href="#exploratory-data-analysis" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p><strong>Checking assumptions</strong>: does my data look like how I expect it to look?</p></li>
+<li><p><strong>Generating hypotheses</strong>: what relationships can I discover in the data?</p></li>
+</ul>
+</div>
+<div class="section" id="communicating-insights">
+<h3>Communicating insights<a class="headerlink" href="#communicating-insights" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Given some insight, how can I communicate this <strong>clearly</strong>, <strong>concisely</strong>, and <strong>accurately</strong>?</p></li>
+</ul>
+</div>
+<div class="section" id="impacting-the-world">
+<h3>Impacting the world<a class="headerlink" href="#impacting-the-world" title="Permalink to this headline">¶</a></h3>
+<ul class="simple">
+<li><p>Data visualizations can (and have) played a big role in shaping <strong>policy</strong>, <strong>business decisions</strong>, and more.</p></li>
+</ul>
+</div>
+<div class="section" id="exploratory-data-analysis-checking-your-assumptions">
+<h3>Exploratory Data Analysis: Checking your assumptions<a class="headerlink" href="#exploratory-data-analysis-checking-your-assumptions" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe’s Quartet</a></p>
+<p><img alt="title" src="../../_images/anscombe.png" /></p>
+</div>
+<div class="section" id="id1">
+<h3>Communicating Insights<a class="headerlink" href="#id1" title="Permalink to this headline">¶</a></h3>
+<p><a class="reference external" href="https://fullstackeconomics.com/18-charts-that-explain-the-american-economy/">Reference: Full Stack Economics</a></p>
+<p><img alt="title" src="../../_images/work.png" /></p>
+</div>
+</div>
+<div class="section" id="id2">
+<h2>Impacting the world<a class="headerlink" href="#id2" title="Permalink to this headline">¶</a></h2>
+<p><a class="reference external" href="https://en.wikipedia.org/wiki/Florence_Nightingale">Florence Nightingale</a> (1820-1910) was a social reformer, statistician, and founder of modern nursing.</p>
+<p><img alt="title" src="../../_images/polar.jpeg" /></p>
+</div>
+<div class="section" id="so-how-do-we-visualize-data">
+<h2>So how do we visualize data?<a class="headerlink" href="#so-how-do-we-visualize-data" title="Permalink to this headline">¶</a></h2>
+<p>In today’s tutorial, we’ll discuss how to visualize data using <strong>Python</strong>.</p>
+</div>
+<div class="section" id="key-learning-outcomes">
+<h2>Key learning outcomes<a class="headerlink" href="#key-learning-outcomes" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p><strong>Describe</strong> the benefits and advantages of data visualization.</p></li>
+<li><p><strong>Propose</strong> a suitable data visualization for a particular <em>dataset</em> and <em>question</em>.</p></li>
+<li><p><strong>Implement</strong> a first-draft of this visualization in Python, using either <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p></li>
+<li><p><strong>Evaluate</strong> this data visualization and make suggestions for improvements in future iterations.</p></li>
+<li><p><strong>Reconstruct</strong> a visualization found “in the wild” using the appropriate dataset.</p></li>
+</ul>
+</div>
+<div class="section" id="loading-packages">
+<h2>Loading packages<a class="headerlink" href="#loading-packages" title="Permalink to this headline">¶</a></h2>
+<p>Here, we load the core packages we’ll be using:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://pandas.pydata.org/"><code class="docutils literal notranslate"><span class="pre">pandas</span></code></a>: a library for loading, reshaping, and joining <code class="docutils literal notranslate"><span class="pre">DataFrame</span></code> objects.</p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/"><code class="docutils literal notranslate"><span class="pre">matplotlib</span></code></a>: Python’s core plotting/graphics library.</p></li>
+<li><p><a class="reference external" href="https://seaborn.pydata.org/"><code class="docutils literal notranslate"><span class="pre">seaborn</span></code></a>: a library built on top of <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code>, which makes certain plotting functions easier.</p></li>
+</ul>
+<p>We also add some lines of code that make sure our visualizations will plot “inline” with our code, and that they’ll have nice, crisp quality.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span> <span class="c1"># conventionalized abbreviation</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span> <span class="c1"># conventionalized abbreviation</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span> <span class="c1"># conventionalized abbreviation</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="o">%</span><span class="k">matplotlib</span> inline 
+<span class="o">%</span><span class="k">config</span> InlineBackend.figure_format = &#39;retina&#39;
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-1-basic-plot-types-with-matplotlib-pyplot">
+<h2>Part 1: Basic plot types with <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code><a class="headerlink" href="#part-1-basic-plot-types-with-matplotlib-pyplot" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we’ll explore several basic plot types, first using <code class="docutils literal notranslate"><span class="pre">matplotlib.pyplot</span></code>. These will include:</p>
+<ul class="simple">
+<li><p>Histograms</p></li>
+<li><p>Scatterplots</p></li>
+<li><p>Barplots</p></li>
+</ul>
+<p>Afterwards (in Part 2), we will discuss how to replicate these plot types with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, an API built on top of <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>.</p>
+<div class="section" id="load-dataset">
+<h3>Load dataset<a class="headerlink" href="#load-dataset" title="Permalink to this headline">¶</a></h3>
+<p>To get started, we’ll load a dataset from <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Load taxis dataset</span>
+<span class="n">df_taxis</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;taxis&quot;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df_taxis</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>6433
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## What are the columns/variables in this dataset?</span>
+<span class="n">df_taxis</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-23 20:21:09</td>
+      <td>2019-03-23 20:27:24</td>
+      <td>1</td>
+      <td>1.60</td>
+      <td>7.0</td>
+      <td>2.15</td>
+      <td>0.0</td>
+      <td>12.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2019-03-04 16:11:55</td>
+      <td>2019-03-04 16:19:00</td>
+      <td>1</td>
+      <td>0.79</td>
+      <td>5.0</td>
+      <td>0.00</td>
+      <td>0.0</td>
+      <td>9.30</td>
+      <td>yellow</td>
+      <td>cash</td>
+      <td>Upper West Side South</td>
+      <td>Upper West Side South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2019-03-27 17:53:01</td>
+      <td>2019-03-27 18:00:25</td>
+      <td>1</td>
+      <td>1.37</td>
+      <td>7.5</td>
+      <td>2.36</td>
+      <td>0.0</td>
+      <td>14.16</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Alphabet City</td>
+      <td>West Village</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2019-03-10 01:23:59</td>
+      <td>2019-03-10 01:49:51</td>
+      <td>1</td>
+      <td>7.70</td>
+      <td>27.0</td>
+      <td>6.15</td>
+      <td>0.0</td>
+      <td>36.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Hudson Sq</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2019-03-30 13:27:42</td>
+      <td>2019-03-30 13:37:14</td>
+      <td>3</td>
+      <td>2.16</td>
+      <td>9.0</td>
+      <td>1.10</td>
+      <td>0.0</td>
+      <td>13.40</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Midtown East</td>
+      <td>Yorkville West</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="histograms-plotting-frequency-distributions">
+<h3>Histograms: plotting frequency distributions<a class="headerlink" href="#histograms-plotting-frequency-distributions" title="Permalink to this headline">¶</a></h3>
+<p><strong>Histograms</strong> are critical for visualizing how your data distribute.</p>
+<p>They are typically used for <strong>continuous</strong>, <strong>quantitative</strong> variables. Examples could include: <em>height</em>, <em>income</em>, and <em>temperature</em>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> package has a dedicated function for creating histograms, called <code class="docutils literal notranslate"><span class="pre">hist</span></code> (documentation <a class="reference external" href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.hist.html">here</a>).</p>
+<p>An example call would look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="c1"># set number of bins</span>
+    <span class="n">density</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="c1"># indicate whether to draw density plot</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span> <span class="c1"># indicate shading/transparency of plot</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<p>Now let’s plot some of our variables from the <code class="docutils literal notranslate"><span class="pre">taxis</span></code> dataset!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Q: How would you describe the shape of this distribution?</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;fare&#39;</span><span class="p">],</span> <span class="c1"># this is the variable we&#39;re plotting</span>
+    <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="c1"># this is the number of bins we want to know</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="c1"># this is our alpha level</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_7-pre_17_0.png" src="../../_images/Lecture_7-pre_17_0.png" />
+</div>
+</div>
+<p>We can also add axis labels, so it’s clear what we’re plotting.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">hist</span><span class="p">(</span>
+    <span class="n">x</span><span class="o">=</span><span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;fare&#39;</span><span class="p">],</span> <span class="c1"># this is the variable we&#39;re plotting</span>
+    <span class="n">bins</span><span class="o">=</span><span class="mi">20</span><span class="p">,</span> <span class="c1"># this is the number of bins we want to know</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span> <span class="c1"># this is our alpha level</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Fare ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of Taxi Fares ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_7-pre_19_0.png" src="../../_images/Lecture_7-pre_19_0.png" />
+</div>
+</div>
+<div class="section" id="q-how-would-you-plot-the-distribution-of-trip-distances">
+<h4>Q: How would you plot the distribution of trip distances?<a class="headerlink" href="#q-how-would-you-plot-the-distribution-of-trip-distances" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-what-about-the-distribution-of-tip-amounts">
+<h4>Q: What about the distribution of tip amounts?<a class="headerlink" href="#q-what-about-the-distribution-of-tip-amounts" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-what-if-we-wanted-to-plot-the-distribution-of-tip-percentages">
+<h4>Q: What if we wanted to plot the distribution of tip <em>percentages</em>?<a class="headerlink" href="#q-what-if-we-wanted-to-plot-the-distribution-of-tip-percentages" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="creating-a-new-variable">
+<h4>Creating a new variable<a class="headerlink" href="#creating-a-new-variable" title="Permalink to this headline">¶</a></h4>
+<p>Presumably, these tip amounts <em>correlate</em> with the overall fare. We might also want to know about the amount in <strong>percentage-terms</strong>, e.g., how much a customer tipped as a percentage of how much the fare was.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## tip_pct = tip / fare</span>
+<span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;tip&#39;</span><span class="p">]</span> <span class="o">/</span> <span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;fare&#39;</span><span class="p">])</span> <span class="o">*</span> <span class="mi">100</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now we can plot this new variable, to get a sense of the distribution of tip percentages.</p>
+<p><strong>Q: What conclusions might we draw about the distribution of tip percentages here?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-adding-other-markers-to-the-plot">
+<h4>Q: Adding other markers to the plot?<a class="headerlink" href="#q-adding-other-markers-to-the-plot" title="Permalink to this headline">¶</a></h4>
+<p>What if we wanted to add more information to this plot, such as the <strong>mean</strong> tip percentage?</p>
+<p>(Hint: use either <code class="docutils literal notranslate"><span class="pre">plt.axvline</span></code> or <code class="docutils literal notranslate"><span class="pre">plt.text</span></code>).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, calculate mean tip for ease of access</span>
+<span class="n">MEAN_TIP</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="scatterplots-plotting-multiple-continuous-variables">
+<h3>Scatterplots: plotting multiple continuous variables<a class="headerlink" href="#scatterplots-plotting-multiple-continuous-variables" title="Permalink to this headline">¶</a></h3>
+<p><strong>Scatterplots</strong> can be used to look at how two different continuous variables <em>relate</em> to each other.</p>
+<p>Among other things, scatterplots are critical for exploratory data analysis––for example, if you want to run a linear regression on your dataset, it is important to determine that the relationship you’re investigating is linear (remember <a class="reference external" href="https://en.wikipedia.org/wiki/Anscombe%27s_quartet">Anscombe’s Quartet</a>).</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> package has a dedicated function for creating scatterplots as well, called <code class="docutils literal notranslate"><span class="pre">scatter</span></code> (documentation <a class="reference external" href="https://matplotlib.org/3.5.0/api/_as_gen/matplotlib.pyplot.scatter.html">here</a>).</p>
+<p>An example call would look like this:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span> <span class="c1"># array of values for x-axis</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span> <span class="c1"># array of values for y-axis</span>
+    <span class="n">c</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span> <span class="c1"># array of values to indicate color of points</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span> <span class="c1"># indicate shading/transparency of plot</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="what-to-ask-our-data">
+<h4>What to ask our data?<a class="headerlink" href="#what-to-ask-our-data" title="Permalink to this headline">¶</a></h4>
+<p>Intuitively, we might want to know a few things:</p>
+<ol class="simple">
+<li><p>Do longer distances cost more?</p></li>
+<li><p>Do people tip more (either in <em>amount</em> or <em>percentage</em> terms) for longer distances?</p></li>
+<li><p>Does it cost more to travel more between <em>boroughs</em>, even holding the distance constant?</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q: Do longer distances cost more?</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">scatter</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">],</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;fare&#39;</span><span class="p">],</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">6</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance (miles)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Fare ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Raw Fare by Distance Traveled&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_7-pre_36_0.png" src="../../_images/Lecture_7-pre_36_0.png" />
+</div>
+</div>
+</div>
+<div class="section" id="q-how-could-we-ask-about-the-relationship-between-distance-and-tip-amount">
+<h4>Q: How could we ask about the relationship between distance and tip amount?<a class="headerlink" href="#q-how-could-we-ask-about-the-relationship-between-distance-and-tip-amount" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-what-about-distance-and-tip-percentage">
+<h4>Q: What about distance and tip percentage?<a class="headerlink" href="#q-what-about-distance-and-tip-percentage" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-what-about-crossing-between-boroughs">
+<h4>Q: What about crossing between boroughs?<a class="headerlink" href="#q-what-about-crossing-between-boroughs" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Create a new variable</span>
+<span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;crossed_borough&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;pickup_borough&#39;</span><span class="p">]</span> <span class="o">!=</span> <span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;dropoff_borough&#39;</span><span class="p">]</span>
+<span class="n">df_taxis</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>pickup</th>
+      <th>dropoff</th>
+      <th>passengers</th>
+      <th>distance</th>
+      <th>fare</th>
+      <th>tip</th>
+      <th>tolls</th>
+      <th>total</th>
+      <th>color</th>
+      <th>payment</th>
+      <th>pickup_zone</th>
+      <th>dropoff_zone</th>
+      <th>pickup_borough</th>
+      <th>dropoff_borough</th>
+      <th>tip_pct</th>
+      <th>crossed_borough</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2019-03-23 20:21:09</td>
+      <td>2019-03-23 20:27:24</td>
+      <td>1</td>
+      <td>1.6</td>
+      <td>7.0</td>
+      <td>2.15</td>
+      <td>0.0</td>
+      <td>12.95</td>
+      <td>yellow</td>
+      <td>credit card</td>
+      <td>Lenox Hill West</td>
+      <td>UN/Turtle Bay South</td>
+      <td>Manhattan</td>
+      <td>Manhattan</td>
+      <td>30.714286</td>
+      <td>False</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plotting-categorical-and-continuous-data">
+<h4>Plotting categorical <em>and</em> continuous data<a class="headerlink" href="#plotting-categorical-and-continuous-data" title="Permalink to this headline">¶</a></h4>
+<p>Now, we want to add more information to our scatterplot––we have a <em>categorical</em> variable (<code class="docutils literal notranslate"><span class="pre">crossed_borough</span></code>), and we want the color (or perhaps shape) of each point to indicate the level of that variable, i.e., whether the trip crossed between boroughs.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="barplots">
+<h3>Barplots<a class="headerlink" href="#barplots" title="Permalink to this headline">¶</a></h3>
+<p>Another commonly found type of plot is a <strong>barplot</strong>.</p>
+<p>Typically, barplots feature:</p>
+<ul class="simple">
+<li><p>On the x-axis, a <strong>categorical</strong> (i.e., nominal) variable.</p></li>
+<li><p>On the y-axis, a <strong>continuous</strong> variable, usually summarized in some way (e.g., the means, with standard errors).</p></li>
+</ul>
+<p>Barplots are effective for drawing attention to differences in the magnitude of some quantity across categories––though personally, I don’t think they’re always the most effective in terms of the amount of information conveyed per unit of space.</p>
+</div>
+<div class="section" id="barplots-in-pyplot">
+<h3>Barplots in <code class="docutils literal notranslate"><span class="pre">pyplot</span></code><a class="headerlink" href="#barplots-in-pyplot" title="Permalink to this headline">¶</a></h3>
+<p>The corresponding <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> function is <code class="docutils literal notranslate"><span class="pre">bar</span></code>. We saw this earlier, when we were trying to plot the <em>counts</em> of a categorical variable.</p>
+<p>The basic inputs are as follows:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">],</span> <span class="c1"># array of categories</span>
+    <span class="n">height</span> <span class="o">=</span> <span class="p">[</span> <span class="o">...</span> <span class="p">]</span> <span class="c1"># height of each category</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="section" id="q-what-is-the-mean-tip-for-green-vs-yellow-taxis">
+<h4>Q: What is the <em>mean</em> tip % for green vs. yellow taxis?<a class="headerlink" href="#q-what-is-the-mean-tip-for-green-vs-yellow-taxis" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="creating-a-new-dataframe-using-groupby">
+<h4>Creating a new dataframe using <code class="docutils literal notranslate"><span class="pre">groupby</span></code><a class="headerlink" href="#creating-a-new-dataframe-using-groupby" title="Permalink to this headline">¶</a></h4>
+<p>Once again, <code class="docutils literal notranslate"><span class="pre">groupby</span></code> is very helpful here. We’ll want to:</p>
+<ol class="simple">
+<li><p>Calculate the mean <code class="docutils literal notranslate"><span class="pre">tip_pct</span></code> for each level of the <code class="docutils literal notranslate"><span class="pre">color</span></code> variable.</p></li>
+<li><p>Plot this using <code class="docutils literal notranslate"><span class="pre">plt.bar</span></code>.</p></li>
+</ol>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_color_tips_mean</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">[[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_color_tips_mean</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>color</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>green</td>
+      <td>7.441110</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>yellow</td>
+      <td>18.627966</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q: What&#39;s missing from this graph?</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_color_tips_mean</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span>
+       <span class="n">height</span> <span class="o">=</span> <span class="n">df_color_tips_mean</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Taxi Color&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tip (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Tip (%) by Taxi Color&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Tip (%) by Taxi Color&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_50_1.png" src="../../_images/Lecture_7-pre_50_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="adding-error-bars">
+<h4>Adding error bars<a class="headerlink" href="#adding-error-bars" title="Permalink to this headline">¶</a></h4>
+<p>To add error bars, we can use <code class="docutils literal notranslate"><span class="pre">plt.errorbar</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## First, calculate standard error of the mean</span>
+<span class="n">df_color_tips_sem</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">[[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">,</span> <span class="s1">&#39;color&#39;</span><span class="p">]]</span><span class="o">.</span><span class="n">groupby</span><span class="p">(</span><span class="s1">&#39;color&#39;</span><span class="p">)</span><span class="o">.</span><span class="n">sem</span><span class="p">()</span><span class="o">.</span><span class="n">reset_index</span><span class="p">()</span>
+<span class="n">df_color_tips_sem</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>color</th>
+      <th>tip_pct</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>green</td>
+      <td>0.384112</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>yellow</td>
+      <td>0.194550</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">plt</span><span class="o">.</span><span class="n">bar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_color_tips_mean</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span>
+        <span class="n">height</span> <span class="o">=</span> <span class="n">df_color_tips_mean</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">])</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">errorbar</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">df_color_tips_mean</span><span class="p">[</span><span class="s1">&#39;color&#39;</span><span class="p">],</span> <span class="c1">## as with bar, the x-axis is the *color*</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="n">df_color_tips_mean</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">],</span> <span class="c1">## as with bar, the y-axis is the *mean*</span>
+             <span class="n">yerr</span> <span class="o">=</span> <span class="n">df_color_tips_sem</span><span class="p">[</span><span class="s1">&#39;tip_pct&#39;</span><span class="p">]</span> <span class="o">*</span> <span class="mi">2</span><span class="p">,</span> <span class="c1">## two standard errors, as typical</span>
+             <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;none&#39;</span><span class="p">,</span> <span class="c1">## toggle this to connect or not connect the lines</span>
+             <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;black&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Taxi Color&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tip (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Tip (%) by Taxi Color&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Tip (%) by Taxi Color&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_53_1.png" src="../../_images/Lecture_7-pre_53_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="other-pyplot-affordances">
+<h3>Other <code class="docutils literal notranslate"><span class="pre">pyplot</span></code> affordances<a class="headerlink" href="#other-pyplot-affordances" title="Permalink to this headline">¶</a></h3>
+<p>This short tutorial really only scratched the surface of what you can do with <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>.</p>
+<p>Just to give a sense:</p>
+<ul class="simple">
+<li><p><a class="reference external" href="https://matplotlib.org/stable/tutorials/text/text_intro.html">Add text to a plot with <code class="docutils literal notranslate"><span class="pre">pyplot.text</span></code></a></p></li>
+<li><p><a class="reference external" href="https://matplotlib.org/stable/api/axes_api.html#subplots">Create multiple subplots</a></p></li>
+<li><p>Create other types of plots, like <a class="reference external" href="https://matplotlib.org/stable/api/_as_gen/matplotlib.pyplot.boxplot.html">boxplots</a> or lineplots.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="part-2-plotting-with-seaborn">
+<h2>Part 2: Plotting with <code class="docutils literal notranslate"><span class="pre">seaborn</span></code><a class="headerlink" href="#part-2-plotting-with-seaborn" title="Permalink to this headline">¶</a></h2>
+<p>In this section, we’ll replicate some of those same plots from above, but now using <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p>
+<p>As you’ll see, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> offers an API that’s (in most cases) cleaner and easier to use than <code class="docutils literal notranslate"><span class="pre">pyplot</span></code>, though there’s a trade-off in terms of flexibility.</p>
+<div class="section" id="histograms">
+<h3>Histograms<a class="headerlink" href="#histograms" title="Permalink to this headline">¶</a></h3>
+<p>Depending on your <em>version</em> of <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>, you can plot a histogram using either:</p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn.distplot</span></code>: typically used for creating <strong>density plots</strong>, but can be adapted for histograms.</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">seaborn.histplot</span></code>: targeted more specifically at histograms.</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">distplot</span><span class="p">(</span><span class="n">df_taxis</span><span class="p">[</span><span class="s1">&#39;distance&#39;</span><span class="p">],</span> <span class="c1">## vector to plot</span>
+             <span class="n">kde</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="c1">## whether to use kernel density estimation to fit density curve</span>
+             <span class="n">norm_hist</span> <span class="o">=</span> <span class="kc">False</span> <span class="c1">## whether to norm histogram to display probability vs. counts</span>
+            <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance (miles)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Count&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Distribution of miles traveled&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stderr highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>/opt/anaconda3/lib/python3.8/site-packages/seaborn/distributions.py:2551: FutureWarning: `distplot` is a deprecated function and will be removed in a future version. Please adapt your code to use either `displot` (a figure-level function with similar flexibility) or `histplot` (an axes-level function for histograms).
+  warnings.warn(msg, FutureWarning)
+</pre></div>
+</div>
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Distribution of miles traveled&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_57_2.png" src="../../_images/Lecture_7-pre_57_2.png" />
+</div>
+</div>
+<div class="section" id="q-exercise-for-homerecreate-the-rest-of-the-histograms-from-part-1-using-seaborn">
+<h4>Q: Exercise for home––recreate the rest of the histograms from Part 1 using seaborn.<a class="headerlink" href="#q-exercise-for-homerecreate-the-rest-of-the-histograms-from-part-1-using-seaborn" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="scatterplots">
+<h3>Scatterplots<a class="headerlink" href="#scatterplots" title="Permalink to this headline">¶</a></h3>
+<p>Fortunately, <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> makes it <em>much</em> easier to create scatterplots, especially if you’d like to change the hue or style of the points.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of dataframe</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of x-axis variable</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of y-axis variable</span>
+    <span class="n">hue</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of hue variable</span>
+    <span class="n">style</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of style variable</span>
+    <span class="n">size</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of variable to modulate point size</span>
+<span class="p">)</span>
+
+</pre></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Replicating our initial plot: Do longer distances cost more?</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">,</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;distance&quot;</span><span class="p">,</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;fare&quot;</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Distance (miles)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Fare ($)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Raw Fare by Distance Traveled&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_7-pre_60_0.png" src="../../_images/Lecture_7-pre_60_0.png" />
+</div>
+</div>
+<div class="section" id="q-how-would-you-create-the-same-plot-but-with-the-points-colored-to-reflect-whether-a-borough-has-been-crossed">
+<h4>Q: How would you create the same plot, but with the points colored to reflect whether a borough has been crossed?<a class="headerlink" href="#q-how-would-you-create-the-same-plot-but-with-the-points-colored-to-reflect-whether-a-borough-has-been-crossed" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="q-exercise-for-homerecreate-the-other-scatterplots-or-new-ones-using-seaborn">
+<h4>Q: Exercise for home––recreate the other scatterplots, or new ones, using seaborn.<a class="headerlink" href="#q-exercise-for-homerecreate-the-other-scatterplots-or-new-ones-using-seaborn" title="Permalink to this headline">¶</a></h4>
+</div>
+</div>
+<div class="section" id="bar-plots">
+<h3>Bar plots<a class="headerlink" href="#bar-plots" title="Permalink to this headline">¶</a></h3>
+<p>Finally, we can reconstruct some of the <strong>bar plots</strong> we created above, using the <code class="docutils literal notranslate"><span class="pre">barplot</span></code> function.</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of dataframe</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of x-axis variable (categorical)</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of y-axis variable (continuous)</span>
+    <span class="n">hue</span> <span class="o">=</span> <span class="o">...</span><span class="p">,</span> <span class="c1"># name of hue variable</span>
+    <span class="n">ci</span> <span class="o">=</span> <span class="nb">float</span> <span class="c1"># size of confidence intervals to draw (these are estimated using *bootstrapping*, not SEM)</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+<div class="section" id="q-how-would-we-recreate-the-figure-showing-average-tip-by-taxi-color">
+<h4>Q: How would we recreate the figure showing average tip % by taxi color?<a class="headerlink" href="#q-how-would-we-recreate-the-figure-showing-average-tip-by-taxi-color" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_taxis</span><span class="p">,</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;color&quot;</span><span class="p">,</span>
+            <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;tip_pct&quot;</span><span class="p">,</span>
+            <span class="n">ci</span> <span class="o">=</span> <span class="mi">95</span>
+           <span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Color&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Tip (%)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Tip (%) by Taxi Color&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Tip (%) by Taxi Color&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_66_1.png" src="../../_images/Lecture_7-pre_66_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="q-what-other-variables-would-you-be-interested-in-looking-at-whether-or-not-they-re-crossed-a-borough">
+<h4>Q: What other variables would you be interested in looking at? Whether or not they’re crossed a borough?<a class="headerlink" href="#q-what-other-variables-would-you-be-interested-in-looking-at-whether-or-not-they-re-crossed-a-borough" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="additional-exercises-with-taxis">
+<h3>Additional exercises with <code class="docutils literal notranslate"><span class="pre">taxis</span></code><a class="headerlink" href="#additional-exercises-with-taxis" title="Permalink to this headline">¶</a></h3>
+<p>This dataset is quite rich, and you could ask a number of other questions.</p>
+<p>Just to get you started:</p>
+<ol class="simple">
+<li><p>Does <code class="docutils literal notranslate"><span class="pre">distance</span></code> traveled vary as a function of the <strong>hour</strong> of pickup?</p></li>
+<li><p>Is the <code class="docutils literal notranslate"><span class="pre">tip_pct</span></code> larger as a function of the <strong>hour</strong> of pickup?</p></li>
+<li><p>How does <code class="docutils literal notranslate"><span class="pre">distance</span></code> relate to the <strong>amount of time</strong> between <code class="docutils literal notranslate"><span class="pre">pickup</span></code> and <code class="docutils literal notranslate"><span class="pre">dropoff</span></code>?</p></li>
+<li><p>Do customers tip more when the trip takes longer (controlling for <code class="docutils literal notranslate"><span class="pre">distance</span></code>)?</p></li>
+</ol>
+</div>
+</div>
+<div class="section" id="part-3-reconstructing-plots-from-the-wild">
+<h2>Part 3: Reconstructing plots from “the wild”<a class="headerlink" href="#part-3-reconstructing-plots-from-the-wild" title="Permalink to this headline">¶</a></h2>
+<p>Data visualizations are increasingly common in blog posts, news articles, or even social media.</p>
+<p>Reconstructing a visualization you find “in the wild” can reveal some of the hidden complexities of this process.</p>
+<p>To that end, I reached out to Timothy Lee, author of a very interesting blog post found on <a class="reference external" href="https://fullstackeconomics.com/18-charts-that-explain-the-american-economy/">Full Stack Economics</a>, entitled “18 charts that explain the American economy”. He was kind enough to give me the data he used to construct two of the charts included in that post: <strong>chart #7</strong> and <strong>chart #14</strong>.</p>
+<p>In this reconstruction, let’s focus on Chart 14.</p>
+<div class="section" id="chart-14-reasons-for-missing-work">
+<h3>Chart 14: Reasons for missing work<a class="headerlink" href="#chart-14-reasons-for-missing-work" title="Permalink to this headline">¶</a></h3>
+<p>This chart depicts the relative magnitudes of different causes for missing work, over time. For me, there are a couple takeaways:</p>
+<ol class="simple">
+<li><p>Vacation time is highly seasonal, peaking each summer and creating an almost oscillatory pattern.</p></li>
+<li><p>Starting with 2020, vacation time drops a bit (though preserves the seasonal pattern), and we see a rise in missed work due to illness.</p></li>
+</ol>
+<p>Let’s try to reconstruct the chart from scratch!</p>
+<p>Just for reference, the chart looks like this:</p>
+<p><img alt="title" src="../../_images/work.png" /></p>
+<div class="section" id="load-the-data">
+<h4>Load the data<a class="headerlink" href="#load-the-data" title="Permalink to this headline">¶</a></h4>
+<p>First, we load and inspect the data. Here, we have to actually read in a <code class="docutils literal notranslate"><span class="pre">.csv</span></code> file using <code class="docutils literal notranslate"><span class="pre">pandas.read_csv</span></code>.</p>
+<p><strong>Question</strong>: What do you you all notice about the way this dataframe is structured?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_missing</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;data/missing_work.csv&quot;</span><span class="p">)</span>
+<span class="nb">len</span><span class="p">(</span><span class="n">df_missing</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>110
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Inspecting the dataset</span>
+<span class="n">df_missing</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Child care problems</th>
+      <th>Maternity or paternity leave</th>
+      <th>Other family or personal obligations</th>
+      <th>Illness or injury</th>
+      <th>Vacation</th>
+      <th>Month</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2012</td>
+      <td>18</td>
+      <td>313</td>
+      <td>246</td>
+      <td>899</td>
+      <td>1701</td>
+      <td>10</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2012</td>
+      <td>35</td>
+      <td>278</td>
+      <td>230</td>
+      <td>880</td>
+      <td>1299</td>
+      <td>11</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012</td>
+      <td>13</td>
+      <td>245</td>
+      <td>246</td>
+      <td>944</td>
+      <td>1005</td>
+      <td>12</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013</td>
+      <td>14</td>
+      <td>257</td>
+      <td>250</td>
+      <td>1202</td>
+      <td>1552</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013</td>
+      <td>27</td>
+      <td>258</td>
+      <td>276</td>
+      <td>1079</td>
+      <td>1305</td>
+      <td>2</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="converting-to-long-format">
+<h4>Converting to long format<a class="headerlink" href="#converting-to-long-format" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="q-any-ideas-on-how-to-do-this">
+<h4>Q: Any ideas on how to do this?<a class="headerlink" href="#q-any-ideas-on-how-to-do-this" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Note: this is just one of the many approaches!</span>
+
+<span class="n">df_missing_long</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span><span class="n">df_missing</span><span class="p">,</span> <span class="c1"># dataframe</span>
+                          <span class="n">value_vars</span><span class="o">=</span><span class="p">[</span><span class="s1">&#39;Child care problems&#39;</span><span class="p">,</span> <span class="c1"># which columns to stack into long format</span>
+                                      <span class="s1">&#39;Maternity or paternity leave&#39;</span><span class="p">,</span><span class="c1"># which columns to stack into long format</span>
+                                      <span class="s1">&#39;Other family or personal obligations&#39;</span><span class="p">,</span> <span class="c1"># which columns to stack into long format</span>
+                                      <span class="s1">&#39;Illness or injury&#39;</span><span class="p">,</span> <span class="c1"># which columns to stack into long format</span>
+                                      <span class="s1">&#39;Vacation&#39;</span><span class="p">],</span> <span class="c1"># which columns to stack into long format</span>
+                          <span class="n">id_vars</span><span class="o">=</span><span class="p">[</span><span class="s2">&quot;Year&quot;</span><span class="p">,</span> <span class="s2">&quot;Month&quot;</span><span class="p">],</span> <span class="c1"># which columns to group/id them by</span>
+                          <span class="n">var_name</span> <span class="o">=</span> <span class="s2">&quot;Cause&quot;</span><span class="p">,</span> <span class="c1"># what to call the new grouping column</span>
+                          <span class="n">value_name</span> <span class="o">=</span> <span class="s2">&quot;Days&quot;</span> <span class="c1"># what to call the new value column</span>
+                         <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_missing_long</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Cause</th>
+      <th>Days</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2012</td>
+      <td>10</td>
+      <td>Child care problems</td>
+      <td>18</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2012</td>
+      <td>11</td>
+      <td>Child care problems</td>
+      <td>35</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012</td>
+      <td>12</td>
+      <td>Child care problems</td>
+      <td>13</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>Child care problems</td>
+      <td>14</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013</td>
+      <td>2</td>
+      <td>Child care problems</td>
+      <td>27</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Note: One other thing––the original graph aggregated data by the *millions*.</span>
+<span class="c1"># This is already in the *thousands*, so we&#39;ll divide by another 1000 to match the origina. </span>
+<span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;Days_millions&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;Days&#39;</span><span class="p">]</span><span class="o">/</span><span class="mi">1000</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="distribution-over-the-year">
+<h4>Distribution over the year<a class="headerlink" href="#distribution-over-the-year" title="Permalink to this headline">¶</a></h4>
+<p>Before we try to reconstruct the plot, let’s first look at the distribution of missed days <strong>across years</strong>, to see if we can detect any patterns.</p>
+</div>
+<div class="section" id="q-what-pattern-should-we-conclude">
+<h4>Q: What pattern should we conclude?<a class="headerlink" href="#q-what-pattern-should-we-conclude" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### Fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_missing_long</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Days_millions&#39;</span><span class="p">,</span>
+             <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Month&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Days (Millions)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Days (Millions)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_83_1.png" src="../../_images/Lecture_7-pre_83_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="q-2-why-is-there-so-much-error-in-the-summer-months">
+<h4>Q (2): Why is there so much error in the summer months?<a class="headerlink" href="#q-2-why-is-there-so-much-error-in-the-summer-months" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This shows us that it&#39;s *vacation* specifically that has a seasonal pattern</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_missing_long</span><span class="p">,</span>
+             <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Month&#39;</span><span class="p">,</span>
+             <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;Days&#39;</span><span class="p">,</span>
+             <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;Cause&#39;</span><span class="p">,</span>
+             <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">7</span><span class="p">)</span>
+
+<span class="c1"># This makes sure the legend doesn&#39;t cover up the plot itself</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">bbox_to_anchor</span><span class="o">=</span><span class="p">(</span><span class="mf">1.02</span><span class="p">,</span> <span class="mi">1</span><span class="p">),</span> <span class="n">loc</span><span class="o">=</span><span class="s1">&#39;upper left&#39;</span><span class="p">,</span> <span class="n">borderaxespad</span><span class="o">=</span><span class="mi">0</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Month&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Days (Millions)&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Days (Millions)&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_85_1.png" src="../../_images/Lecture_7-pre_85_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="reconstructing-the-original-plot">
+<h4>Reconstructing the original plot<a class="headerlink" href="#reconstructing-the-original-plot" title="Permalink to this headline">¶</a></h4>
+<p>Now, rather than averaging <em>across</em> years to get a picture of the “average year”, let’s just look at this over time.</p>
+<p>One issue is that we’ll first need to convert each observation (a <code class="docutils literal notranslate"><span class="pre">Month</span></code> and a <code class="docutils literal notranslate"><span class="pre">Year</span></code>) into a <code class="docutils literal notranslate"><span class="pre">datetime</span></code> object, so we can plug this into <code class="docutils literal notranslate"><span class="pre">pandas</span></code> and <code class="docutils literal notranslate"><span class="pre">seaborn</span></code> native <code class="docutils literal notranslate"><span class="pre">datetime</span></code> operations.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## First, let&#39;s concatenate each month and year into a single string</span>
+<span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_missing_long</span><span class="o">.</span><span class="n">apply</span><span class="p">(</span><span class="k">lambda</span> <span class="n">row</span><span class="p">:</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Month&#39;</span><span class="p">])</span> <span class="o">+</span> <span class="s1">&#39;-&#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">row</span><span class="p">[</span><span class="s1">&#39;Year&#39;</span><span class="p">]),</span> <span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">df_missing_long</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Cause</th>
+      <th>Days</th>
+      <th>Days_millions</th>
+      <th>date</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2012</td>
+      <td>10</td>
+      <td>Child care problems</td>
+      <td>18</td>
+      <td>0.018</td>
+      <td>10-2012</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2012</td>
+      <td>11</td>
+      <td>Child care problems</td>
+      <td>35</td>
+      <td>0.035</td>
+      <td>11-2012</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012</td>
+      <td>12</td>
+      <td>Child care problems</td>
+      <td>13</td>
+      <td>0.013</td>
+      <td>12-2012</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>Child care problems</td>
+      <td>14</td>
+      <td>0.014</td>
+      <td>1-2013</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013</td>
+      <td>2</td>
+      <td>Child care problems</td>
+      <td>27</td>
+      <td>0.027</td>
+      <td>2-2013</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Now, let&#39;s create a new &quot;datetime&quot; column using the `pd.to_datetime` function</span>
+<span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;datetime&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">to_datetime</span><span class="p">(</span><span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;date&#39;</span><span class="p">])</span>
+<span class="n">df_missing_long</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Year</th>
+      <th>Month</th>
+      <th>Cause</th>
+      <th>Days</th>
+      <th>Days_millions</th>
+      <th>date</th>
+      <th>datetime</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>2012</td>
+      <td>10</td>
+      <td>Child care problems</td>
+      <td>18</td>
+      <td>0.018</td>
+      <td>10-2012</td>
+      <td>2012-10-01</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2012</td>
+      <td>11</td>
+      <td>Child care problems</td>
+      <td>35</td>
+      <td>0.035</td>
+      <td>11-2012</td>
+      <td>2012-11-01</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>2012</td>
+      <td>12</td>
+      <td>Child care problems</td>
+      <td>13</td>
+      <td>0.013</td>
+      <td>12-2012</td>
+      <td>2012-12-01</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>2013</td>
+      <td>1</td>
+      <td>Child care problems</td>
+      <td>14</td>
+      <td>0.014</td>
+      <td>1-2013</td>
+      <td>2013-01-01</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2013</td>
+      <td>2</td>
+      <td>Child care problems</td>
+      <td>27</td>
+      <td>0.027</td>
+      <td>2-2013</td>
+      <td>2013-02-01</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="q-now-how-can-we-actually-create-the-final-plot">
+<h4>Q: Now, how can we actually create the final plot?<a class="headerlink" href="#q-now-how-can-we-actually-create-the-final-plot" title="Permalink to this headline">¶</a></h4>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="bonus-smoothing">
+<h4>Bonus: Smoothing<a class="headerlink" href="#bonus-smoothing" title="Permalink to this headline">¶</a></h4>
+<p>If you look at the original plot carefully, you’ll see that the observations have been <em>smoothed</em> using a rolling window average.</p>
+<p>Fortunately, we can do the same thing using the <code class="docutils literal notranslate"><span class="pre">pandas.rolling</span></code> function.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Construct a 3-month rolling average to &quot;smooth&quot; the data</span>
+<span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;Days_rolling_avg&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">df_missing_long</span><span class="p">[</span><span class="s1">&#39;Days_millions&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">rolling</span><span class="p">(</span><span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">## Discussion: Should we limit y-axis/causes to investigate trends in other causes, like child care problems?</span>
+<span class="c1">## Q: How could we do this?</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### fill in</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="conclusion">
+<h2>Conclusion<a class="headerlink" href="#conclusion" title="Permalink to this headline">¶</a></h2>
+<p>This concludes the tutorial! Hopefully, this has equipped you with some of the tools necessary to:</p>
+<ul class="simple">
+<li><p><strong>Describe</strong> the benefits and advantages of data visualization.</p></li>
+<li><p><strong>Propose</strong> a suitable data visualization for a particular <em>dataset</em> and <em>question</em>.</p></li>
+<li><p><strong>Implement</strong> a first-draft of this visualization in Python, using either <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p></li>
+<li><p><strong>Evaluate</strong> this data visualization and make suggestions for improvements in future iterations.</p></li>
+<li><p><strong>Reconstruct</strong> a visualization found “in the wild” using the appropriate dataset.</p></li>
+</ul>
+<p>If you’re interested in R, a tutorial on data visualization in R can be found <a class="reference external" href="https://seantrott.github.io/data_wrangling_visualization/">here</a>.</p>
+</div>
+<div class="section" id="part-4-bonus-anscombe-s-quartet">
+<h2>Part 4 (Bonus): Anscombe’s Quartet<a class="headerlink" href="#part-4-bonus-anscombe-s-quartet" title="Permalink to this headline">¶</a></h2>
+<p>As discussed in the slides, one key motivation for making data visualizations is <strong>exploratory data analysis</strong> (EDA). Among other things, EDA can be used to ensure that the assumptions of a statistical test are met (e.g., that a relationship in our data is linear, if one is running linear regression).</p>
+<div class="section" id="load-data">
+<h3>Load data<a class="headerlink" href="#load-data" title="Permalink to this headline">¶</a></h3>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">df_anscombe</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s2">&quot;anscombe&quot;</span><span class="p">)</span>
+<span class="n">df_anscombe</span><span class="o">.</span><span class="n">head</span><span class="p">(</span><span class="mi">5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>dataset</th>
+      <th>x</th>
+      <th>y</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>I</td>
+      <td>10.0</td>
+      <td>8.04</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>I</td>
+      <td>8.0</td>
+      <td>6.95</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>I</td>
+      <td>13.0</td>
+      <td>7.58</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>I</td>
+      <td>9.0</td>
+      <td>8.81</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>I</td>
+      <td>11.0</td>
+      <td>8.33</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="calculate-correlation-coefficient-for-each-dataset">
+<h3>Calculate correlation coefficient for each dataset<a class="headerlink" href="#calculate-correlation-coefficient-for-each-dataset" title="Permalink to this headline">¶</a></h3>
+<p>Just to make sure the central claim is correct, let’s calculate Pearson’s r for each dataset. Is it roughly the same in each?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">scipy.stats</span> <span class="kn">import</span> <span class="n">pearsonr</span>
+
+<span class="n">corrs</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">dataset</span> <span class="ow">in</span> <span class="nb">set</span><span class="p">(</span><span class="n">df_anscombe</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]):</span>
+    <span class="n">df_tmp</span> <span class="o">=</span> <span class="n">df_anscombe</span><span class="p">[</span><span class="n">df_anscombe</span><span class="p">[</span><span class="s1">&#39;dataset&#39;</span><span class="p">]</span><span class="o">==</span><span class="n">dataset</span><span class="p">]</span>
+    <span class="n">r</span> <span class="o">=</span> <span class="nb">round</span><span class="p">(</span><span class="n">pearsonr</span><span class="p">(</span><span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;x&#39;</span><span class="p">],</span> <span class="n">df_tmp</span><span class="p">[</span><span class="s1">&#39;y&#39;</span><span class="p">])[</span><span class="mi">0</span><span class="p">],</span> <span class="mi">4</span><span class="p">)</span>
+    <span class="n">corrs</span><span class="o">.</span><span class="n">append</span><span class="p">({</span>
+        <span class="s1">&#39;r&#39;</span><span class="p">:</span> <span class="n">r</span><span class="p">,</span>
+        <span class="s1">&#39;dataset&#39;</span><span class="p">:</span> <span class="n">dataset</span>
+    <span class="p">})</span>
+
+<span class="n">df_corrs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">corrs</span><span class="p">)</span>
+<span class="n">df_corrs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>r</th>
+      <th>dataset</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0.8165</td>
+      <td>IV</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0.8162</td>
+      <td>II</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0.8164</td>
+      <td>I</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>0.8163</td>
+      <td>III</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+</div>
+<div class="section" id="plot-the-data-a-first-and-flawed-approach">
+<h3>Plot the data: a first (and flawed) approach<a class="headerlink" href="#plot-the-data-a-first-and-flawed-approach" title="Permalink to this headline">¶</a></h3>
+<p>First, I’m going to plot the data just using <code class="docutils literal notranslate"><span class="pre">seaborn.scatterplot</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Q: What&#39;s wrong with this approach?</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_anscombe</span><span class="p">,</span>
+                <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
+                <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;X&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;Y&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_103_1.png" src="../../_images/Lecture_7-pre_103_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-data-using-facetgrid">
+<h3>Plot the data using <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code><a class="headerlink" href="#plot-the-data-using-facetgrid" title="Permalink to this headline">¶</a></h3>
+<p>The above plot <strong>lumps</strong> all the datasets together into the same plot. But we want to visualize them all <em>separately</em>.</p>
+<p>For this, we can rely on <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code>.</p>
+<div class="section" id="introducing-facetgrid">
+<h4>Introducing <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code><a class="headerlink" href="#introducing-facetgrid" title="Permalink to this headline">¶</a></h4>
+<p>The <code class="docutils literal notranslate"><span class="pre">FacetGrid</span></code> object allows you to <code class="docutils literal notranslate"><span class="pre">map</span></code> a particular plot aesthetic (i.e., a particular <code class="docutils literal notranslate"><span class="pre">x/y</span></code> axis choice) onto multiple subplots, broken up by the levels of a categorical variable.</p>
+<p>For example, you could create different subplots for <code class="docutils literal notranslate"><span class="pre">payment</span></code> type (<code class="docutils literal notranslate"><span class="pre">cash</span></code> vs. <code class="docutils literal notranslate"><span class="pre">credit</span> <span class="pre">card</span></code>), each showing the same relationship between <code class="docutils literal notranslate"><span class="pre">distance</span></code> and <code class="docutils literal notranslate"><span class="pre">fare</span></code>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">FacetGrid</span><span class="p">(</span><span class="n">df_anscombe</span><span class="p">,</span> <span class="n">col</span><span class="o">=</span><span class="s2">&quot;dataset&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">map</span><span class="p">(</span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">,</span> <span class="s2">&quot;x&quot;</span><span class="p">,</span> <span class="s2">&quot;y&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fda47506820&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_106_1.png" src="../../_images/Lecture_7-pre_106_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="plot-the-data-using-lmplot">
+<h3>Plot the data using <code class="docutils literal notranslate"><span class="pre">lmplot</span></code><a class="headerlink" href="#plot-the-data-using-lmplot" title="Permalink to this headline">¶</a></h3>
+<p>Another approach that allows us to <code class="docutils literal notranslate"><span class="pre">facet</span></code> the data is to use <code class="docutils literal notranslate"><span class="pre">lmplot</span></code>.</p>
+<p>The benefit of <code class="docutils literal notranslate"><span class="pre">lmplot</span></code> is that it will also plot a regression line over our data, which, in this case, clearly demonstrates that across each dataset, the estimated slope is roughly the same.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">lmplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">df_anscombe</span><span class="p">,</span>
+           <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;x&#39;</span><span class="p">,</span>
+           <span class="n">y</span> <span class="o">=</span> <span class="s1">&#39;y&#39;</span><span class="p">,</span>
+           <span class="n">col</span> <span class="o">=</span> <span class="s1">&#39;dataset&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;seaborn.axisgrid.FacetGrid at 0x7fda47256eb0&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_7-pre_108_1.png" src="../../_images/Lecture_7-pre_108_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="id3">
+<h2>Conclusion<a class="headerlink" href="#id3" title="Permalink to this headline">¶</a></h2>
+<p>This concludes the tutorial! Hopefully, this has equipped you with some of the tools necessary to:</p>
+<ul class="simple">
+<li><p><strong>Describe</strong> the benefits and advantages of data visualization.</p></li>
+<li><p><strong>Propose</strong> a suitable data visualization for a particular <em>dataset</em> and <em>question</em>.</p></li>
+<li><p><strong>Implement</strong> a first-draft of this visualization in Python, using either <code class="docutils literal notranslate"><span class="pre">matplotlib</span></code> or <code class="docutils literal notranslate"><span class="pre">seaborn</span></code>.</p></li>
+<li><p><strong>Evaluate</strong> this data visualization and make suggestions for improvements in future iterations.</p></li>
+<li><p><strong>Reconstruct</strong> a visualization found “in the wild” using the appropriate dataset.</p></li>
+</ul>
+<p>If you’re interested in R, a tutorial on data visualization in R can be found <a class="reference external" href="https://seantrott.github.io/data_wrangling_visualization/">here</a>.</p>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Week3_Overview.html" title="previous page">Week 3</a>
+    <a class='right-next' id="next-link" href="Lecture_8.html" title="next page">Lecture 8 (4/13/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
