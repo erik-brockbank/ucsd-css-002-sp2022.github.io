@@ -1,5 +1,7 @@
 # Expectations
 
+***This content largely written by Ed Vul.***
+
 **Computational Social Science (CSS)** uses **computation** to understand **social phenomena**. "Using computation" means giving a computer very precise instructions about what steps to follow to calculate something of interest. This commonly takes two forms: computationally intensive analysis of large naturalistic datasets, and computational simulation of theoretical models of social phenomena to understand their behavior. In this class we focus on dealing with data.
 
 You will learn to write computer programs that analyze data in [Python](https://www.python.org/). The following are all consequences of this primary goal:

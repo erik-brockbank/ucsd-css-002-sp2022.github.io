@@ -2,6 +2,8 @@
 
 This is a guide to submitting assignments on datahub.
 
+***This content largely written by Ed Vul.***
+
 ## Overview
 
 **Technical overview:** Assignments are [jupyter notebooks](https://jupyter-notebook.readthedocs.io/en/stable/) served from UCSD's [datahub](https://datahub.ucsd.edu), and automatically graded by [nbgrader](https://nbgrader.readthedocs.io/en/stable/).
