@@ -1,5 +1,7 @@
 # Debugging
 
+***This content largely written by Ed Vul.***
+
 Your first attempt at writing a computer program will contain errors (bugs). It's not about you, this is true for everyone, including your instructors and professional programmers. Learning to program requires learning how to fix errors in your code. This process is called "debugging". Here we provide some accumulated wisdom about debugging. Fortunately, the steps to fixing the bug yourself, searching the internet for help, or asking someone else for help are the same.
 
 ## Identify what kind of error it is.

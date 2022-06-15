@@ -1,5 +1,7 @@
 # Extracurricular Resources
 
+***This list largely compiled by Ed Vul.***
+
 The materials of this class are designed to be self-sufficient,
 however, there are many reasons why you may want to seek out
 further resources, including:
