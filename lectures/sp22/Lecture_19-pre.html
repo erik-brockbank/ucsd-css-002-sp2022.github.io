@@ -1,0 +1,1296 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 19 (5/9/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 20 (5/11/2022)" href="Lecture_20-pre.html" />
+    <link rel="prev" title="Week 7" href="Week7_Overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_19-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_19-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_19-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#advanced-classifier-evaluation-roc-curves">
+   Advanced classifier evaluation: ROC curves
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#hard-and-soft-classification">
+     Hard and Soft Classification
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#different-thresholds-change-evaluation-metrics">
+     Different thresholds change evaluation metrics
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roc-curves-expressing-accuracy-across-different-thresholds">
+     ROC curves: expressing accuracy across different thresholds
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#roc-curves-in-scikit-learn">
+     ROC curves in scikit-learn
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#auc">
+       AUC
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-classification-algorithms-summary">
+   Evaluating classification algorithms: summary
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-19-5-9-2022">
+<h1>Lecture 19 (5/9/2022)<a class="headerlink" href="#lecture-19-5-9-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Evaluating classification algorithms</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Evaluating classification algorithms cont’d (ROC curves)</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="advanced-classifier-evaluation-roc-curves">
+<h1>Advanced classifier evaluation: ROC curves<a class="headerlink" href="#advanced-classifier-evaluation-roc-curves" title="Permalink to this headline">¶</a></h1>
+<p>First, let’s load in the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset and remind ourselves what it is we’re classifying to begin with…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">iris</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;sepal_length&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;sepal_width&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;species&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_19-pre_6_0.png" src="../../_images/Lecture_19-pre_6_0.png" />
+</div>
+</div>
+<p>Last time, we discussed:</p>
+<ul class="simple">
+<li><p>How to fit a <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors (k-NN) classification model to this data</p></li>
+<li><p>How to evaluate its performance on held-out or cross-validated test data</p></li>
+</ul>
+<p>Let’s quickly review this together by having you code and run the steps above yourself!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s start by changing this to a binary classification problem</span>
+<span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species_binary&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">iris</span><span class="p">[</span><span class="s1">&#39;species&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">map</span><span class="p">({</span><span class="s1">&#39;versicolor&#39;</span><span class="p">:</span> <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;virginica&#39;</span><span class="p">:</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">,</span>
+                                             <span class="s1">&#39;setosa&#39;</span><span class="p">:</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+
+<span class="c1"># 1. Select the `sepal_length` and `sepal_width` columns as X values</span>
+
+
+
+
+<span class="c1"># 2. Select the `species_binary` column we generated above as y values</span>
+
+
+
+
+<span class="c1"># 3. Use the `train-test-split` function to generate a set of training and test data points </span>
+    <span class="c1"># Use 0.2 for the test portion and set `random_state = 0` to make our results identical</span>
+    <span class="c1"># Don&#39;t forget to call `reset_index(drop = True)` for each of your train/test datasets</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+
+<span class="c1"># 4. Fit an sklearn `KNeighborsClassifier` instance to this data with 3 neighbors</span>
+
+
+
+<span class="c1"># 5. Evaluate the classifier using accuracy as a baseline metric</span>
+
+
+
+<span class="c1"># 6. Evaluate the classifier with a more sophisticated metric like F1 score</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="hard-and-soft-classification">
+<h2>Hard and Soft Classification<a class="headerlink" href="#hard-and-soft-classification" title="Permalink to this headline">¶</a></h2>
+<p>The <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors classifier chooses a predicted label <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> for a new set of features <span class="math notranslate nohighlight">\(\theta\)</span> by selecting the <em>mode</em> of the labels of the nearest training items.</p>
+<p>In this way, you can think of the nearest neighbors as essentially “voting” for the label of each test item. This produces a single label prediction for each test item. Put another way, all the predictions for our test items in the example above are either <code class="docutils literal notranslate"><span class="pre">'versicolor'</span></code> or <code class="docutils literal notranslate"><span class="pre">'non-versicolor'</span></code>. This sort of model <em>decision policy</em> is referred to as <strong>Hard Classification</strong>.</p>
+<p><strong>But, it doesn’t need to be this way.</strong> We can also represent the “votes” of the nearest neighbors as generating a <em>probability distribution</em> over <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> values.</p>
+<ul class="simple">
+<li><p>For example, if there are 3 nearest neighbors for our new item and 2 are ‘versicolor’ and 1 is ‘non-versicolor’, we can represent the new item as having a 2/3 chance of being ‘versicolor’.</p></li>
+<li><p>Many of the classification algorithms we’ll discuss can assign a <em>probability</em> of a particular label for a given test item rather than a strict label assignment.</p></li>
+</ul>
+<p>This form of classification is called <strong>Soft Classification</strong>.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">sklearn</span></code> <code class="docutils literal notranslate"><span class="pre">KNeighborsClassifier</span></code> class exports a <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> function that is just like the <code class="docutils literal notranslate"><span class="pre">predict</span></code> function except instead of showing us the <em>hard predictions</em> for each test item, it shows us the <em>soft prediction</em> probabilities:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s the original `predict` function</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">6</span><span class="o">-</span><span class="n">baf57049ea54</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Here&#39;s the original `predict` function</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+
+<span class="ne">NameError</span>: name &#39;knn&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s the graded probability prediction</span>
+<span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">7</span><span class="o">-</span><span class="mi">9</span><span class="n">b573d794d94</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Here&#39;s the graded probability prediction</span>
+<span class="ne">----&gt; </span><span class="mi">2</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+
+<span class="ne">NameError</span>: name &#39;knn&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the predictions above, the first column is the probability of ‘non-versicolor’ and the second is the probability of ‘versicolor’.</p>
+<p>This <em>Soft Classification</em> allows us to set more flexible decision policies about what kind of label <span class="math notranslate nohighlight">\(\hat{\lambda}\)</span> we want to assign to a given test item. Using the <em>mode</em> of the nearest neighbor labels in k-NN classification sets a <strong>classification threshold</strong> of 50% (for binary classification), but we could choose any threshold we want depending on the problem.</p>
+<ul class="simple">
+<li><p>In some cases, we may want to predict a label value whenever <em>any</em> of the neighbors have that label (ex. risk of a fatal disease).</p></li>
+<li><p>Or, maybe we only want to predict a particular label if 90% of the neighbors have that label (ex. setting a high parole).</p></li>
+</ul>
+<p>However, the classification threshold we set will effect how often we assign a particular label to new pieces of data.</p>
+<p><em>Why does this matter?</em></p>
+</div>
+<div class="section" id="different-thresholds-change-evaluation-metrics">
+<h2>Different thresholds change evaluation metrics<a class="headerlink" href="#different-thresholds-change-evaluation-metrics" title="Permalink to this headline">¶</a></h2>
+<p>Critically, our choice of classification threshold will affect our evaluation metrics above in predictable ways.</p>
+<p>In our <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset, labeling new data points based on the mode of 3 nearest neighbors sets a threshold of 2/3 for ‘versicolor’ labels.</p>
+<p>If we set a <em>lower</em> threshold of 1/3:</p>
+<ul class="simple">
+<li><p>We will label <em>more</em> test items as ‘versicolor’ since we only need 1 out of 3 neighbors to be ‘versicolor’</p></li>
+<li><p>We will have a <strong>higher true positive rate</strong> (and <strong>lower false negative rate</strong>) because we are more likely to detect all true versicolor items this way</p></li>
+<li><p>But, we will have a <strong>higher false positive rate</strong> (and <strong>lower true negative rate</strong>) since we will label more things as ‘versicolor’ that shouldn’t be due to our low threshold.</p></li>
+</ul>
+<p>If instead we set a very <em>high</em> threshold of 3/3:</p>
+<ul class="simple">
+<li><p>We will label <em>fewer</em> test items as ‘versicolor’ since we now need 3 out of 3 neighbors to be ‘versicolor’ before labeling a new item ‘versicolor’.</p></li>
+<li><p>We will have a <strong>lower true positive rate</strong> (and <strong>higher false negative rate</strong>) because we are more likely to pass up on some true versicolor items this way</p></li>
+<li><p>We will have a <strong>lower false positive rate</strong> (and <strong>higher true negative rate</strong>) since we will label few things as ‘versicolor’ that shouldn’t be due to our high threshold.</p></li>
+</ul>
+<p>Let’s illustrate this by looking at this pattern in our data.</p>
+</div>
+<div class="section" id="roc-curves-expressing-accuracy-across-different-thresholds">
+<h2>ROC curves: expressing accuracy across different thresholds<a class="headerlink" href="#roc-curves-expressing-accuracy-across-different-thresholds" title="Permalink to this headline">¶</a></h2>
+<p>Below, we’re going to compute the “versicolor probability” in our test set from above for a classifier with 5 nearest neighbors.</p>
+<p>Then, we’ll look at how different <em>thresholds</em> for identifying test items as ‘versicolor’ change our <strong>true positive rate</strong> and <strong>false positive rate</strong> in opposite directions.</p>
+<p><strong>Step 1</strong>: use the k-NN <code class="docutils literal notranslate"><span class="pre">predict_proba</span></code> function shown above to get probability values for each test item <span class="math notranslate nohighlight">\(p(\text{'versicolor'})\)</span> rather than hard classifications</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+
+<span class="c1"># Here&#39;s our soft classification with 5 nearest neighbors (converted to dataframe for easier processing)</span>
+<span class="n">versicolor_probs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">),</span>
+                                <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;non-versicolor_prob&quot;</span><span class="p">,</span> <span class="s2">&quot;versicolor_prob&quot;</span><span class="p">]</span>
+                               <span class="p">)</span>
+
+<span class="c1"># Let&#39;s add the true values for comparison</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">ytest</span>
+
+<span class="n">versicolor_probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">8</span><span class="o">-</span><span class="n">a2bc349bf354</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="ne">----&gt; </span><span class="mi">1</span> <span class="n">knn</span> <span class="o">=</span> <span class="n">KNeighborsClassifier</span><span class="p">(</span><span class="n">n_neighbors</span> <span class="o">=</span> <span class="mi">5</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># Here&#39;s our soft classification with 5 nearest neighbors (converted to dataframe for easier processing)</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">versicolor_probs</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">),</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                                 <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;non-versicolor_prob&quot;</span><span class="p">,</span> <span class="s2">&quot;versicolor_prob&quot;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;KNeighborsClassifier&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 2</strong>: Now, let’s pick a range of <em>classification thresholds</em> for ‘versicolor’ and show how this changes what values we assign to the test items.</p>
+<p>For <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, the thresholds are intuitive because we can break them out by each possible voting arrangement of our 5 neighbors.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Which test items get labeled &#39;versicolor&#39; if you only need 1 nearest neighbor to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="c1"># np.where is like an &quot;if-else&quot; condition for this column value</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="c1"># condition</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="c1"># value in all rows where condition above is True</span>
+    <span class="s1">&#39;non-versicolor&#39;</span> <span class="c1"># value in all rows where condition above is False</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need at least 2 nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k2_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.4</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need at least 3 nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k3_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.6</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need at least 4 nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k4_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.8</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="c1"># Which test items get labeled &#39;versicolor&#39; if you need *all 5* nearest neighbors to be versicolor?</span>
+<span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k5_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span>
+    <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">1.0</span><span class="p">,</span>
+    <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span>
+    <span class="s1">&#39;non-versicolor&#39;</span>
+<span class="p">)</span>
+
+<span class="n">versicolor_probs</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">9</span><span class="o">-</span><span class="mi">3</span><span class="n">daa2b3a961e</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="c1"># Which test items get labeled &#39;versicolor&#39; if you only need 1 nearest neighbor to be versicolor?</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">where</span><span class="p">(</span> <span class="c1"># np.where is like an &quot;if-else&quot; condition for this column value</span>
+<span class="ne">----&gt; </span><span class="mi">3</span>     <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;versicolor_prob&#39;</span><span class="p">]</span> <span class="o">&gt;=</span> <span class="mf">0.2</span><span class="p">,</span> <span class="c1"># condition</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span>     <span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="c1"># value in all rows where condition above is True</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s1">&#39;non-versicolor&#39;</span> <span class="c1"># value in all rows where condition above is False</span>
+
+<span class="ne">NameError</span>: name &#39;versicolor_probs&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 3</strong>: How do our <strong>true positive rate</strong> and <strong>false positive rate</strong> change for each of these thresholds?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">recall_score</span>
+
+<span class="c1"># What&#39;s the TPR for our lowest threshold (k1) above?</span>
+<span class="n">k1_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="c1"># What&#39;s the FPR for our lowest threshold (k1) above?</span>
+<span class="c1"># Note FPR = 1 - TNR and TNR is just the recall (TPR) for the *negative* label, which we can set below</span>
+<span class="n">k1_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span> <span class="c1"># positive label</span>
+                         <span class="p">)</span>
+
+<span class="c1"># Same as above for k2 threshold</span>
+<span class="n">k2_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k2_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k2_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k2_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+
+<span class="c1"># Same as above for k3 threshold</span>
+<span class="n">k3_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k3_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k3_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k3_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+
+
+<span class="c1"># Same as above for k4 threshold</span>
+<span class="n">k4_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k4_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k4_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k4_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+
+<span class="c1"># Same as above for k5 threshold</span>
+<span class="n">k5_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                      <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k5_label&#39;</span><span class="p">],</span>
+                      <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                      <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+                     <span class="p">)</span>
+<span class="n">k5_fpr</span> <span class="o">=</span> <span class="mi">1</span> <span class="o">-</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+                          <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k5_label&#39;</span><span class="p">],</span>
+                          <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+                          <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;non-versicolor&#39;</span>
+                         <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">10</span><span class="o">-</span><span class="mi">2700</span><span class="n">b5f571a0</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="c1"># What&#39;s the TPR for our lowest threshold (k1) above?</span>
+<span class="ne">----&gt; </span><span class="mi">4</span> <span class="n">k1_tpr</span> <span class="o">=</span> <span class="n">recall_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;true_label&#39;</span><span class="p">],</span> 
+<span class="g g-Whitespace">      </span><span class="mi">5</span>                       <span class="n">y_pred</span> <span class="o">=</span> <span class="n">versicolor_probs</span><span class="p">[</span><span class="s1">&#39;k1_label&#39;</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>                       <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">],</span>
+
+<span class="ne">NameError</span>: name &#39;versicolor_probs&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Phew! Now let’s combine the above to see how they compare:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For each of our thresholds, what is the true positive rate and the false positive rate?</span>
+
+<span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">)</span>
+<span class="n">roc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+    <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+    <span class="s2">&quot;TPR&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">k1_tpr</span><span class="p">,</span> <span class="n">k2_tpr</span><span class="p">,</span> <span class="n">k3_tpr</span><span class="p">,</span> <span class="n">k4_tpr</span><span class="p">,</span> <span class="n">k5_tpr</span><span class="p">],</span>
+    <span class="s2">&quot;FPR&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">k1_fpr</span><span class="p">,</span> <span class="n">k2_fpr</span><span class="p">,</span> <span class="n">k3_fpr</span><span class="p">,</span> <span class="n">k4_fpr</span><span class="p">,</span> <span class="n">k5_fpr</span><span class="p">]</span>
+<span class="p">})</span>
+
+<span class="n">roc_df</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">11</span><span class="o">-</span><span class="mi">9</span><span class="n">c9e8e96c008</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">roc_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="s2">&quot;threshold&quot;</span><span class="p">:</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mf">0.2</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">),</span>
+<span class="ne">----&gt; </span><span class="mi">6</span>     <span class="s2">&quot;TPR&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">k1_tpr</span><span class="p">,</span> <span class="n">k2_tpr</span><span class="p">,</span> <span class="n">k3_tpr</span><span class="p">,</span> <span class="n">k4_tpr</span><span class="p">,</span> <span class="n">k5_tpr</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="s2">&quot;FPR&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">k1_fpr</span><span class="p">,</span> <span class="n">k2_fpr</span><span class="p">,</span> <span class="n">k3_fpr</span><span class="p">,</span> <span class="n">k4_fpr</span><span class="p">,</span> <span class="n">k5_fpr</span><span class="p">]</span>
+<span class="g g-Whitespace">      </span><span class="mi">8</span> <span class="p">})</span>
+
+<span class="ne">NameError</span>: name &#39;k1_tpr&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Now, our final step is to graph this relationship.</p>
+<p>This is called an <strong><a class="reference external" href="https://en.wikipedia.org/wiki/Receiver_operating_characteristic">ROC curve</a></strong> (Receiver Operating Characteristic) and we’ll see why it’s useful once we’ve plotted it.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># ROC curve by hand</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">roc_df</span><span class="p">,</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;FPR&quot;</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;TPR&quot;</span>
+<span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;False Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;True Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">([])</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_yticklabels</span><span class="p">([])</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">12</span><span class="o">-</span><span class="mi">6</span><span class="n">debca9fd19b</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">data</span> <span class="o">=</span> <span class="n">roc_df</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;FPR&quot;</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;TPR&quot;</span>
+
+<span class="ne">NameError</span>: name &#39;roc_df&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>What is that??</em></p>
+<p>Answer: a somewhat clumsy ROC curve (since we’re not working with much data here).</p>
+<p><em>What does this mean?</em></p>
+<ul class="simple">
+<li><p>Each of our points above is the TPR and FPR for a given <em>classification threshold</em></p></li>
+<li><p>When we set a <em>low threshold</em>, we expect TPR and FPR to be very high (top right)</p></li>
+<li><p>When we set a <em>high threshold</em>, we expect TPR and FPR to both be very low (bottom left)</p></li>
+</ul>
+<p>What about in between?</p>
+<ul class="simple">
+<li><p>For every threshold in between the top right (low) and bottom left (high), we want to <em>keep TPR high while FPR goes down</em>.</p></li>
+<li><p>Put another way, we want to reduce FPR without having to also sacrifice TPR.</p></li>
+</ul>
+<p>Given the above, <strong>a good ROC curve is one that swings as close to the <em>top left</em> portion of the axes as possible</strong>.</p>
+<p>Here’s a picture that illustrates this:</p>
+<p><img alt="roc" src="../../_images/roc.png" /></p>
+<p>(<a class="reference external" href="https://medium.com/the-owl/evaluation-metrics-part-3-47c315e07222">source</a>)</p>
+<p><strong>Compared to what?</strong></p>
+<p>Note the dashed line across the middle. This indicates what you would expect to happen with TPR and FPR if your classifier was <em>random</em>. In other words, we can compare our ROC curve to the “random classifier” line to determine how much better our classifier is doing than random guessing.</p>
+<p>We use a metric called <em>area under the curve (AUC)</em> to calculate this difference.</p>
+<p>This measures the area under the ROC curve. The value ranges from 0 to 1, but since a random classifier has an AUC of 0.5, we’re looking for values &gt; 0.5.</p>
+</div>
+<div class="section" id="roc-curves-in-scikit-learn">
+<h2>ROC curves in scikit-learn<a class="headerlink" href="#roc-curves-in-scikit-learn" title="Permalink to this headline">¶</a></h2>
+<p>Fortunately, we don’t need to do all the manual calculations above to generate an ROC curve.</p>
+<p>As usual, <code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> has us covered!</p>
+<p>Below, we call the <code class="docutils literal notranslate"><span class="pre">roc_curve</span></code> function to generate an ROC curve:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+<span class="p">)</span>
+
+
+<span class="n">tpr</span>
+<span class="n">fpr</span>
+<span class="n">thresholds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">13</span><span class="o">-</span><span class="mf">2e3941</span><span class="n">cb1b54</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">2</span> 
+<span class="g g-Whitespace">      </span><span class="mi">3</span> <span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">4</span>     <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span>     <span class="n">y_score</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">pos_label</span> <span class="o">=</span> <span class="s1">&#39;versicolor&#39;</span>
+
+<span class="ne">NameError</span>: name &#39;ytest&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<p>Then, we can graph the results:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">fpr</span><span class="p">,</span>
+    <span class="n">y</span> <span class="o">=</span> <span class="n">tpr</span>
+<span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;False Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;True Positive Rate&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xticklabels</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mf">1.1</span><span class="p">,</span> <span class="mf">0.2</span><span class="p">))</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">14</span><span class="o">-</span><span class="n">cfb6b5f8de64</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">1</span> <span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">2</span>     <span class="n">x</span> <span class="o">=</span> <span class="n">fpr</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span>     <span class="n">y</span> <span class="o">=</span> <span class="n">tpr</span>
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="p">)</span>
+<span class="g g-Whitespace">      </span><span class="mi">5</span> 
+
+<span class="ne">NameError</span>: name &#39;fpr&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="auc">
+<h3>AUC<a class="headerlink" href="#auc" title="Permalink to this headline">¶</a></h3>
+<p><code class="docutils literal notranslate"><span class="pre">scikit-learn</span></code> also exports an AUC function that will report how our ROC curve fares:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_auc_score</span>
+
+
+<span class="n">roc_auc_score</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># get probabilities for &#39;versicolor&#39;</span>
+    <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">]</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output traceback highlight-ipythontb notranslate"><div class="highlight"><pre><span></span><span class="gt">---------------------------------------------------------------------------</span>
+<span class="ne">NameError</span><span class="g g-Whitespace">                                 </span>Traceback (most recent call last)
+<span class="o">&lt;</span><span class="n">ipython</span><span class="o">-</span><span class="nb">input</span><span class="o">-</span><span class="mi">15</span><span class="o">-</span><span class="n">ffbfe1299508</span><span class="o">&gt;</span> <span class="ow">in</span> <span class="o">&lt;</span><span class="n">module</span><span class="o">&gt;</span>
+<span class="g g-Whitespace">      </span><span class="mi">3</span> 
+<span class="g g-Whitespace">      </span><span class="mi">4</span> <span class="n">roc_auc_score</span><span class="p">(</span>
+<span class="ne">----&gt; </span><span class="mi">5</span>     <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+<span class="g g-Whitespace">      </span><span class="mi">6</span>     <span class="n">y_score</span> <span class="o">=</span> <span class="n">knn</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="c1"># get probabilities for &#39;versicolor&#39;</span>
+<span class="g g-Whitespace">      </span><span class="mi">7</span>     <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;versicolor&#39;</span><span class="p">,</span> <span class="s1">&#39;non-versicolor&#39;</span><span class="p">]</span>
+
+<span class="ne">NameError</span>: name &#39;ytest&#39; is not defined
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluating-classification-algorithms-summary">
+<h1>Evaluating classification algorithms: summary<a class="headerlink" href="#evaluating-classification-algorithms-summary" title="Permalink to this headline">¶</a></h1>
+<p>When we use a classification algorithm like <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, we want a way to quantify <em>how well it performs</em> with test data.</p>
+<ol class="simple">
+<li><p>The most intuitive way to do so is with accuracy, but this can mis-construe our classifier’s performance when we have imbalanced data.</p></li>
+<li><p>Alternatives that rely on the <em>confusion matrix</em> allow us to weight the relative impact of different kinds of <em>errors</em> (false positives and false negatives).</p></li>
+<li><p>Recognizing that our rate of false positives and false negatives is sensitive to the <em>classification threshold</em> used in our model (e.g., the “voting” procedure in k-NN), we can use an ROC curve to examine the classifier’s success across a range of thresholds.</p></li>
+</ol>
+<hr class="docutils" />
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Week7_Overview.html" title="previous page">Week 7</a>
+    <a class='right-next' id="next-link" href="Lecture_20-pre.html" title="next page">Lecture 20 (5/11/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

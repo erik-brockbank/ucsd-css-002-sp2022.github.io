@@ -1,0 +1,1276 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 24 (5/20/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 25 (5/23/2022)" href="Lecture_25-post.html" />
+    <link rel="prev" title="Lecture 23 (5/18/2022)" href="Lecture_23-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_24-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_24-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_24-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#review-challenges-with-k-means">
+   Review: challenges with
+   <span class="math notranslate nohighlight">
+    \(k\)
+   </span>
+   -means
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#gaussian-mixture-models-generalizing-k-means">
+   Gaussian Mixture Models: generalizing
+   <span class="math notranslate nohighlight">
+    \(k\)
+   </span>
+   -means
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#estimating-gmms">
+     Estimating GMMs
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#aside-expectation-maximization">
+     Aside: Expectation Maximization
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#gaussian-mixture-models-in-sklearn">
+     Gaussian Mixture Models in sklearn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#wow">
+   WOW!!
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#evaluating-gaussian-mixture-models">
+     Evaluating Gaussian Mixture Models
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#failure-modes">
+     Failure Modes
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practice">
+   Practice
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-24-5-20-2022">
+<h1>Lecture 24 (5/20/2022)<a class="headerlink" href="#lecture-24-5-20-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Evaluating <span class="math notranslate nohighlight">\(k\)</span>-means (and other clustering solutions)</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Clustering with Gaussian Mixture Models</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="review-challenges-with-k-means">
+<h1>Review: challenges with <span class="math notranslate nohighlight">\(k\)</span>-means<a class="headerlink" href="#review-challenges-with-k-means" title="Permalink to this headline">¶</a></h1>
+<p>In Wednesday’s lecture, we discussed a shortcoming of <span class="math notranslate nohighlight">\(k\)</span>-means clustering: the algorithm assumes that <strong>all the clusters are the same variance</strong>.</p>
+<p>In some cases, when we have data that is very <em>clearly clustered</em> but unequal variance, the algorithm fails to cluster the data in the way we would want.</p>
+<p>To illustrate this, here’s a set of data we might want to cluster. This has a pretty intuitive clustering solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+
+<span class="n">mouse_vals</span><span class="p">,</span> <span class="n">mouse_clusters</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="c1"># how many samples to generate </span>
+                                          <span class="n">n_features</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># number of features</span>
+                                          <span class="n">centers</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="c1"># how many &quot;blobs&quot;</span>
+                                          <span class="n">cluster_std</span> <span class="o">=</span> <span class="p">[</span><span class="mf">0.75</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">,</span> <span class="mf">0.25</span><span class="p">],</span> <span class="c1"># SD of the blobs (can be a list)</span>
+                                          <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span>
+                                         <span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+<span class="c1">#                 hue = mouse_clusters, # toggle comment this</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;x2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_24-post_5_0.png" src="../../_images/Lecture_24-post_5_0.png" />
+</div>
+</div>
+<p>However, when we estimate clusters in this data using <span class="math notranslate nohighlight">\(k\)</span>-means clustering, we get a very unintuitive solution:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="n">kmouse</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>
+               <span class="p">)</span>
+<span class="c1"># Show cluster centers</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">]</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;x2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_24-post_7_0.png" src="../../_images/Lecture_24-post_7_0.png" />
+</div>
+</div>
+<p><strong>Our <span class="math notranslate nohighlight">\(k\)</span>-means clustering is finding 3 cluster centers and then assigning points to their closest center without any ability to accommodate the fact that the clusters are of different sizes (size == variance here, not number of elements).</strong></p>
+<p><img alt="kmouse_clusters" src="../../_images/kmouse_clusters.png" /></p>
+<p><em><strong>What can we do about this? How do we revise our clustering solution to allow for clusters that vary in size?</strong></em></p>
+<p>…</p>
+</div>
+<hr class="docutils" />
+<div class="section" id="gaussian-mixture-models-generalizing-k-means">
+<h1>Gaussian Mixture Models: generalizing <span class="math notranslate nohighlight">\(k\)</span>-means<a class="headerlink" href="#gaussian-mixture-models-generalizing-k-means" title="Permalink to this headline">¶</a></h1>
+<p>One way we can think about <span class="math notranslate nohighlight">\(k\)</span>-means clustering is that it tries to find a set of cluster <em>means</em> (as the name implies) that minimize the inertia of the data points around their closest mean.</p>
+<p>What Gaussian Mixture Models do is solve the same problem but with two additional improvements:</p>
+<ul class="simple">
+<li><p>We also identify an optimal <em>variance</em> for each cluster (same dimensions as the data: a covariance matrix)</p></li>
+<li><p>We identify a <em>weight</em> for each cluster that reflects the different number of data points assigned to each one</p></li>
+</ul>
+<p>These are some big improvements! <em>Is it magic???</em> No, it’s Gaussians.</p>
+<p>This amounts to finding a set of <em>multi-variate Gaussians</em> whose individual means and variances best capture the data (plus their corresponding weights).</p>
+<p>Critically, this allows our clusters to have different sizes and shapes, which <em>loosens</em> the constraint implied by <span class="math notranslate nohighlight">\(k\)</span>-means that the clusters only vary in their means.</p>
+<p><img alt="em" src="../../_images/em.gif" /></p>
+<p>(Source: <a class="reference external" href="https://en.wikipedia.org/wiki/Expectation%E2%80%93maximization_algorithm">wikipedia</a>)</p>
+<p>In the example above, we use this approach to identify two clusters of types of Old Faithful eruptions, using the <em>Duration</em> and <em>Delay</em> of each observed eruption. Note that the end state of the GIF is essentially two different Gaussians that may have different means and covariance values, and different numbers of points in each cluster.</p>
+<p><strong>Overview</strong></p>
+<p>Gaussian Mixture Models estimate three <em>parameters</em> in our data:</p>
+<ol class="simple">
+<li><p>A vector of <em>means</em> <span class="math notranslate nohighlight">\(\mu\)</span> with an individual mean <span class="math notranslate nohighlight">\(\mu_j\)</span> for each of our <span class="math notranslate nohighlight">\(k\)</span> clusters</p></li>
+<li><p>A vector of <em>covariances</em> <span class="math notranslate nohighlight">\(\Sigma\)</span> with <span class="math notranslate nohighlight">\(\Sigma_j\)</span> for each of our <span class="math notranslate nohighlight">\(k\)</span> clusters</p></li>
+<li><p>A vector of <em>weights</em> <span class="math notranslate nohighlight">\(w\)</span> that determines the relative densities of our clusters. Note these weights sum to 1: <span class="math notranslate nohighlight">\(\sum_{j=1}^{k} w_j = 1\)</span></p></li>
+</ol>
+<p>Using these parameters, often referred to as <span class="math notranslate nohighlight">\(\theta = \{\mu, \Sigma, w\}\)</span>, we can estimate, for all of our data points, the probability that they were sampled from their respective cluster. Note: if we compare this to <span class="math notranslate nohighlight">\(k\)</span>-means, which just assigns each point to a cluster, <span class="math notranslate nohighlight">\(k\)</span>-means and GMMs are similar to <em>hard classification</em> and <em>soft classification</em> applied to clustering.</p>
+<p>In this formulation, we assign the probability of our data <span class="math notranslate nohighlight">\(X\)</span> given the parameters <span class="math notranslate nohighlight">\(\theta\)</span> above to be:
+$<span class="math notranslate nohighlight">\(p(X | \theta) = \sum_{j=1}^{k} w_j \ \mathcal{N}(X | \mu_j, \Sigma_j)\)</span>$</p>
+<p>Here, <span class="math notranslate nohighlight">\(\mathcal{N}(X | \mu_j, \Sigma_j)\)</span> is just the probability of our data points under a normal (multi-variate Gaussian) distribution with mean <span class="math notranslate nohighlight">\(\mu_j\)</span> and covariance <span class="math notranslate nohighlight">\(\Sigma_j\)</span>.</p>
+<p>The challenge for our model is to find the parameter values <span class="math notranslate nohighlight">\(\theta = \{\mu, \Sigma, w\}\)</span> that maximizes <span class="math notranslate nohighlight">\(p(X | \theta)\)</span>:</p>
+<div class="math notranslate nohighlight">
+\[\hat{\theta} = arg max_{\theta} p(X | \theta)\]</div>
+<p>It turns out, there’s a (relatively) straightforward process for doing this.</p>
+<div class="section" id="estimating-gmms">
+<h2>Estimating GMMs<a class="headerlink" href="#estimating-gmms" title="Permalink to this headline">¶</a></h2>
+<p>There’s a really excellent tutorial <a class="reference external" href="https://towardsdatascience.com/gaussian-mixture-models-and-expectation-maximization-a-full-explanation-50fa94111ddd">here</a> that walks through how this works with the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset (the first part anyway; later on things get a little more complicated). Another tutorial <a class="reference external" href="https://towardsdatascience.com/gaussian-mixture-models-explained-6986aaf5a95">here</a> illustrates the math in fine detail if you want to understand this on a more technical level.</p>
+<p>The process of estimating this model follows two steps, very similar to <span class="math notranslate nohighlight">\(k\)</span>-means clustering!</p>
+<p><strong>Initialization</strong></p>
+<p>Like <span class="math notranslate nohighlight">\(k\)</span>-means, we start by <em>initializing our clusters</em>. With <span class="math notranslate nohighlight">\(k\)</span>-means all we needed was to guess our cluster centers. Now, we need initial estimates for all the parameters above: <span class="math notranslate nohighlight">\(\mu\)</span>, <span class="math notranslate nohighlight">\(\Sigma\)</span>, and <span class="math notranslate nohighlight">\(w\)</span>.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(w\)</span>: For our weights, we can assume to start that each cluster has an equal number of data points: <span class="math notranslate nohighlight">\(w_j = 1/k\)</span></p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu\)</span>: in theory, we can initialize our <span class="math notranslate nohighlight">\(\mu\)</span> values to be randomly sampled points like we did with <span class="math notranslate nohighlight">\(k\)</span>-means. However, the more popular approach here is to actually run <span class="math notranslate nohighlight">\(k\)</span>-means and use the centers that it estimates!</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Sigma\)</span>: our covariance matrix can be initialized to something generic (identity matrix, 1s, etc.)</p></li>
+</ul>
+<p><strong>Step 1</strong></p>
+<p>Now, the first step of the algorithm is to figure out the <em>probability that each data point was sampled from each of the potential clusters</em> with the cluster parameters initialized above.</p>
+<p>Essentially, we make a table like the one below for each point in <span class="math notranslate nohighlight">\(X\)</span>. This table assumes that <span class="math notranslate nohighlight">\(X\)</span> is 2-dimensional as in our mouse example above, and assumes there are 3 clusters:</p>
+<table class="colwidths-auto table">
+<thead>
+<tr class="row-odd"><th class="text-align:center head"><p><span class="math notranslate nohighlight">\(x\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(p(j=1)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(p(j=2)\)</span></p></th>
+<th class="text-align:center head"><p><span class="math notranslate nohighlight">\(p(j=3)\)</span></p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td class="text-align:center"><p>(1, 3)</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-odd"><td class="text-align:center"><p>(2, 5)</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+<tr class="row-even"><td class="text-align:center"><p>…</p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+<td class="text-align:center"><p></p></td>
+</tr>
+</tbody>
+</table>
+<p>With multi-variate Gaussians, the probability that a point was sampled from a particular distribution is pretty straightforward: we can use the probability density function for the Gaussian with the current parameter estimates <span class="math notranslate nohighlight">\(\mu_j\)</span> and <span class="math notranslate nohighlight">\(\Sigma_j\)</span>.</p>
+<ul class="simple">
+<li><p>Here, we also scale the probabilities by the weights for each cluster and divide by the probabilities assigned to the other clusters for each point.</p></li>
+<li><p>So each row in the table above would have <span class="math notranslate nohighlight">\(x_1\)</span> and <span class="math notranslate nohighlight">\(x_2\)</span> values for a given point, plus three probabilities that sum to 1 indicating the probability of that point belonging to each cluster <span class="math notranslate nohighlight">\(j\)</span>.</p></li>
+</ul>
+<p>For cluster 1, we would set the probability that <span class="math notranslate nohighlight">\(x_i\)</span> is in cluster 1 to be:</p>
+<div class="math notranslate nohighlight">
+\[p(x_i = \text{cluster 1} | \ \theta) = \dfrac{w_1 \ \mathcal{N}(x_i | \mu_1, \Sigma_1)}{\sum_{j=1}^{k} w_j \ \mathcal{N}(x_i | \mu_j, \Sigma_j)} \]</div>
+<p>Note this step echoes the <em>assignment</em> step of <span class="math notranslate nohighlight">\(k\)</span>-means, except we’re calculating a <em>probability</em> for each point belonging in each cluster instead of simply assigning each point to a cluster.</p>
+<p><strong>Step 2</strong></p>
+<p>Next, we figure out the <em>best parameter estimates</em> for each cluster <strong>based on the probabilities assigned to each data point in Step 1</strong>. This echoes the step in <span class="math notranslate nohighlight">\(k\)</span>-means where we re-evaluated each cluster center. However, now things are more complicated because we need to revise all the cluster parameters above.</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(w_j\)</span>: We start by adding up the probability of each point belonging to cluster <span class="math notranslate nohighlight">\(j\)</span> from Step 1. This tells us how many points we <em>expect</em> to have in that cluster. Then, we set each weight <span class="math notranslate nohighlight">\(w_j\)</span> to just be the number of points estimated for that cluster divided by the total number of data points <span class="math notranslate nohighlight">\(N\)</span>. For example, our weight for cluster 1, <span class="math notranslate nohighlight">\(w_1\)</span>, would be set to:
+$<span class="math notranslate nohighlight">\(w_1 := \dfrac{\sum_{i=1}^{N} p(j=1)_i}{N}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\mu_j\)</span>: Our <span class="math notranslate nohighlight">\(\mu_j\)</span>, the estimated mean of each cluster, will be the average of all our data points weighted by the probability of each value belonging to cluster <span class="math notranslate nohighlight">\(j\)</span>. For example:
+$<span class="math notranslate nohighlight">\(\mu_1 := \dfrac{\sum_{i=1}^{N} x_n \ p(j=1)_i}{\sum_{i=1}^{N} p(j=1)_i}\)</span>$</p></li>
+<li><p><span class="math notranslate nohighlight">\(\Sigma_j\)</span>: Our <span class="math notranslate nohighlight">\(\Sigma_j\)</span>, similar to the above, will be the covariance of all our datapoints <span class="math notranslate nohighlight">\((x_1, x_2)\)</span>, weighted by the probability of each point belonging to our cluster <span class="math notranslate nohighlight">\(j\)</span>. If you’re familiar with the notation for expressing covariance below, it looks like this:
+$<span class="math notranslate nohighlight">\(\Sigma_1 := \dfrac{\sum_{i=1}^{N} p(j=1)_i \ (x_i - \mu_1)(x_i - \mu_1)^T}{\sum_{i=1}^{N} p(j=1)_i}\)</span>$</p></li>
+</ul>
+<p>The formal steps for these parameter updates isn’t super important (but is helpful if this is familiar notation!). The key take-away is the <em>operation</em> being done.</p>
+<p><strong>Step 3</strong></p>
+<p>Repeat Step 1 and Step 2 until convergence. Convergence occurs when we’ve more or less maximized our <em>log likelihood</em>, the <span class="math notranslate nohighlight">\(log \ p(X | \theta)\)</span> using the equation for <span class="math notranslate nohighlight">\(p(X | \theta)\)</span> above.</p>
+</div>
+<div class="section" id="aside-expectation-maximization">
+<h2>Aside: Expectation Maximization<a class="headerlink" href="#aside-expectation-maximization" title="Permalink to this headline">¶</a></h2>
+<p>If the above seemed like an especially tedious trip into the depths of model estimation, there’s a reason we did this!</p>
+<p>Steps 1 and 2 in the model estimation process above are examples of a <em>more general process called Expectation Maximization</em>.</p>
+<p>Using EM to estimate a model’s parameters involves breaking down the process into two steps:</p>
+<ol class="simple">
+<li><p>The <strong>“E-Step”</strong>: what is the (expected) likelihood of the data <span class="math notranslate nohighlight">\(X\)</span> given the current estimates for the parameters <span class="math notranslate nohighlight">\(\theta\)</span> (Step 1 above)?</p></li>
+<li><p>The <strong>“M-Step”</strong>: what are the parameter estimates <span class="math notranslate nohighlight">\(\theta\)</span> that will maximize the likelihoods in the previous <em>E-Step</em> (Step 2 above)?</p></li>
+</ol>
+<p>In fact, the process for simple <span class="math notranslate nohighlight">\(k\)</span>-means clustering that we discussed on Wednesday is <em>also</em> a simplified example of the EM process:</p>
+<ul class="simple">
+<li><p>E-Step: assign data points to the nearest cluster</p></li>
+<li><p>M-Step: estimate the new cluster centers given the data point assignments</p></li>
+</ul>
+<p>Expectation Maximization is a way to estimate model parameters when those parameters depend on <em>latent variables</em>, in this case our cluster assignments. We don’t need to get into the formal details of EM more generally, but this way you’re familiar with the underlying idea behind the algorithms for <span class="math notranslate nohighlight">\(k\)</span>-means and GMMs above.</p>
+<p>Now, let’s jump into the actual coding!</p>
+</div>
+<div class="section" id="gaussian-mixture-models-in-sklearn">
+<h2>Gaussian Mixture Models in sklearn<a class="headerlink" href="#gaussian-mixture-models-in-sklearn" title="Permalink to this headline">¶</a></h2>
+<p>The <code class="docutils literal notranslate"><span class="pre">GaussianMixture</span></code> class documentation is <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.mixture.GaussianMixture.html">here</a>.</p>
+<p>There’s a nice overview of how they work in sklearn <a class="reference external" href="https://scikit-learn.org/stable/modules/mixture.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.mixture</span> <span class="kn">import</span> <span class="n">GaussianMixture</span>
+
+<span class="n">gm</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="n">gm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span>
+<span class="n">gm</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>GaussianMixture(n_components=3, random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">labels</span> <span class="o">=</span> <span class="n">gm</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span>
+<span class="n">labels</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+    <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+    <span class="n">hue</span> <span class="o">=</span> <span class="n">labels</span><span class="p">,</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_24-post_17_0.png" src="../../_images/Lecture_24-post_17_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="wow">
+<h1>WOW!!<a class="headerlink" href="#wow" title="Permalink to this headline">¶</a></h1>
+<p><em>What information did we fit?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="o">.</span><span class="n">converged_</span> <span class="c1"># Did it work?</span>
+<span class="n">gm</span><span class="o">.</span><span class="n">n_iter_</span> <span class="c1"># How many iterations?</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>5
+</pre></div>
+</div>
+</div>
+</div>
+<p>The <code class="docutils literal notranslate"><span class="pre">n_iter_</span></code> attribute above tells us how many times the Expectation Maximization algorithm ran to estimate the parameters.</p>
+<p><em>What about the parameter values themselves?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="o">.</span><span class="n">means_</span> <span class="c1"># Original: [(3, 3), (1.5, 5), (4.5, 5)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[1.49291625, 4.99385141],
+       [3.03299495, 3.01461154],
+       [4.50139164, 4.99700108]])
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Our recovered means are very close to the ones that generated the data.</strong></p>
+<p>How do our recovered standard deviations compare?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span> <span class="c1"># Covariance matrix estimate (x1 and x2) for each cluster</span>
+
+<span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># compare to 0.25 for cluster 0</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># compare to 0.25 for cluster 0</span>
+
+<span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">1</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># compare to 0.25 for cluster 1</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># compare to 0.25 for cluster 1</span>
+
+<span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">])</span> <span class="c1"># compare to 0.75 for cluster 2</span>
+<span class="n">np</span><span class="o">.</span><span class="n">sqrt</span><span class="p">(</span><span class="n">gm</span><span class="o">.</span><span class="n">covariances_</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">])</span> <span class="c1"># compare to 0.75 for cluster 2</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.25725040914132336
+</pre></div>
+</div>
+</div>
+</div>
+<p>Pretty good! We did generate this data using Gaussian mixtures, but even so…</p>
+<p>Finally, we can see what <em>weights</em> it estimated for our data, i.e., the relative density of points in each cluster:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="o">.</span><span class="n">weights_</span> <span class="c1"># Original values: 100, 100, 300</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0.25146957, 0.49802568, 0.25050475])
+</pre></div>
+</div>
+</div>
+</div>
+<p>Woo hoo!</p>
+<div class="section" id="evaluating-gaussian-mixture-models">
+<h2>Evaluating Gaussian Mixture Models<a class="headerlink" href="#evaluating-gaussian-mixture-models" title="Permalink to this headline">¶</a></h2>
+<p>One of the advantages of the Expectation Maximization algorithm used to fit GMMs is that we have a <em>likelihood value</em> that tells us how well our data fits the model with the specified parameters (specifically, the probability of our data <span class="math notranslate nohighlight">\(X\)</span> given the model parameter estimates <span class="math notranslate nohighlight">\(\theta\)</span>, <span class="math notranslate nohighlight">\(p(X | \theta)\)</span>).</p>
+<p>We can use this as the basis for evaluating our model or comparing it to other possible models (e.g., ones with more or fewer clusters).</p>
+<p>Scores like <em><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Akaike_information_criterion">AIC</a></strong></em> (Akaike Information Criterion, see also <a class="reference external" href="https://towardsdatascience.com/introduction-to-aic-akaike-information-criterion-9c9ba1c96ced">here</a>) or <em><strong><a class="reference external" href="https://en.wikipedia.org/wiki/Bayesian_information_criterion">BIC</a></strong></em> (Bayesian Information Criterion), both exported by the <code class="docutils literal notranslate"><span class="pre">GaussianMixture</span></code> class, are based on the likelihood of our model fit. They tell you how well your model accounts for the data, while penalizing models that have <em>more</em> parameters.</p>
+<p>We can use these values to evaluate our model or (more often) compare it to other models.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span> <span class="c1"># this is the average per-sample log likelihood of our data</span>
+<span class="n">gm</span><span class="o">.</span><span class="n">aic</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span> <span class="c1"># AIC</span>
+<span class="n">gm</span><span class="o">.</span><span class="n">bic</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span> <span class="c1"># BIC</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>8853.800356844406
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s see how this compares to if we fit a model above with only <em>two</em> clusters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm2</span> <span class="o">=</span> <span class="n">GaussianMixture</span><span class="p">(</span><span class="n">n_components</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">labels2</span> <span class="o">=</span> <span class="n">gm2</span><span class="o">.</span><span class="n">fit_predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span>
+<span class="n">labels2</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+    <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+    <span class="n">hue</span> <span class="o">=</span> <span class="n">labels2</span><span class="p">,</span>
+    <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>
+<span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_24-post_32_0.png" src="../../_images/Lecture_24-post_32_0.png" />
+</div>
+</div>
+<p>Yikes! How does this compare to the 3 cluster version?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gm2</span><span class="o">.</span><span class="n">aic</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span> <span class="c1"># lower is better, so this is worse than the 3 cluster one above!</span>
+<span class="n">gm2</span><span class="o">.</span><span class="n">bic</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span> <span class="c1"># same story here</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10311.399648442439
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="failure-modes">
+<h2>Failure Modes<a class="headerlink" href="#failure-modes" title="Permalink to this headline">¶</a></h2>
+<p>Because of the additional complexity involved in estimating Gaussian mixture models, things can sometimes go awry, e.g., when there are few data points in a given cluster. We’re not going to dive into this, but it’s worth being aware of.</p>
+<p>Some of these problems can be avoided by starting out with pretty good guesses about the Gaussian means.</p>
+<p>How do we make good starting guesses?</p>
+<p><span class="math notranslate nohighlight">\(k\)</span>-means clustering!</p>
+<p>The sklearn <code class="docutils literal notranslate"><span class="pre">GaussianMixture</span></code> class has an <code class="docutils literal notranslate"><span class="pre">init_params</span></code> argument specifying how the initial parameter values should be estimated.</p>
+<ul class="simple">
+<li><p>The default value for this is “kmeans”, but you can also supply “kmeans++” or two versions of random selection.</p></li>
+</ul>
+</div>
+</div>
+<div class="section" id="practice">
+<h1>Practice<a class="headerlink" href="#practice" title="Permalink to this headline">¶</a></h1>
+<p>If we get through all the above with time left over, you can practice fitting a GMM yourself!</p>
+<p>Read in the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset and try using a Gaussian Mixture Model to cluster the iris species (you can use any 1, 2, or all 4 features).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+
+<span class="n">iris</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">load_dataset</span><span class="p">(</span><span class="s1">&#39;iris&#39;</span><span class="p">)</span>
+<span class="n">iris</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>sepal_length</th>
+      <th>sepal_width</th>
+      <th>petal_length</th>
+      <th>petal_width</th>
+      <th>species</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>5.1</td>
+      <td>3.5</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>4.9</td>
+      <td>3.0</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>4.7</td>
+      <td>3.2</td>
+      <td>1.3</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4.6</td>
+      <td>3.1</td>
+      <td>1.5</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5.0</td>
+      <td>3.6</td>
+      <td>1.4</td>
+      <td>0.2</td>
+      <td>setosa</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>145</th>
+      <td>6.7</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>146</th>
+      <td>6.3</td>
+      <td>2.5</td>
+      <td>5.0</td>
+      <td>1.9</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>147</th>
+      <td>6.5</td>
+      <td>3.0</td>
+      <td>5.2</td>
+      <td>2.0</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>148</th>
+      <td>6.2</td>
+      <td>3.4</td>
+      <td>5.4</td>
+      <td>2.3</td>
+      <td>virginica</td>
+    </tr>
+    <tr>
+      <th>149</th>
+      <td>5.9</td>
+      <td>3.0</td>
+      <td>5.1</td>
+      <td>1.8</td>
+      <td>virginica</td>
+    </tr>
+  </tbody>
+</table>
+<p>150 rows × 5 columns</p>
+</div></div></div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_23-post.html" title="previous page">Lecture 23 (5/18/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_25-post.html" title="next page">Lecture 25 (5/23/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

@@ -1,0 +1,1241 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 23 (5/18/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 24 (5/20/2022)" href="Lecture_24-post.html" />
+    <link rel="prev" title="Lecture 22 (5/16/2022)" href="Lecture_22-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_23-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_23-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_23-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#evaluating-k-means-and-other-clustering-algorithms">
+   Evaluating
+   <span class="math notranslate nohighlight">
+    \(k\)
+   </span>
+   -means (and other clustering) algorithms
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensuring-the-right-number-of-clusters">
+     Ensuring the right number of clusters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#goldilocks-and-the-three-clusters">
+       Goldilocks and the Three Clusters
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#k-means-inertia-or-within-cluster-sum-of-squares-wcss">
+       <span class="math notranslate nohighlight">
+        \(k\)
+       </span>
+       -means
+       <em>
+        Inertia
+       </em>
+       or Within-Cluster Sum of Squares (WCSS)
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#the-elbow-method">
+       The “Elbow Method”
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#ensuring-optimal-and-stable-clustering">
+     Ensuring optimal (and stable) clustering
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-1-try-again">
+       Solution 1: try again…
+      </a>
+     </li>
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#solution-2-k-means">
+       Solution 2:
+       <span class="math notranslate nohighlight">
+        \(k\)
+       </span>
+       -means++
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#consistently-sub-optimal-clusters">
+     Consistently sub-optimal clusters
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#choosing-the-model-to-fit-the-data">
+       Choosing the model to fit the data
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-23-5-18-2022">
+<h1>Lecture 23 (5/18/2022)<a class="headerlink" href="#lecture-23-5-18-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Clustering: <span class="math notranslate nohighlight">\(k\)</span>-means</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Evaluating <span class="math notranslate nohighlight">\(k\)</span>-means and other clustering solutions</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="evaluating-k-means-and-other-clustering-algorithms">
+<h1>Evaluating <span class="math notranslate nohighlight">\(k\)</span>-means (and other clustering) algorithms<a class="headerlink" href="#evaluating-k-means-and-other-clustering-algorithms" title="Permalink to this headline">¶</a></h1>
+<p>Ways <span class="math notranslate nohighlight">\(k\)</span>-means clustering can fail, and how to overcome them:</p>
+<ol class="simple">
+<li><p>Wrong number of clusters</p>
+<ul class="simple">
+<li><p>Using WCSS and the “elbow method” to determine clusters</p></li>
+</ul>
+</li>
+<li><p>Inconsistent (and sometimes sub-optimal) clusters</p>
+<ul class="simple">
+<li><p>Repeated iterations; k-means++ and other variants</p></li>
+</ul>
+</li>
+<li><p>Consistently sub-optimal clusters</p>
+<ul class="simple">
+<li><p>The underlying “model” of <span class="math notranslate nohighlight">\(k\)</span>-means (mouse data)</p></li>
+</ul>
+</li>
+</ol>
+<p>Instead of the <code class="docutils literal notranslate"><span class="pre">iris</span></code> dataset that we used last time, let’s check out some of the sklearn tools for <em>generating</em> sample data: the sklearn <code class="docutils literal notranslate"><span class="pre">make_blobs</span></code> function <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.datasets.make_blobs.html">here</a> (see other available data generators <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#samples-generator">here</a>)</p>
+<p><strong>Step 1: generate our data</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.datasets</span> <span class="kn">import</span> <span class="n">make_blobs</span>
+
+<span class="n">sample_vals</span><span class="p">,</span> <span class="n">sample_clusters</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="mi">300</span><span class="p">,</span> <span class="c1"># how many samples to generate </span>
+                                          <span class="n">n_features</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># number of features</span>
+                                          <span class="n">centers</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="c1"># how many &quot;blobs&quot;</span>
+                                          <span class="n">center_box</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">10</span><span class="p">),</span> <span class="c1"># what range the &quot;centers&quot; can be in</span>
+                                          <span class="n">cluster_std</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="c1"># SD of the blobs (can be a list)</span>
+                                          <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span>
+                                         <span class="p">)</span>
+
+<span class="c1"># sample_vals</span>
+<span class="c1"># sample_clusters</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Step 2: let’s take a look!</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">sample_clusters</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;x2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_8_0.png" src="../../_images/Lecture_23-post_8_0.png" />
+</div>
+</div>
+<p><strong>Step 3: profit</strong></p>
+<p><img alt="leo" src="../../_images/leo.gif" /></p>
+<hr class="docutils" />
+<div class="section" id="ensuring-the-right-number-of-clusters">
+<h2>Ensuring the right number of clusters<a class="headerlink" href="#ensuring-the-right-number-of-clusters" title="Permalink to this headline">¶</a></h2>
+<p>How do we know when a clustering algorithm like <span class="math notranslate nohighlight">\(k\)</span>-means has generated the “right” number of clusters?</p>
+<p>One solution that we’ve relied on for simple data like the above is to just look at the clustering solution. Do the assigned clusters <em>look right</em>?</p>
+<p>But this isn’t always an option. What do we do for example when our data is multi-dimensional and we can’t easily visualize it?</p>
+<p>…</p>
+<div class="section" id="goldilocks-and-the-three-clusters">
+<h3>Goldilocks and the Three Clusters<a class="headerlink" href="#goldilocks-and-the-three-clusters" title="Permalink to this headline">¶</a></h3>
+<p>Let’s start by just thinking about what having the right number of clusters should look like:</p>
+<ul class="simple">
+<li><p>When our data is easily clustered and we’ve properly assigned it to the right clusters, every point should be relatively close to the center of its respective cluster (ideally)</p></li>
+<li><p>When our data is easily clustered but we’ve assigned it to too <em>few</em> clusters, some of our data points will be far from the cluster’s center</p></li>
+<li><p>When our data is easily clustered but we’ve assigned it to too <em>many</em> clusters, our points will all be pretty close the center of their respective clusters, but maybe not that much better than when we had the right amount because at that point we’re just splitting up existing clusters</p></li>
+</ul>
+<p>Let’s see an example of this with our data above:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="c1"># Too FEW clusters</span>
+<span class="n">km1</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">km1</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">km1</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">km1</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;X&quot;</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;red&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_13_0.png" src="../../_images/Lecture_23-post_13_0.png" />
+</div>
+</div>
+<p>In the above, some of these points are much farther away from the center of their assigned cluster (in X) than they would be if we properly assigned them to 2-3 <em>separate</em> clusters.</p>
+<p><em>What about when there are too many clusters?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.cluster</span> <span class="kn">import</span> <span class="n">KMeans</span>
+
+<span class="c1"># Too MANY clusters</span>
+<span class="n">km10</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">km10</span><span class="o">.</span><span class="n">labels_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_15_0.png" src="../../_images/Lecture_23-post_15_0.png" />
+</div>
+</div>
+<p>Now, each of these points will be super close to their center, but not that much closer than they would be with just 2-3 cluster centers.</p>
+<p>Take a look at 3 clusters below to get a sense of this:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This k-means is juuuust right</span>
+<span class="n">km3</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="n">km3</span><span class="o">.</span><span class="n">labels_</span>
+               <span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">km3</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">km3</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span> 
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_17_0.png" src="../../_images/Lecture_23-post_17_0.png" />
+</div>
+</div>
+<p>So, a metric that captures how close each data point is to the center of its assigned cluster might give us a way to estimate the right number of clusters based on these intuitions.</p>
+</div>
+<div class="section" id="k-means-inertia-or-within-cluster-sum-of-squares-wcss">
+<h3><span class="math notranslate nohighlight">\(k\)</span>-means <em>Inertia</em> or Within-Cluster Sum of Squares (WCSS)<a class="headerlink" href="#k-means-inertia-or-within-cluster-sum-of-squares-wcss" title="Permalink to this headline">¶</a></h3>
+<p>The <em>inertia</em> metric for our <span class="math notranslate nohighlight">\(k\)</span>-means clusters tells us how close each data point is to its respective cluster center.</p>
+<p><span class="math notranslate nohighlight">\(\text{inertia} = \sum_{i=1}^{N} {(x_i - C_k)}^2\)</span> where <span class="math notranslate nohighlight">\(C_k\)</span> is the <em>center</em> of each data point’s assigned cluster.</p>
+<p>Inertia is essentially a measure of the <em>variance</em> of our clusters (though it scales with the number of data points).</p>
+<p>Our sklearn <span class="math notranslate nohighlight">\(k\)</span>-means model tells us the inertia for the clusters it estimated.</p>
+<p><em>How do our inertia values compare for the models above?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;1 cluster: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">km1</span><span class="o">.</span><span class="n">inertia_</span><span class="p">))</span> <span class="c1"># super high when we only assign 1 cluster</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;10 clusters: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">km10</span><span class="o">.</span><span class="n">inertia_</span><span class="p">))</span> <span class="c1"># MUCH lower when we assign 10 clusters</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;3 clusters: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">(</span><span class="n">km3</span><span class="o">.</span><span class="n">inertia_</span><span class="p">))</span> <span class="c1"># What about when we assign 3 clusters?</span>
+<span class="c1"># this is definitely higher than for k = 10, but not THAT much higher...</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1 cluster: 3553.2877803096735
+10 clusters: 194.76095710197015
+3 clusters: 541.4034319875432
+</pre></div>
+</div>
+</div>
+</div>
+<p>The better way to see this pattern is to graph our inertia for increasing numbers of <span class="math notranslate nohighlight">\(k\)</span>-means clusters:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Here&#39;s a fun list comprehension!</span>
+<span class="n">inertias</span> <span class="o">=</span> <span class="p">[</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="n">k</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span><span class="o">.</span><span class="n">inertia_</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">)]</span>
+<span class="n">inertias</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">11</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">inertias</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;k clusters&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;inertia&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_22_0.png" src="../../_images/Lecture_23-post_22_0.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">km3</span><span class="o">.</span><span class="n">cluster_centers_</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[ 1.52672439,  1.09826024],
+       [ 4.37662326,  7.20432474],
+       [-0.21045907,  3.18789892]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="the-elbow-method">
+<h3>The “Elbow Method”<a class="headerlink" href="#the-elbow-method" title="Permalink to this headline">¶</a></h3>
+<p>One strategy for identifying the right number of clusters in your data is the “elbow method” (I’m not making this up…), which involves identifying the point in the curve above where the line starts to flatten (i.e., the <em>elbow</em>).</p>
+<p>So in this case, we end up with an optimal number of clusters around 2-3 (which matches our data above pretty well).</p>
+<p>You can read a nice overview of this approach <a class="reference external" href="https://towardsdatascience.com/clustering-how-to-find-hyperparameters-using-inertia-b0343c6fe819">here</a>.</p>
+<p>If this feels a bit weirdly subjective, it’s because it is… There are other approaches available but none is a silver bullet; you can read more about them on the wikipedia page <a class="reference external" href="https://en.wikipedia.org/wiki/Determining_the_number_of_clusters_in_a_data_set">here</a>. Some are much more complex and some are specific to particular classes of clustering models. Other clustering models don’t require you to specify the number of clusters <em>at all</em>, but almost all of them have <em>some</em> hyperparameter that requires a bit of tuning or intuition.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="ensuring-optimal-and-stable-clustering">
+<h2>Ensuring optimal (and stable) clustering<a class="headerlink" href="#ensuring-optimal-and-stable-clustering" title="Permalink to this headline">¶</a></h2>
+<p>Okay, so you’ve chosen an optimal number of clusters using something like the elbow method.</p>
+<p>Another important question to ask is whether the cluster assignments that <span class="math notranslate nohighlight">\(k\)</span>-means produces (and the corresponding <em>inertia</em> value) are <em>stable</em>. In other words, will <span class="math notranslate nohighlight">\(k\)</span>-means always converge to the same clusters for a given <span class="math notranslate nohighlight">\(k\)</span> value?</p>
+<p>It turns out, <strong><span class="math notranslate nohighlight">\(k\)</span>-means guarantees convergence, but it doesn’t guarantee that it will converge to the <em>global minimum</em> inertia for a given <span class="math notranslate nohighlight">\(k\)</span> value</strong>.</p>
+<p><img alt="padme" src="../../_images/padme.jpeg" /></p>
+<p><strong>Why doesn’t <span class="math notranslate nohighlight">\(k\)</span>-means choose the best cluster allocation every time?</strong></p>
+<p>One of the requirements for <span class="math notranslate nohighlight">\(k\)</span>-means is that you start out with a random set of points as the assigned cluster centers. Which points you choose at the outset can lead to different clustering solutions once the algorithm converges.</p>
+<p>Here’s a really clear illustration of this from the <span class="math notranslate nohighlight">\(k\)</span>-means wikipedia page (<a class="reference external" href="https://en.wikipedia.org/wiki/K-means_clustering">link</a>):</p>
+<p><img alt="km_convergence" src="../../_images/km_convergence.png" /></p>
+<p>In the example above, we can see a <span class="math notranslate nohighlight">\(k\)</span>-means <em>starting state</em> with four randomly chosen cluster centers on the far left, and then the cluster assignments it converges to at the far right, which obviously doesn’t match how this data naturally clusters.</p>
+<p><em>So what can we do about this?</em></p>
+<div class="section" id="solution-1-try-again">
+<h3>Solution 1: try again…<a class="headerlink" href="#solution-1-try-again" title="Permalink to this headline">¶</a></h3>
+<p>Following our intuition in the previous section about the relationship between inertia and proper cluster alignment, it seems like the <strong>bad solution</strong> above (far right) would have much higher inertia than the proper cluster assignment, since the red cluster above is pretty spread out.</p>
+<p>So, one solution to avoid this problem is to <strong>run the <span class="math notranslate nohighlight">\(k\)</span>-means algorithm repeatedly</strong> with different random initial states, then choose the <em>best clustering solution</em> (i.e., lowest inertia) from among those runs.</p>
+<p><strong>Repeated runs in python</strong></p>
+<p>In fact, this is actually what sklearn does when you run <code class="docutils literal notranslate"><span class="pre">KMeans.fit</span></code>!</p>
+<p>By default, it runs the algorithm 10 times and then chooses the best one.</p>
+<p>You can toggle the number of runs with the <code class="docutils literal notranslate"><span class="pre">n_init</span></code> argument at initialization.</p>
+<p>Let’s take a look at what happens when we run the algorithm a bunch of times with only <em>one</em> convergence per run.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># First, let&#39;s run 100 versions of k means with only ONE convergence per run (instead of default 10)</span>
+<span class="c1"># Another sneaky list comiprehension. Note the `n_init` argument below!</span>
+<span class="n">inertias</span> <span class="o">=</span> <span class="p">[</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+                   <span class="n">n_init</span> <span class="o">=</span> <span class="mi">1</span> <span class="c1"># NOTE</span>
+                  <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span><span class="o">.</span><span class="n">inertia_</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)]</span>
+<span class="n">inertias</span>
+
+<span class="c1"># Now, let&#39;s run a single k means with the default 10 convergences and compare them</span>
+<span class="n">optim</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span><span class="o">.</span><span class="n">inertia_</span>
+<span class="n">optim</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>541.4034319875432
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>What do these look like?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">inertias</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">inertias</span><span class="p">)</span>
+<span class="n">inertias</span> <span class="c1"># whoa, look at those max values...</span>
+
+<span class="n">inertias</span> <span class="o">=</span> <span class="n">inertias</span><span class="p">[</span><span class="n">inertias</span> <span class="o">&lt;</span> <span class="mi">600</span><span class="p">]</span>
+<span class="n">inertias</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">inertias</span><span class="p">,</span>
+             <span class="n">bins</span> <span class="o">=</span> <span class="mi">50</span>
+            <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">optim</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span> <span class="c1"># add a line showing inertia for our single k means with 10 runs</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Inertia for single runs&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_31_0.png" src="../../_images/Lecture_23-post_31_0.png" />
+</div>
+</div>
+<p>As you can see above (at least for our pretty clusterable data), running the algorithm 10 times and choosing the best run does a pretty good job identifying the optimal solution.</p>
+</div>
+<div class="section" id="solution-2-k-means">
+<h3>Solution 2: <span class="math notranslate nohighlight">\(k\)</span>-means++<a class="headerlink" href="#solution-2-k-means" title="Permalink to this headline">¶</a></h3>
+<p>As the name implies, the <em><span class="math notranslate nohighlight">\(k\)</span>-means++</em> algorithm represents a careful improvement over the <em>default</em> <span class="math notranslate nohighlight">\(k\)</span>-means aimed at optimizing the convergence of the algorithm.</p>
+<p><em>What does it do differently?</em></p>
+<p>Since the default <span class="math notranslate nohighlight">\(k\)</span>-means runs into issues because of its random assignment of initial cluster centers, one solution is to try and pick more strategic initial clusters at the outset. This is what <span class="math notranslate nohighlight">\(k\)</span>-means++ does.</p>
+<p>Specifically, it chooses a <em>single first cluster center</em> at random. Then, it computes every other point’s distance from that initial starting point, and chooses a second cluster centroid with a probability proportional to each point’s distance from the first centroid. It continues doing this for each point’s distance to the <em>closest</em> centroid chosen so far. These details aren’t super important: what matters is that <strong><span class="math notranslate nohighlight">\(k\)</span>-means++ will almost always choose starting centers that are far away from each other</strong>. This helps avoid the problems of local minima shown above.</p>
+<p>The <span class="math notranslate nohighlight">\(k\)</span>-means++ algorithm has a provable upper bound on the inertia of the eventual clusters.</p>
+<p><strong><span class="math notranslate nohighlight">\(k\)</span>-means++ in python</strong></p>
+<p>Because <span class="math notranslate nohighlight">\(k\)</span>-means++ offers such an improvement over the random method, the sklearn <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> class also uses this by default!</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">init</span></code> argument to the <code class="docutils literal notranslate"><span class="pre">KMeans</span></code> class lets you try out alternatives (including passing in explicit points that you want to start as the centroids).</p>
+<p>Let’s compare “random” and “kmeans++” for single-run <span class="math notranslate nohighlight">\(k\)</span>-means clusters to see the difference:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Run 100 k-means with &quot;random&quot; starting seeds</span>
+<span class="n">inertias_rand</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">([</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+                                <span class="n">n_init</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> 
+                                <span class="n">init</span> <span class="o">=</span> <span class="s2">&quot;random&quot;</span> <span class="c1"># NOTE</span>
+                               <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span><span class="o">.</span><span class="n">inertia_</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)])</span>
+
+<span class="c1"># Run 100 k-means with &quot;k-means++&quot; starting seeds (the default)</span>
+<span class="n">inertias_kplus</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">sort</span><span class="p">([</span><span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> 
+                                 <span class="n">n_init</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> 
+<span class="c1">#                                  init = &quot;k-means++&quot; # NOTE</span>
+                                <span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">sample_vals</span><span class="p">)</span><span class="o">.</span><span class="n">inertia_</span> <span class="k">for</span> <span class="n">k</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">101</span><span class="p">)])</span>
+
+<span class="c1"># Plot the average of the above</span>
+<span class="n">inertias_df</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">concat</span><span class="p">([</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;rand&quot;</span><span class="p">,</span> <span class="s2">&quot;inertia&quot;</span><span class="p">:</span> <span class="n">inertias_rand</span><span class="p">}),</span>
+    <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">({</span><span class="s2">&quot;method&quot;</span><span class="p">:</span> <span class="s2">&quot;k++&quot;</span><span class="p">,</span> <span class="s2">&quot;inertia&quot;</span><span class="p">:</span> <span class="n">inertias_kplus</span><span class="p">}),</span>
+<span class="p">])</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">inertias_df</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;method&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;inertia&quot;</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;method&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;method&#39;, ylabel=&#39;inertia&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_23-post_35_1.png" src="../../_images/Lecture_23-post_35_1.png" />
+</div>
+</div>
+<p>Above, you can see the impact of using <span class="math notranslate nohighlight">\(k\)</span>-means++ for initial “seed” selection.</p>
+<p>Even though the impact isn’t huge here, this can make a big difference with large and complex datasets.</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="consistently-sub-optimal-clusters">
+<h2>Consistently sub-optimal clusters<a class="headerlink" href="#consistently-sub-optimal-clusters" title="Permalink to this headline">¶</a></h2>
+<p>In the previous sections, we discussed how to identify the right number of clusters for our <span class="math notranslate nohighlight">\(k\)</span>-means algorithm and how to ensure that the clusters it identifies are stable and reasonably optimal.</p>
+<p>However, <strong>there are some scenarios where <span class="math notranslate nohighlight">\(k\)</span>-means will <em>reliably</em> fail to cluster in the ways we want</strong>.</p>
+<p>Here’s an intuitive example:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">mouse_vals</span><span class="p">,</span> <span class="n">mouse_clusters</span> <span class="o">=</span> <span class="n">make_blobs</span><span class="p">(</span><span class="n">n_samples</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1000</span><span class="p">,</span> <span class="mi">500</span><span class="p">,</span> <span class="mi">500</span><span class="p">],</span> <span class="c1"># how many samples to generate </span>
+                                          <span class="n">n_features</span> <span class="o">=</span> <span class="mi">2</span><span class="p">,</span> <span class="c1"># number of features</span>
+                                          <span class="n">centers</span> <span class="o">=</span> <span class="p">[(</span><span class="mi">3</span><span class="p">,</span> <span class="mi">3</span><span class="p">),</span> <span class="p">(</span><span class="mf">1.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">),</span> <span class="p">(</span><span class="mf">4.5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)],</span> <span class="c1"># how many &quot;blobs&quot;</span>
+                                          <span class="n">cluster_std</span> <span class="o">=</span> <span class="p">[</span><span class="o">.</span><span class="mi">75</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">,</span> <span class="o">.</span><span class="mi">25</span><span class="p">],</span> <span class="c1"># SD of the blobs (can be a list)</span>
+                                          <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span>
+                                         <span class="p">)</span>
+<span class="n">mouse_vals</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[3.37140849, 2.86897263],
+       [4.51083011, 4.78849811],
+       [3.91886689, 2.20984044],
+       ...,
+       [1.37955591, 4.90772202],
+       [1.51874336, 5.3680004 ],
+       [4.39407956, 5.48043454]])
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+<span class="c1">#                 hue = mouse_clusters, # toggle comment this</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.25</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_40_0.png" src="../../_images/Lecture_23-post_40_0.png" />
+</div>
+</div>
+<p>The wikipedia page for <span class="math notranslate nohighlight">\(k\)</span>-means illustrates a similar example and calls the data set “mouse” (can you guess why??), so we’ll do the same here.</p>
+<p><img alt="mickey" src="../../_images/mickey.png" /></p>
+<p>Now, let’s see what happens when we estimate clusters in this data using <span class="math notranslate nohighlight">\(k\)</span>-means:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">kmouse</span> <span class="o">=</span> <span class="n">KMeans</span><span class="p">(</span><span class="n">n_clusters</span> <span class="o">=</span> <span class="mi">3</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">)</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_42_0.png" src="../../_images/Lecture_23-post_42_0.png" />
+</div>
+</div>
+<p>That seems odd…</p>
+<p><em>What’s happening here?</em></p>
+<p>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s take a look at the centroids to get a clearer idea</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> 
+                <span class="n">y</span> <span class="o">=</span> <span class="n">mouse_vals</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">],</span> 
+                <span class="n">hue</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">labels_</span><span class="p">,</span>
+                <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span>
+               <span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;C1&quot;</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;C2&quot;</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">kmouse</span><span class="o">.</span><span class="n">cluster_centers_</span><span class="p">[</span><span class="mi">2</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span> 
+         <span class="n">s</span> <span class="o">=</span> <span class="s2">&quot;C3&quot;</span><span class="p">,</span> <span class="n">fontweight</span> <span class="o">=</span> <span class="s2">&quot;bold&quot;</span><span class="p">,</span> <span class="n">fontsize</span> <span class="o">=</span> <span class="mi">14</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_23-post_44_0.png" src="../../_images/Lecture_23-post_44_0.png" />
+</div>
+</div>
+<div class="section" id="choosing-the-model-to-fit-the-data">
+<h3>Choosing the model to fit the data<a class="headerlink" href="#choosing-the-model-to-fit-the-data" title="Permalink to this headline">¶</a></h3>
+<p>The mouse example illustrates a really imporant point about evaluating models.</p>
+<p><strong>Every model makes certain assumptions about the <em>generative process</em> for the data it’s trying to capture.</strong></p>
+<p>These assumptions or constraints are, in part, what allow the model to make sense of the world; they <em>simplify</em> our description of what’s going on.</p>
+<blockquote>
+<div><p>“All models are wrong, but some are useful” ~ George Box (a statistician)</p>
+</div></blockquote>
+<p>You’ve already seen this in a previous problem set: simple linear regression assumes that the relationship between two variables will produce <em>normally distributed residuals</em> around the line that gets fit. Multiple regression assumes that the predictors aren’t correlated.</p>
+<p>Sometimes these assumptions aren’t stated explicitly but the mechanics of the model require them. With <span class="math notranslate nohighlight">\(k\)</span>-means clustering, the model will converge to centroids that (roughly) minimize each point’s distance to the nearest centroid. <strong>This process therefore assumes that all of the clusters are the same size.</strong></p>
+<hr class="docutils" />
+<p><em>So what do we do when a model’s assumptions are violated?</em></p>
+<ul class="simple">
+<li><p>If you think that the <em>real world process that generated your data</em> aligns with the model’s assumptions, or that  this is a useful simplification to your real world data, then it’s probably okay.</p>
+<ul>
+<li><p>For example, your residuals in a linear regression may never be perfectly normally distributed.</p></li>
+</ul>
+</li>
+<li><p>On the other hand, if you think the process that generated your data is more fundamentally at odds with the model’s assumptions, then you probably need a different model.</p>
+<ul>
+<li><p>The data above is a good example of a scenario where <span class="math notranslate nohighlight">\(k\)</span>-means is probably the wrong model because our clusters have <em>very</em> different variances and we want our cluster solutions to reflect that.</p></li>
+</ul>
+</li>
+</ul>
+<hr class="docutils" />
+<p><em>So what do we use instead?</em></p>
+<p>There are a <strong>lot</strong> of different clustering solutions out there; like classification, we could probably have a whole quarter devoted just to clustering.</p>
+<ul class="simple">
+<li><p>The sklearn package has classes for many of the most common ones. You can see the full list <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.cluster">here</a></p></li>
+</ul>
+<p>We’re not going to go through the other solutions out there (there are many, and they’re each complex in their own way so we would need a lot more time to cover them).</p>
+<p>However, on Friday we’re going to talk about one other solution that is important to be familiar with: <strong>Gaussian mixture models</strong>.</p>
+<ul class="simple">
+<li><p>These are a <em>generalization</em> of the <span class="math notranslate nohighlight">\(k\)</span>-means</p></li>
+<li><p>They solve the mouse problem we ran into above</p></li>
+<li><p>And, they give us an opportunity to discuss <em>Expectation Maximization</em>, an important concept in model fitting.</p></li>
+</ul>
+<p>If you’d like to learn more about these and other solutions, there’s a really clear and interesting tutorial about the different sklearn clustering algorithms <a class="reference external" href="https://scikit-learn.org/stable/modules/clustering.html#clustering">here</a>.</p>
+<p><img alt="clusters" src="../../_images/clusters.png" /></p>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_22-post.html" title="previous page">Lecture 22 (5/16/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_24-post.html" title="next page">Lecture 24 (5/20/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

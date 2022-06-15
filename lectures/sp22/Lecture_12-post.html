@@ -1,0 +1,2684 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 12 (4/22/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 13 (4/25/22)" href="Lecture_13-post.html" />
+    <link rel="prev" title="Lecture 11 (4/20/2022)" href="Lecture_11-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_12-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_12-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_12-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-1-log-transformations">
+   Part 1: log transformations
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-highly-skewed-data">
+     Problem: highly skewed data
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-with-skewed-data-use-log-transform">
+     Solution: with skewed data, use log transform!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#log-transformations-summary">
+     Log transformations: Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#part-2-z-scoring">
+   Part 2: z-scoring
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#problem-comparing-data-from-different-distributions">
+     Problem: comparing data from different distributions
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-when-comparing-across-normal-distributions-try-z-scores">
+     Solution: when comparing across (normal) distributions, try z-scores!
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#z-scores-summary">
+     Z-scores: Summary
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-12-4-22-2022">
+<h1>Lecture 12 (4/22/2022)<a class="headerlink" href="#lecture-12-4-22-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Tidy data (wide / long format)</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Data transformations</p></li>
+</ul>
+<blockquote>
+<div><p>Part 1: logarithmic transformations</p>
+<p>Part 2: z-scoring</p>
+</div></blockquote>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="part-1-log-transformations">
+<h1>Part 1: log transformations<a class="headerlink" href="#part-1-log-transformations" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-highly-skewed-data">
+<h2>Problem: highly skewed data<a class="headerlink" href="#problem-highly-skewed-data" title="Permalink to this headline">¶</a></h2>
+<p>To get a sense of when we may need to transform our data, let’s take a look at our <code class="docutils literal notranslate"><span class="pre">gapminder</span></code> dataset once again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">gap</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/UCSD-CSS-002/ucsd-css-002.github.io/master/datasets/gapminder.csv&quot;</span><span class="p">)</span>
+
+<span class="n">gap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>1700</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1987</td>
+      <td>62.351</td>
+      <td>9216418</td>
+      <td>706.157306</td>
+    </tr>
+    <tr>
+      <th>1700</th>
+      <td>1701</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1992</td>
+      <td>60.377</td>
+      <td>10704340</td>
+      <td>693.420786</td>
+    </tr>
+    <tr>
+      <th>1701</th>
+      <td>1702</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1997</td>
+      <td>46.809</td>
+      <td>11404948</td>
+      <td>792.449960</td>
+    </tr>
+    <tr>
+      <th>1702</th>
+      <td>1703</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2002</td>
+      <td>39.989</td>
+      <td>11926563</td>
+      <td>672.038623</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>1704</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+    </tr>
+  </tbody>
+</table>
+<p>1704 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p>Below we plot the distribution of <em>population</em> across the countries in this dataset for the most recent year available.</p>
+<p>What does it look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">gap</span><span class="p">[</span><span class="n">gap</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">],</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;pop&quot;</span><span class="p">,</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="mi">60</span> <span class="c1"># even with more bins the distribution is similar</span>
+<span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Population (billions)&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Population by country, 2007&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 1.0, &#39;Population by country, 2007&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_8_1.png" src="../../_images/Lecture_12-post_8_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How skewed is the data above?</span>
+
+<span class="n">gap</span><span class="p">[</span><span class="s2">&quot;pop&quot;</span><span class="p">][</span><span class="n">gap</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># ~44M</span>
+<span class="n">gap</span><span class="p">[</span><span class="s2">&quot;pop&quot;</span><span class="p">][</span><span class="n">gap</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">]</span><span class="o">.</span><span class="n">median</span><span class="p">()</span> <span class="c1"># ~10.5M</span>
+
+
+<span class="c1"># ...big difference</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>10517531.0
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Why this is a problem?</strong></p>
+<p>Most standard statistics assumes that the variables being predicted or serving as predictors are (roughly) normally distributed. Our population data above clearly isn’t!</p>
+<p><strong>How common is this?</strong></p>
+<p>The pattern above isn’t unique to population. Many other common variables tend to have similarly shaped distributions.</p>
+<p><em>Can you think of some others?</em> (hint: remember Zipf’s Law back in pset 1?)</p>
+</div>
+<div class="section" id="solution-with-skewed-data-use-log-transform">
+<h2>Solution: with skewed data, use log transform!<a class="headerlink" href="#solution-with-skewed-data-use-log-transform" title="Permalink to this headline">¶</a></h2>
+<p><strong>What do we mean by log transforming?</strong></p>
+<p>We want to convert our population data to a logarithmic scale rather than a linear scale.</p>
+<p>We’ll illustrate this difference below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Our original graph used bins scaled at a linear interval. We&#39;re printing them below. </span>
+
+<span class="n">_</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">gap</span><span class="p">[</span><span class="n">gap</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">],</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;pop&quot;</span><span class="p">,</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="mi">20</span>
+<span class="p">)</span>
+
+<span class="c1"># Here&#39;s our original histogram bins: note how they increase by a fixed amount</span>
+<span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Histogram bins: </span><span class="si">{}</span><span class="s2">&quot;</span><span class="o">.</span><span class="n">format</span><span class="p">([</span><span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">plt</span><span class="o">.</span><span class="n">xticks</span><span class="p">()[</span><span class="mi">0</span><span class="p">]]))</span>
+
+<span class="c1"># Can print each element minus the previous elemnt to show this</span>
+<span class="c1"># [plt.xticks()[0][i+1] - plt.xticks()[0][i] for i in range(len(plt.xticks()[0])-1)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output stream highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Histogram bins: [&#39;-200000000.0&#39;, &#39;0.0&#39;, &#39;200000000.0&#39;, &#39;400000000.0&#39;, &#39;600000000.0&#39;, &#39;800000000.0&#39;, &#39;1000000000.0&#39;, &#39;1200000000.0&#39;, &#39;1400000000.0&#39;]
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_13_1.png" src="../../_images/Lecture_12-post_13_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Step 1: let&#39;s generate logarithmic scaled bins instead of the above.</span>
+
+
+<span class="c1"># Instead of increasing by a fixed amount (200k), they will increase by a fixed *multiple* (10) from 100k to 1B</span>
+<span class="c1"># Use `np.logspace` for this</span>
+<span class="n">log_bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">logspace</span><span class="p">(</span><span class="n">base</span> <span class="o">=</span> <span class="mi">10</span><span class="p">,</span> <span class="c1"># specify the base (10 is default)</span>
+                       <span class="n">start</span> <span class="o">=</span> <span class="mi">5</span><span class="p">,</span> <span class="c1"># specify the start, which is base**start (in this case 10e5)</span>
+                       <span class="n">stop</span> <span class="o">=</span> <span class="mi">9</span><span class="p">,</span> <span class="c1"># specify the end, which is base**end (in this case 10e9)</span>
+                       <span class="n">num</span> <span class="o">=</span> <span class="mi">10</span><span class="p">)</span> <span class="c1"># specify the number of bins</span>
+
+<span class="p">[</span><span class="nb">str</span><span class="p">(</span><span class="n">elem</span><span class="p">)</span> <span class="k">for</span> <span class="n">elem</span> <span class="ow">in</span> <span class="n">log_bins</span><span class="p">]</span>
+
+<span class="c1"># These don&#39;t increase by a fixed amount</span>
+<span class="c1"># Can print each element minus the previous element as we did above to show this</span>
+
+<span class="c1"># [log_bins[i+1] - log_bins[i] for i in range(len(log_bins)-1)]</span>
+
+<span class="c1"># Instead, they increase by a fixed *multiple*</span>
+<span class="c1"># Can print each element in log_bins *divided by* the previous element to show this</span>
+
+<span class="c1"># [log_bins[i+1] / log_bins[i] for i in range(len(log_bins)-1)]</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[&#39;100000.0&#39;,
+ &#39;278255.94022071257&#39;,
+ &#39;774263.6826811278&#39;,
+ &#39;2154434.6900318824&#39;,
+ &#39;5994842.503189409&#39;,
+ &#39;16681005.372000592&#39;,
+ &#39;46415888.33612773&#39;,
+ &#39;129154966.50148827&#39;,
+ &#39;359381366.3804626&#39;,
+ &#39;1000000000.0&#39;]
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now, let&#39;s use these logarithmic intervals as the basis for our histogram bins</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">gap</span><span class="p">[</span><span class="n">gap</span><span class="p">[</span><span class="s2">&quot;year&quot;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">],</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;pop&quot;</span><span class="p">,</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="n">log_bins</span> <span class="c1"># This is the key change</span>
+<span class="p">)</span>
+
+<span class="c1"># NOTE: we need to also specify that the x axis should be drawn on a logarithmic scale </span>
+<span class="c1"># (try graphing without this to see what happens!)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xscale</span><span class="p">(</span><span class="s1">&#39;log&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_12-post_15_0.png" src="../../_images/Lecture_12-post_15_0.png" />
+</div>
+</div>
+<p>Our data looks normally distributed when we plot it on a log scale. Woo hoo!</p>
+<p>But we haven’t changed the underlying data.</p>
+<p>Let’s log transform <em>the data itself</em> so its (log) values are normally distributed.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># To do this, use np.log10 (np.log uses the *natural log*) </span>
+<span class="n">gap</span><span class="p">[</span><span class="s1">&#39;log_pop&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log10</span><span class="p">(</span><span class="n">gap</span><span class="p">[</span><span class="s1">&#39;pop&#39;</span><span class="p">])</span>
+
+<span class="n">gap</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Unnamed: 0</th>
+      <th>country</th>
+      <th>continent</th>
+      <th>year</th>
+      <th>lifeExp</th>
+      <th>pop</th>
+      <th>gdpPercap</th>
+      <th>log_pop</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1952</td>
+      <td>28.801</td>
+      <td>8425333</td>
+      <td>779.445314</td>
+      <td>6.925587</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1957</td>
+      <td>30.332</td>
+      <td>9240934</td>
+      <td>820.853030</td>
+      <td>6.965716</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1962</td>
+      <td>31.997</td>
+      <td>10267083</td>
+      <td>853.100710</td>
+      <td>7.011447</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1967</td>
+      <td>34.020</td>
+      <td>11537966</td>
+      <td>836.197138</td>
+      <td>7.062129</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>Afghanistan</td>
+      <td>Asia</td>
+      <td>1972</td>
+      <td>36.088</td>
+      <td>13079460</td>
+      <td>739.981106</td>
+      <td>7.116590</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>1699</th>
+      <td>1700</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1987</td>
+      <td>62.351</td>
+      <td>9216418</td>
+      <td>706.157306</td>
+      <td>6.964562</td>
+    </tr>
+    <tr>
+      <th>1700</th>
+      <td>1701</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1992</td>
+      <td>60.377</td>
+      <td>10704340</td>
+      <td>693.420786</td>
+      <td>7.029560</td>
+    </tr>
+    <tr>
+      <th>1701</th>
+      <td>1702</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>1997</td>
+      <td>46.809</td>
+      <td>11404948</td>
+      <td>792.449960</td>
+      <td>7.057093</td>
+    </tr>
+    <tr>
+      <th>1702</th>
+      <td>1703</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2002</td>
+      <td>39.989</td>
+      <td>11926563</td>
+      <td>672.038623</td>
+      <td>7.076515</td>
+    </tr>
+    <tr>
+      <th>1703</th>
+      <td>1704</td>
+      <td>Zimbabwe</td>
+      <td>Africa</td>
+      <td>2007</td>
+      <td>43.487</td>
+      <td>12311143</td>
+      <td>469.709298</td>
+      <td>7.090298</td>
+    </tr>
+  </tbody>
+</table>
+<p>1704 rows × 8 columns</p>
+</div></div></div>
+</div>
+<p>Now what? Let’s take a look at our <em>log transformed</em> population variable.</p>
+<p>Is it normally distributed?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">gap</span><span class="p">[</span><span class="n">gap</span><span class="p">[</span><span class="s1">&#39;year&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="mi">2007</span><span class="p">],</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;log_pop&#39;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Log transformed population&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Log transformed population&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_19_1.png" src="../../_images/Lecture_12-post_19_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="log-transformations-summary">
+<h2>Log transformations: Summary<a class="headerlink" href="#log-transformations-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Statistics and modeling solutions often assume that the underlying variables are <em>normally distributed</em></p></li>
+<li><p>You can count on many variables in the world being roughly normally distributed (especially with large samples!)</p></li>
+<li><p>But certain types of data are <strong>reliably not</strong> normally distributed (ex. income, wealth, population, number of Twitter followers, number of Spotify streams, …)</p></li>
+<li><p>When your data looks like the examples above (rule of thumb: roughly exponentially distributed, or has very large right skew), it’s often the case that the <em>logarithm</em> of the data <em>is normally distributed</em>.</p></li>
+<li><p>You can check whether this is true by plotting it on a log scale as we did above. If so, consider <em>log transforming</em> your data.</p></li>
+</ul>
+<p>Note: using the log transformed values for a variable in statistics or regression changes how you interpret your results (for example, regression coefficients on a log-transformed variable X will reflect the impact of <em>multiplicative</em> changes to X on the output variable Y).</p>
+</div>
+</div>
+<hr class="docutils" />
+<div class="section" id="part-2-z-scoring">
+<h1>Part 2: z-scoring<a class="headerlink" href="#part-2-z-scoring" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="problem-comparing-data-from-different-distributions">
+<h2>Problem: comparing data from different distributions<a class="headerlink" href="#problem-comparing-data-from-different-distributions" title="Permalink to this headline">¶</a></h2>
+<p>To get a sense of when we may need to z-score our data, let’s take a look at our <code class="docutils literal notranslate"><span class="pre">pokemon</span></code> dataset once again:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pk</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/UCSD-CSS-002/ucsd-css-002.github.io/master/datasets/Pokemon.csv&quot;</span><span class="p">)</span>
+
+<span class="n">pk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 13 columns</p>
+</div></div></div>
+</div>
+<p>Let’s say we want to know whether each of our pokemon is going to be better off attacking opponents, or simply outlasting them.</p>
+<p>The <code class="docutils literal notranslate"><span class="pre">Attack</span></code> variable indicates how strong they are at attacking, while <code class="docutils literal notranslate"><span class="pre">HP</span></code> indicates how long they can withstand attacks.</p>
+<p>How would we evaluate which of these is stronger for each pokemon?</p>
+<p><strong>Strategy 1: look at which variable is larger</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># &quot;attacker&quot; variable says whether a given pokemon has higher attack value than HP</span>
+<span class="n">pk</span><span class="p">[</span><span class="s1">&#39;attacker&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">]</span>
+
+<span class="n">pk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>attacker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 14 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can plot this variable across our generations</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pk</span><span class="p">,</span>
+              <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Generation&#39;</span><span class="p">,</span>
+              <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;attacker&#39;</span>
+             <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Generation&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_29_1.png" src="../../_images/Lecture_12-post_29_1.png" />
+</div>
+</div>
+<p><em><strong>However, there’s one challenge with this strategy.</strong></em></p>
+<p>If many pokemon have higher <code class="docutils literal notranslate"><span class="pre">Attack</span></code> than <code class="docutils literal notranslate"><span class="pre">HP</span></code> values, we can’t always tell whether a pokemon has a greater <em>advantage</em> when attacking or withstanding an opponent by just looking at which value is higher.</p>
+<p>To see this, take a look at the distribution of <code class="docutils literal notranslate"><span class="pre">HP</span></code> and <code class="docutils literal notranslate"><span class="pre">Attack</span></code> variables below.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># For the graph below, it&#39;s easiest to switch to tidy data!</span>
+<span class="n">pk_tidy</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">melt</span><span class="p">(</span>
+    <span class="n">id_vars</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;#&quot;</span><span class="p">,</span> <span class="s2">&quot;Name&quot;</span><span class="p">,</span> <span class="s2">&quot;Type 1&quot;</span><span class="p">,</span> <span class="s2">&quot;Type 2&quot;</span><span class="p">,</span> <span class="s2">&quot;Generation&quot;</span><span class="p">,</span> <span class="s2">&quot;Legendary&quot;</span><span class="p">,</span> <span class="s2">&quot;attacker&quot;</span><span class="p">]</span>
+<span class="p">)</span>
+<span class="n">pk_tidy</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">histplot</span><span class="p">(</span>
+    <span class="n">data</span> <span class="o">=</span> <span class="n">pk_tidy</span><span class="p">[</span><span class="n">pk_tidy</span><span class="p">[</span><span class="s1">&#39;variable&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">isin</span><span class="p">([</span><span class="s2">&quot;HP&quot;</span><span class="p">,</span> <span class="s2">&quot;Attack&quot;</span><span class="p">])],</span>
+    <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;value&quot;</span><span class="p">,</span>
+    <span class="n">hue</span> <span class="o">=</span> <span class="s2">&quot;variable&quot;</span><span class="p">,</span>
+    <span class="n">kde</span> <span class="o">=</span> <span class="kc">True</span><span class="p">,</span>
+    <span class="n">bins</span> <span class="o">=</span> <span class="mi">15</span>
+<span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;value&#39;, ylabel=&#39;Count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_31_1.png" src="../../_images/Lecture_12-post_31_1.png" />
+</div>
+</div>
+<p>In the graph above, the <code class="docutils literal notranslate"><span class="pre">Attack</span></code> distribution is shifted right and seems more spread out than the <code class="docutils literal notranslate"><span class="pre">HP</span></code> distribution, so most pokemon will likely have higher <code class="docutils literal notranslate"><span class="pre">Attack</span></code> points.</p>
+<p>What we really want to know might be something like: <em>relative to the competition, does each pokemon have a more impressive <code class="docutils literal notranslate"><span class="pre">Attack</span></code> or <code class="docutils literal notranslate"><span class="pre">HP</span></code> value?</em></p>
+</div>
+<div class="section" id="solution-when-comparing-across-normal-distributions-try-z-scores">
+<h2>Solution: when comparing across (normal) distributions, try z-scores!<a class="headerlink" href="#solution-when-comparing-across-normal-distributions-try-z-scores" title="Permalink to this headline">¶</a></h2>
+<p><strong>What is a z-score?</strong></p>
+<p>A z-score for a given observation <span class="math notranslate nohighlight">\(x\)</span> is the <em>number of standard deviations away from the mean</em> it is.</p>
+<p><span class="math notranslate nohighlight">\(Z = \dfrac{x - \mu}{\sigma}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s pre-compute the mean and standard deviation of each distribution in our data (Attack and HP)</span>
+
+<span class="n">mean_attack</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># 79</span>
+<span class="n">mean_hp</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">mean</span><span class="p">()</span> <span class="c1"># 69</span>
+
+<span class="n">sd_attack</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># 32.5</span>
+<span class="n">sd_hp</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">std</span><span class="p">()</span> <span class="c1"># 25.5</span>
+
+<span class="c1"># Note that these are fairly different in roughly the way we described above.</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Now, let&#39;s evaluate the z score for each pokemon&#39;s Attack and HP values</span>
+
+<span class="n">pk</span><span class="p">[</span><span class="s1">&#39;attack_z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pk</span><span class="p">[</span><span class="s1">&#39;Attack&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_attack</span><span class="p">)</span> <span class="o">/</span> <span class="n">sd_attack</span>
+<span class="n">pk</span><span class="p">[</span><span class="s1">&#39;hp_z&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span><span class="n">pk</span><span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">mean_hp</span><span class="p">)</span> <span class="o">/</span> <span class="n">sd_hp</span>
+
+<span class="n">pk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>attacker</th>
+      <th>attack_z</th>
+      <th>hp_z</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>-0.924328</td>
+      <td>-0.950032</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>-0.523803</td>
+      <td>-0.362595</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.092390</td>
+      <td>0.420654</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.646964</td>
+      <td>0.420654</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>-0.831899</td>
+      <td>-1.185007</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.646964</td>
+      <td>-0.754220</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2.495543</td>
+      <td>-0.754220</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.955061</td>
+      <td>0.420654</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2.495543</td>
+      <td>0.420654</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.955061</td>
+      <td>0.420654</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 16 columns</p>
+</div></div></div>
+</div>
+<p>What do z-score distributions look like?</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pk</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;attack_z&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pk</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;hp_z&#39;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;green&#39;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Z score&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Z score&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_38_1.png" src="../../_images/Lecture_12-post_38_1.png" />
+</div>
+</div>
+<p>These are much more comparable!</p>
+<p>Now, we can ask which pokemon have a higher <em>z-scored</em> <code class="docutils literal notranslate"><span class="pre">Attack</span></code> relative to their <em>z-scored</em> <code class="docutils literal notranslate"><span class="pre">HP</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pk</span><span class="p">[</span><span class="s1">&#39;z_attacker&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;attack_z&#39;</span><span class="p">]</span> <span class="o">&gt;</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;hp_z&#39;</span><span class="p">]</span>
+
+<span class="n">pk</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>attacker</th>
+      <th>attack_z</th>
+      <th>hp_z</th>
+      <th>z_attacker</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>Bulbasaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>318</td>
+      <td>45</td>
+      <td>49</td>
+      <td>49</td>
+      <td>65</td>
+      <td>65</td>
+      <td>45</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>-0.924328</td>
+      <td>-0.950032</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>Ivysaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>405</td>
+      <td>60</td>
+      <td>62</td>
+      <td>63</td>
+      <td>80</td>
+      <td>80</td>
+      <td>60</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>-0.523803</td>
+      <td>-0.362595</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>525</td>
+      <td>80</td>
+      <td>82</td>
+      <td>83</td>
+      <td>100</td>
+      <td>100</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.092390</td>
+      <td>0.420654</td>
+      <td>False</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>3</td>
+      <td>VenusaurMega Venusaur</td>
+      <td>Grass</td>
+      <td>Poison</td>
+      <td>625</td>
+      <td>80</td>
+      <td>100</td>
+      <td>123</td>
+      <td>122</td>
+      <td>120</td>
+      <td>80</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.646964</td>
+      <td>0.420654</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>4</td>
+      <td>Charmander</td>
+      <td>Fire</td>
+      <td>NaN</td>
+      <td>309</td>
+      <td>39</td>
+      <td>52</td>
+      <td>43</td>
+      <td>60</td>
+      <td>50</td>
+      <td>65</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>-0.831899</td>
+      <td>-1.185007</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>795</th>
+      <td>719</td>
+      <td>Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>600</td>
+      <td>50</td>
+      <td>100</td>
+      <td>150</td>
+      <td>100</td>
+      <td>150</td>
+      <td>50</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.646964</td>
+      <td>-0.754220</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2.495543</td>
+      <td>-0.754220</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>797</th>
+      <td>720</td>
+      <td>HoopaHoopa Confined</td>
+      <td>Psychic</td>
+      <td>Ghost</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>60</td>
+      <td>150</td>
+      <td>130</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.955061</td>
+      <td>0.420654</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>798</th>
+      <td>720</td>
+      <td>HoopaHoopa Unbound</td>
+      <td>Psychic</td>
+      <td>Dark</td>
+      <td>680</td>
+      <td>80</td>
+      <td>160</td>
+      <td>60</td>
+      <td>170</td>
+      <td>130</td>
+      <td>80</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2.495543</td>
+      <td>0.420654</td>
+      <td>True</td>
+    </tr>
+    <tr>
+      <th>799</th>
+      <td>721</td>
+      <td>Volcanion</td>
+      <td>Fire</td>
+      <td>Water</td>
+      <td>600</td>
+      <td>80</td>
+      <td>110</td>
+      <td>120</td>
+      <td>130</td>
+      <td>90</td>
+      <td>70</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>0.955061</td>
+      <td>0.420654</td>
+      <td>True</td>
+    </tr>
+  </tbody>
+</table>
+<p>800 rows × 17 columns</p>
+</div></div></div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># We can plot this variable across our generations</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">countplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pk</span><span class="p">,</span>
+              <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;Generation&#39;</span><span class="p">,</span>
+              <span class="n">hue</span> <span class="o">=</span> <span class="s1">&#39;z_attacker&#39;</span>
+             <span class="p">)</span>
+
+<span class="c1"># Note it&#39;s a little less dramatic than our previous plot!</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;AxesSubplot:xlabel=&#39;Generation&#39;, ylabel=&#39;count&#39;&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_41_1.png" src="../../_images/Lecture_12-post_41_1.png" />
+</div>
+</div>
+<p>This plot provides a little more balanced picture than our previous one.</p>
+<p>We can also use the z-scores to compare each pokemon’s <code class="docutils literal notranslate"><span class="pre">Attack</span></code> and <code class="docutils literal notranslate"><span class="pre">HP</span></code> in a more fine-grained way:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s see which pokemon have the largest difference (in standard deviation units) between their `Attack` and `HP`</span>
+<span class="n">pk</span><span class="p">[</span><span class="s1">&#39;attack_diff_normalized&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;attack_z&#39;</span><span class="p">]</span> <span class="o">-</span> <span class="n">pk</span><span class="p">[</span><span class="s1">&#39;hp_z&#39;</span><span class="p">]</span>
+
+<span class="n">pk</span><span class="o">.</span><span class="n">nlargest</span><span class="p">(</span><span class="mi">10</span><span class="p">,</span> <span class="s1">&#39;attack_diff_normalized&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>#</th>
+      <th>Name</th>
+      <th>Type 1</th>
+      <th>Type 2</th>
+      <th>Total</th>
+      <th>HP</th>
+      <th>Attack</th>
+      <th>Defense</th>
+      <th>Sp. Atk</th>
+      <th>Sp. Def</th>
+      <th>Speed</th>
+      <th>Generation</th>
+      <th>Legendary</th>
+      <th>attacker</th>
+      <th>attack_z</th>
+      <th>hp_z</th>
+      <th>z_attacker</th>
+      <th>attack_diff_normalized</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>429</th>
+      <td>386</td>
+      <td>DeoxysAttack Forme</td>
+      <td>Psychic</td>
+      <td>NaN</td>
+      <td>600</td>
+      <td>50</td>
+      <td>180</td>
+      <td>20</td>
+      <td>180</td>
+      <td>20</td>
+      <td>150</td>
+      <td>3</td>
+      <td>True</td>
+      <td>True</td>
+      <td>3.111736</td>
+      <td>-0.754220</td>
+      <td>True</td>
+      <td>3.865956</td>
+    </tr>
+    <tr>
+      <th>796</th>
+      <td>719</td>
+      <td>DiancieMega Diancie</td>
+      <td>Rock</td>
+      <td>Fairy</td>
+      <td>700</td>
+      <td>50</td>
+      <td>160</td>
+      <td>110</td>
+      <td>160</td>
+      <td>110</td>
+      <td>110</td>
+      <td>6</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2.495543</td>
+      <td>-0.754220</td>
+      <td>True</td>
+      <td>3.249763</td>
+    </tr>
+    <tr>
+      <th>316</th>
+      <td>292</td>
+      <td>Shedinja</td>
+      <td>Bug</td>
+      <td>Ghost</td>
+      <td>236</td>
+      <td>1</td>
+      <td>90</td>
+      <td>45</td>
+      <td>30</td>
+      <td>30</td>
+      <td>40</td>
+      <td>3</td>
+      <td>False</td>
+      <td>True</td>
+      <td>0.338868</td>
+      <td>-2.673179</td>
+      <td>True</td>
+      <td>3.012047</td>
+    </tr>
+    <tr>
+      <th>428</th>
+      <td>386</td>
+      <td>DeoxysNormal Forme</td>
+      <td>Psychic</td>
+      <td>NaN</td>
+      <td>600</td>
+      <td>50</td>
+      <td>150</td>
+      <td>50</td>
+      <td>150</td>
+      <td>50</td>
+      <td>150</td>
+      <td>3</td>
+      <td>True</td>
+      <td>True</td>
+      <td>2.187446</td>
+      <td>-0.754220</td>
+      <td>True</td>
+      <td>2.941666</td>
+    </tr>
+    <tr>
+      <th>387</th>
+      <td>354</td>
+      <td>BanetteMega Banette</td>
+      <td>Ghost</td>
+      <td>NaN</td>
+      <td>555</td>
+      <td>64</td>
+      <td>165</td>
+      <td>75</td>
+      <td>93</td>
+      <td>83</td>
+      <td>75</td>
+      <td>3</td>
+      <td>False</td>
+      <td>True</td>
+      <td>2.649591</td>
+      <td>-0.205945</td>
+      <td>True</td>
+      <td>2.855537</td>
+    </tr>
+    <tr>
+      <th>232</th>
+      <td>214</td>
+      <td>HeracrossMega Heracross</td>
+      <td>Bug</td>
+      <td>Fighting</td>
+      <td>600</td>
+      <td>80</td>
+      <td>185</td>
+      <td>115</td>
+      <td>40</td>
+      <td>105</td>
+      <td>75</td>
+      <td>2</td>
+      <td>False</td>
+      <td>True</td>
+      <td>3.265784</td>
+      <td>0.420654</td>
+      <td>True</td>
+      <td>2.845131</td>
+    </tr>
+    <tr>
+      <th>527</th>
+      <td>475</td>
+      <td>GalladeMega Gallade</td>
+      <td>Psychic</td>
+      <td>Fighting</td>
+      <td>618</td>
+      <td>68</td>
+      <td>165</td>
+      <td>95</td>
+      <td>65</td>
+      <td>115</td>
+      <td>110</td>
+      <td>4</td>
+      <td>False</td>
+      <td>True</td>
+      <td>2.649591</td>
+      <td>-0.049296</td>
+      <td>True</td>
+      <td>2.698887</td>
+    </tr>
+    <tr>
+      <th>750</th>
+      <td>681</td>
+      <td>AegislashBlade Forme</td>
+      <td>Steel</td>
+      <td>Ghost</td>
+      <td>520</td>
+      <td>60</td>
+      <td>150</td>
+      <td>50</td>
+      <td>150</td>
+      <td>50</td>
+      <td>60</td>
+      <td>6</td>
+      <td>False</td>
+      <td>True</td>
+      <td>2.187446</td>
+      <td>-0.362595</td>
+      <td>True</td>
+      <td>2.550042</td>
+    </tr>
+    <tr>
+      <th>137</th>
+      <td>127</td>
+      <td>PinsirMega Pinsir</td>
+      <td>Bug</td>
+      <td>Flying</td>
+      <td>600</td>
+      <td>65</td>
+      <td>155</td>
+      <td>120</td>
+      <td>65</td>
+      <td>90</td>
+      <td>105</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>2.341495</td>
+      <td>-0.166783</td>
+      <td>True</td>
+      <td>2.508278</td>
+    </tr>
+    <tr>
+      <th>19</th>
+      <td>15</td>
+      <td>BeedrillMega Beedrill</td>
+      <td>Bug</td>
+      <td>Poison</td>
+      <td>495</td>
+      <td>65</td>
+      <td>150</td>
+      <td>40</td>
+      <td>15</td>
+      <td>80</td>
+      <td>145</td>
+      <td>1</td>
+      <td>False</td>
+      <td>True</td>
+      <td>2.187446</td>
+      <td>-0.166783</td>
+      <td>True</td>
+      <td>2.354230</td>
+    </tr>
+  </tbody>
+</table>
+</div></div></div>
+</div>
+<p>We can plot this distribution and use it to evaluate the relative strength of a given pokemon’s <code class="docutils literal notranslate"><span class="pre">Attack</span></code></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">kdeplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">pk</span><span class="p">,</span>
+            <span class="n">x</span> <span class="o">=</span> <span class="s1">&#39;attack_diff_normalized&#39;</span>
+           <span class="p">)</span>
+
+
+<span class="n">g</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="n">pk</span><span class="p">[</span><span class="n">pk</span><span class="p">[</span><span class="s1">&#39;Name&#39;</span><span class="p">]</span> <span class="o">==</span> <span class="s1">&#39;Shedinja&#39;</span><span class="p">][</span><span class="s1">&#39;attack_diff_normalized&#39;</span><span class="p">]</span><span class="o">.</span><span class="n">iloc</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="c1"># value to draw the line at</span>
+            <span class="n">color</span> <span class="o">=</span> <span class="s1">&#39;red&#39;</span><span class="p">,</span> <span class="c1"># color</span>
+            <span class="n">ls</span> <span class="o">=</span> <span class="s1">&#39;--&#39;</span> <span class="c1"># `linestyle`: &#39;-&#39;, &#39;:&#39;</span>
+           <span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">text</span><span class="p">(</span><span class="mf">3.25</span><span class="p">,</span> <span class="mf">0.3</span><span class="p">,</span> <span class="s2">&quot;Shedinja&quot;</span><span class="p">)</span>
+
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlim</span><span class="p">(</span><span class="o">-</span><span class="mi">5</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_title</span><span class="p">(</span><span class="s2">&quot;Distribution of differences in Attack and HP z-scores&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Normalized Attack - HP&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0.5, 0, &#39;Normalized Attack - HP&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_12-post_45_1.png" src="../../_images/Lecture_12-post_45_1.png" />
+</div>
+</div>
+</div>
+<div class="section" id="z-scores-summary">
+<h2>Z-scores: Summary<a class="headerlink" href="#z-scores-summary" title="Permalink to this headline">¶</a></h2>
+<ul class="simple">
+<li><p>Sometimes for analysis purposes, you’ll want to compare variables that are measured on different scales or show differences in the underlying distribution (ex. how to compare SAT and ACT scores?)</p></li>
+<li><p>To make these comparisons, it’s often easier to convert the data to a similar scale for comparison.</p></li>
+<li><p>A z-score converts each data point to a <em>number of standard deviations above or below the mean</em>, which means you can more easily compare two scores that are otherwise very different or use these scores as the basis for regression or other analyses.</p></li>
+</ul>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_11-post.html" title="previous page">Lecture 11 (4/20/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_13-post.html" title="next page">Lecture 13 (4/25/22)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

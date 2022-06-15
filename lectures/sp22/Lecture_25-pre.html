@@ -1,0 +1,1328 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 25 (5/23/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 26 (5/25/2022)" href="Lecture_26-pre.html" />
+    <link rel="prev" title="Week 9" href="Week9_Overview.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 current active has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input checked="" class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul class="current">
+   <li class="toctree-l2 current active">
+    <a class="current reference internal" href="#">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_20-post.html">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_25-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_25-pre.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_25-pre.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#dimensionality-reduction">
+   Dimensionality Reduction
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#what-is-it">
+     What is it?
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#example">
+     Example
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#solution-principal-components-analysis-pca">
+     Solution: Principal Components Analysis (PCA)
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pca-in-python-getting-started">
+     PCA in python: getting started
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#pca-in-python-interpreting-results">
+     PCA in python: interpreting results
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#wrapping-up-a-note-on-interpretability">
+     Wrapping up: a note on interpretability
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#practicing-pca">
+   Practicing PCA
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-25-5-23-2022">
+<h1>Lecture 25 (5/23/2022)<a class="headerlink" href="#lecture-25-5-23-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>Clustering: <span class="math notranslate nohighlight">\(k\)</span>-means and Gaussian Mixture Models</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Dimensionality reduction</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="dimensionality-reduction">
+<h1>Dimensionality Reduction<a class="headerlink" href="#dimensionality-reduction" title="Permalink to this headline">¶</a></h1>
+<div class="section" id="what-is-it">
+<h2>What is it?<a class="headerlink" href="#what-is-it" title="Permalink to this headline">¶</a></h2>
+<p>Broadly, the goal of dimensionality reduction is, as the name implies, to <strong>take data that exists in a very high dimensional space and find a way to represent the points in that space as accurately as possible with as few dimensions as possible</strong>.</p>
+<p><em>Why would we want to do this?</em></p>
+<ul class="simple">
+<li><p>High dimensional data is harder to visualize, harder to make hypotheses about</p></li>
+<li><p>High dimensional data can make it more difficult to fit models</p>
+<ul>
+<li><p>Aside: the “curse of dimensionality”: in machine learning settings, adding dimensions to your data will initially improve your models, but eventually, your data becomes <em>sparse</em> in very high dimensions, meaning it no longer clusters in useful ways. This will make your models <strong>worse</strong> or require much much more data to fit. Read about this on wikipedia <a class="reference external" href="https://en.wikipedia.org/wiki/Curse_of_dimensionality">here</a> or on Medium <a class="reference external" href="https://towardsdatascience.com/the-curse-of-dimensionality-50dc6e49aa1e">here</a>.</p></li>
+</ul>
+</li>
+</ul>
+<p>Broadly, dimensionality reduction techniques make it easier for us to visualize, reason about, and fit models to our data.</p>
+<p>As a result, dimensionality reduction is often used alongside other analysis techniques we’ve discussed in this class: before performing classification or clustering on your data, it may be helpful to first reduce it to a lower dimensional space and <em>then</em> classify based on the lower dimensional feature representation or cluster in the lower dimension.</p>
+</div>
+<div class="section" id="example">
+<h2>Example<a class="headerlink" href="#example" title="Permalink to this headline">¶</a></h2>
+<p>The easiest way to illustrate dimensionality reduction is with an example.</p>
+<p>Remember our <em><strong>gapminder</strong></em> dataset from earlier problem sets and lectures? In problem set 3, we looked at how income and population affect life expectancy. However, these are just three out of <em>many</em> different variables that gapminder tracks, including educational attainment, gender equality, internet users, the list goes on (you can play around with these different indicators on the site <a class="reference external" href="https://www.gapminder.org/data/">here</a>).</p>
+<p>Now, let’s say your job is to take a whole bunch of these indicators and try to figure out how different countries <strong>cluster</strong> across these variables. Or, maybe you want to <strong>predict</strong> something like life expectancy and you have all these variables at your disposal (the excellent blog <a class="reference external" href="https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c">here</a> provides a similar motivation). The problem is, many of these predictors will be redundant and highly correlated with each other so you want to find the most useful ones for a model.</p>
+<p><em>How do you go about doing this?</em></p>
+<p>…</p>
+</div>
+<div class="section" id="solution-principal-components-analysis-pca">
+<h2>Solution: Principal Components Analysis (PCA)<a class="headerlink" href="#solution-principal-components-analysis-pca" title="Permalink to this headline">¶</a></h2>
+<p><strong>What is it</strong></p>
+<p>Principal Component Analysis is based on a fairly simple but really powerful intuition:</p>
+<blockquote>
+<div><p>If we plot a line through our data that minimizes how far our data points are from the line and maximizes the spread of our data points <em>along</em> the line, then we can do a pretty good job describing our data in just one dimension with that line.</p>
+</div></blockquote>
+<p>Take a look at the graph below to see how we might find this sort of line through our data.</p>
+<p><img alt="pca" src="../../_images/pca.gif" /></p>
+<p>This image comes from a brief tutorial about PCA <a class="reference external" href="https://stats.stackexchange.com/questions/2691/making-sense-of-principal-component-analysis-eigenvectors-eigenvalues">here</a> (the writing is sexist but the explanation of PCA itself is pretty good). In the image, the blue points are our original data, and the red points are our data points mapped onto the line for different possible lines through our data. The red lines show the “error” in this mapping. What this is showing is that when the line through our data points is aligned with the purple edges, the <em>projection</em> of our data points onto that line (in red) has the lowest error and the highest variance, which is what we want.</p>
+<p><strong>The line through the purple edges does a good job describing the overall trend in our data.</strong></p>
+<p>Now, if we can find a <em>second line</em> perpendicular to the first, we can capture <em>additional variance in our data</em> with the second line that isn’t captured by the first line. PCA is often illustrated with a series of lines like this. These are called the <strong>principal components</strong>.</p>
+<p><img alt="pca_static" src="../../_images/pca_static.jpeg" /></p>
+<p>This image comes from a really awesome tutorial <a class="reference external" href="https://towardsdatascience.com/understanding-pca-fae3e243731d">here</a>. I highly recommend reading it :)</p>
+<p>What defines the principal components is that they are lines that a) are perpendicular to each other, and b) capture the maximal amount of variance in our data. The <em>first component</em> captures the most variance, the second component captures the second most, etc.</p>
+<p><strong>What are the principal components</strong></p>
+<p><em>Isn’t this a lot like regression??</em> Yes! Just like a regression line can be specified in terms of coefficients <span class="math notranslate nohighlight">\(\beta_1\)</span>, <span class="math notranslate nohighlight">\(\beta_2\)</span>, …, <span class="math notranslate nohighlight">\(\beta_n\)</span> applied to our predictor variables <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>, the principal components are described as a series of <em>weights</em> on each predictor variable. These weights map our data points (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>) onto the principal component line in the same way that regression coefficients map our data points onto the regression line.</p>
+<p><strong>However, there’s one key difference</strong> between regression and PCA. Our best fitting regression line was the one that <em>minimized sum of squared error in <span class="math notranslate nohighlight">\(y\)</span></em>. Remember what that looked like? As you can see in the animation above, PCA is doing something slightly different; it’s minimizing each data point’s Euclidean distance to the line, rather than its distance in <span class="math notranslate nohighlight">\(y\)</span> alone. This is an important difference and it means the two techniques aren’t guaranteed to draw the same line. What we wanted with regression was the best way to predict <span class="math notranslate nohighlight">\(y\)</span>. What we want with PCA is the best way to predict our data across all dimensions.</p>
+<p><img alt="pca_reg" src="../../_images/residuals_pca.jpeg" /></p>
+<p>This awesome graphic came from another brief tutorial about PCA <a class="reference external" href="https://starship-knowledge.com/pca-vs-linear-regression">here</a>.</p>
+<p><strong>How to calculate the principal components</strong></p>
+<p>So how do we estimate these super handy <em>principal component</em> lines? It turns out there’s a super handy <em>analytic</em> solution based on the eigenvectors and eigenvalues of our data (briefly: the principal components are the eigenvectors with the largest eigenvalues). We’re not going to get into how that actually works here, but it’s important that you know where they come from (we aren’t <em>estimating</em> them but calculating them). If you want to read more about it, take a look at <a class="reference external" href="https://towardsdatascience.com/a-one-stop-shop-for-principal-component-analysis-5582fb7e0a9c">this</a> tutorial or <a class="reference external" href="https://georgemdallas.wordpress.com/2013/10/30/principal-component-analysis-4-dummies-eigenvectors-eigenvalues-and-dimension-reduction/">this</a> one, or the derivation on the wikipedia page for PCA <a class="reference external" href="https://en.wikipedia.org/wiki/Principal_component_analysis#Details">here</a>.</p>
+<p><strong>Dimensionality reduction with the principal components</strong></p>
+<p>To tie this all together, once we’ve calculated our principal components, we can represent our data in fewer dimensions <em>by mapping each data point onto a small number of principal components</em>. In other words, we change each data point from being written as (<span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, …, <span class="math notranslate nohighlight">\(x_n\)</span>) to something like (<span class="math notranslate nohighlight">\(pc_1\)</span>, <span class="math notranslate nohighlight">\(pc_2\)</span>, <span class="math notranslate nohighlight">\(pc_3\)</span>), where <span class="math notranslate nohighlight">\(pc_1\)</span> is our data point’s value when projected onto the first principal component line. Instead of the <em>axes</em> of our data being <span class="math notranslate nohighlight">\(x_1\)</span>, <span class="math notranslate nohighlight">\(x_2\)</span>, …, we now represent our data on <em>new</em> axes <span class="math notranslate nohighlight">\(pc_1\)</span>, <span class="math notranslate nohighlight">\(pc_2\)</span>, … that allow us to describe the pattern in our data more efficiently.</p>
+</div>
+<div class="section" id="pca-in-python-getting-started">
+<h2>PCA in python: getting started<a class="headerlink" href="#pca-in-python-getting-started" title="Permalink to this headline">¶</a></h2>
+<p>In this example, we’re going to walk through how to do PCA in python.</p>
+<p>The sklearn <code class="docutils literal notranslate"><span class="pre">decomposition</span></code> module offers a range of other dimensionality reduction solutions. You can see the full list of those classes <a class="reference external" href="https://scikit-learn.org/stable/modules/classes.html#module-sklearn.decomposition">here</a> and a brief overview tutorial of each one <a class="reference external" href="https://scikit-learn.org/stable/modules/decomposition.html#decompositions">here</a> (NOTE the tutorial has a lot of really spooky face images. You’ve been warned…).</p>
+<p>Let’s start by revisiting an old dataset that we know has a pretty high-dimensional data representation. The <code class="docutils literal notranslate"><span class="pre">crimestats</span></code> data shows crime rates in cities throughout the US broken out by types of crimes.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/erik-brockbank/css2_sp22-public/main/Datasets/crimestats-clean.csv&quot;</span><span class="p">)</span>
+<span class="n">crime</span><span class="p">[</span><span class="n">crime</span><span class="o">.</span><span class="n">isna</span><span class="p">()</span><span class="o">.</span><span class="n">any</span><span class="p">(</span><span class="n">axis</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)]</span>
+<span class="n">crime</span> <span class="o">=</span> <span class="n">crime</span><span class="o">.</span><span class="n">dropna</span><span class="p">(</span><span class="n">how</span> <span class="o">=</span> <span class="s1">&#39;any&#39;</span><span class="p">)</span>
+<span class="n">crime</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>State</th>
+      <th>City</th>
+      <th>Population</th>
+      <th>Murder</th>
+      <th>Rape</th>
+      <th>Robbery</th>
+      <th>Assault</th>
+      <th>Burglary</th>
+      <th>Theft</th>
+      <th>GTA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>ALABAMA</td>
+      <td>Abbeville</td>
+      <td>2955</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>16.0</td>
+      <td>83.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>ALABAMA</td>
+      <td>Adamsville</td>
+      <td>4771</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>20</td>
+      <td>32.0</td>
+      <td>45.0</td>
+      <td>351.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>ALABAMA</td>
+      <td>Addison</td>
+      <td>720</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>21.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>ALABAMA</td>
+      <td>Alabaster</td>
+      <td>28904</td>
+      <td>1</td>
+      <td>0.0</td>
+      <td>18</td>
+      <td>14.0</td>
+      <td>68.0</td>
+      <td>545.0</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>ALABAMA</td>
+      <td>Alexander City</td>
+      <td>15053</td>
+      <td>2</td>
+      <td>14.0</td>
+      <td>24</td>
+      <td>91.0</td>
+      <td>182.0</td>
+      <td>784.0</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8652</th>
+      <td>WYOMING</td>
+      <td>Sundance</td>
+      <td>1199</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>7.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8653</th>
+      <td>WYOMING</td>
+      <td>Thermopolis</td>
+      <td>2912</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>17.0</td>
+      <td>10.0</td>
+      <td>70.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8654</th>
+      <td>WYOMING</td>
+      <td>Torrington</td>
+      <td>5446</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>36.0</td>
+      <td>133.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8655</th>
+      <td>WYOMING</td>
+      <td>Wheatland</td>
+      <td>3426</td>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>6.0</td>
+      <td>17.0</td>
+      <td>100.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>8656</th>
+      <td>WYOMING</td>
+      <td>Worland</td>
+      <td>4857</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>25.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>8408 rows × 10 columns</p>
+</div></div></div>
+</div>
+<p>Now, let’s imagine we want to do some clustering to see whether there are notable criminal “profiles” of the different cities in this data.</p>
+<p>We’ll extract just the columns with counts for each type of crime:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">subset_cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Murder&#39;</span><span class="p">,</span> <span class="s1">&#39;Rape&#39;</span><span class="p">,</span> <span class="s1">&#39;Robbery&#39;</span><span class="p">,</span> <span class="s1">&#39;Assault&#39;</span><span class="p">,</span> <span class="s1">&#39;Burglary&#39;</span><span class="p">,</span> <span class="s1">&#39;Theft&#39;</span><span class="p">,</span> <span class="s1">&#39;GTA&#39;</span><span class="p">]</span>
+<span class="n">subset</span> <span class="o">=</span> <span class="n">crime</span><span class="o">.</span><span class="n">loc</span><span class="p">[:,</span> <span class="n">subset_cols</span><span class="p">]</span>
+<span class="n">subset</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>Murder</th>
+      <th>Rape</th>
+      <th>Robbery</th>
+      <th>Assault</th>
+      <th>Burglary</th>
+      <th>Theft</th>
+      <th>GTA</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>0</td>
+      <td>1.0</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>16.0</td>
+      <td>83.0</td>
+      <td>6.0</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>0</td>
+      <td>1.0</td>
+      <td>20</td>
+      <td>32.0</td>
+      <td>45.0</td>
+      <td>351.0</td>
+      <td>20.0</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>4.0</td>
+      <td>1.0</td>
+      <td>21.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>1</td>
+      <td>0.0</td>
+      <td>18</td>
+      <td>14.0</td>
+      <td>68.0</td>
+      <td>545.0</td>
+      <td>46.0</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>2</td>
+      <td>14.0</td>
+      <td>24</td>
+      <td>91.0</td>
+      <td>182.0</td>
+      <td>784.0</td>
+      <td>50.0</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>8652</th>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>0.0</td>
+      <td>4.0</td>
+      <td>7.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8653</th>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>17.0</td>
+      <td>10.0</td>
+      <td>70.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8654</th>
+      <td>0</td>
+      <td>0.0</td>
+      <td>1</td>
+      <td>6.0</td>
+      <td>36.0</td>
+      <td>133.0</td>
+      <td>1.0</td>
+    </tr>
+    <tr>
+      <th>8655</th>
+      <td>0</td>
+      <td>1.0</td>
+      <td>0</td>
+      <td>6.0</td>
+      <td>17.0</td>
+      <td>100.0</td>
+      <td>4.0</td>
+    </tr>
+    <tr>
+      <th>8656</th>
+      <td>0</td>
+      <td>0.0</td>
+      <td>0</td>
+      <td>15.0</td>
+      <td>10.0</td>
+      <td>25.0</td>
+      <td>8.0</td>
+    </tr>
+  </tbody>
+</table>
+<p>8408 rows × 7 columns</p>
+</div></div></div>
+</div>
+<p><em>What does this data look like?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># NB: this takes ~60s to run</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">pairplot</span><span class="p">(</span><span class="n">subset</span><span class="p">,</span> <span class="n">plot_kws</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;alpha&quot;</span><span class="p">:</span> <span class="mf">0.5</span><span class="p">})</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Unfortunately, this data is high dimensional (7 <span class="math notranslate nohighlight">\(x\)</span> variables) and they seem very highly correlated.</p>
+<p>This is a recipe for difficulties if we try to cluster it as-is.</p>
+<p><em><strong>… TIME FOR PCA!!!</strong></em></p>
+<p>Now, before we can apply PCA, there’s an important step here, which is to <em>re-scale our data</em>.</p>
+<p>Remember way back in week 4 when we talked about z-scoring our data?</p>
+<p>Now we get to put that skill to work!</p>
+<p><em><strong>Why would we want to z-score our data before doing PCA?</strong></em></p>
+<p>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.preprocessing</span> <span class="kn">import</span> <span class="n">StandardScaler</span>
+
+<span class="n">subset_scaled</span> <span class="o">=</span> <span class="n">StandardScaler</span><span class="p">()</span><span class="o">.</span><span class="n">fit_transform</span><span class="p">(</span><span class="n">subset</span><span class="p">)</span>
+<span class="n">subset_scaled</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="n">subset</span><span class="o">.</span><span class="n">columns</span><span class="p">)</span>
+<span class="n">subset_scaled</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>Now, let’s fit the sklearn PCA class to our scaled data</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.decomposition</span> <span class="kn">import</span> <span class="n">PCA</span>
+
+<span class="n">pca</span> <span class="o">=</span> <span class="n">PCA</span><span class="p">()</span>
+
+<span class="n">pca</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">subset_scaled</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>How did we do?</em></p>
+</div>
+<div class="section" id="pca-in-python-interpreting-results">
+<h2>PCA in python: interpreting results<a class="headerlink" href="#pca-in-python-interpreting-results" title="Permalink to this headline">¶</a></h2>
+<p>Let’s start by understanding these results in aggregate.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># How many components were there? (default: same number as dimensions of data)</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">n_components_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># how much variance do we explain with each component? (remember our data has been z-scored)</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># what proportion of the total variance is each component explaining?</span>
+<span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>Let’s take a look at this proportion of total variance result.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">pointplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">),</span> <span class="n">y</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">explained_variance_ratio_</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Principal component&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;Proportion of additional variance explained&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>What does the result above mean??</strong></em></p>
+<p>…</p>
+<p>Now, let’s take a closer look at our individual components:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">pca</span><span class="o">.</span><span class="n">components_</span>
+<span class="c1"># pca.components_[0]</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">subset_cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Component 1&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">barplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">components_</span><span class="p">[</span><span class="mi">1</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">subset_cols</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Component 2&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>What do the plots above tell us?</strong></em></p>
+<p>…</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">crime_transform</span> <span class="o">=</span> <span class="n">pca</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">subset_scaled</span><span class="p">)</span>
+<span class="n">crime_transform</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">DataFrame</span><span class="p">(</span><span class="n">crime_transform</span><span class="p">,</span> <span class="n">columns</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Component &#39;</span> <span class="o">+</span> <span class="nb">str</span><span class="p">(</span><span class="n">i</span><span class="p">)</span> <span class="k">for</span> <span class="n">i</span> <span class="ow">in</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">8</span><span class="p">)])</span>
+<span class="n">crime_transform</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crime</span><span class="p">[</span><span class="s1">&#39;State&#39;</span><span class="p">]</span>
+<span class="n">crime_transform</span><span class="p">[</span><span class="s1">&#39;City&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="n">crime</span><span class="p">[</span><span class="s1">&#39;City&#39;</span><span class="p">]</span>
+<span class="n">crime_transform</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">data</span> <span class="o">=</span> <span class="n">crime_transform</span><span class="p">,</span> <span class="n">x</span> <span class="o">=</span> <span class="s2">&quot;Component 1&quot;</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="s2">&quot;Component 2&quot;</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="mf">0.5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p><em><strong>What does the plot above tell us?</strong></em></p>
+<p>…</p>
+</div>
+<div class="section" id="wrapping-up-a-note-on-interpretability">
+<h2>Wrapping up: a note on interpretability<a class="headerlink" href="#wrapping-up-a-note-on-interpretability" title="Permalink to this headline">¶</a></h2>
+<p>As you might have intuited from the examples above, principal components can sometimes be hard to interpret.</p>
+<p>It may require a lot of domain expertise or further analysis. For this reason, be thoughtful when using it.</p>
+<p>However, because dimensionality reduction is so powerful (and this solution works so well), having a smaller set of principal components that requires interpretation is likely better than trying to work with high dimensional data in its original form.</p>
+</div>
+</div>
+<div class="section" id="practicing-pca">
+<h1>Practicing PCA<a class="headerlink" href="#practicing-pca" title="Permalink to this headline">¶</a></h1>
+<p>If we get through all the above and still have time left over, let’s practice doing PCA on a different data set.</p>
+<p>In the code below, read in the <code class="docutils literal notranslate"><span class="pre">pokemon</span></code> dataset that we’ve used in prior assignments.</p>
+<p>Now, take a look at the columns used to evaluate a pokemon’s effectiveness: <code class="docutils literal notranslate"><span class="pre">HP</span></code>, <code class="docutils literal notranslate"><span class="pre">Attack</span></code>, <code class="docutils literal notranslate"><span class="pre">Defense</span></code>, <code class="docutils literal notranslate"><span class="pre">Sp.</span> <span class="pre">Atk</span></code>, <code class="docutils literal notranslate"><span class="pre">Sp.</span> <span class="pre">Def</span></code>, and <code class="docutils literal notranslate"><span class="pre">Speed</span></code>. Each pokemon occupies a position in this high-dimensional space. This makes it difficult to evaluate them across all these measures.</p>
+<p><em>Can you find a lower dimensional way of representing each pokemon for easier clustering or analysis?</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+
+<span class="c1"># Read in the data</span>
+<span class="n">pokemon</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s2">&quot;https://raw.githubusercontent.com/erik-brockbank/css2_sp22-public/main/Datasets/Pokemon.csv&quot;</span><span class="p">)</span>
+
+<span class="c1"># Use these columns as the basis for PCA</span>
+<span class="n">cols</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;HP&#39;</span><span class="p">,</span> <span class="s1">&#39;Attack&#39;</span><span class="p">,</span> <span class="s1">&#39;Defense&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Atk&#39;</span><span class="p">,</span> <span class="s1">&#39;Sp. Def&#39;</span><span class="p">,</span> <span class="s1">&#39;Speed&#39;</span><span class="p">]</span>
+
+
+<span class="n">pokemon</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Week9_Overview.html" title="previous page">Week 9</a>
+    <a class='right-next' id="next-link" href="Lecture_26-pre.html" title="next page">Lecture 26 (5/25/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>

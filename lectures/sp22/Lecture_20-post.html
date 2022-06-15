@@ -1,0 +1,1908 @@
+
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lecture 20 (5/11/2022) &#8212; UCSD CSS 2 - Spring 2022</title>
+    
+  <link href="../../_static/css/theme.css" rel="stylesheet" />
+  <link href="../../_static/css/index.c5995385ac14fb8791e8eb36b4908be2.css" rel="stylesheet" />
+
+    
+  <link rel="stylesheet"
+    href="../../_static/vendor/fontawesome/5.13.0/css/all.min.css">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-solid-900.woff2">
+  <link rel="preload" as="font" type="font/woff2" crossorigin
+    href="../../_static/vendor/fontawesome/5.13.0/webfonts/fa-brands-400.woff2">
+
+    
+      
+
+    
+    <link rel="stylesheet" href="../../_static/sphinx-book-theme.5f77b4aec8189eecf79907ce328c390d.css" type="text/css" />
+    <link rel="stylesheet" href="../../_static/pygments.css" type="text/css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/togglebutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/copybutton.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/mystnb.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/sphinx-thebe.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-main.c949a650a448cc0ae9fd3441c0e17fb0.css" />
+    <link rel="stylesheet" type="text/css" href="../../_static/panels-variables.06eb56fa6e07937060861dad626602ad.css" />
+    
+  <link rel="preload" as="script" href="../../_static/js/index.1c5a1a01449ed65a7b51.js">
+
+    <script id="documentation_options" data-url_root="../../" src="../../_static/documentation_options.js"></script>
+    <script src="../../_static/jquery.js"></script>
+    <script src="../../_static/underscore.js"></script>
+    <script src="../../_static/doctools.js"></script>
+    <script src="../../_static/language_data.js"></script>
+    <script src="../../_static/togglebutton.js"></script>
+    <script src="../../_static/clipboard.min.js"></script>
+    <script src="../../_static/copybutton.js"></script>
+    <script >var togglebuttonSelector = '.toggle, .admonition.dropdown, .tag_hide_input div.cell_input, .tag_hide-input div.cell_input, .tag_hide_output div.cell_output, .tag_hide-output div.cell_output, .tag_hide_cell.cell, .tag_hide-cell.cell';</script>
+    <script src="../../_static/sphinx-book-theme.12a9622fbb08dcb3a2a40b2c02b83a57.js"></script>
+    <script async="async" src="https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.7/latest.js?config=TeX-AMS-MML_HTMLorMML"></script>
+    <script type="text/x-mathjax-config">MathJax.Hub.Config({"tex2jax": {"inlineMath": [["\\(", "\\)"]], "displayMath": [["\\[", "\\]"]], "processRefs": false, "processEnvironments": false}})</script>
+    <script async="async" src="https://unpkg.com/thebelab@latest/lib/index.js"></script>
+    <script >
+        const thebe_selector = ".thebe"
+        const thebe_selector_input = "pre"
+        const thebe_selector_output = ".output"
+    </script>
+    <script async="async" src="../../_static/sphinx-thebe.js"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Lecture 21 (5/13/2022)" href="Lecture_21-post.html" />
+    <link rel="prev" title="Lecture 19 (5/9/2022)" href="Lecture_19-post.html" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="docsearch:language" content="en" />
+    
+  </head>
+  <body data-spy="scroll" data-target="#bd-toc-nav" data-offset="80">
+    
+    <div class="container-fluid" id="banner"></div>
+
+    
+
+    <div class="container-xl">
+      <div class="row">
+          
+<div class="col-12 col-md-3 bd-sidebar site-navigation show" id="site-navigation">
+    
+        <div class="navbar-brand-box">
+    <a class="navbar-brand text-wrap" href="../../index.html">
+      
+      <img src="../../_static/logo.png" class="logo" alt="logo">
+      
+      
+      <h1 class="site-logo" id="site-title">UCSD CSS 2 - Spring 2022</h1>
+      
+    </a>
+</div><form class="bd-search d-flex align-items-center" action="../../search.html" method="get">
+  <i class="icon fas fa-search"></i>
+  <input type="search" class="form-control" name="q" id="search-input" placeholder="Search this book..." aria-label="Search this book..." autocomplete="off" >
+</form><nav class="bd-links" id="bd-docs-nav" aria-label="Main navigation">
+    <div class="bd-toc-item active">
+        <ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../index.html">
+   Welcome to CSS 2
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Course (CSS 2 Spring 2022)
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/syllabus.html">
+   Syllabus
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/expectations.html">
+   Expectations
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/datahub.html">
+   Datahub assignments
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/debugging.html">
+   Debugging
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/resources.html">
+   Extracurricular Resources
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="../../course/final.html">
+   Final Project
+  </a>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lectures - download before class
+ </span>
+</p>
+<ul class="nav bd-sidenav">
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week1_Overview.html">
+   Week 1
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-1" name="toctree-checkbox-1" type="checkbox"/>
+  <label for="toctree-checkbox-1">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_1.html">
+     Lecture 1 (3/28/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_2-pre.html">
+     Lecture 2 (3/30/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_3-pre.html">
+     Lecture 3 (4/1/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week2_Overview.html">
+   Week 2
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" type="checkbox"/>
+  <label for="toctree-checkbox-2">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_4-pre.html">
+     Lecture 4 (4/4/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_5-pre.html">
+     Lecture 5 (4/6/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_6-pre.html">
+     Lecture 6 (4/8/22)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week3_Overview.html">
+   Week 3
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" type="checkbox"/>
+  <label for="toctree-checkbox-3">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_7-pre.html">
+     Lecture 7 (guest) - Introduction to Data Visualization in Python
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_8.html">
+     Lecture 8 (4/13/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_9-pre.html">
+     Lecture 9 (guest) - Data Visualization with Seaborn
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week4_Overview.html">
+   Week 4
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" type="checkbox"/>
+  <label for="toctree-checkbox-4">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_10-pre.html">
+     Lecture 10 (4/18/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_11-pre.html">
+     Lecture 11 (4/20/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_12-pre.html">
+     Lecture 12 (4/22/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week5_Overview.html">
+   Week 5
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" type="checkbox"/>
+  <label for="toctree-checkbox-5">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_13-pre.html">
+     Lecture 13 (4/25/22)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_14-pre.html">
+     Lecture 14 (4/27/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_15-pre.html">
+     Lecture 15 (4/29/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week6_Overview.html">
+   Week 6
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" type="checkbox"/>
+  <label for="toctree-checkbox-6">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_16-pre.html">
+     Lecture 16 (5/2/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_17-pre.html">
+     Lecture 17 (5/4/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_18-pre.html">
+     Lecture 18 (5/6/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week7_Overview.html">
+   Week 7
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" type="checkbox"/>
+  <label for="toctree-checkbox-7">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_19-pre.html">
+     Lecture 19 (5/9/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_20-pre.html">
+     Lecture 20 (5/11/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_21-pre.html">
+     Lecture 21 (5/13/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week8_Overview.html">
+   Week 8
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" type="checkbox"/>
+  <label for="toctree-checkbox-8">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_22-pre.html">
+     Lecture 22 (5/16/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_23-pre.html">
+     Lecture 23 (5/18/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_24-pre.html">
+     Lecture 24 (5/20/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week9_Overview.html">
+   Week 9
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" type="checkbox"/>
+  <label for="toctree-checkbox-9">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_25-pre.html">
+     Lecture 25 (5/23/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_26-pre.html">
+     Lecture 26 (5/25/2022)
+    </a>
+   </li>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_27-pre.html">
+     Lecture 27 (5/27/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+ <li class="toctree-l1 has-children">
+  <a class="reference internal" href="Week10_Overview.html">
+   Week 10
+  </a>
+  <input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" type="checkbox"/>
+  <label for="toctree-checkbox-10">
+   <i class="fas fa-chevron-down">
+   </i>
+  </label>
+  <ul>
+   <li class="toctree-l2">
+    <a class="reference internal" href="Lecture_28-pre.html">
+     Lecture 28 (6/3/2022)
+    </a>
+   </li>
+  </ul>
+ </li>
+</ul>
+<p class="caption">
+ <span class="caption-text">
+  Lecture code - available after class
+ </span>
+</p>
+<ul class="current nav bd-sidenav">
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_2-post.html">
+   Lecture 2 (3/30/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_3-post.html">
+   Lecture 3 (4/1/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_4-post.html">
+   Lecture 4 (4/4/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_5-post.html">
+   Lecture 5 (4/6/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_6-post.html">
+   Lecture 6 (4/8/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_7-post.html">
+   Lecture 7 (guest) - Introduction to Data Visualization in Python
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_9-post.html">
+   Lecture 9 (guest) Data Visualization with Seaborn
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_10-post.html">
+   Lecture 10 (4/18/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_11-post.html">
+   Lecture 11 (4/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_12-post.html">
+   Lecture 12 (4/22/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_13-post.html">
+   Lecture 13 (4/25/22)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_14-post.html">
+   Lecture 14 (4/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_15-post.html">
+   Lecture 15 (4/29/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_16-post.html">
+   Lecture 16 (5/2/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_17-post.html">
+   Lecture 17 (5/4/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_18-post.html">
+   Lecture 18 (5/6/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_19-post.html">
+   Lecture 19 (5/9/2022)
+  </a>
+ </li>
+ <li class="toctree-l1 current active">
+  <a class="current reference internal" href="#">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_21-post.html">
+   Lecture 21 (5/13/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_22-post.html">
+   Lecture 22 (5/16/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_23-post.html">
+   Lecture 23 (5/18/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_24-post.html">
+   Lecture 24 (5/20/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_25-post.html">
+   Lecture 25 (5/23/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_26-post.html">
+   Lecture 26 (5/25/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_27-post.html">
+   Lecture 27 (5/27/2022)
+  </a>
+ </li>
+ <li class="toctree-l1">
+  <a class="reference internal" href="Lecture_28-post.html">
+   Lecture 28 (6/3/2022)
+  </a>
+ </li>
+</ul>
+
+    </div>
+</nav> <!-- To handle the deprecated key -->
+
+<div class="navbar_extra_footer">
+  Powered by <a href="https://jupyterbook.org">Jupyter Book</a>
+</div>
+
+</div>
+
+
+          
+
+
+          
+<main class="col py-md-3 pl-md-4 bd-content overflow-auto" role="main">
+    
+    <div class="topbar container-xl fixed-top">
+    <div class="topbar-contents row">
+        <div class="col-12 col-md-3 bd-topbar-whitespace site-navigation show"></div>
+        <div class="col pl-md-4 topbar-main">
+            
+            <button id="navbar-toggler" class="navbar-toggler ml-0" type="button" data-toggle="collapse"
+                data-toggle="tooltip" data-placement="bottom" data-target=".site-navigation" aria-controls="navbar-menu"
+                aria-expanded="true" aria-label="Toggle navigation" aria-controls="site-navigation"
+                title="Toggle navigation" data-toggle="tooltip" data-placement="left">
+                <i class="fas fa-bars"></i>
+                <i class="fas fa-arrow-left"></i>
+                <i class="fas fa-arrow-up"></i>
+            </button>
+            
+            
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn" aria-label="Download this page"><i
+            class="fas fa-download"></i></button>
+
+    <div class="dropdown-buttons">
+        <!-- ipynb file if we had a myst markdown file -->
+        
+        <!-- Download raw file -->
+        <a class="dropdown-buttons" href="../../_sources/lectures/sp22/Lecture_20-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Download source file" data-toggle="tooltip"
+                data-placement="left">.ipynb</button></a>
+        <!-- Download PDF via print -->
+        <button type="button" id="download-print" class="btn btn-secondary topbarbtn" title="Print to PDF"
+            onClick="window.print()" data-toggle="tooltip" data-placement="left">.pdf</button>
+    </div>
+</div>
+
+            <!-- Source interaction buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Connect with source repository"><i class="fab fa-github"></i></button>
+    <div class="dropdown-buttons sourcebuttons">
+        <a class="repository-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io"><button type="button" class="btn btn-secondary topbarbtn"
+                data-toggle="tooltip" data-placement="left" title="Source repository"><i
+                    class="fab fa-github"></i>repository</button></a>
+        <a class="issues-button"
+            href="https://github.com/erik-brockbank/ucsd-css-002-sp2022.github.io/issues/new?title=Issue%20on%20page%20%2Flectures/sp22/Lecture_20-post.html&body=Your%20issue%20content%20here."><button
+                type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip" data-placement="left"
+                title="Open an issue"><i class="fas fa-lightbulb"></i>open issue</button></a>
+        
+    </div>
+</div>
+
+            <!-- Full screen (wrap in <a> to have style consistency -->
+
+<a class="full-screen-button"><button type="button" class="btn btn-secondary topbarbtn" data-toggle="tooltip"
+        data-placement="bottom" onclick="toggleFullScreen()" aria-label="Fullscreen mode"
+        title="Fullscreen mode"><i
+            class="fas fa-expand"></i></button></a>
+
+            <!-- Launch buttons -->
+
+<div class="dropdown-buttons-trigger">
+    <button id="dropdown-buttons-trigger" class="btn btn-secondary topbarbtn"
+        aria-label="Launch interactive content"><i class="fas fa-rocket"></i></button>
+    <div class="dropdown-buttons">
+        
+        <a class="binder-button" href="https://mybinder.org/v2/gh/erik-brockbank/ucsd-css-002-sp2022.github.io/master?urlpath=tree/lectures/sp22/Lecture_20-post.ipynb"><button type="button"
+                class="btn btn-secondary topbarbtn" title="Launch Binder" data-toggle="tooltip"
+                data-placement="left"><img class="binder-button-logo"
+                    src="../../_static/images/logo_binder.svg"
+                    alt="Interact on binder">Binder</button></a>
+        
+        
+        
+        
+    </div>
+</div>
+
+        </div>
+
+        <!-- Table of contents -->
+        <div class="d-none d-md-block col-md-2 bd-toc show">
+            
+            <div class="tocsection onthispage pt-5 pb-3">
+                <i class="fas fa-list"></i> Contents
+            </div>
+            <nav id="bd-toc-nav">
+                <ul class="visible nav section-nav flex-column">
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#">
+   Lecture 20 (5/11/2022)
+  </a>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#common-classification-models">
+   Common Classification Models
+  </a>
+  <ul class="visible nav section-nav flex-column">
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#data-predicting-heart-disease">
+     Data: Predicting Heart Disease
+    </a>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#logistic-regression">
+     Logistic Regression
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#logistic-regression-in-python">
+       Logistic regression in python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#decision-trees">
+     Decision Trees
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#decision-tree-classifiers-in-python">
+       Decision tree classifiers in python
+      </a>
+     </li>
+    </ul>
+   </li>
+   <li class="toc-h2 nav-item toc-entry">
+    <a class="reference internal nav-link" href="#support-vector-machines-svms">
+     Support Vector Machines (SVMs)
+    </a>
+    <ul class="nav section-nav flex-column">
+     <li class="toc-h3 nav-item toc-entry">
+      <a class="reference internal nav-link" href="#svms-in-python">
+       SVMs in python
+      </a>
+     </li>
+    </ul>
+   </li>
+  </ul>
+ </li>
+ <li class="toc-h1 nav-item toc-entry">
+  <a class="reference internal nav-link" href="#classifier-wrap-up">
+   Classifier Wrap-Up
+  </a>
+ </li>
+</ul>
+
+            </nav>
+        </div>
+    </div>
+</div>
+    <div id="main-content" class="row">
+        <div class="col-12 col-md-9 pl-md-3 pr-md-0">
+        
+              <div>
+                
+  <div class="section" id="lecture-20-5-11-2022">
+<h1>Lecture 20 (5/11/2022)<a class="headerlink" href="#lecture-20-5-11-2022" title="Permalink to this headline">¶</a></h1>
+<p><strong>Announcements</strong></p>
+<ul class="simple">
+<li><p>Final projects!</p></li>
+<li><p>TODO ERIK make next week’s lab include some work component for final project</p></li>
+</ul>
+<p><em>Last time we covered:</em></p>
+<ul class="simple">
+<li><p>ROC curves</p></li>
+</ul>
+<p><strong>Today’s agenda:</strong></p>
+<ul class="simple">
+<li><p>Common classification models</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">numpy</span> <span class="k">as</span> <span class="nn">np</span>
+<span class="kn">import</span> <span class="nn">pandas</span> <span class="k">as</span> <span class="nn">pd</span>
+<span class="kn">import</span> <span class="nn">matplotlib.pyplot</span> <span class="k">as</span> <span class="nn">plt</span>
+<span class="kn">import</span> <span class="nn">seaborn</span> <span class="k">as</span> <span class="nn">sns</span>
+
+<span class="kn">from</span> <span class="nn">sklearn.model_selection</span> <span class="kn">import</span> <span class="n">train_test_split</span>
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="common-classification-models">
+<h1>Common Classification Models<a class="headerlink" href="#common-classification-models" title="Permalink to this headline">¶</a></h1>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors</p></li>
+<li><p>Logistic regression</p></li>
+<li><p>Decision trees</p></li>
+<li><p>Support Vector Machines (SVMs)</p></li>
+<li><p>Other: naive Bayes, neural networks, discriminant analysis</p></li>
+</ul>
+<div class="section" id="data-predicting-heart-disease">
+<h2>Data: Predicting Heart Disease<a class="headerlink" href="#data-predicting-heart-disease" title="Permalink to this headline">¶</a></h2>
+<p>From <a class="reference external" href="https://hastie.su.domains/ElemStatLearn/">source</a>:</p>
+<blockquote>
+<div><p>A retrospective sample of males in a heart-disease high-risk region
+of the Western Cape, South Africa. There are roughly two controls per
+case of CHD. Many of the CHD positive men have undergone blood
+pressure reduction treatment and other programs to reduce their risk
+factors after their CHD event. In some cases the measurements were
+made after these treatments. These data are taken from a larger
+dataset, described in  Rousseauw et al, 1983, South African Medical
+Journal.</p>
+</div></blockquote>
+<ul class="simple">
+<li><p>sbp: systolic blood pressure</p></li>
+<li><p>tobacco: cumulative tobacco (kg)</p></li>
+<li><p>ldl: low densiity lipoprotein cholesterol</p></li>
+<li><p>adiposity</p></li>
+<li><p>famhist: family history of heart disease (Present, Absent)</p></li>
+<li><p>typea: type-A behavior</p></li>
+<li><p>obesity</p></li>
+<li><p>alcohol: current alcohol consumption</p></li>
+<li><p>age: age at onset</p></li>
+<li><p>chd: <strong>response</strong>, coronary heart disease</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">data</span> <span class="o">=</span> <span class="n">pd</span><span class="o">.</span><span class="n">read_csv</span><span class="p">(</span><span class="s1">&#39;https://web.stanford.edu/~hastie/ElemStatLearn/datasets/SAheart.data&#39;</span><span class="p">)</span>
+
+<span class="n">data</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_html"><div>
+<style scoped>
+    .dataframe tbody tr th:only-of-type {
+        vertical-align: middle;
+    }
+
+    .dataframe tbody tr th {
+        vertical-align: top;
+    }
+
+    .dataframe thead th {
+        text-align: right;
+    }
+</style>
+<table border="1" class="dataframe">
+  <thead>
+    <tr style="text-align: right;">
+      <th></th>
+      <th>row.names</th>
+      <th>sbp</th>
+      <th>tobacco</th>
+      <th>ldl</th>
+      <th>adiposity</th>
+      <th>famhist</th>
+      <th>typea</th>
+      <th>obesity</th>
+      <th>alcohol</th>
+      <th>age</th>
+      <th>chd</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>0</th>
+      <td>1</td>
+      <td>160</td>
+      <td>12.00</td>
+      <td>5.73</td>
+      <td>23.11</td>
+      <td>Present</td>
+      <td>49</td>
+      <td>25.30</td>
+      <td>97.20</td>
+      <td>52</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>1</th>
+      <td>2</td>
+      <td>144</td>
+      <td>0.01</td>
+      <td>4.41</td>
+      <td>28.61</td>
+      <td>Absent</td>
+      <td>55</td>
+      <td>28.87</td>
+      <td>2.06</td>
+      <td>63</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>2</th>
+      <td>3</td>
+      <td>118</td>
+      <td>0.08</td>
+      <td>3.48</td>
+      <td>32.28</td>
+      <td>Present</td>
+      <td>52</td>
+      <td>29.14</td>
+      <td>3.81</td>
+      <td>46</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>3</th>
+      <td>4</td>
+      <td>170</td>
+      <td>7.50</td>
+      <td>6.41</td>
+      <td>38.03</td>
+      <td>Present</td>
+      <td>51</td>
+      <td>31.99</td>
+      <td>24.26</td>
+      <td>58</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>4</th>
+      <td>5</td>
+      <td>134</td>
+      <td>13.60</td>
+      <td>3.50</td>
+      <td>27.78</td>
+      <td>Present</td>
+      <td>60</td>
+      <td>25.99</td>
+      <td>57.34</td>
+      <td>49</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>...</th>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+      <td>...</td>
+    </tr>
+    <tr>
+      <th>457</th>
+      <td>459</td>
+      <td>214</td>
+      <td>0.40</td>
+      <td>5.98</td>
+      <td>31.72</td>
+      <td>Absent</td>
+      <td>64</td>
+      <td>28.45</td>
+      <td>0.00</td>
+      <td>58</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>458</th>
+      <td>460</td>
+      <td>182</td>
+      <td>4.20</td>
+      <td>4.41</td>
+      <td>32.10</td>
+      <td>Absent</td>
+      <td>52</td>
+      <td>28.61</td>
+      <td>18.72</td>
+      <td>52</td>
+      <td>1</td>
+    </tr>
+    <tr>
+      <th>459</th>
+      <td>461</td>
+      <td>108</td>
+      <td>3.00</td>
+      <td>1.59</td>
+      <td>15.23</td>
+      <td>Absent</td>
+      <td>40</td>
+      <td>20.09</td>
+      <td>26.64</td>
+      <td>55</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>460</th>
+      <td>462</td>
+      <td>118</td>
+      <td>5.40</td>
+      <td>11.61</td>
+      <td>30.79</td>
+      <td>Absent</td>
+      <td>64</td>
+      <td>27.35</td>
+      <td>23.97</td>
+      <td>40</td>
+      <td>0</td>
+    </tr>
+    <tr>
+      <th>461</th>
+      <td>463</td>
+      <td>132</td>
+      <td>0.00</td>
+      <td>4.82</td>
+      <td>33.41</td>
+      <td>Present</td>
+      <td>62</td>
+      <td>14.70</td>
+      <td>0.00</td>
+      <td>46</td>
+      <td>1</td>
+    </tr>
+  </tbody>
+</table>
+<p>462 rows × 11 columns</p>
+</div></div></div>
+</div>
+<p><strong>Setting up our classifiers</strong>:</p>
+<p>Let’s stick to just a single feature (age at onset) and see how different methods use this feature to predict the outcome label (CHD).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">x_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;age&#39;</span><span class="p">])</span><span class="o">.</span><span class="n">reshape</span><span class="p">(</span><span class="nb">len</span><span class="p">(</span><span class="n">data</span><span class="p">),</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">y_vals</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">array</span><span class="p">(</span><span class="n">data</span><span class="p">[</span><span class="s1">&#39;chd&#39;</span><span class="p">])</span>
+
+<span class="n">xtrain</span><span class="p">,</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">ytest</span> <span class="o">=</span> <span class="n">train_test_split</span><span class="p">(</span><span class="n">x_vals</span><span class="p">,</span> <span class="n">y_vals</span><span class="p">,</span> <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># sns.scatterplot(x = xtrain[:, 0], y = ytrain, alpha = .5)</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;CHD&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;CHD&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_20-post_9_1.png" src="../../_images/Lecture_20-post_9_1.png" />
+</div>
+</div>
+<p><em><strong>Now, let’s get started!</strong></em></p>
+</div>
+<div class="section" id="logistic-regression">
+<h2>Logistic Regression<a class="headerlink" href="#logistic-regression" title="Permalink to this headline">¶</a></h2>
+<p><strong>How it works</strong>:</p>
+<p>In linear regression, the relationship between our predictor <span class="math notranslate nohighlight">\(x\)</span> and our response variable <span class="math notranslate nohighlight">\(y\)</span> was:</p>
+<p><span class="math notranslate nohighlight">\(y = \beta_0 + \beta_1 x\)</span></p>
+<p>If our <span class="math notranslate nohighlight">\(y\)</span> values are all 0 or 1 (and assumed to be <em>Bernoulli distributed</em> with probability <span class="math notranslate nohighlight">\(p\)</span>), this approach doesn’t work very well:</p>
+<ol class="simple">
+<li><p>It predicts values &lt;0 and &gt;1 for some inputs <span class="math notranslate nohighlight">\(x\)</span></p></li>
+<li><p>It doesn’t accomodate the fact that getting closer and closer to 1 gets harder and harder: one-unit changes in <span class="math notranslate nohighlight">\(x\)</span> may not have equal changes in <span class="math notranslate nohighlight">\(p(y = 1)\)</span>.</p></li>
+</ol>
+<p><em>So what do we do about this?</em></p>
+<p>Instead, we postulate the following relationship between <span class="math notranslate nohighlight">\(x\)</span> and <span class="math notranslate nohighlight">\(y\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(log \dfrac{p(y=1)}{p(y=0)} = \beta_0 + \beta_1 x\)</span>.</p>
+<p>Every unit increase in <span class="math notranslate nohighlight">\(x\)</span> leads to a <span class="math notranslate nohighlight">\(\beta_1\)</span> increase in the <em>log odds of <span class="math notranslate nohighlight">\(y\)</span></em> (or, every unit increase in <span class="math notranslate nohighlight">\(x\)</span> leads to a <span class="math notranslate nohighlight">\(\beta_1\)</span> <em>multiplication</em> of the <em>odds</em> of <span class="math notranslate nohighlight">\(y\)</span>).</p>
+<p>This <em>logit transform</em> of our response variable <span class="math notranslate nohighlight">\(y\)</span> solves both of the problems with linear regression above.</p>
+<p>However, the goal today isn’t to get into the nitty-gritty of logistic regression. Instead, let’s talk about how we use it as a classifier!</p>
+<p><strong>Classification</strong></p>
+<p>When we’ve fit a logistic regression to our data, we can output a probability <span class="math notranslate nohighlight">\(p(y)\)</span> for any given <span class="math notranslate nohighlight">\(x\)</span>:</p>
+<p><span class="math notranslate nohighlight">\(p(y) = \dfrac{e^{h(x)}}{1+ e^{h(x)}}\)</span></p>
+<p>for <span class="math notranslate nohighlight">\(h(x) = \beta_0 + \beta_1x\)</span>.</p>
+<p><span class="math notranslate nohighlight">\(\dfrac{e^{h(x)}}{1+ e^{h(x)}}\)</span> is the <em>logistic function</em> that maps from our <span class="math notranslate nohighlight">\(x\)</span> variable to <span class="math notranslate nohighlight">\(p(y)\)</span>.</p>
+<p>We can use this function as the basis for classification, where <span class="math notranslate nohighlight">\(p(y)\)</span> greater than a threshold <span class="math notranslate nohighlight">\(T\)</span> is given a particular label estimate <span class="math notranslate nohighlight">\(\hat{y}\)</span>.</p>
+<p><strong>Fitting parameters</strong></p>
+<p>Even though logistic regression produces regression coefficients (intercept + slopes) similar to linear regression, these parameters are not estimated using the Ordinary Least Squares process we saw with linear regression. Instead, they are most often estimated using a more complicated process called Maximum Likelihood Estimation.</p>
+<div class="section" id="logistic-regression-in-python">
+<h3>Logistic regression in python<a class="headerlink" href="#logistic-regression-in-python" title="Permalink to this headline">¶</a></h3>
+<p>You can read the scikit-learn documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.linear_model.LogisticRegression.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the LogisticRegression class</span>
+<span class="kn">from</span> <span class="nn">sklearn.linear_model</span> <span class="kn">import</span> <span class="n">LogisticRegression</span>
+
+<span class="c1"># Initialize the logistic regression</span>
+<span class="n">log_reg</span> <span class="o">=</span> <span class="n">LogisticRegression</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Fit the model</span>
+<span class="n">log_reg</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>LogisticRegression(random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>What attributes do we get from this model fit?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">log_reg</span><span class="o">.</span><span class="n">classes_</span>
+
+<span class="n">log_reg</span><span class="o">.</span><span class="n">intercept_</span> <span class="c1"># What does this mean?</span>
+<span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_reg</span><span class="o">.</span><span class="n">intercept_</span><span class="p">[</span><span class="mi">0</span><span class="p">]))</span>
+
+<span class="n">log_reg</span><span class="o">.</span><span class="n">coef_</span> <span class="c1"># What does this mean?</span>
+<span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_reg</span><span class="o">.</span><span class="n">coef_</span><span class="p">[</span><span class="mi">0</span><span class="p">][</span><span class="mi">0</span><span class="p">])</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>1.06682882157164
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>What functions does the model class give us?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">binary_preds</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">xtest</span><span class="p">)</span>
+<span class="n">binary_preds</span>
+
+<span class="n">soft_preds</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">xtest</span><span class="p">)</span>
+<span class="n">soft_preds</span>
+<span class="c1"># soft_preds[:, 0] # probability of 0</span>
+
+
+<span class="c1"># Accuracy of hard classification predictions</span>
+<span class="n">log_reg</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span> 
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6637931034482759
+</pre></div>
+</div>
+</div>
+</div>
+<p><strong>How did we do?</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s show the actual test data</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">ytest</span> <span class="o">==</span> <span class="n">binary_preds</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">5</span><span class="p">)</span>
+
+<span class="c1"># Now, let&#39;s plot our logistic regression curve</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">soft_preds</span><span class="p">[:,</span> <span class="mi">1</span><span class="p">])</span>
+
+<span class="c1"># What is the &quot;hard classification&quot; boundary?</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">binary_preds</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axhline</span><span class="p">(</span><span class="mf">0.5</span><span class="p">,</span> <span class="n">linestyle</span> <span class="o">=</span> <span class="s2">&quot;--&quot;</span><span class="p">,</span> <span class="n">color</span> <span class="o">=</span> <span class="s2">&quot;k&quot;</span><span class="p">)</span> <span class="c1"># this is what produces our classification boundary</span>
+
+
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;CHD probability&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">legend</span><span class="p">(</span><span class="n">title</span> <span class="o">=</span> <span class="s2">&quot;Correct&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_20-post_19_0.png" src="../../_images/Lecture_20-post_19_0.png" />
+</div>
+</div>
+<p><em>What are the true positive/negative and false positive/negatives above?</em></p>
+<p>…</p>
+<p><strong>Understanding the regression</strong></p>
+<p>Let’s look at where the blue line above comes from.</p>
+<p>Our logistic regression is formalized as follows:</p>
+<p>For <span class="math notranslate nohighlight">\(h(x) = \beta_0 + \beta_1x\)</span>,</p>
+<p><span class="math notranslate nohighlight">\(p(y) = \dfrac{e^{h(x)}}{1+ e^{h(x)}}\)</span></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Let&#39;s implement the above transformation here</span>
+<span class="n">ypreds</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_reg</span><span class="o">.</span><span class="n">intercept_</span> <span class="o">+</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">*</span><span class="n">xtest</span><span class="p">)</span> <span class="o">/</span> <span class="p">(</span><span class="mi">1</span> <span class="o">+</span> <span class="n">np</span><span class="o">.</span><span class="n">exp</span><span class="p">(</span><span class="n">log_reg</span><span class="o">.</span><span class="n">intercept_</span> <span class="o">+</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">coef_</span><span class="o">*</span><span class="n">xtest</span><span class="p">))</span>
+
+<span class="c1"># Now we can confirm that this worked</span>
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ypreds</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylim</span><span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;p(CHD)&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="c1"># Finally, let&#39;s look at the &quot;linear&quot; relationship underlying logistic regression</span>
+<span class="n">h</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">log</span><span class="p">(</span><span class="n">ypreds</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">]</span><span class="o">/</span><span class="p">(</span><span class="mi">1</span><span class="o">-</span><span class="n">ypreds</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">])))</span>
+<span class="n">h</span><span class="o">.</span><span class="n">set_xlabel</span><span class="p">(</span><span class="s2">&quot;Age&quot;</span><span class="p">)</span>
+<span class="n">h</span><span class="o">.</span><span class="n">set_ylabel</span><span class="p">(</span><span class="s2">&quot;Log odds of CHD&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_20-post_22_0.png" src="../../_images/Lecture_20-post_22_0.png" />
+<img alt="../../_images/Lecture_20-post_22_1.png" src="../../_images/Lecture_20-post_22_1.png" />
+</div>
+</div>
+<p><strong>Understanding the classification</strong></p>
+<p>Note, the classification boundary of 50% that we used based on our logistic function’s <span class="math notranslate nohighlight">\(p(y)\)</span> is somewhat arbitrary.</p>
+<p>As with <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, we can modify that classification threshold and generate an ROC curve over different thresholds.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="c1"># ROC curve</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">log_reg</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">pos_label</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">)</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fpr</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">(</span><span class="n">xy1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">slope</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;FPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;TPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_20-post_24_0.png" src="../../_images/Lecture_20-post_24_0.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="decision-trees">
+<h2>Decision Trees<a class="headerlink" href="#decision-trees" title="Permalink to this headline">¶</a></h2>
+<p>Decision trees are a form of classification that fits a model by generating successive <em>rules</em> based on the input feature values. These rules are optimized to try and classify the data as accurately as possible.</p>
+<p><img alt="decision_tree" src="../../_images/Decision_Tree.jpeg" /></p>
+<p>Above, the percentages are the percent of data points in each node and the proportions are the probability of survival (<a class="reference external" href="https://en.wikipedia.org/wiki/Decision_tree_learning">Source</a>).</p>
+<p><em>Take a second to interpret this</em>.</p>
+<p>Decision trees have the advantage of being super intuitive (like <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors, they’re similar to how people often think about classification).</p>
+<p>There’s a great article about how they work <a class="reference external" href="https://towardsdatascience.com/decision-tree-classifier-explained-in-real-life-picking-a-vacation-destination-6226b2b60575">here</a> and a nice explanation of how the decision boundaries are identified <a class="reference external" href="https://victorzhou.com/blog/gini-impurity/">here</a>.</p>
+<div class="section" id="decision-tree-classifiers-in-python">
+<h3>Decision tree classifiers in python<a class="headerlink" href="#decision-tree-classifiers-in-python" title="Permalink to this headline">¶</a></h3>
+<p>You can read the decision tree classifier documentation <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.tree.DecisionTreeClassifier.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Import the DecisionTreeClassifier class</span>
+<span class="kn">from</span> <span class="nn">sklearn.tree</span> <span class="kn">import</span> <span class="n">DecisionTreeClassifier</span>
+
+<span class="c1"># Initialize the decision tree classifier</span>
+<span class="n">dtree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span><span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span><span class="p">)</span>
+
+<span class="c1"># Fit the model</span>
+<span class="n">dtree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn</span> <span class="kn">import</span> <span class="n">tree</span>
+
+<span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dtree</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(172.40380434782608, 209.07692307692307, &#39;X[0] &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]&#39;),
+ Text(52.767391304347825, 192.35076923076923, &#39;X[0] &lt;= 24.5\ngini = 0.339\nsamples = 217\nvalue = [170, 47]&#39;),
+ Text(14.556521739130435, 175.62461538461537, &#39;X[0] &lt;= 19.5\ngini = 0.038\nsamples = 51\nvalue = [50, 1]&#39;),
+ Text(7.278260869565218, 158.89846153846153, &#39;gini = 0.0\nsamples = 38\nvalue = [38, 0]&#39;),
+ Text(21.834782608695654, 158.89846153846153, &#39;X[0] &lt;= 20.5\ngini = 0.142\nsamples = 13\nvalue = [12, 1]&#39;),
+ Text(14.556521739130435, 142.1723076923077, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
+ Text(29.11304347826087, 142.1723076923077, &#39;gini = 0.0\nsamples = 7\nvalue = [7, 0]&#39;),
+ Text(90.97826086956522, 175.62461538461537, &#39;X[0] &lt;= 31.5\ngini = 0.401\nsamples = 166\nvalue = [120, 46]&#39;),
+ Text(58.22608695652174, 158.89846153846153, &#39;X[0] &lt;= 28.5\ngini = 0.305\nsamples = 32\nvalue = [26, 6]&#39;),
+ Text(43.66956521739131, 142.1723076923077, &#39;X[0] &lt;= 25.5\ngini = 0.415\nsamples = 17\nvalue = [12, 5]&#39;),
+ Text(36.391304347826086, 125.44615384615385, &#39;gini = 0.5\nsamples = 2\nvalue = [1, 1]&#39;),
+ Text(50.947826086956525, 125.44615384615385, &#39;X[0] &lt;= 27.5\ngini = 0.391\nsamples = 15\nvalue = [11, 4]&#39;),
+ Text(43.66956521739131, 108.72, &#39;X[0] &lt;= 26.5\ngini = 0.375\nsamples = 8\nvalue = [6, 2]&#39;),
+ Text(36.391304347826086, 91.99384615384615, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(50.947826086956525, 91.99384615384615, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(58.22608695652174, 108.72, &#39;gini = 0.408\nsamples = 7\nvalue = [5, 2]&#39;),
+ Text(72.78260869565217, 142.1723076923077, &#39;X[0] &lt;= 30.5\ngini = 0.124\nsamples = 15\nvalue = [14, 1]&#39;),
+ Text(65.50434782608696, 125.44615384615385, &#39;gini = 0.0\nsamples = 8\nvalue = [8, 0]&#39;),
+ Text(80.06086956521739, 125.44615384615385, &#39;gini = 0.245\nsamples = 7\nvalue = [6, 1]&#39;),
+ Text(123.7304347826087, 158.89846153846153, &#39;X[0] &lt;= 32.5\ngini = 0.419\nsamples = 134\nvalue = [94, 40]&#39;),
+ Text(116.45217391304348, 142.1723076923077, &#39;gini = 0.494\nsamples = 9\nvalue = [5, 4]&#39;),
+ Text(131.0086956521739, 142.1723076923077, &#39;X[0] &lt;= 38.5\ngini = 0.41\nsamples = 125\nvalue = [89, 36]&#39;),
+ Text(94.61739130434783, 125.44615384615385, &#39;X[0] &lt;= 35.5\ngini = 0.342\nsamples = 32\nvalue = [25, 7]&#39;),
+ Text(80.06086956521739, 108.72, &#39;X[0] &lt;= 34.5\ngini = 0.298\nsamples = 11\nvalue = [9, 2]&#39;),
+ Text(72.78260869565217, 91.99384615384615, &#39;X[0] &lt;= 33.5\ngini = 0.32\nsamples = 10\nvalue = [8, 2]&#39;),
+ Text(65.50434782608696, 75.2676923076923, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
+ Text(80.06086956521739, 75.2676923076923, &#39;gini = 0.375\nsamples = 4\nvalue = [3, 1]&#39;),
+ Text(87.33913043478262, 91.99384615384615, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(109.17391304347827, 108.72, &#39;X[0] &lt;= 36.5\ngini = 0.363\nsamples = 21\nvalue = [16, 5]&#39;),
+ Text(101.89565217391305, 91.99384615384615, &#39;gini = 0.444\nsamples = 3\nvalue = [2, 1]&#39;),
+ Text(116.45217391304348, 91.99384615384615, &#39;X[0] &lt;= 37.5\ngini = 0.346\nsamples = 18\nvalue = [14, 4]&#39;),
+ Text(109.17391304347827, 75.2676923076923, &#39;gini = 0.278\nsamples = 6\nvalue = [5, 1]&#39;),
+ Text(123.7304347826087, 75.2676923076923, &#39;gini = 0.375\nsamples = 12\nvalue = [9, 3]&#39;),
+ Text(167.4, 125.44615384615385, &#39;X[0] &lt;= 43.5\ngini = 0.429\nsamples = 93\nvalue = [64, 29]&#39;),
+ Text(152.84347826086957, 108.72, &#39;X[0] &lt;= 42.5\ngini = 0.473\nsamples = 39\nvalue = [24, 15]&#39;),
+ Text(145.56521739130434, 91.99384615384615, &#39;X[0] &lt;= 39.5\ngini = 0.451\nsamples = 32\nvalue = [21, 11]&#39;),
+ Text(138.28695652173914, 75.2676923076923, &#39;gini = 0.49\nsamples = 7\nvalue = [4, 3]&#39;),
+ Text(152.84347826086957, 75.2676923076923, &#39;X[0] &lt;= 40.5\ngini = 0.435\nsamples = 25\nvalue = [17, 8]&#39;),
+ Text(145.56521739130434, 58.541538461538465, &#39;gini = 0.42\nsamples = 10\nvalue = [7, 3]&#39;),
+ Text(160.12173913043478, 58.541538461538465, &#39;X[0] &lt;= 41.5\ngini = 0.444\nsamples = 15\nvalue = [10, 5]&#39;),
+ Text(152.84347826086957, 41.81538461538463, &#39;gini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
+ Text(167.4, 41.81538461538463, &#39;gini = 0.444\nsamples = 9\nvalue = [6, 3]&#39;),
+ Text(160.12173913043478, 91.99384615384615, &#39;gini = 0.49\nsamples = 7\nvalue = [3, 4]&#39;),
+ Text(181.95652173913044, 108.72, &#39;X[0] &lt;= 44.5\ngini = 0.384\nsamples = 54\nvalue = [40, 14]&#39;),
+ Text(174.67826086956524, 91.99384615384615, &#39;gini = 0.0\nsamples = 7\nvalue = [7, 0]&#39;),
+ Text(189.23478260869567, 91.99384615384615, &#39;X[0] &lt;= 45.5\ngini = 0.418\nsamples = 47\nvalue = [33, 14]&#39;),
+ Text(181.95652173913044, 75.2676923076923, &#39;gini = 0.5\nsamples = 8\nvalue = [4, 4]&#39;),
+ Text(196.51304347826087, 75.2676923076923, &#39;X[0] &lt;= 49.5\ngini = 0.381\nsamples = 39\nvalue = [29, 10]&#39;),
+ Text(189.23478260869567, 58.541538461538465, &#39;X[0] &lt;= 46.5\ngini = 0.35\nsamples = 31\nvalue = [24, 7]&#39;),
+ Text(181.95652173913044, 41.81538461538463, &#39;gini = 0.444\nsamples = 6\nvalue = [4, 2]&#39;),
+ Text(196.51304347826087, 41.81538461538463, &#39;X[0] &lt;= 47.5\ngini = 0.32\nsamples = 25\nvalue = [20, 5]&#39;),
+ Text(189.23478260869567, 25.089230769230767, &#39;gini = 0.0\nsamples = 1\nvalue = [1, 0]&#39;),
+ Text(203.7913043478261, 25.089230769230767, &#39;X[0] &lt;= 48.5\ngini = 0.33\nsamples = 24\nvalue = [19, 5]&#39;),
+ Text(196.51304347826087, 8.363076923076932, &#39;gini = 0.355\nsamples = 13\nvalue = [10, 3]&#39;),
+ Text(211.0695652173913, 8.363076923076932, &#39;gini = 0.298\nsamples = 11\nvalue = [9, 2]&#39;),
+ Text(203.7913043478261, 58.541538461538465, &#39;gini = 0.469\nsamples = 8\nvalue = [5, 3]&#39;),
+ Text(292.04021739130434, 192.35076923076923, &#39;X[0] &lt;= 59.5\ngini = 0.491\nsamples = 129\nvalue = [56, 73]&#39;),
+ Text(271.1152173913043, 175.62461538461537, &#39;X[0] &lt;= 57.5\ngini = 0.472\nsamples = 81\nvalue = [31, 50]&#39;),
+ Text(251.1, 158.89846153846153, &#39;X[0] &lt;= 55.5\ngini = 0.494\nsamples = 56\nvalue = [25, 31]&#39;),
+ Text(232.90434782608696, 142.1723076923077, &#39;X[0] &lt;= 53.5\ngini = 0.476\nsamples = 46\nvalue = [18, 28]&#39;),
+ Text(218.34782608695653, 125.44615384615385, &#39;X[0] &lt;= 52.5\ngini = 0.497\nsamples = 26\nvalue = [12, 14]&#39;),
+ Text(211.0695652173913, 108.72, &#39;X[0] &lt;= 51.5\ngini = 0.48\nsamples = 15\nvalue = [6, 9]&#39;),
+ Text(203.7913043478261, 91.99384615384615, &#39;gini = 0.49\nsamples = 7\nvalue = [3, 4]&#39;),
+ Text(218.34782608695653, 91.99384615384615, &#39;gini = 0.469\nsamples = 8\nvalue = [3, 5]&#39;),
+ Text(225.62608695652173, 108.72, &#39;gini = 0.496\nsamples = 11\nvalue = [6, 5]&#39;),
+ Text(247.4608695652174, 125.44615384615385, &#39;X[0] &lt;= 54.5\ngini = 0.42\nsamples = 20\nvalue = [6, 14]&#39;),
+ Text(240.1826086956522, 108.72, &#39;gini = 0.278\nsamples = 6\nvalue = [1, 5]&#39;),
+ Text(254.73913043478262, 108.72, &#39;gini = 0.459\nsamples = 14\nvalue = [5, 9]&#39;),
+ Text(269.295652173913, 142.1723076923077, &#39;X[0] &lt;= 56.5\ngini = 0.42\nsamples = 10\nvalue = [7, 3]&#39;),
+ Text(262.0173913043478, 125.44615384615385, &#39;gini = 0.48\nsamples = 5\nvalue = [3, 2]&#39;),
+ Text(276.5739130434783, 125.44615384615385, &#39;gini = 0.32\nsamples = 5\nvalue = [4, 1]&#39;),
+ Text(291.1304347826087, 158.89846153846153, &#39;X[0] &lt;= 58.5\ngini = 0.365\nsamples = 25\nvalue = [6, 19]&#39;),
+ Text(283.8521739130435, 142.1723076923077, &#39;gini = 0.375\nsamples = 12\nvalue = [3, 9]&#39;),
+ Text(298.40869565217395, 142.1723076923077, &#39;gini = 0.355\nsamples = 13\nvalue = [3, 10]&#39;),
+ Text(312.96521739130435, 175.62461538461537, &#39;X[0] &lt;= 60.5\ngini = 0.499\nsamples = 48\nvalue = [25, 23]&#39;),
+ Text(305.68695652173915, 158.89846153846153, &#39;gini = 0.375\nsamples = 12\nvalue = [9, 3]&#39;),
+ Text(320.24347826086955, 158.89846153846153, &#39;X[0] &lt;= 63.5\ngini = 0.494\nsamples = 36\nvalue = [16, 20]&#39;),
+ Text(312.96521739130435, 142.1723076923077, &#39;X[0] &lt;= 62.5\ngini = 0.473\nsamples = 26\nvalue = [10, 16]&#39;),
+ Text(305.68695652173915, 125.44615384615385, &#39;X[0] &lt;= 61.5\ngini = 0.49\nsamples = 21\nvalue = [9, 12]&#39;),
+ Text(298.40869565217395, 108.72, &#39;gini = 0.444\nsamples = 12\nvalue = [4, 8]&#39;),
+ Text(312.96521739130435, 108.72, &#39;gini = 0.494\nsamples = 9\nvalue = [5, 4]&#39;),
+ Text(320.24347826086955, 125.44615384615385, &#39;gini = 0.32\nsamples = 5\nvalue = [1, 4]&#39;),
+ Text(327.5217391304348, 142.1723076923077, &#39;gini = 0.48\nsamples = 10\nvalue = [6, 4]&#39;)]
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_20-post_29_1.png" src="../../_images/Lecture_20-post_29_1.png" />
+</div>
+</div>
+<p>Whoa.</p>
+<p><strong>Decision trees can overfit data <em>a lot</em> if they aren’t constrained.</strong></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dtree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="n">dtree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+
+<span class="c1"># Seems like we&#39;re overfitting</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.646551724137931
+</pre></div>
+</div>
+</div>
+</div>
+<p><em>Let’s try this again…</em></p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">dtree</span> <span class="o">=</span> <span class="n">DecisionTreeClassifier</span><span class="p">(</span>
+    <span class="c1"># how many layers our decision tree should have (toggle between 1 and 2 and see how this impacts results)</span>
+    <span class="n">max_depth</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span>
+    <span class="n">random_state</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">)</span>
+
+<span class="c1"># Fit the model</span>
+<span class="n">dtree</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>DecisionTreeClassifier(max_depth=1, random_state=1)
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">tree</span><span class="o">.</span><span class="n">plot_tree</span><span class="p">(</span><span class="n">dtree</span><span class="p">,</span>
+               <span class="n">feature_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;Age&#39;</span><span class="p">],</span>
+               <span class="n">class_names</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;No CHD&#39;</span><span class="p">,</span> <span class="s1">&#39;CHD&#39;</span><span class="p">],</span>
+               <span class="n">filled</span> <span class="o">=</span> <span class="kc">True</span>
+              <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>[Text(167.4, 163.07999999999998, &#39;Age &lt;= 50.5\ngini = 0.453\nsamples = 346\nvalue = [226, 120]\nclass = No CHD&#39;),
+ Text(83.7, 54.360000000000014, &#39;gini = 0.339\nsamples = 217\nvalue = [170, 47]\nclass = No CHD&#39;),
+ Text(251.10000000000002, 54.360000000000014, &#39;gini = 0.491\nsamples = 129\nvalue = [56, 73]\nclass = CHD&#39;)]
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_20-post_34_1.png" src="../../_images/Lecture_20-post_34_1.png" />
+</div>
+</div>
+<p><em><strong>What’s going on here?</strong></em></p>
+<ul class="simple">
+<li><p><code class="docutils literal notranslate"><span class="pre">Age</span> <span class="pre">&lt;=</span> <span class="pre">50.5</span></code>: This is the “rule” being used to define leaves on either side of the tree (“No” -&gt; left, “Yes” -&gt; right)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">gini</span> <span class="pre">=</span> <span class="pre">0.453</span></code>: This refers to the “Gini impurity” of the node. Gini impurity is the loss function used to fit this tree (optimal = 0) (more on this <a class="reference external" href="https://victorzhou.com/blog/gini-impurity/">here</a>)</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">samples</span> <span class="pre">=</span> <span class="pre">346</span></code>: This is the number of samples in the group that the node is dividing</p></li>
+<li><p><code class="docutils literal notranslate"><span class="pre">value</span> <span class="pre">=</span> <span class="pre">[226,</span> <span class="pre">120]</span></code>: This is the number of training values on the left (<code class="docutils literal notranslate"><span class="pre">values[0]</span></code>) and the right (<code class="docutils literal notranslate"><span class="pre">values[1]</span></code>) of the node</p></li>
+</ul>
+<p>NOTE: With a depth of 1, at the very bottom, we have:</p>
+<ul class="simple">
+<li><p>170 people were correctly classified as “No CHD” with this rule (true negatives)</p></li>
+<li><p>47 people were classified as “No CHD” with this rule <em>incorrectly</em> (false negatives)</p></li>
+<li><p>56 people were classified as “CHD” with this rule <em>incorrectly</em> (false positives)</p></li>
+<li><p>73 people were classified as “CHD” with this rule <em>correctly</em> (true positives)</p></li>
+</ul>
+<p>Like other classifiers, the decision tree classifier lets us predict values and has functions for assessing prediction accuracy.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Accuracy on the data</span>
+<span class="n">dtree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="n">dtree</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">ypreds</span>
+
+<span class="c1"># Test `score` above</span>
+<span class="nb">sum</span><span class="p">(</span><span class="n">ypreds</span> <span class="o">==</span> <span class="n">ytest</span><span class="p">)</span> <span class="o">/</span> <span class="nb">len</span><span class="p">(</span><span class="n">ypreds</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.6810344827586207
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># The &quot;soft classification&quot; probabilities are just the fraction of training samples for the &quot;true&quot; label </span>
+<span class="c1"># in the leaf where this test item ended up</span>
+
+<span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">ypreds_soft</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.78341014, 0.21658986],
+       [0.43410853, 0.56589147]])
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can use the predictions as the basis for better understanding what the tree is doing:</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># This reveals the cutoff(s) chosen by our decision tree! </span>
+<span class="n">train_preds</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">)</span>
+
+<span class="n">g</span> <span class="o">=</span> <span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">hue</span> <span class="o">=</span> <span class="n">ytrain</span> <span class="o">==</span> <span class="n">train_preds</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+<span class="c1"># These are the decision boundaries in the tree. You can see how they segment our data into more accurate predictions</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">50.5</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">59.5</span><span class="p">)</span>
+<span class="n">g</span><span class="o">.</span><span class="n">axvline</span><span class="p">(</span><span class="mf">24.5</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>&lt;matplotlib.lines.Line2D at 0x7fac7c7bdb50&gt;
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_20-post_41_1.png" src="../../_images/Lecture_20-post_41_1.png" />
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1">### YOUR CODE HERE</span>
+
+<span class="c1"># Make a similar graph to the above with the test data</span>
+</pre></div>
+</div>
+</div>
+</div>
+<p>We can also draw on the same resources that we talked about for assessing our <span class="math notranslate nohighlight">\(k\)</span>-nearest neighbors classifier:</p>
+<ul class="simple">
+<li><p>Accuracy / F1 score</p></li>
+<li><p>ROC curves</p></li>
+</ul>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">accuracy_score</span><span class="p">,</span> <span class="n">f1_score</span>
+
+
+<span class="c1"># Test accuracy</span>
+<span class="n">accuracy_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span> <span class="n">y_pred</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">))</span>
+
+<span class="c1"># Test F1 score</span>
+<span class="n">f1_score</span><span class="p">(</span><span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+         <span class="n">y_pred</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">),</span>
+         <span class="n">labels</span> <span class="o">=</span> <span class="p">[</span><span class="mi">0</span><span class="p">,</span> <span class="mi">1</span><span class="p">],</span>
+         <span class="n">pos_label</span> <span class="o">=</span> <span class="mi">1</span>
+        <span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.5542168674698795
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.metrics</span> <span class="kn">import</span> <span class="n">roc_curve</span>
+
+<span class="c1"># ROC curve</span>
+<span class="n">fpr</span><span class="p">,</span> <span class="n">tpr</span><span class="p">,</span> <span class="n">thresholds</span> <span class="o">=</span> <span class="n">roc_curve</span><span class="p">(</span>
+    <span class="n">y_true</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">,</span>
+    <span class="n">y_score</span> <span class="o">=</span> <span class="n">dtree</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)[:,</span> <span class="mi">1</span><span class="p">],</span>
+    <span class="n">pos_label</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="p">)</span>
+
+
+<span class="n">sns</span><span class="o">.</span><span class="n">lineplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">fpr</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">tpr</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">axline</span><span class="p">(</span><span class="n">xy1</span> <span class="o">=</span> <span class="p">(</span><span class="mi">0</span><span class="p">,</span> <span class="mi">0</span><span class="p">),</span> <span class="n">slope</span> <span class="o">=</span> <span class="mi">1</span><span class="p">,</span> <span class="n">c</span> <span class="o">=</span> <span class="s2">&quot;r&quot;</span><span class="p">)</span>
+
+<span class="n">plt</span><span class="o">.</span><span class="n">xlabel</span><span class="p">(</span><span class="s2">&quot;FPR&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">ylabel</span><span class="p">(</span><span class="s2">&quot;TPR&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>Text(0, 0.5, &#39;TPR&#39;)
+</pre></div>
+</div>
+<img alt="../../_images/Lecture_20-post_45_1.png" src="../../_images/Lecture_20-post_45_1.png" />
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="support-vector-machines-svms">
+<h2>Support Vector Machines (SVMs)<a class="headerlink" href="#support-vector-machines-svms" title="Permalink to this headline">¶</a></h2>
+<p>Support Vector Machines work by trying to find a line or plane (usually in a high-dimensional space) that <em>maximally separates</em> the training labels in that space.</p>
+<p>The intuition for this is relatively straightforward but the implementation can get complicated!</p>
+<p>In the plot below, the linear funtion <span class="math notranslate nohighlight">\(h_3(x_1, x_2)\)</span> is the best way to separate our training data because it maximizes the margin on either side of the line.</p>
+<p>SVMs try to find the equivalent of <span class="math notranslate nohighlight">\(h_3\)</span> given some training data. This separator can be defined by the closest points in the data to the line; these are called the “support vectors”. Finding the best separator usually requires mapping the training data into a high-dimensional space where it can be effectively separated.</p>
+<p><img alt="svm" src="../../_images/svm2.png" /></p>
+<p>(<a class="reference external" href="https://en.wikipedia.org/wiki/Support-vector_machine">Source</a>)</p>
+<div class="section" id="svms-in-python">
+<h3>SVMs in python<a class="headerlink" href="#svms-in-python" title="Permalink to this headline">¶</a></h3>
+<p>The documentation for SVMs in scikit-learn is <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.svm.SVC.html">here</a>.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">sklearn.svm</span> <span class="kn">import</span> <span class="n">SVC</span>
+
+<span class="n">svm</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">()</span>
+
+<span class="n">svm</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">xtrain</span><span class="p">,</span> <span class="n">ytrain</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>SVC()
+</pre></div>
+</div>
+</div>
+</div>
+<p>In the case of SVMs, there are class attributes that help you recover the separator that was fit.</p>
+<p>We won’t get into these but if you’re interested in learning more it’s good to know about!</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># svm.intercept_</span>
+<span class="c1"># svm.coef_ # only for &#39;linear&#39; kernel</span>
+<span class="c1"># svm.support_vectors_</span>
+
+<span class="c1"># For example, we can view the items in the training set that formed the support vector</span>
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">,</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Training data&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+
+<span class="n">sns</span><span class="o">.</span><span class="n">scatterplot</span><span class="p">(</span><span class="n">x</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">][:,</span> <span class="mi">0</span><span class="p">],</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">[</span><span class="n">svm</span><span class="o">.</span><span class="n">support_</span><span class="p">],</span> <span class="n">alpha</span> <span class="o">=</span> <span class="o">.</span><span class="mi">25</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">title</span><span class="p">(</span><span class="s2">&quot;Support vectors&quot;</span><span class="p">)</span>
+<span class="n">plt</span><span class="o">.</span><span class="n">show</span><span class="p">()</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<img alt="../../_images/Lecture_20-post_50_0.png" src="../../_images/Lecture_20-post_50_0.png" />
+<img alt="../../_images/Lecture_20-post_50_1.png" src="../../_images/Lecture_20-post_50_1.png" />
+</div>
+</div>
+<p>The SVM class has a <code class="docutils literal notranslate"><span class="pre">score</span></code> function that returns the accuracy of a test set, plus prediction functions.</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="c1"># Percent of correct classifications</span>
+<span class="n">svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+<span class="n">svm</span><span class="o">.</span><span class="n">score</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytest</span><span class="p">)</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>0.646551724137931
+</pre></div>
+</div>
+</div>
+</div>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">ypreds</span> <span class="o">=</span> <span class="n">svm</span><span class="o">.</span><span class="n">predict</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">ypreds</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([0, 0, 0, 0, 1, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0, 0,
+       0, 0, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 0, 0, 1, 0, 0, 0, 0, 0, 1,
+       0, 0, 1, 0, 1, 0, 0, 1, 1, 1, 0, 0, 0, 0, 1, 1, 0, 0, 0, 0, 1, 1,
+       0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 1, 0, 0, 1, 1, 0, 1, 1, 0, 1, 1,
+       0, 1, 0, 0, 1, 0, 1, 0, 0, 0, 0, 0, 0, 0, 1, 0, 1, 1, 0, 0, 1, 0,
+       0, 1, 0, 0, 0, 1])
+</pre></div>
+</div>
+</div>
+</div>
+<p>However, soft prediction requires configuring the initial model to do soft classification (by default, SVMs are made to only do hard classification).</p>
+<div class="cell docutils container">
+<div class="cell_input docutils container">
+<div class="highlight-ipython3 notranslate"><div class="highlight"><pre><span></span><span class="n">svm_soft</span> <span class="o">=</span> <span class="n">SVC</span><span class="p">(</span><span class="n">probability</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="c1"># indicate that you want the SVM to do soft classification</span>
+<span class="n">svm_soft</span><span class="o">.</span><span class="n">fit</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtrain</span><span class="p">,</span> <span class="n">y</span> <span class="o">=</span> <span class="n">ytrain</span><span class="p">)</span>
+
+<span class="n">ypreds_soft</span> <span class="o">=</span> <span class="n">svm_soft</span><span class="o">.</span><span class="n">predict_proba</span><span class="p">(</span><span class="n">X</span> <span class="o">=</span> <span class="n">xtest</span><span class="p">)</span>
+<span class="n">ypreds_soft</span>
+</pre></div>
+</div>
+</div>
+<div class="cell_output docutils container">
+<div class="output text_plain highlight-myst-ansi notranslate"><div class="highlight"><pre><span></span>array([[0.71971361, 0.28028639],
+       [0.72063653, 0.27936347],
+       [0.67868053, 0.32131947],
+       [0.72025123, 0.27974877],
+       [0.44383188, 0.55616812],
+       [0.71972589, 0.28027411],
+       [0.72407255, 0.27592745],
+       [0.51169367, 0.48830633],
+       [0.72063653, 0.27936347],
+       [0.44758618, 0.55241382],
+       [0.47107807, 0.52892193],
+       [0.72007526, 0.27992474],
+       [0.71972589, 0.28027411],
+       [0.44914516, 0.55085484],
+       [0.71846213, 0.28153787],
+       [0.67868053, 0.32131947],
+       [0.720486  , 0.279514  ],
+       [0.53650348, 0.46349652],
+       [0.71846213, 0.28153787],
+       [0.72398331, 0.27601669],
+       [0.71973359, 0.28026641],
+       [0.71973359, 0.28026641],
+       [0.70502942, 0.29497058],
+       [0.72063653, 0.27936347],
+       [0.71971361, 0.28028639],
+       [0.45871708, 0.54128292],
+       [0.72063653, 0.27936347],
+       [0.71346947, 0.28653053],
+       [0.45871708, 0.54128292],
+       [0.44383188, 0.55616812],
+       [0.48956242, 0.51043758],
+       [0.71915565, 0.28084435],
+       [0.72063653, 0.27936347],
+       [0.71793861, 0.28206139],
+       [0.71915565, 0.28084435],
+       [0.58916126, 0.41083874],
+       [0.71975156, 0.28024844],
+       [0.45693791, 0.54306209],
+       [0.71910267, 0.28089733],
+       [0.58916126, 0.41083874],
+       [0.71975156, 0.28024844],
+       [0.71846213, 0.28153787],
+       [0.72250516, 0.27749484],
+       [0.56277503, 0.43722497],
+       [0.71914798, 0.28085202],
+       [0.72025123, 0.27974877],
+       [0.47107807, 0.52892193],
+       [0.71975156, 0.28024844],
+       [0.45693791, 0.54306209],
+       [0.71971361, 0.28028639],
+       [0.71346947, 0.28653053],
+       [0.45871708, 0.54128292],
+       [0.51169367, 0.48830633],
+       [0.44914516, 0.55085484],
+       [0.63745526, 0.36254474],
+       [0.72192606, 0.27807394],
+       [0.720486  , 0.279514  ],
+       [0.67868053, 0.32131947],
+       [0.45693791, 0.54306209],
+       [0.48956242, 0.51043758],
+       [0.72407255, 0.27592745],
+       [0.720486  , 0.279514  ],
+       [0.61438945, 0.38561055],
+       [0.72007526, 0.27992474],
+       [0.56277503, 0.43722497],
+       [0.44758618, 0.55241382],
+       [0.71346947, 0.28653053],
+       [0.71346947, 0.28653053],
+       [0.72192606, 0.27807394],
+       [0.71915565, 0.28084435],
+       [0.71975156, 0.28024844],
+       [0.71975156, 0.28024844],
+       [0.72407255, 0.27592745],
+       [0.72058686, 0.27941314],
+       [0.71955264, 0.28044736],
+       [0.71935695, 0.28064305],
+       [0.71920322, 0.28079678],
+       [0.44758618, 0.55241382],
+       [0.71972589, 0.28027411],
+       [0.72025123, 0.27974877],
+       [0.51169367, 0.48830633],
+       [0.56277503, 0.43722497],
+       [0.71910267, 0.28089733],
+       [0.47107807, 0.52892193],
+       [0.53650348, 0.46349652],
+       [0.71955264, 0.28044736],
+       [0.44322758, 0.55677242],
+       [0.51169367, 0.48830633],
+       [0.70502942, 0.29497058],
+       [0.48956242, 0.51043758],
+       [0.71793861, 0.28206139],
+       [0.72040304, 0.27959696],
+       [0.44322758, 0.55677242],
+       [0.72407255, 0.27592745],
+       [0.44383188, 0.55616812],
+       [0.72324331, 0.27675669],
+       [0.72063653, 0.27936347],
+       [0.72324331, 0.27675669],
+       [0.72063653, 0.27936347],
+       [0.71971361, 0.28028639],
+       [0.72324331, 0.27675669],
+       [0.61438945, 0.38561055],
+       [0.47107807, 0.52892193],
+       [0.71915565, 0.28084435],
+       [0.47107807, 0.52892193],
+       [0.44914516, 0.55085484],
+       [0.71915565, 0.28084435],
+       [0.71915565, 0.28084435],
+       [0.56277503, 0.43722497],
+       [0.58916126, 0.41083874],
+       [0.72025123, 0.27974877],
+       [0.44322758, 0.55677242],
+       [0.72025123, 0.27974877],
+       [0.72324331, 0.27675669],
+       [0.71346947, 0.28653053],
+       [0.44322758, 0.55677242]])
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+</div>
+<div class="section" id="classifier-wrap-up">
+<h1>Classifier Wrap-Up<a class="headerlink" href="#classifier-wrap-up" title="Permalink to this headline">¶</a></h1>
+<p>This is just a sample of what’s out there!</p>
+<p>There are a number of other common classifiers you should take a look at if you’re interested:</p>
+<ul class="simple">
+<li><p>Naive Bayes (<a class="reference external" href="https://scikit-learn.org/stable/modules/naive_bayes.html">here</a>)</p></li>
+<li><p>Discriminant analysis (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.LinearDiscriminantAnalysis.html">linear</a> and <a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.discriminant_analysis.QuadraticDiscriminantAnalysis.html">quadratic</a>)</p></li>
+<li><p>Neural networks (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.neural_network.MLPClassifier.html">here</a>)</p></li>
+<li><p>Random forests (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.RandomForestClassifier.html">here</a>) (related to decision trees)</p></li>
+<li><p>Gradient boosted trees (<a class="reference external" href="https://scikit-learn.org/stable/modules/generated/sklearn.ensemble.GradientBoostingClassifier.html">here</a>)</p></li>
+<li><p>…</p></li>
+</ul>
+<p>The main goal of this lecture is to show you some of the creative ways that people solve classification problems and how the scikit-learn library supports these solutions.</p>
+<p>This should empower you to go off and try some of these other ones on your own!</p>
+</div>
+
+    <script type="text/x-thebe-config">
+    {
+        requestKernel: true,
+        binderOptions: {
+            repo: "binder-examples/jupyter-stacks-datascience",
+            ref: "master",
+        },
+        codeMirrorConfig: {
+            theme: "abcdef",
+            mode: "python"
+        },
+        kernelOptions: {
+            kernelName: "python3",
+            path: "./lectures/sp22"
+        },
+        predefinedOutput: true
+    }
+    </script>
+    <script>kernelName = 'python3'</script>
+
+              </div>
+              
+        
+        <div class='prev-next-bottom'>
+            
+    <a class='left-prev' id="prev-link" href="Lecture_19-post.html" title="previous page">Lecture 19 (5/9/2022)</a>
+    <a class='right-next' id="next-link" href="Lecture_21-post.html" title="next page">Lecture 21 (5/13/2022)</a>
+
+        </div>
+        
+        </div>
+    </div>
+    <footer class="footer mt-5 mt-md-0">
+    <div class="container">
+      <p>
+        
+          By Erik Brockbank<br/>
+        
+            &copy; Copyright 2022.<br/>
+      </p>
+    </div>
+  </footer>
+</main>
+
+
+      </div>
+    </div>
+  
+  <script src="../../_static/js/index.1c5a1a01449ed65a7b51.js"></script>
+
+  
+  </body>
+</html>
